@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Português 4 — Aula 8: Relatórios Formais e Técnicos na Governança da IPB</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg-page: #eef2f7;
+      --surface: #ffffff;
+      --paper: #f8fafc;
+      --ink: #1e293b;
+      --muted: #475569;
+      --navy: #0b2344;
+      --navy-light: #163a6b;
+      --blue: #2563eb;
+      --blue-pale: #eff6ff;
+      --blue-border: #bfdbfe;
+      --teal: #0f766e;
+      --teal-pale: #f0fdfa;
+      --teal-border: #99f6e4;
+      --green: #15803d;
+      --green-pale: #f0fdf4;
+      --green-border: #bbf7d0;
+      --coral: #c2410c;
+      --coral-pale: #fff7ed;
+      --coral-border: #fed7aa;
+      --purple: #6d28d9;
+      --purple-pale: #f5f3ff;
+      --purple-border: #ddd6fe;
+      --amber: #b45309;
+      --amber-pale: #fffbeb;
+      --amber-border: #fde68a;
+      --line: #cbd5e1;
+      --shadow-sm: 0 1px 3px rgba(11, 35, 68, 0.06);
+      --shadow-md: 0 4px 20px rgba(11, 35, 68, 0.1);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+
+      /* Cores Vetoriais do Cabeçalho Institucional (Modo Claro) */
+      --hdr-navy: #134a84;
+      --hdr-teal: #10a386;
+      --hdr-right-main: #1e293b;
+      --hdr-right-sub: #334155;
+      --hdr-line: #1e5a96;
+
+      /* Pílulas sintáticas modo claro */
+      --pill-op-bg: #dbeafe; --pill-op-txt: #1e3a8a; --pill-op-brd: #93c5fd;
+      --pill-co-bg: #dcfce7; --pill-co-txt: #14532d; --pill-co-brd: #86efac;
+      --pill-su-bg: #ffedd5; --pill-su-txt: #7c2d12; --pill-su-brd: #fdba74;
+      --pill-cn-bg: #fae8ff; --pill-cn-txt: #581c87; --pill-cn-brd: #e879f9;
+    }
+
+    html.dark-mode {
+      color-scheme: dark;
+      --bg-page: #090d16;
+      --surface: #111827;
+      --paper: #1e293b;
+      --ink: #f1f5f9;
+      --muted: #94a3b8;
+      --navy: #e2e8f0;
+      --navy-light: #93c5fd;
+      --blue: #60a5fa;
+      --blue-pale: #172554;
+      --blue-border: #1e3a8a;
+      --teal: #2dd4bf;
+      --teal-pale: #042f2e;
+      --teal-border: #115e59;
+      --green: #4ade80;
+      --green-pale: #052e16;
+      --green-border: #14532d;
+      --coral: #fb923c;
+      --coral-pale: #431407;
+      --coral-border: #7c2d12;
+      --purple: #c084fc;
+      --purple-pale: #2e1065;
+      --purple-border: #581c87;
+      --amber: #fbbf24;
+      --amber-pale: #451a03;
+      --amber-border: #78350f;
+      --line: #334155;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+      --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.55);
+
+      /* Cores Vetoriais do Cabeçalho Institucional (Modo Escuro — integrado ao fundo) */
+      --hdr-navy: #1d5ca0;
+      --hdr-teal: #2dd4bf;
+      --hdr-right-main: #f8fafc;
+      --hdr-right-sub: #cbd5e1;
+      --hdr-line: #3b82f6;
+
+      /* Pílulas sintáticas modo escuro */
+      --pill-op-bg: #1e3a8a; --pill-op-txt: #dbeafe; --pill-op-brd: #3b82f6;
+      --pill-co-bg: #14532d; --pill-co-txt: #dcfce7; --pill-co-brd: #22c55e;
+      --pill-su-bg: #7c2d12; --pill-su-txt: #ffedd5; --pill-su-brd: #f97316;
+      --pill-cn-bg: #581c87; --pill-cn-txt: #fae8ff; --pill-cn-brd: #c084fc;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-page);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .page-wrapper {
+      max-width: 1060px;
+      margin: 0 auto;
+      background-color: var(--surface);
+      padding: 28px clamp(16px, 4.5vw, 58px) 84px;
+      box-shadow: var(--shadow-md);
+      transition: background-color 0.2s ease;
+    }
+
+    /* Chave Seletora de Modo Claro / Escuro */
+    .theme-switch-wrapper {
+      position: fixed;
+      top: 16px;
+      right: 18px;
+      z-index: 1200;
+    }
+
+    .theme-switch-btn {
+      appearance: none;
+      background-color: var(--surface);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px 5px 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-md);
+      transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .theme-switch-btn:hover {
+      border-color: var(--blue);
+      transform: translateY(-1px);
+    }
+
+    .theme-switch-btn:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
+    }
+
+    .switch-track {
+      width: 30px;
+      height: 17px;
+      background-color: var(--line);
+      border-radius: 999px;
+      position: relative;
+      transition: background-color 0.2s ease;
+    }
+
+    html.dark-mode .switch-track {
+      background-color: var(--blue);
+    }
+
+    .switch-thumb {
+      width: 13px;
+      height: 13px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    }
+
+    html.dark-mode .switch-thumb {
+      transform: translateX(13px);
+    }
+
+    .theme-switch-btn svg {
+      width: 15px;
+      height: 15px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Menu Lateral Slim Fixo e Sóbrio */
+    .slim-toc {
+      position: fixed;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1100;
+      background-color: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 5px;
+      width: 36px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      opacity: 0.78;
+      transition: width 0.24s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.2s ease, padding 0.2s ease, opacity 0.2s ease;
+    }
+
+    .slim-toc:hover,
+    .slim-toc:focus-within {
+      width: 254px;
+      border-radius: var(--radius-md);
+      padding: 10px 8px;
+      opacity: 1;
+    }
+
+    .slim-toc-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .slim-toc-link {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      color: var(--muted);
+      padding: 4px;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .slim-toc-link:hover,
+    .slim-toc-link:focus-visible {
+      background-color: var(--blue-pale);
+      color: var(--blue);
+      outline: none;
+    }
+
+    .slim-toc-link.active {
+      background-color: var(--blue);
+      color: #ffffff;
+    }
+
+    .toc-num {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      border-radius: 50%;
+    }
+
+    .toc-text {
+      font-size: 0.8rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.18s ease;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .slim-toc:hover .toc-text,
+    .slim-toc:focus-within .toc-text {
+      opacity: 1;
+    }
+
+    /* CABEÇALHO INSTITUCIONAL ADAPTÁVEL AO FUNDO CLARO/ESCURO EM ALTA DEFINIÇÃO */
+    .inst-header {
+      width: 100%;
+      margin: 0 auto 24px;
+      background-color: transparent;
+      padding: 4px 0 16px;
+      border-bottom: 2.5px solid var(--hdr-line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      transition: border-color 0.2s ease;
+    }
+
+    .spb-brand-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .spb-emblem-svg {
+      width: 60px;
+      height: 82px;
+      display: block;
+      flex-shrink: 0;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .spb-brand-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .spb-brand-name {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      font-size: clamp(1.08rem, 1.9vw, 1.32rem);
+      font-weight: 600;
+      line-height: 1.16;
+      color: #134a84;
+      letter-spacing: -0.01em;
+      transition: color 0.2s ease;
+    }
+
+    html.dark-mode .spb-brand-name {
+      color: #e2e8f0;
+    }
+
+    .spb-brand-motto {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      font-size: clamp(0.66rem, 1vw, 0.76rem);
+      font-weight: 600;
+      color: var(--hdr-teal);
+      margin-top: 5px;
+      letter-spacing: 0.01em;
+    }
+
+    .spb-meta-right {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+    }
+
+    .spb-meta-line {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      font-size: clamp(0.82rem, 1.45vw, 1.02rem);
+      font-weight: 500;
+      color: var(--hdr-right-sub);
+      letter-spacing: 0.02em;
+      line-height: 1.28;
+      transition: color 0.2s ease;
+    }
+
+    /* Fonte suavizada para Prof.: ISMAEL ROCHA */
+    .spb-meta-prof {
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+      font-size: clamp(0.86rem, 1.5vw, 1.04rem);
+      font-weight: 500;
+      color: var(--hdr-right-main);
+      letter-spacing: 0.03em;
+      margin-top: 2px;
+      transition: color 0.2s ease;
+    }
+
+    /* Título Didático Principal */
+    .hero-title-block {
+      text-align: center;
+      padding: 12px 10px 24px;
+      margin-bottom: 30px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .hero-title-block h1 {
+      font-size: clamp(1.85rem, 4.5vw, 2.95rem);
+      color: var(--navy);
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .hero-title-block .subtitle {
+      font-size: clamp(1.05rem, 2.2vw, 1.38rem);
+      color: var(--blue);
+      font-weight: 600;
+      margin: 0 0 16px;
+    }
+
+    /* Botão Discreto de Download do PDF (aula8.pdf) */
+    .pdf-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--blue);
+      background-color: var(--blue-pale);
+      border: 1px solid var(--blue-border);
+      padding: 6px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .pdf-download-btn:hover,
+    .pdf-download-btn:focus-visible {
+      background-color: var(--blue);
+      color: #ffffff;
+      border-color: var(--blue);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .pdf-download-btn svg {
+      width: 15px;
+      height: 15px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Seções e Tipografia */
+    section.content-sec {
+      margin-bottom: 46px;
+      scroll-margin-top: 24px;
+    }
+
+    h2.sec-heading {
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      color: var(--navy);
+      border-bottom: 3px solid var(--blue);
+      padding-bottom: 8px;
+      margin: 0 0 18px;
+      line-height: 1.25;
+    }
+
+    h3.sub-heading {
+      font-size: clamp(1.12rem, 2.3vw, 1.35rem);
+      color: var(--blue);
+      margin: 26px 0 12px;
+      line-height: 1.3;
+    }
+
+    p {
+      margin: 0 0 15px;
+    }
+
+    ul, ol {
+      margin: 0 0 18px;
+      padding-left: 1.45rem;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    /* Caixas de Destaque */
+    .callout {
+      border-left: 5px solid var(--teal);
+      background-color: var(--teal-pale);
+      border-top: 1px solid var(--teal-border);
+      border-right: 1px solid var(--teal-border);
+      border-bottom: 1px solid var(--teal-border);
+      padding: 16px 20px;
+      margin: 20px 0;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+
+    .callout.blue {
+      border-left-color: var(--blue);
+      background-color: var(--blue-pale);
+      border-color: var(--blue-border);
+    }
+
+    .callout.coral {
+      border-left-color: var(--coral);
+      background-color: var(--coral-pale);
+      border-color: var(--coral-border);
+    }
+
+    .callout.amber {
+      border-left-color: var(--amber);
+      background-color: var(--amber-pale);
+      border-color: var(--amber-border);
+    }
+
+    .callout.green {
+      border-left-color: var(--green);
+      background-color: var(--green-pale);
+      border-color: var(--green-border);
+    }
+
+    .callout-title {
+      font-size: 0.96rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin: 0 0 6px;
+      display: block;
+      color: var(--navy);
+    }
+
+    /* Exemplos Fixos */
+    .example-card {
+      background-color: var(--paper);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--blue);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 15px 18px;
+      margin: 16px 0;
+    }
+
+    .example-card.green {
+      border-left-color: var(--green);
+      background-color: var(--green-pale);
+    }
+
+    .example-tag {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 9px;
+      border-radius: 4px;
+      background-color: var(--blue);
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .example-card.green .example-tag {
+      background-color: var(--green);
+    }
+
+    .quote-verse {
+      font-size: 1.06rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    /* Exemplos Interativos com Pequeno Ícone Clicável */
+    .interactive-box {
+      background-color: var(--surface);
+      border: 1.5px solid var(--blue-border);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin: 22px 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .interactive-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .interactive-badge {
+      background-color: var(--blue);
+      color: #ffffff;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .interactive-focus {
+      font-size: 0.86rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .interactive-prompt {
+      font-size: 1.04rem;
+      font-weight: 700;
+      color: var(--navy);
+      background-color: var(--paper);
+      padding: 12px 15px;
+      border-radius: var(--radius-sm);
+      border-left: 4px solid var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .interactive-question-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .interactive-question {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--ink);
+      flex: 1;
+    }
+
+    /* Pequeno Ícone Clicável para Resposta Comentada */
+    .icon-answer-btn {
+      appearance: none;
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background-color: var(--blue-pale);
+      color: var(--blue);
+      border: 1px solid var(--blue-border);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.2s ease, border-color 0.15s ease;
+    }
+
+    .icon-answer-btn:hover {
+      background-color: var(--blue);
+      color: #ffffff;
+      border-color: var(--blue);
+      transform: scale(1.08);
+    }
+
+    .icon-answer-btn:focus-visible {
+      outline: 2px solid var(--amber);
+      outline-offset: 2px;
+    }
+
+    .icon-answer-btn[aria-expanded="true"] {
+      background-color: var(--teal);
+      color: #ffffff;
+      border-color: var(--teal);
+    }
+
+    .icon-answer-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.2s ease;
+    }
+
+    .icon-answer-btn[aria-expanded="true"] svg {
+      transform: rotate(180deg);
+    }
+
+    .answer-panel {
+      display: none;
+      margin-top: 14px;
+      padding: 15px 18px;
+      background-color: var(--teal-pale);
+      border: 1px solid var(--teal-border);
+      border-left: 5px solid var(--teal);
+      border-radius: var(--radius-sm);
+      font-size: 0.94rem;
+    }
+
+    .answer-panel.is-open {
+      display: block;
+    }
+
+    .answer-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Diagramas e Infográficos */
+    .diagram-box {
+      background-color: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 20px 18px;
+      margin: 24px 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .diagram-title {
+      text-align: center;
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      margin: 0 0 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .diag-card {
+      background-color: var(--surface);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+
+    .diag-card.coord { border-top: 5px solid var(--green); }
+    .diag-card.subord { border-top: 5px solid var(--coral); }
+    .diag-card.subst { border-top: 5px solid var(--blue); }
+    .diag-card.adj { border-top: 5px solid var(--green); }
+
+    .diag-card h4 {
+      margin: 0 0 10px;
+      font-size: 1.04rem;
+      color: var(--navy);
+    }
+
+    .train-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .wagon {
+      background-color: var(--green-pale);
+      border: 1.5px solid var(--green);
+      color: var(--navy);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    .coupler {
+      font-weight: 800;
+      color: var(--coral);
+      padding: 4px 8px;
+      background-color: var(--coral-pale);
+      border: 1px dashed var(--coral);
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+
+    .tree-flow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .tree-root {
+      background-color: var(--blue-pale);
+      border: 1.5px solid var(--blue);
+      color: var(--navy);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    .tree-branch-arrow {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--coral);
+    }
+
+    .tree-leaf {
+      background-color: var(--coral-pale);
+      border: 1.5px solid var(--coral);
+      color: var(--navy);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    /* Marcadores Sintáticos Inline */
+    .syn-pill {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-size: 0.85em;
+      font-weight: 700;
+      margin: 2px 1px;
+    }
+
+    .syn-op { background-color: var(--pill-op-bg); color: var(--pill-op-txt); border: 1px solid var(--pill-op-brd); }
+    .syn-coord { background-color: var(--pill-co-bg); color: var(--pill-co-txt); border: 1px solid var(--pill-co-brd); }
+    .syn-sub { background-color: var(--pill-su-bg); color: var(--pill-su-txt); border: 1px solid var(--pill-su-brd); }
+    .syn-conn { background-color: var(--pill-cn-bg); color: var(--pill-cn-txt); border: 1px solid var(--pill-cn-brd); }
+
+    /* Tabelas Responsivas */
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 20px 0 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    table {
+      width: 100%;
+      min-width: 540px;
+      border-collapse: collapse;
+      background-color: var(--surface);
+      font-size: 0.93rem;
+      line-height: 1.55;
+    }
+
+    thead th {
+      background-color: #0b2344;
+      color: #ffffff;
+      font-weight: 700;
+      text-align: left;
+      padding: 12px 14px;
+    }
+
+    html.dark-mode thead th {
+      background-color: #1e293b;
+      color: #f8fafc;
+      border-bottom: 2px solid var(--line);
+    }
+
+    td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: var(--paper);
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Passo a Passo do Período Misto */
+    .step-chain {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .step-item {
+      background-color: var(--surface);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--blue);
+      border-radius: var(--radius-sm);
+      padding: 13px 15px;
+    }
+
+    .step-num {
+      display: inline-block;
+      background-color: var(--blue-pale);
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 0.76rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+
+    /* Referências Gramaticais e Rodapé */
+    .ref-footer {
+      margin-top: 52px;
+      padding-top: 22px;
+      border-top: 2px solid var(--line);
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .ref-footer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .ref-footer h3 {
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .ref-footer ul {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+
+    /* Pequena Seta no Final da Página para Subir Rápido ao Topo */
+    .bottom-actions-bar {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .scroll-top-btn {
+      appearance: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background-color: var(--paper);
+      color: var(--navy);
+      border: 1px solid var(--line);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      box-shadow: var(--shadow-sm);
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .scroll-top-btn:hover,
+    .scroll-top-btn:focus-visible {
+      background-color: var(--blue);
+      color: #ffffff;
+      border-color: var(--blue);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .scroll-top-btn svg {
+      width: 17px;
+      height: 17px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Compatibilidade Mobile e Telas Menores */
+    @media (max-width: 1160px) {
+      .slim-toc {
+        left: 8px;
+        width: 32px;
+        padding: 6px 4px;
+      }
+
+      .toc-num {
+        width: 17px;
+        height: 17px;
+        font-size: 0.7rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      body {
+        font-size: 16px;
+        line-height: 1.62;
+      }
+
+      .page-wrapper {
+        padding: 16px 14px 74px 44px;
+      }
+
+      .inst-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding-bottom: 14px;
+      }
+
+      .spb-meta-right {
+        text-align: left;
+      }
+
+      .slim-toc {
+        left: 5px;
+        width: 28px;
+        padding: 6px 3px;
+        opacity: 0.88;
+      }
+
+      .slim-toc:hover,
+      .slim-toc:focus-within {
+        width: 225px;
+        padding: 8px 6px;
+      }
+
+      .toc-num {
+        width: 16px;
+        height: 16px;
+        font-size: 0.68rem;
+      }
+
+      .theme-switch-wrapper {
+        top: 10px;
+        right: 10px;
+      }
+
+      .theme-switch-btn {
+        padding: 4px 8px;
+        font-size: 0.72rem;
+      }
+
+      .interactive-box {
+        padding: 14px 14px;
+      }
+
+      .interactive-prompt {
+        font-size: 0.96rem;
+        padding: 10px 12px;
+      }
+
+      .callout {
+        padding: 14px 15px;
+      }
+    }
+
+    @media print {
+      body {
+        background-color: #ffffff;
+        font-size: 11.5pt;
+      }
+      .page-wrapper {
+        box-shadow: none;
+        max-width: none;
+        padding: 0;
+      }
+      .slim-toc, .theme-switch-wrapper, .icon-answer-btn, .bottom-actions-bar, .pdf-download-btn {
+        display: none !important;
+      }
+      .answer-panel {
+        display: block !important;
+      }
+    }
+  
+
+/* === Padronização visual e responsividade === */
+
+/* Marca-d’água discreta, transparente e sensível ao tema */
+.page-wrapper {
+  background-image: url('/graphics/logo_em_tudo_watermark_light.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: min(78vw, 900px) auto;
+  background-attachment: fixed;
+}
+html.dark-mode .page-wrapper {
+  background-image: url('/graphics/logo_em_tudo_watermark_dark.png');
+}
+
+/* Chave junto ao cabeçalho no início do documento; rola para fora da tela */
+.theme-switch-wrapper { position:absolute !important; top:14px !important; right:max(18px, calc((100vw - 1060px)/2 + 18px)) !important; z-index:1200; }
+#themeToggle.theme-switch-btn { position:relative !important; top:auto !important; right:auto !important; z-index:1200; touch-action:manipulation; }
+body { position:relative; }
+
+/* Uniformizar dimensão e interação dos botões de PDF */
+.pdf-download-btn {
+  min-height:40px; max-width:100%; padding:8px 14px;
+  border-radius:999px; font-size:.86rem; line-height:1.35;
+  overflow-wrap:anywhere; touch-action:manipulation;
+}
+.pdf-download-btn svg { flex:0 0 18px; }
+html { scroll-padding-top:84px; }
+body { overflow-x:clip; }
+.page-wrapper { min-width:0; }
+.page-wrapper img { max-width:100%; height:auto; }
+@media (max-width:640px) {
+  .theme-switch-wrapper { top:10px !important; right:12px !important; }
+  #themeToggle.theme-switch-btn { min-width:44px; min-height:44px; }
+  .page-wrapper { width:100%; padding-left:16px; padding-right:16px; }
+  .pdf-download-btn { min-height:44px; }
+}
+@media print {
+  .page-wrapper { background-image:url('/graphics/logo_em_tudo_watermark_light.png') !important; background-attachment:scroll !important; background-repeat:no-repeat !important; background-position:center center !important; background-size:72% auto !important; }
+  /* Cabeçalho de impressão em fluxo simples para evitar sobreposição em PDF. */
+  .inst-header { display:block !important; min-height:100px; margin-bottom:16px !important; padding-bottom:10px !important; overflow:hidden; }
+  .spb-brand-left { float:left; display:flex !important; width:43%; gap:10px !important; align-items:center; }
+  .spb-emblem-svg { width:50px !important; height:68px !important; }
+  .spb-brand-text { display:block !important; min-width:0; }
+  .spb-brand-name { font-size:10.5pt !important; line-height:1.15 !important; }
+  .spb-brand-motto { font-size:7pt !important; line-height:1.2 !important; margin-top:3px !important; }
+  .spb-meta-right { float:right; display:block !important; width:54%; text-align:right; }
+  .spb-meta-line, .spb-meta-prof { display:block !important; font-size:8pt !important; line-height:1.25 !important; margin:0 0 3px !important; letter-spacing:0 !important; }
+  .inst-header::after { content:""; display:block; clear:both; }
+}
+
+
+/* Marca-d’água Em Tudo: centralizada na viewport e visível durante toda a rolagem */
+body::after { content:""; position:fixed; inset:0; z-index:9990; pointer-events:none; opacity:.075; background-image:url("/graphics/logo_em_tudo_b.png"); background-repeat:no-repeat; background-position:center center; background-size:min(58vw, 760px) auto; }
+html.dark-mode body::after, html[data-theme="dark"] body::after { background-image:url("/graphics/logo_em_tudo_w.png"); opacity:.09; }
+@media(max-width:640px){ body::after { background-size:88vw auto; opacity:.055; } html.dark-mode body::after, html[data-theme="dark"] body::after { opacity:.07; } }
+@media print { body::after { position:absolute; opacity:.06; background-image:url("/graphics/logo_em_tudo_b.png") !important; } }
+
+
+/* Bunker Digital: arquivo original externo, com variante por tema */
+.bunker-logo-link{display:inline-flex;align-items:center;justify-content:center;max-width:100%;}
+.bunker-logo-link img{display:block;width:min(150px,42vw);height:auto;object-fit:contain;}
+.bunker-logo-light{display:none!important;}
+html.dark-mode .bunker-logo-dark,html[data-theme="dark"] .bunker-logo-dark{display:none!important;}
+html.dark-mode .bunker-logo-light,html[data-theme="dark"] .bunker-logo-light{display:block!important;}
+/* Marca-d’água Em Tudo centralizada na viewport, inclusive durante a rolagem */
+body::after{content:"";position:fixed;inset:0;z-index:9990;pointer-events:none;opacity:.055;background:url('/graphics/logo_em_tudo_b.png') center center/min(58vw,760px) auto no-repeat;}
+html.dark-mode body::after,html[data-theme="dark"] body::after{background-image:url('/graphics/logo_em_tudo_w.png');opacity:.075;}
+@media(max-width:640px){body::after{background-size:88vw auto;opacity:.04;}html.dark-mode body::after,html[data-theme="dark"] body::after{opacity:.055;}}
+@media print{body::after{position:absolute;opacity:.04;background-image:url('/graphics/logo_em_tudo_b.png')!important;}}
+
+</style>
+
+<style>
+/* Ajustes específicos da Aula 8 de Português 4, mantendo o sistema visual da referência. */
+.hero-title-block .subtitle{max-width:850px;margin-left:auto;margin-right:auto;}
+.content-sec{position:relative;}
+.report-model{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:20px 22px;margin:20px 0;}
+.report-model h3{margin-top:0;color:var(--navy);}
+.report-model p:last-child{margin-bottom:0;}
+.report-model .model-label{display:block;color:var(--blue);font-size:.82rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin-bottom:5px;}
+.report-model .signature{margin-top:24px;}
+.report-list{padding-left:1.5rem;}
+.report-list li{margin-bottom:12px;}
+@media(max-width:768px){
+  .page-wrapper{padding-left:16px!important;padding-right:16px!important;}
+  .slim-toc{left:4px!important;width:25px!important;opacity:.72;}
+  .slim-toc:hover,.slim-toc:focus-within{width:min(230px,82vw)!important;}
+  .spb-brand-left{gap:10px;}
+  .spb-emblem-svg{width:48px;height:66px;}
+  .hero-title-block{padding-left:0;padding-right:0;}
+  .report-model{padding:15px 14px;}
+}
+@media print{.report-model{break-inside:avoid;}}
+</style>
+
+<style id="correcao-mobile-sem-indice-e-sem-marca-dagua">
+/* Correção solicitada: remove a marca-d’água sem alterar o conteúdo da aula. */
+.page-wrapper { background-image: none !important; }
+body::before, body::after, .page-wrapper::before, .page-wrapper::after {
+  background-image: none !important;
+  content: none !important;
+  display: none !important;
+}
+/* Em telas pequenas, oculta o índice lateral para liberar a área de leitura. */
+@media (max-width: 800px) {
+  .slim-toc { display: none !important; }
+}
+</style>
+</head>
+<body id="page-top">
+  <div class="theme-switch-wrapper">
+    <button type="button" id="themeToggle" class="theme-switch-btn" role="switch" aria-checked="false" title="Alternar entre modo claro e escuro" aria-label="Alternar entre modo claro e escuro">
+      <svg id="themeIcon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      <span class="switch-track"><span class="switch-thumb"></span></span>
+    </button>
+  </div>
+  <nav class="slim-toc" aria-label="Sumário de navegação rápida"><ul class="slim-toc-list">
+    <li><a href="#sec-apresentacao" class="slim-toc-link active" title="1. Apresentação e mapeamento"><span class="toc-num">1</span><span class="toc-text">Apresentação e mapeamento</span></a></li>
+    <li><a href="#sec-fundamentos" class="slim-toc-link" title="2. Fundamentos teológicos e administrativos"><span class="toc-num">2</span><span class="toc-text">Fundamentos teológicos e administrativos</span></a></li>
+    <li><a href="#sec-estrutura" class="slim-toc-link" title="3. Estrutura canônica do relatório"><span class="toc-num">3</span><span class="toc-text">Estrutura canônica do relatório</span></a></li>
+    <li><a href="#sec-objetividade" class="slim-toc-link" title="4. Objetividade e precisão numérica"><span class="toc-num">4</span><span class="toc-text">Objetividade e precisão numérica</span></a></li>
+    <li><a href="#sec-modelos" class="slim-toc-link" title="5. Modelos práticos de relatórios"><span class="toc-num">5</span><span class="toc-text">Modelos práticos de relatórios</span></a></li>
+    <li><a href="#sec-anexos" class="slim-toc-link" title="5.3. Apêndices e anexos"><span class="toc-num">5.3</span><span class="toc-text">Apêndices e anexos</span></a></li>
+  </ul></nav>
+
+  <main class="page-wrapper">
+    <header class="inst-header" role="banner" aria-label="Cabeçalho Institucional do Seminário Presbiteriano de Brasília">
+      <div class="spb-brand-left">
+        <svg class="spb-emblem-svg" viewBox="0 0 120 164" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="0" y="0" width="120" height="128" fill="#134a84"/><rect x="56" y="0" width="8" height="128" fill="#ffffff"/><rect x="0" y="48" width="120" height="8" fill="#ffffff"/>
+          <path d="M 60 12 C 26 32, 26 84, 60 106 C 94 84, 94 32, 60 12 Z" fill="#134a84" stroke="#ffffff" stroke-width="7.5" stroke-linejoin="round"/><path d="M 60 106 C 46 113, 35 116, 28 117 M 60 106 C 74 113, 85 116, 92 117" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round"/><circle cx="60" cy="36" r="4.2" fill="#ffffff"/><rect x="0" y="124" width="120" height="40" fill="#ffffff"/><path d="M 0 128 Q 30 113, 60 129 Q 90 113, 120 128 L 120 137 Q 90 122, 60 138 Q 30 122, 0 137 Z" fill="#10a386"/><path d="M 0 142 Q 30 127, 60 143 Q 90 127, 120 142 L 120 151 Q 90 136, 60 152 Q 30 136, 0 151 Z" fill="#10a386"/><path d="M 0 156 Q 30 141, 60 157 Q 90 141, 120 156 L 120 164 L 0 164 Z" fill="#10a386"/>
+        </svg>
+        <div class="spb-brand-text"><div class="spb-brand-name">Seminário<br>Presbiteriano<br>de Brasília</div><div class="spb-brand-motto">Teologia para transformação da vida</div></div>
+      </div>
+      <div class="spb-meta-right"><div class="spb-meta-line">BACHAREL EM TEOLOGIA</div><div class="spb-meta-line">DEPARTAMENTO DE CULTURA GERAL</div><div class="spb-meta-line">LÍNGUA PORTUGUESA — PORTUGUÊS 4 — 2º SEM. 2026</div><div class="spb-meta-prof">Prof.: ISMAEL ROCHA</div></div>
+    </header>
+
+    <div class="hero-title-block">
+      <h1>Redação Oficial</h1>
+      <p class="subtitle">Relatórios Formais e Técnicos na Governança da IPB</p>
+
+    </div>
+
+    <section class="content-sec" id="sec-apresentacao">
+      <h2 class="sec-heading">1. Apresentação e mapeamento da sessão</h2>
+      <p>Dando seguimento ao calendário acadêmico da disciplina de Português 4 (CG04), a aula de 27 de outubro encerra a base técnica da Redação Oficial com um aprofundamento intensivo nos Relatórios Formais e Técnicos. Nas sessões anteriores, estudamos exaustivamente a Ata (registro de deliberações) e o Ofício/Requerimento (instrumentos de petição e comunicação externa). Nesta sessão, o foco volta-se para a prestação de contas, a transparência institucional e o princípio reformado da mordomia cristã.</p>
+      <p>Este manual de foi expandido para articular, com profundidade analítica, os princípios da ABNT NBR 10719 (que rege o Relatório Técnico e/ou Científico) com as exigências rigorosas do governo eclesiástico presbiteriano. O objetivo é dotar o futuro ministro e líder de ferramentas para consolidar dados de gestão, missões e ações sociais em documentos probatórios irrefutáveis, empregando o padrão culto do português brasileiro. Esta apostila não contém propostas de exercícios, consistindo integralmente em fundamentação teórica e múltiplos modelos práticos.</p>
+    </section>
+
+    <section class="content-sec" id="sec-fundamentos">
+      <h2 class="sec-heading">2. Fundamentos teológicos e administrativos do relatório</h2>
+      <h3 class="sub-heading">2.1 O Relatório como instrumento de Mordomia Cristã</h3>
+      <p>A eclesiologia reformada pressupõe que nenhum oficial da igreja age de forma independente ou isenta de prestação de contas. O conceito bíblico de 'mordomia' (oikonômia) implica a administração de bens e responsabilidades que pertencem a Deus, delegados à igreja. Consequentemente, o ato de redigir um relatório não é um mero formalismo burocrático, mas um dever espiritual de transparência perante o rebanho e os concílios (Conselho, Presbitério e Sínodo).</p>
+      <p>No contexto conciliar, a Ata atua como o 'diário oficial' de uma reunião, registrando o que foi proposto e votado naquele dia específico. Em contrapartida, o Relatório é o instrumento de consolidação gerencial de um trabalho realizado ao longo do tempo. Enquanto a Ata olha para as deliberações pontuais, o Relatório demonstra a execução de projetos, a aplicação de recursos, as intempéries enfrentadas e a eficácia pastoral em um dado período (mensal, semestral ou anual).</p>
+      <h3 class="sub-heading">2.2 Tipologia dos Relatórios Eclesiásticos</h3>
+      <p>Na governança da igreja local, o obreiro deparar-se-á com três tipologias documentais distintas que não devem ser confundidas em sua estrutura:</p>
+      <div class="grid-2">
+        <div class="diag-card coord"><h4>Relatório Financeiro/Tesouraria</h4><p>Centrado na exatidão contábil, balancetes de receitas e despesas, e anexação rigorosa de notas fiscais e recibos probatórios.</p></div>
+        <div class="diag-card subst"><h4>Relatório de Atividades/Sociedades Internas</h4><p>Focado no impacto quantitativo e qualitativo das ações (número de reuniões, média de frequência, eventos realizados, alcance de metas).</p></div>
+        <div class="diag-card subord"><h4>Parecer de Comissão Especial</h4><p>Relatório conclusivo e analítico que investiga um fato específico (ex.: exame de contas, avaliação estrutural do templo, comissão disciplinar) e culmina com uma recomendação de voto ao concílio.</p></div>
+      </div>
+    </section>
+
+    <section class="content-sec" id="sec-estrutura">
+      <h2 class="sec-heading">3. Estrutura canônica do relatório técnico (NBR 10719 adaptada)</h2>
+      <h3 class="sub-heading">3.1 A arquitetura formal do documento</h3>
+      <p>A elaboração de um relatório eclesiástico não demanda o rigor acadêmico pleno de um laudo pericial científico, porém sua estruturação deve espelhar os eixos lógicos da ABNT NBR 10719. A segmentação do texto em seções bem definidas confere clareza, facilitando a leitura e a aprovação em plenário. A macroestrutura canônica compõe-se de:</p>
+      <ol class="report-list">
+        <li><strong>Cabeçalho Institucional e Título:</strong> Identificação clara do concílio ou órgão emissor (ex.: 'Igreja Presbiteriana Central – Junta Diaconal'), a natureza do relatório e o período temporal abrangido;</li>
+        <li><strong>Introdução (Apresentação e Mandato):</strong> Todo relatório nasce de um mandato. A introdução deve indicar quem solicitou a atividade (ex.: 'Em cumprimento à resolução do Conselho, Ata nº 142...'), os membros responsáveis pela comissão e o propósito central do documento;</li>
+        <li><strong>Desenvolvimento (Exposição de Fatos e Dados):</strong> O núcleo substancial do documento. Deve detalhar as ações efetivamente realizadas, a metodologia adotada na execução, os recursos humanos e financeiros empenhados e as estatísticas de público. Recomenda-se o uso de alíneas ou tópicos para facilitar a compreensão;</li>
+        <li><strong>Conclusão ou Parecer (Diagnóstico Final):</strong> A avaliação técnica e imparcial da comissão relatora sobre o sucesso, a viabilidade futura, os desafios encontrados e as recomendações pastorais ou administrativas. O parecer não deve trazer dados novos, mas julgar os fatos expostos no desenvolvimento;</li>
+        <li><strong>Pós-textuais (Apêndices e Anexos):</strong> Listagem e inserção de documentos probatórios vitais, como recibos, notas fiscais, listas de presença assinadas ou registros fotográficos do evento;</li>
+        <li><strong>Fecho e Assinaturas:</strong> Localidade, data redigida por extenso e a assinatura nominal de todos os membros da comissão relatora.</li>
+      </ol>
+    </section>
+
+    <section class="content-sec" id="sec-objetividade">
+      <h2 class="sec-heading">4. O princípio da objetividade e a precisão numérica</h2>
+      <h3 class="sub-heading">4.1 A superação do registro coloquial impressionista</h3>
+      <p>A deficiência mais grave na redação de relatórios eclesiásticos é o uso de 'impressionismo linguístico'. O redator frequentemente recorre a quantificadores vagos, advérbios genéricos e adjetivos de púlpito que inviabilizam qualquer auditoria ou análise histórica precisa. A linguagem do relatório não admite emoção documental; ela exige frieza técnica, exatidão e padrão culto da língua.</p>
+      <div class="callout blue"><span class="callout-title">Exemplos de transformação: do impressionismo para a objetividade</span><p>Abaixo, demonstramos a transformação de frases vagas em métricas aferíveis e precisas:</p>
+        <h3 class="sub-heading">1. Relatório de evento educacional</h3><p><strong>Inadequado:</strong> «O Simpósio de Teologia foi uma bênção, o auditório ficou lotado e muitas pessoas aprenderam bastante sobre a doutrina da graça.»</p><p><strong>Correto:</strong> «O Simpósio de Teologia registrou a inscrição formal de 215 (duzentos e quinze) participantes, preenchendo a totalidade da capacidade física do auditório principal, com a ministração de quatro palestras temáticas sobre a soteriologia reformada.»</p>
+        <h3 class="sub-heading">2. Relatório de ação diaconal e social</h3><p><strong>Inadequado:</strong> «No mês passado, a igreja ajudou várias famílias carentes. Distribuímos bastante comida e roupas, e o pessoal ficou muito agradecido e feliz com a igreja.»</p><p><strong>Correto:</strong> «Durante o mês de outubro, a Junta Diaconal atendeu 42 (quarenta e duas) famílias previamente cadastradas na triagem socioeconômica, resultando na distribuição de 850 kg (oitocentos e cinquenta quilogramas) de alimentos não perecíveis e 120 (cento e vinte) peças de vestuário em bom estado de conservação.»</p>
+        <h3 class="sub-heading">3. Relatório financeiro e patrimonial</h3><p><strong>Inadequado:</strong> «Gastamos um dinheiro considerável na pintura do templo, mas o trabalho dos pedreiros foi excelente e a obra terminou rápida.»</p><p><strong>Correto:</strong> «O serviço de revitalização da fachada do templo exigiu o aporte financeiro de R$ 8.450,00 (oito mil, quatrocentos e cinquenta reais), integralmente quitado mediante notas fiscais de serviço. A empreitada foi concluída em 14 (catorze) dias úteis, cumprindo o cronograma estabelecido no contrato nº 02/2026.»</p>
+      </div>
+    </section>
+
+    <section class="content-sec" id="sec-modelos">
+      <h2 class="sec-heading">5. Modelos práticos e integrais de relatórios conciliares</h2>
+      <p>Para materializar a profunda distinção entre as esferas de atuação dentro da comunidade, apresentamos a seguir três modelos reais de relatórios adaptados, abrangendo a ação social (Junta Diaconal), a educação cristã (Conselho) e o exame de contas financeiras.</p>
+      <h3 class="sub-heading">5.1 Modelo 1: Relatório Final de Atividades Diaconais</h3>
+      <div class="report-model">
+        <span class="model-label">Relatório de ação social comunitária</span><h3>IGREJA PRESBITERIANA CENTRAL</h3><p>Junta Diaconal — Comissão Especial de Ação Social</p>
+        <h3 class="sub-heading">RELATÓRIO FINAL DE ATIVIDADES: AÇÃO SOCIAL COMUNITÁRIA</h3><p><strong>Período de realização:</strong> 15 de novembro de 2026.</p>
+        <h3 class="sub-heading">1. INTRODUÇÃO</h3><p>Em cumprimento à deliberação do Venerável Conselho desta igreja (referência: Ata nº 210, resolução nº 3), a Comissão Especial de Ação Social apresenta o presente relatório circunstanciado referente às atividades de assistência social realizadas no estacionamento público adjacente ao templo no dia quinze de novembro do corrente ano.</p>
+        <h3 class="sub-heading">2. DESENVOLVIMENTO DAS ATIVIDADES</h3><p>O evento transcorreu sob a coordenação operacional do Diácono Pedro Gabriel Felipe dos Santos, contando com a supervisão logística do Presbítero Antonio Augusto Pacheco Feitoza Filho. As ações concentraram-se em dois eixos fundamentais:</p><p><strong>a) Assistência Material:</strong> Arrecadação e distribuição de 80 (oitenta) cestas básicas padronizadas às famílias previamente cadastradas pela triagem diaconal da igreja;</p><p><strong>b) Atendimento Comunitário:</strong> O Diácono Lucas Kenzo Yoshimura gerenciou as frentes de aconselhamento e orientação jurídica gratuita, contabilizando 45 (quarenta e cinco) atendimentos formalizados durante as seis horas de evento.</p>
+        <h3 class="sub-heading">3. BALANÇO FINANCEIRO E PATRIMONIAL</h3><p>A execução da Ação Social observou estritamente o orçamento previamente aprovado pelo Conselho. O custo logístico total (locação de tendas e alimentação de voluntários) alcançou a monta de R$ 1.250,00 (mil duzentos e cinquenta reais), integralmente coberto pelo fundo diaconal. Toda a documentação comprobatória encontra-se arquivada no Anexo A deste relatório.</p>
+        <h3 class="sub-heading">4. PARECER CONCLUSIVO E RECOMENDAÇÕES</h3><p>A Comissão avalia que a Ação Social cumpriu plenamente seu objetivo missional e de misericórdia. O impacto comunitário foi altamente positivo e transcorreu sem intercorrências relativas à segurança ou organização. Recomenda-se, para edições futuras, a ampliação estrutural da equipe de triagem médica, dado o elevado volume de procura popular não atendida.</p>
+        <p>Brasília, DF, 27 de outubro de 2026.</p><div class="signature"><p>_____________________________________</p><p>Rafael de Castro Oliveira<br>Presidente da Comissão Especial Relatora</p></div>
+      </div>
+      <h3 class="sub-heading">5.2 Modelo 2: Parecer Técnico da Comissão de Exame de Contas</h3>
+      <div class="report-model">
+        <span class="model-label">Parecer técnico de tesouraria</span><h3>IGREJA PRESBITERIANA CENTRAL</h3><p>Conselho da Igreja — Comissão de Exame de Contas</p>
+        <h3 class="sub-heading">PARECER CONCLUSIVO: EXAME DE BALANCETES DO 3º TRIMESTRE DE 2026</h3>
+        <h3 class="sub-heading">1. INTRODUÇÃO E ESCOPO</h3><p>Designados pelo Presidente do Conselho para compor a Comissão Especial de Exame de Contas, procedemos à auditoria interna dos balancetes financeiros, livros-caixa, extratos bancários e pastas de comprovantes de despesas relativos ao terceiro trimestre do ano civil de 2026 (meses de julho, agosto e setembro), sob a responsabilidade do tesoureiro geral, Presbítero Frederico Otavio Ferreira dos Reis.</p>
+        <h3 class="sub-heading">2. EXAME DOCUMENTAL</h3><p>Constatamos que a escrituração contábil encontra-se rigorosamente atualizada e em conformidade com as normas financeiras do Supremo Concílio. As despesas lançadas estão devidamente fundamentadas com notas fiscais, cupons e recibos assinados pelos prestadores de serviço, havendo perfeita conciliação entre o saldo contábil físico e o extrato da conta corrente institucional nº 55.444-2, do Banco do Brasil.</p>
+        <h3 class="sub-heading">3. PARECER FINAL</h3><p>Diante da exatidão matemática, da lisura e da organização impecável demonstradas na administração financeira do período supracitado, esta Comissão emite PARECER FAVORÁVEL e recomenda ao Venerável Conselho a aprovação irrestrita das contas referentes ao 3º trimestre de 2026.</p>
+        <p>Brasília, DF, 27 de outubro de 2026.</p><div class="signature"><p>_____________________________________</p><p>Antonio Augusto Pacheco Feitoza Filho<br>Relator da Comissão de Exame de Contas</p></div><div class="signature"><p>_____________________________________</p><p>Lucas Kenzo Yoshimura<br>Membro da Comissão</p></div>
+      </div>
+    </section>
+
+    <section class="content-sec" id="sec-anexos">
+      <h3 class="sub-heading">5.3 A relevância dos Elementos Pós-textuais (Apêndices e Anexos)</h3>
+      <p>Na governança da IPB, o relatório, isoladamente, pode não ser suficiente em auditorias rigorosas. De acordo com as normas de redação técnica (NBR 10719), os relatórios devem ser complementados com elementos pós-textuais essenciais para a validade do documento:</p>
+      <ul><li><strong>ANEXOS:</strong> Documentos que não foram criados pela própria comissão, mas que comprovam a narrativa (ex.: notas fiscais emitidas por lojas, extratos bancários gerados pelo banco, laudos de engenheiros terceirizados);</li><li><strong>APÊNDICES:</strong> Documentos elaborados pela própria comissão ou secretaria para dar suporte à leitura (ex.: listas de presença assinadas, planilhas criadas no Excel para detalhar as despesas, gráficos de frequência de membros da Escola Dominical).</li></ul>
+      <p>Todos esses documentos complementares devem ser referenciados e citados no corpo do texto (exemplo: 'conforme detalhado no Apêndice B', ou 'vide comprovantes no Anexo A').</p>
+    </section>
+
+    <div class="bottom-actions-bar" style="justify-content:flex-end"><button type="button" id="scrollTopBtn" class="scroll-top-btn" title="Subir ao topo da página" aria-label="Subir ao topo da página"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg></button></div>
+  </main>
+  <div class="portal-return-wrap" style="display:flex;justify-content:center;padding:22px 16px 36px;position:relative;z-index:1"><a href="/portugues/p4/" class="pdf-download-btn" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px" aria-label="Voltar ao portal de Português 4">← Voltar ao portal de Português 4</a></div>
+  <script>
+  (function(){'use strict';var root=document.documentElement,themeBtn=document.getElementById('themeToggle'),themeIcon=document.getElementById('themeIcon'),storageKey='spb-periodo-composto-theme';
+  var sunSvg='<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>',moonSvg='<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+  function applyTheme(mode){var dark=mode==='dark';root.classList.toggle('dark-mode',dark);themeBtn.setAttribute('aria-checked',String(dark));themeIcon.innerHTML=dark?moonSvg:sunSvg;}
+  try{var saved=localStorage.getItem(storageKey);if(saved==='dark'||saved==='light')applyTheme(saved);}catch(e){}
+  themeBtn.addEventListener('click',function(){var next=root.classList.contains('dark-mode')?'light':'dark';applyTheme(next);try{localStorage.setItem(storageKey,next);}catch(e){}});
+  var scrollTopBtn=document.getElementById('scrollTopBtn');if(scrollTopBtn)scrollTopBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  var sections=document.querySelectorAll('section.content-sec'),links=document.querySelectorAll('.slim-toc-link');function updateActiveNav(){var pos=window.scrollY+150,current=sections[0]?sections[0].id:'';sections.forEach(function(sec){if(sec.offsetTop<=pos)current=sec.id;});links.forEach(function(link){link.classList.toggle('active',link.getAttribute('href').slice(1)===current);});}window.addEventListener('scroll',updateActiveNav,{passive:true});updateActiveNav();
+  })();
+  </script>
+  <footer class="site-credit" style="text-align:center;padding:28px 16px 34px;position:relative;z-index:1"><a class="bunker-logo-link" href="https://bunkerdigital.top/" target="_blank" rel="noopener noreferrer" aria-label="Bunker Digital"><img class="bunker-logo-dark" src="/graphics/logo-bunker-dark.png" alt="Bunker Digital" loading="lazy"><img class="bunker-logo-light" src="/graphics/logo-bunker-light.png" alt="Bunker Digital" loading="lazy"></a></footer>
+</body></html>

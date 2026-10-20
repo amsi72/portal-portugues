@@ -31,57 +31,51 @@ jobs:
           import html
           from pathlib import Path
 
-          origem = Path(".")
-          destino = Path("_site")
+          origem = Path('.')
+          destino = Path('_site')
           shutil.rmtree(destino, ignore_errors=True)
           destino.mkdir()
 
           for raiz, dirs, arquivos in os.walk(origem):
-              dirs[:] = [d for d in dirs if d not in {".git", ".github", "_site"}]
+              dirs[:] = [d for d in dirs if d not in {'.git', '.github', '_site'}]
               for nome in arquivos:
                   src = Path(raiz) / nome
-                  if src.suffix.lower() == ".php":
+                  if src.suffix.lower() == '.php':
                       continue
                   rel = src.relative_to(origem)
                   dst = destino / rel
                   dst.parent.mkdir(parents=True, exist_ok=True)
                   shutil.copy2(src, dst)
 
-          for turma in ("p2", "p4"):
-              pasta = destino / "portugues" / turma
+          for turma in ('p2', 'p4'):
+              pasta = destino / 'portugues' / turma
               if not pasta.is_dir():
                   continue
-
-              paginas = sorted(f for f in pasta.glob("*.html") if f.name.lower() != "index.html")
+              paginas = sorted(f for f in pasta.glob('*.html') if f.name.lower() != 'index.html')
               links = []
               for pagina in paginas:
-                  titulo = html.escape(pagina.stem.replace("_", " ").replace("-", " "))
+                  titulo = html.escape(pagina.stem.replace('_', ' ').replace('-', ' '))
                   nome = html.escape(pagina.name, quote=True)
-                  links.append(f'<li><a href="{nome}">{titulo}</a></li>')
-
-              conteudo = "\n".join(links) or "<li>Nenhuma aula publicada.</li>"
-              documento = f\"\"\"<!doctype html>
-          <html lang="pt-BR">
-          <head>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <title>Português {turma.upper()} - Materiais</title>
-          <style>
-          body {{ font: 16px system-ui, sans-serif; max-width: 850px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }}
-          a {{ color: #2563eb; text-decoration: none; }}
-          a:hover {{ text-decoration: underline; }}
-          li {{ margin: 12px 0; }}
-          </style>
-          </head>
-          <body>
-          <h1>Materiais de Português {turma.upper()}</h1>
-          <ul>
-          {conteudo}
-          </ul>
-          </body>
-          </html>
-          \"\"\"
-              (pasta / "index.html").write_text(documento, encoding="utf-8")
+                  links.append('<li><a href="{}">{}</a></li>'.format(nome, titulo))
+              conteudo = '\n'.join(links) if links else '<li>Nenhuma aula publicada.</li>'
+              linhas = [
+                  '<!doctype html>',
+                  '<html lang="pt-BR">',
+                  '<head>',
+                  '<meta charset="utf-8">',
+                  '<meta name="viewport" content="width=device-width, initial-scale=1">',
+                  '<title>Materiais de Português {}</title>'.format(turma.upper()),
+                  '<style>body{font:16px system-ui,sans-serif;max-width:850px;margin:40px auto;padding:0 20px;line-height:1.6}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}li{margin:12px 0}</style>',
+                  '</head>',
+                  '<body>',
+                  '<h1>Materiais de Português {}</h1>'.format(turma.upper()),
+                  '<ul>',
+                  conteudo,
+                  '</ul>',
+                  '</body>',
+                  '</html>'
+              ]
+              (pasta / 'index.html').write_text('\n'.join(linhas), encoding='utf-8')
           PY
 
       - name: Configurar GitHub Pages

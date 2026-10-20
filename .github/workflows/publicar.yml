@@ -62,7 +62,16 @@ jobs:
                       .replace('{{MATERIAIS}}', listing))
               target = site / 'portugues' / code / 'index.html'
               target.parent.mkdir(parents=True, exist_ok=True)
+              # Remove o marcador caso o template use uma variante de chaves.
+              page = re.sub(r"\{+\s*CABECALHO\s*\}+", header, page, flags=re.I)
               target.write_text(page, encoding='utf-8')
+
+          # Limpeza final em todos os HTML publicados: elimina qualquer marcador
+          # literal que tenha sobrado, inclusive no index.html da raiz.
+          for html_file in site.rglob('*.html'):
+              text = html_file.read_text(encoding='utf-8', errors='replace')
+              text = re.sub(r"\{+\s*CABECALHO\s*\}+", '', text, flags=re.I)
+              html_file.write_text(text, encoding='utf-8')
           PY
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5

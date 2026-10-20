@@ -1,0 +1,4715 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Português 2 — Aula 7: Período Composto por Subordinação</title><style>
+    :root {
+      color-scheme: light;
+      --bg-page: #eef2f7;
+      --surface: #ffffff;
+      --paper: #f8fafc;
+      --ink: #1e293b;
+      --muted: #475569;
+      --navy: #0b2344;
+      --navy-light: #163a6b;
+      --blue: #2563eb;
+      --blue-pale: #eff6ff;
+      --blue-border: #bfdbfe;
+      --teal: #0f766e;
+      --teal-pale: #f0fdfa;
+      --teal-border: #99f6e4;
+      --green: #15803d;
+      --green-pale: #f0fdf4;
+      --green-border: #bbf7d0;
+      --coral: #c2410c;
+      --coral-pale: #fff7ed;
+      --coral-border: #fed7aa;
+      --purple: #6d28d9;
+      --purple-pale: #f5f3ff;
+      --purple-border: #ddd6fe;
+      --amber: #b45309;
+      --amber-pale: #fffbeb;
+      --amber-border: #fde68a;
+      --line: #cbd5e1;
+      --shadow-sm: 0 1px 3px rgba(11, 35, 68, 0.06);
+      --shadow-md: 0 4px 20px rgba(11, 35, 68, 0.1);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+
+      /* Cores Vetoriais do Cabeçalho Institucional (Modo Claro) */
+      --hdr-navy: #134a84;
+      --hdr-teal: #10a386;
+      --hdr-right-main: #1e293b;
+      --hdr-right-sub: #334155;
+      --hdr-line: #1e5a96;
+
+      /* Pílulas sintáticas modo claro */
+      --pill-op-bg: #dbeafe; --pill-op-txt: #1e3a8a; --pill-op-brd: #93c5fd;
+      --pill-co-bg: #dcfce7; --pill-co-txt: #14532d; --pill-co-brd: #86efac;
+      --pill-su-bg: #ffedd5; --pill-su-txt: #7c2d12; --pill-su-brd: #fdba74;
+      --pill-cn-bg: #fae8ff; --pill-cn-txt: #581c87; --pill-cn-brd: #e879f9;
+    }
+
+    html.dark-mode {
+      color-scheme: dark;
+      --bg-page: #090d16;
+      --surface: #111827;
+      --paper: #1e293b;
+      --ink: #f1f5f9;
+      --muted: #94a3b8;
+      --navy: #e2e8f0;
+      --navy-light: #93c5fd;
+      --blue: #60a5fa;
+      --blue-pale: #172554;
+      --blue-border: #1e3a8a;
+      --teal: #2dd4bf;
+      --teal-pale: #042f2e;
+      --teal-border: #115e59;
+      --green: #4ade80;
+      --green-pale: #052e16;
+      --green-border: #14532d;
+      --coral: #fb923c;
+      --coral-pale: #431407;
+      --coral-border: #7c2d12;
+      --purple: #c084fc;
+      --purple-pale: #2e1065;
+      --purple-border: #581c87;
+      --amber: #fbbf24;
+      --amber-pale: #451a03;
+      --amber-border: #78350f;
+      --line: #334155;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+      --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.55);
+
+      /* Cores Vetoriais do Cabeçalho Institucional (Modo Escuro — integrado ao fundo) */
+      --hdr-navy: #1d5ca0;
+      --hdr-teal: #2dd4bf;
+      --hdr-right-main: #f8fafc;
+      --hdr-right-sub: #cbd5e1;
+      --hdr-line: #3b82f6;
+
+      /* Pílulas sintáticas modo escuro */
+      --pill-op-bg: #1e3a8a; --pill-op-txt: #dbeafe; --pill-op-brd: #3b82f6;
+      --pill-co-bg: #14532d; --pill-co-txt: #dcfce7; --pill-co-brd: #22c55e;
+      --pill-su-bg: #7c2d12; --pill-su-txt: #ffedd5; --pill-su-brd: #f97316;
+      --pill-cn-bg: #581c87; --pill-cn-txt: #fae8ff; --pill-cn-brd: #c084fc;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-page);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .page-wrapper {
+      max-width: 1060px;
+      margin: 0 auto;
+      background-color: var(--surface);
+      padding: 28px clamp(16px, 4.5vw, 58px) 84px;
+      box-shadow: var(--shadow-md);
+      transition: background-color 0.2s ease;
+    }
+
+    /* Chave Seletora de Modo Claro / Escuro */
+    .theme-switch-wrapper {
+      position: fixed;
+      top: 16px;
+      right: 18px;
+      z-index: 1200;
+    }
+
+    .theme-switch-btn {
+      appearance: none;
+      background-color: var(--surface);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px 5px 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-md);
+      transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .theme-switch-btn:hover {
+      border-color: var(--blue);
+      transform: translateY(-1px);
+    }
+
+    .theme-switch-btn:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
+    }
+
+    .switch-track {
+      width: 30px;
+      height: 17px;
+      background-color: var(--line);
+      border-radius: 999px;
+      position: relative;
+      transition: background-color 0.2s ease;
+    }
+
+    html.dark-mode .switch-track {
+      background-color: var(--blue);
+    }
+
+    .switch-thumb {
+      width: 13px;
+      height: 13px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    }
+
+    html.dark-mode .switch-thumb {
+      transform: translateX(13px);
+    }
+
+    .theme-switch-btn svg {
+      width: 15px;
+      height: 15px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Menu Lateral Slim Fixo e Sóbrio */
+    .slim-toc {
+      position: fixed;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1100;
+      background-color: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 5px;
+      width: 36px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      opacity: 0.78;
+      transition: width 0.24s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.2s ease, padding 0.2s ease, opacity 0.2s ease;
+    }
+
+    .slim-toc:hover,
+    .slim-toc:focus-within {
+      width: 254px;
+      border-radius: var(--radius-md);
+      padding: 10px 8px;
+      opacity: 1;
+    }
+
+    .slim-toc-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .slim-toc-link {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      color: var(--muted);
+      padding: 4px;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .slim-toc-link:hover,
+    .slim-toc-link:focus-visible {
+      background-color: var(--blue-pale);
+      color: var(--blue);
+      outline: none;
+    }
+
+    .slim-toc-link.active {
+      background-color: var(--blue);
+      color: #ffffff;
+    }
+
+    .toc-num {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      border-radius: 50%;
+    }
+
+    .toc-text {
+      font-size: 0.8rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.18s ease;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .slim-toc:hover .toc-text,
+    .slim-toc:focus-within .toc-text {
+      opacity: 1;
+    }
+
+    /* CABEÇALHO INSTITUCIONAL ADAPTÁVEL AO FUNDO CLARO/ESCURO EM ALTA DEFINIÇÃO */
+    .inst-header {
+      width: 100%;
+      margin: 0 auto 24px;
+      background-color: transparent;
+      padding: 4px 0 16px;
+      border-bottom: 2.5px solid var(--hdr-line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      transition: border-color 0.2s ease;
+    }
+
+    .spb-brand-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .spb-emblem-svg {
+      width: 60px;
+      height: 82px;
+      display: block;
+      flex-shrink: 0;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .spb-brand-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .spb-brand-name {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      font-size: clamp(1.08rem, 1.9vw, 1.32rem);
+      font-weight: 600;
+      line-height: 1.16;
+      color: #134a84;
+      letter-spacing: -0.01em;
+      transition: color 0.2s ease;
+    }
+
+    html.dark-mode .spb-brand-name {
+      color: #e2e8f0;
+    }
+
+    .spb-brand-motto {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      font-size: clamp(0.66rem, 1vw, 0.76rem);
+      font-weight: 600;
+      color: var(--hdr-teal);
+      margin-top: 5px;
+      letter-spacing: 0.01em;
+    }
+
+    .spb-meta-right {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+    }
+
+    .spb-meta-line {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      font-size: clamp(0.82rem, 1.45vw, 1.02rem);
+      font-weight: 500;
+      color: var(--hdr-right-sub);
+      letter-spacing: 0.02em;
+      line-height: 1.28;
+      transition: color 0.2s ease;
+    }
+
+    /* Fonte suavizada para Prof.: ISMAEL ROCHA */
+    .spb-meta-prof {
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+      font-size: clamp(0.86rem, 1.5vw, 1.04rem);
+      font-weight: 500;
+      color: var(--hdr-right-main);
+      letter-spacing: 0.03em;
+      margin-top: 2px;
+      transition: color 0.2s ease;
+    }
+
+    /* Título Didático Principal */
+    .hero-title-block {
+      text-align: center;
+      padding: 12px 10px 24px;
+      margin-bottom: 30px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .hero-title-block h1 {
+      font-size: clamp(1.85rem, 4.5vw, 2.95rem);
+      color: var(--navy);
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .hero-title-block .subtitle {
+      font-size: clamp(1.05rem, 2.2vw, 1.38rem);
+      color: var(--blue);
+      font-weight: 600;
+      margin: 0 0 16px;
+    }
+
+    /* Botão Discreto de Download do PDF (aula8.pdf) */
+    .pdf-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--blue);
+      background-color: var(--blue-pale);
+      border: 1px solid var(--blue-border);
+      padding: 6px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .pdf-download-btn:hover,
+    .pdf-download-btn:focus-visible {
+      background-color: var(--blue);
+      color: #ffffff;
+      border-color: var(--blue);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .pdf-download-btn svg {
+      width: 15px;
+      height: 15px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Seções e Tipografia */
+    section.content-sec {
+      margin-bottom: 46px;
+      scroll-margin-top: 24px;
+    }
+
+    h2.sec-heading {
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      color: var(--navy);
+      border-bottom: 3px solid var(--blue);
+      padding-bottom: 8px;
+      margin: 0 0 18px;
+      line-height: 1.25;
+    }
+
+    h3.sub-heading {
+      font-size: clamp(1.12rem, 2.3vw, 1.35rem);
+      color: var(--blue);
+      margin: 26px 0 12px;
+      line-height: 1.3;
+    }
+
+    p {
+      margin: 0 0 15px;
+    }
+
+    ul, ol {
+      margin: 0 0 18px;
+      padding-left: 1.45rem;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    /* Caixas de Destaque */
+    .callout {
+      border-left: 5px solid var(--teal);
+      background-color: var(--teal-pale);
+      border-top: 1px solid var(--teal-border);
+      border-right: 1px solid var(--teal-border);
+      border-bottom: 1px solid var(--teal-border);
+      padding: 16px 20px;
+      margin: 20px 0;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+
+    .callout.blue {
+      border-left-color: var(--blue);
+      background-color: var(--blue-pale);
+      border-color: var(--blue-border);
+    }
+
+    .callout.coral {
+      border-left-color: var(--coral);
+      background-color: var(--coral-pale);
+      border-color: var(--coral-border);
+    }
+
+    .callout.amber {
+      border-left-color: var(--amber);
+      background-color: var(--amber-pale);
+      border-color: var(--amber-border);
+    }
+
+    .callout.green {
+      border-left-color: var(--green);
+      background-color: var(--green-pale);
+      border-color: var(--green-border);
+    }
+
+    .callout-title {
+      font-size: 0.96rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin: 0 0 6px;
+      display: block;
+      color: var(--navy);
+    }
+
+    /* Exemplos Fixos */
+    .example-card {
+      background-color: var(--paper);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--blue);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 15px 18px;
+      margin: 16px 0;
+    }
+
+    .example-card.green {
+      border-left-color: var(--green);
+      background-color: var(--green-pale);
+    }
+
+    .example-tag {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 9px;
+      border-radius: 4px;
+      background-color: var(--blue);
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .example-card.green .example-tag {
+      background-color: var(--green);
+    }
+
+    .quote-verse {
+      font-size: 1.06rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    /* Exemplos Interativos com Pequeno Ícone Clicável */
+    .interactive-box {
+      background-color: var(--surface);
+      border: 1.5px solid var(--blue-border);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin: 22px 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .interactive-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .interactive-badge {
+      background-color: var(--blue);
+      color: #ffffff;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .interactive-focus {
+      font-size: 0.86rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .interactive-prompt {
+      font-size: 1.04rem;
+      font-weight: 700;
+      color: var(--navy);
+      background-color: var(--paper);
+      padding: 12px 15px;
+      border-radius: var(--radius-sm);
+      border-left: 4px solid var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .interactive-question-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .interactive-question {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--ink);
+      flex: 1;
+    }
+
+    /* Pequeno Ícone Clicável para Resposta Comentada */
+    .icon-answer-btn {
+      appearance: none;
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background-color: var(--blue-pale);
+      color: var(--blue);
+      border: 1px solid var(--blue-border);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.2s ease, border-color 0.15s ease;
+    }
+
+    .icon-answer-btn:hover {
+      background-color: var(--blue);
+      color: #ffffff;
+      border-color: var(--blue);
+      transform: scale(1.08);
+    }
+
+    .icon-answer-btn:focus-visible {
+      outline: 2px solid var(--amber);
+      outline-offset: 2px;
+    }
+
+    .icon-answer-btn[aria-expanded="true"] {
+      background-color: var(--teal);
+      color: #ffffff;
+      border-color: var(--teal);
+    }
+
+    .icon-answer-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.2s ease;
+    }
+
+    .icon-answer-btn[aria-expanded="true"] svg {
+      transform: rotate(180deg);
+    }
+
+    .answer-panel {
+      display: none;
+      margin-top: 14px;
+      padding: 15px 18px;
+      background-color: var(--teal-pale);
+      border: 1px solid var(--teal-border);
+      border-left: 5px solid var(--teal);
+      border-radius: var(--radius-sm);
+      font-size: 0.94rem;
+    }
+
+    .answer-panel.is-open {
+      display: block;
+    }
+
+    .answer-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Diagramas e Infográficos */
+    .diagram-box {
+      background-color: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 20px 18px;
+      margin: 24px 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .diagram-title {
+      text-align: center;
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      margin: 0 0 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .diag-card {
+      background-color: var(--surface);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+
+    .diag-card.coord { border-top: 5px solid var(--green); }
+    .diag-card.subord { border-top: 5px solid var(--coral); }
+    .diag-card.subst { border-top: 5px solid var(--blue); }
+    .diag-card.adj { border-top: 5px solid var(--green); }
+
+    .diag-card h4 {
+      margin: 0 0 10px;
+      font-size: 1.04rem;
+      color: var(--navy);
+    }
+
+    .train-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .wagon {
+      background-color: var(--green-pale);
+      border: 1.5px solid var(--green);
+      color: var(--navy);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    .coupler {
+      font-weight: 800;
+      color: var(--coral);
+      padding: 4px 8px;
+      background-color: var(--coral-pale);
+      border: 1px dashed var(--coral);
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+
+    .tree-flow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .tree-root {
+      background-color: var(--blue-pale);
+      border: 1.5px solid var(--blue);
+      color: var(--navy);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    .tree-branch-arrow {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--coral);
+    }
+
+    .tree-leaf {
+      background-color: var(--coral-pale);
+      border: 1.5px solid var(--coral);
+      color: var(--navy);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    /* Marcadores Sintáticos Inline */
+    .syn-pill {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-size: 0.85em;
+      font-weight: 700;
+      margin: 2px 1px;
+    }
+
+    .syn-op { background-color: var(--pill-op-bg); color: var(--pill-op-txt); border: 1px solid var(--pill-op-brd); }
+    .syn-coord { background-color: var(--pill-co-bg); color: var(--pill-co-txt); border: 1px solid var(--pill-co-brd); }
+    .syn-sub { background-color: var(--pill-su-bg); color: var(--pill-su-txt); border: 1px solid var(--pill-su-brd); }
+    .syn-conn { background-color: var(--pill-cn-bg); color: var(--pill-cn-txt); border: 1px solid var(--pill-cn-brd); }
+
+    /* Tabelas Responsivas */
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 20px 0 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    table {
+      width: 100%;
+      min-width: 540px;
+      border-collapse: collapse;
+      background-color: var(--surface);
+      font-size: 0.93rem;
+      line-height: 1.55;
+    }
+
+    thead th {
+      background-color: #0b2344;
+      color: #ffffff;
+      font-weight: 700;
+      text-align: left;
+      padding: 12px 14px;
+    }
+
+    html.dark-mode thead th {
+      background-color: #1e293b;
+      color: #f8fafc;
+      border-bottom: 2px solid var(--line);
+    }
+
+    td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: var(--paper);
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Passo a Passo do Período Misto */
+    .step-chain {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .step-item {
+      background-color: var(--surface);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--blue);
+      border-radius: var(--radius-sm);
+      padding: 13px 15px;
+    }
+
+    .step-num {
+      display: inline-block;
+      background-color: var(--blue-pale);
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 0.76rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+
+    /* Referências Gramaticais e Rodapé */
+    .ref-footer {
+      margin-top: 52px;
+      padding-top: 22px;
+      border-top: 2px solid var(--line);
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .ref-footer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .ref-footer h3 {
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .ref-footer ul {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+
+    /* Pequena Seta no Final da Página para Subir Rápido ao Topo */
+    .bottom-actions-bar {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .scroll-top-btn {
+      appearance: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background-color: var(--paper);
+      color: var(--navy);
+      border: 1px solid var(--line);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      box-shadow: var(--shadow-sm);
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .scroll-top-btn:hover,
+    .scroll-top-btn:focus-visible {
+      background-color: var(--blue);
+      color: #ffffff;
+      border-color: var(--blue);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .scroll-top-btn svg {
+      width: 17px;
+      height: 17px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Compatibilidade Mobile e Telas Menores */
+    @media (max-width: 1160px) {
+      .slim-toc {
+        left: 8px;
+        width: 32px;
+        padding: 6px 4px;
+      }
+
+      .toc-num {
+        width: 17px;
+        height: 17px;
+        font-size: 0.7rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      body {
+        font-size: 16px;
+        line-height: 1.62;
+      }
+
+      .page-wrapper {
+        padding: 16px 14px 74px 44px;
+      }
+
+      .inst-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding-bottom: 14px;
+      }
+
+      .spb-meta-right {
+        text-align: left;
+      }
+
+      .slim-toc {
+        left: 5px;
+        width: 28px;
+        padding: 6px 3px;
+        opacity: 0.88;
+      }
+
+      .slim-toc:hover,
+      .slim-toc:focus-within {
+        width: 225px;
+        padding: 8px 6px;
+      }
+
+      .toc-num {
+        width: 16px;
+        height: 16px;
+        font-size: 0.68rem;
+      }
+
+      .theme-switch-wrapper {
+        top: 10px;
+        right: 10px;
+      }
+
+      .theme-switch-btn {
+        padding: 4px 8px;
+        font-size: 0.72rem;
+      }
+
+      .interactive-box {
+        padding: 14px 14px;
+      }
+
+      .interactive-prompt {
+        font-size: 0.96rem;
+        padding: 10px 12px;
+      }
+
+      .callout {
+        padding: 14px 15px;
+      }
+    }
+
+    @media print {
+      body {
+        background-color: #ffffff;
+        font-size: 11.5pt;
+      }
+      .page-wrapper {
+        box-shadow: none;
+        max-width: none;
+        padding: 0;
+      }
+      .slim-toc, .theme-switch-wrapper, .icon-answer-btn, .bottom-actions-bar, .pdf-download-btn {
+        display: none !important;
+      }
+      .answer-panel {
+        display: block !important;
+      }
+    }
+  
+
+/* === Padronização visual e responsividade === */
+
+/* Marca-d’água discreta, transparente e sensível ao tema */
+.page-wrapper {
+  background-image: url('/graphics/logo_em_tudo_watermark_light.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: min(78vw, 900px) auto;
+  background-attachment: fixed;
+}
+html.dark-mode .page-wrapper {
+  background-image: url('/graphics/logo_em_tudo_watermark_dark.png');
+}
+
+/* Chave junto ao cabeçalho no início do documento; rola para fora da tela */
+.theme-switch-wrapper { position:absolute !important; top:14px !important; right:max(18px, calc((100vw - 1060px)/2 + 18px)) !important; z-index:1200; }
+#themeToggle.theme-switch-btn { position:relative !important; top:auto !important; right:auto !important; z-index:1200; touch-action:manipulation; }
+body { position:relative; }
+
+/* Uniformizar dimensão e interação dos botões de PDF */
+.pdf-download-btn {
+  min-height:40px; max-width:100%; padding:8px 14px;
+  border-radius:999px; font-size:.86rem; line-height:1.35;
+  overflow-wrap:anywhere; touch-action:manipulation;
+}
+.pdf-download-btn svg { flex:0 0 18px; }
+html { scroll-padding-top:84px; }
+body { overflow-x:clip; }
+.page-wrapper { min-width:0; }
+.page-wrapper img { max-width:100%; height:auto; }
+@media (max-width:640px) {
+  .theme-switch-wrapper { top:10px !important; right:12px !important; }
+  #themeToggle.theme-switch-btn { min-width:44px; min-height:44px; }
+  .page-wrapper { width:100%; padding-left:16px; padding-right:16px; }
+  .pdf-download-btn { min-height:44px; }
+}
+@media print {
+  .page-wrapper { background-image:url('/graphics/logo_em_tudo_watermark_light.png') !important; background-attachment:scroll !important; background-repeat:no-repeat !important; background-position:center center !important; background-size:72% auto !important; }
+  /* Cabeçalho de impressão em fluxo simples para evitar sobreposição em PDF. */
+  .inst-header { display:block !important; min-height:100px; margin-bottom:16px !important; padding-bottom:10px !important; overflow:hidden; }
+  .spb-brand-left { float:left; display:flex !important; width:43%; gap:10px !important; align-items:center; }
+  .spb-emblem-svg { width:50px !important; height:68px !important; }
+  .spb-brand-text { display:block !important; min-width:0; }
+  .spb-brand-name { font-size:10.5pt !important; line-height:1.15 !important; }
+  .spb-brand-motto { font-size:7pt !important; line-height:1.2 !important; margin-top:3px !important; }
+  .spb-meta-right { float:right; display:block !important; width:54%; text-align:right; }
+  .spb-meta-line, .spb-meta-prof { display:block !important; font-size:8pt !important; line-height:1.25 !important; margin:0 0 3px !important; letter-spacing:0 !important; }
+  .inst-header::after { content:""; display:block; clear:both; }
+}
+
+
+/* Marca-d’água Em Tudo: centralizada na viewport e visível durante toda a rolagem */
+body::after { content:""; position:fixed; inset:0; z-index:9990; pointer-events:none; opacity:.075; background-image:url("/graphics/logo_em_tudo_b.png"); background-repeat:no-repeat; background-position:center center; background-size:min(58vw, 760px) auto; }
+html.dark-mode body::after, html[data-theme="dark"] body::after { background-image:url("/graphics/logo_em_tudo_w.png"); opacity:.09; }
+@media(max-width:640px){ body::after { background-size:88vw auto; opacity:.055; } html.dark-mode body::after, html[data-theme="dark"] body::after { opacity:.07; } }
+@media print { body::after { position:absolute; opacity:.06; background-image:url("/graphics/logo_em_tudo_b.png") !important; } }
+
+</style><style>
+/* Compatibilidade visual da Aula 7 com o sistema da Aula 8 */
+body { background:var(--bg-page); color:var(--ink); }
+.page-wrapper { position:relative; overflow:visible; }
+.inst-header { position:relative; padding-right:64px; }
+.theme-switch-wrapper { position:absolute !important; top:4px !important; right:0 !important; z-index:1200; }
+.theme-switch-btn { position:relative !important; top:auto !important; right:auto !important; }
+.hero-title-block { text-align:center; margin:0 auto 28px; padding:10px 0 24px; border-bottom:1px solid var(--line); }
+.hero-kicker { color:var(--purple); font-weight:900; letter-spacing:.16em; margin-bottom:10px; }
+.hero-title-block h1 { margin:0 auto 12px; max-width:1000px; font-size:clamp(2rem,4vw,3rem); line-height:1.14; color:var(--ink); }
+.hero-subtitle { margin:0 auto 18px; color:var(--muted); font-size:clamp(1rem,1.7vw,1.3rem); font-weight:700; }
+.pdf-action-wrap { margin-top:18px; }
+.content-sec { margin:0 0 30px; scroll-margin-top:24px; }
+.content-sec > .para { margin-top:0; }
+.content-sec .para { color:var(--ink); }
+.content-sec .table-wrap { max-width:100%; overflow-x:auto; border-radius:var(--radius-md); }
+.content-sec table { max-width:100%; }
+.content-sec img { max-width:100%; height:auto; }
+.content-sec .visual-card { border-radius:var(--radius-md); }
+.back-portal-wrap { text-align:center; padding:30px 0 10px; margin-top:32px; border-top:1px solid var(--line); }
+.back-portal-btn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:11px 20px; border-radius:999px; background:var(--blue-pale); color:var(--blue); border:1px solid var(--blue-border); text-decoration:none; font-weight:800; }
+.back-portal-btn:hover { filter:brightness(.97); }
+/* Marca-d'água externa, transparente e discreta, fixa no centro da janela */
+body::after { content:""; position:fixed; z-index:0; pointer-events:none; inset:50% auto auto 50%; transform:translate(-50%,-50%); width:min(42vw,520px); aspect-ratio:1; background:url('/graphics/logo_em_tudo_b.png') center/contain no-repeat; opacity:.045; }
+html.dark-mode body::after { background-image:url('/graphics/logo_em_tudo_w.png'); opacity:.055; }
+.page-wrapper { position:relative; z-index:1; }
+.theme-switch-wrapper { position:absolute !important; z-index:1200; }
+.slim-toc { position:fixed !important; z-index:1100 !important; }
+@media(max-width:800px){ .inst-header{padding-right:52px}.hero-title-block h1{font-size:2rem}.content-sec .table-wrap{max-width:100%}body::after{width:min(65vw,400px)} }
+@media print { .slim-toc,.theme-switch-wrapper,.back-portal-wrap,body::after{display:none!important}.page-wrapper{box-shadow:none;max-width:none}.content-sec{break-inside:auto} }
+
+/* ===== Revisão final de responsividade e identidade visual ===== */
+.inst-header {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  grid-template-rows: auto auto !important;
+  align-items: center !important;
+  column-gap: clamp(12px, 2.4vw, 28px) !important;
+  row-gap: 10px !important;
+  padding: 0 0 14px !important;
+  margin: 0 auto 22px !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+}
+.inst-header > .theme-switch-wrapper {
+  grid-column: 1 / -1 !important;
+  grid-row: 1 !important;
+  justify-self: end !important;
+  align-self: start !important;
+  position: static !important;
+  inset: auto !important;
+  margin: 0 0 2px !important;
+  z-index: 5 !important;
+  width: auto !important;
+}
+.inst-header > .spb-brand-left { grid-column: 1 !important; grid-row: 2 !important; min-width: 0 !important; }
+.inst-header > .spb-meta-right { grid-column: 2 !important; grid-row: 2 !important; min-width: 0 !important; padding: 0 !important; margin: 0 !important; }
+.theme-switch-btn {
+  position: relative !important; inset: auto !important;
+  display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  min-width: 48px !important; min-height: 42px !important; padding: 8px 11px !important;
+  gap: 8px !important; line-height: 1 !important; white-space: nowrap !important;
+  box-shadow: var(--shadow-sm) !important; transform: none !important;
+}
+.theme-switch-btn svg { flex: 0 0 18px !important; width:18px !important; height:18px !important; }
+.spb-brand-left, .spb-brand-text, .spb-meta-right { min-width:0 !important; }
+.spb-meta-line, .spb-meta-prof { overflow-wrap:anywhere !important; }
+.page-wrapper { width:100% !important; min-width:0 !important; overflow:visible !important; }
+.page-wrapper img, .content-sec img, .diagram-box img { max-width:100% !important; height:auto !important; }
+.content-sec .table-wrap, .table-wrap { max-width:100% !important; overflow-x:auto !important; -webkit-overflow-scrolling:touch; }
+.content-sec table { max-width:100%; }
+body { overflow-x:hidden !important; }
+html[data-theme="dark"] html[data-theme="dark"] /* Marca-d’água externa Em Tudo, acima dos fundos e sem bloquear interações. */
+body::after {
+  content:"" !important; position:fixed !important; inset:0 !important; z-index:9990 !important;
+  pointer-events:none !important; display:block !important;
+  background-image:url('/graphics/logo_em_tudo_watermark_dark.png') !important;
+  background-repeat:no-repeat !important; background-position:center center !important;
+  background-size:min(58vw, 760px) auto !important; opacity:.055 !important;
+}
+html.dark-mode body::after, html[data-theme="dark"] body::after {
+  background-image:url('/graphics/logo_em_tudo_watermark_light.png') !important; opacity:.065 !important;
+}
+/* Em telas pequenas o índice vira uma faixa horizontal no fluxo normal: nunca cobre a aula. */
+@media (max-width: 800px) {
+  .slim-toc {
+    position:relative !important; inset:auto !important; top:auto !important; left:auto !important;
+    transform:none !important; width:100% !important; max-width:100% !important;
+    height:auto !important; max-height:none !important; overflow-x:auto !important; overflow-y:hidden !important;
+    margin:0 auto 10px !important; padding:6px 8px !important; border-radius:12px !important;
+    opacity:1 !important; box-shadow:var(--shadow-sm) !important; z-index:2 !important;
+    -webkit-overflow-scrolling:touch; scrollbar-width:thin;
+  }
+  .slim-toc:hover, .slim-toc:focus-within { width:100% !important; padding:6px 8px !important; }
+  .slim-toc-list { display:flex !important; flex-direction:row !important; align-items:center !important; gap:5px !important; width:max-content !important; min-width:100%; }
+  .slim-toc-list li { flex:0 0 auto !important; margin:0 !important; }
+  .slim-toc-link { display:flex !important; align-items:center !important; min-height:34px; padding:5px 8px !important; gap:5px !important; }
+  .toc-text { display:inline !important; opacity:1 !important; max-width:180px; font-size:.72rem !important; }
+  .page-wrapper { padding:14px 14px 56px !important; }
+  .inst-header { grid-template-columns:minmax(0,1fr) !important; grid-template-rows:auto auto auto !important; row-gap:12px !important; }
+  .inst-header > .theme-switch-wrapper { grid-column:1 !important; grid-row:1 !important; }
+  .inst-header > .spb-brand-left { grid-column:1 !important; grid-row:2 !important; width:100% !important; gap:12px !important; }
+  .inst-header > .spb-meta-right { grid-column:1 !important; grid-row:3 !important; text-align:left !important; width:100% !important; }
+  .spb-emblem-svg { width:48px !important; height:66px !important; }
+  .spb-brand-name { font-size:1.05rem !important; line-height:1.12 !important; }
+  .spb-brand-motto { font-size:.68rem !important; line-height:1.3 !important; overflow-wrap:anywhere; }
+  .spb-meta-line { font-size:.78rem !important; line-height:1.35 !important; letter-spacing:0 !important; }
+  .spb-meta-prof { font-size:.84rem !important; line-height:1.35 !important; letter-spacing:0 !important; }
+  .hero-title-block { padding:10px 2px 20px !important; margin-bottom:22px !important; }
+  .hero-title-block h1 { font-size:clamp(1.65rem,7vw,2.2rem) !important; line-height:1.15 !important; overflow-wrap:anywhere; }
+  .hero-title-block .subtitle, .hero-subtitle { font-size:1rem !important; line-height:1.45 !important; overflow-wrap:anywhere; }
+  .pdf-download-btn { white-space:normal !important; text-align:center; overflow-wrap:anywhere; }
+  .grid-2 { grid-template-columns:minmax(0,1fr) !important; }
+  .callout, .example-card, .interactive-box, .diagram-box { padding:13px !important; }
+  body::after { background-size:88vw auto !important; opacity:.035 !important; }
+  html.dark-mode body::after, html[data-theme="dark"] body::after { opacity:.045 !important; }
+}
+@media (max-width:420px) {
+  .page-wrapper { padding-left:11px !important; padding-right:11px !important; }
+  .spb-emblem-svg { width:42px !important; height:58px !important; }
+  .spb-brand-left { gap:9px !important; }
+  .toc-text { max-width:140px; }
+}
+@media print {
+  body::after { position:absolute !important; opacity:.04 !important; background-image:url('/graphics/logo_em_tudo_watermark_dark.png') !important; }
+  .slim-toc, .theme-switch-wrapper { display:none !important; }
+}
+
+</style>
+</head><body><nav aria-label="Sumário de navegação rápida" class="slim-toc"><ul class="slim-toc-list"><li><a class="slim-toc-link" href="#sec-introducao" title="Introdução"><span class="toc-num">1</span><span class="toc-text">Introdução</span></a></li><li><a class="slim-toc-link" href="#sec-aula7-1" title="OBJETIVOS DA AULA"><span class="toc-num">2</span><span class="toc-text">OBJETIVOS DA AULA</span></a></li><li><a class="slim-toc-link" href="#sec-aula7-2" title="VISÃO GERAL: COMO ENXERGAR A SUBORDINAÇÃO"><span class="toc-num">3</span><span class="toc-text">VISÃO GERAL: COMO ENXERGAR A SUBORDINAÇÃO</span></a></li><li><a class="slim-toc-link" href="#sec-aula7-3" title="O QUE É SUBORDINAÇÃO?"><span class="toc-num">4</span><span class="toc-text">O QUE É SUBORDINAÇÃO?</span></a></li><li><a class="slim-toc-link" href="#sec-aula7-4" title="ORAÇÕES SUBORDINADAS SUBSTANTIVAS"><span class="toc-num">5</span><span class="toc-text">ORAÇÕES SUBORDINADAS SUBSTANTIVAS</span></a></li><li><a class="slim-toc-link" href="#sec-aula7-5" title="ORAÇÕES SUBORDINADAS ADJETIVAS"><span class="toc-num">6</span><span class="toc-text">ORAÇÕES SUBORDINADAS ADJETIVAS</span></a></li><li><a class="slim-toc-link" href="#sec-aula7-6" title="ORAÇÕES SUBORDINADAS ADVERBIAIS"><span class="toc-num">7</span><span class="toc-text">ORAÇÕES SUBORDINADAS ADVERBIAIS</span></a></li><li><a class="slim-toc-link" href="#sec-aula7-7" title="NÃO CONFUNDA AS CLASSIFICAÇÕES"><span class="toc-num">8</span><span class="toc-text">NÃO CONFUNDA AS CLASSIFICAÇÕES</span></a></li><li><a class="slim-toc-link" href="#sec-aula7-8" title="ANÁLISE COMPLETA DE UM PERÍODO"><span class="toc-num">9</span><span class="toc-text">ANÁLISE COMPLETA DE UM PERÍODO</span></a></li><li><a class="slim-toc-link" href="#sec-aula7-9" title="ANÁLISE DE TEXTOS BÍBLICOS"><span class="toc-num">10</span><span class="toc-text">ANÁLISE DE TEXTOS BÍBLICOS</span></a></li><li><a class="slim-toc-link" href="#sec-aula7-10" title="QUADRO-MESTRE PARA REVISÃO"><span class="toc-num">11</span><span class="toc-text">QUADRO-MESTRE PARA REVISÃO</span></a></li><li><a class="slim-toc-link" href="#sec-aula7-11" title="CHECKLIST DE ANÁLISE"><span class="toc-num">12</span><span class="toc-text">CHECKLIST DE ANÁLISE</span></a></li><li><a class="slim-toc-link" href="#sec-aula7-12" title="RESUMO FINAL PARA EXPOSIÇÃO EM SALA"><span class="toc-num">13</span><span class="toc-text">RESUMO FINAL PARA EXPOSIÇÃO EM SALA</span></a></li><li><a class="slim-toc-link" href="#sec-aula7-13" title="CARTÃO DE MEMÓRIA — O QUE PERGUNTAR?"><span class="toc-num">14</span><span class="toc-text">CARTÃO DE MEMÓRIA — O QUE PERGUNTAR?</span></a></li><li><a class="slim-toc-link" href="#sec-aula7-14" title="GUIA VISUAL DE CLASSIFICAÇÃO — MUITOS EXEMPLOS PARA FIXAÇÃO"><span class="toc-num">15</span><span class="toc-text">GUIA VISUAL DE CLASSIFICAÇÃO — MUITOS EXEMPLOS PARA FIXAÇÃO</span></a></li><li><a class="slim-toc-link" href="#sec-aula7-15" title="MAIS EXEMPLOS PARA LEITURA E ANÁLISE"><span class="toc-num">16</span><span class="toc-text">MAIS EXEMPLOS PARA LEITURA E ANÁLISE</span></a></li></ul></nav><main class="page-wrapper"><header aria-label="Cabeçalho Institucional do Seminário Presbiteriano de Brasília" class="inst-header" role="banner">
+<div class="theme-switch-wrapper">
+<button aria-checked="false" aria-label="Alternar entre modo claro e escuro" class="theme-switch-btn" id="themeToggle" role="switch" title="Alternar entre modo claro e escuro" type="button">
+<svg id="themeIcon" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+<span class="switch-track"><span class="switch-thumb"></span></span>
+</button>
+</div>
+
+<div class="spb-brand-left">
+<svg aria-hidden="true" class="spb-emblem-svg" viewbox="0 0 120 164" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#134a84" height="128" width="120" x="0" y="0"></rect>
+<rect fill="#ffffff" height="128" width="8" x="56" y="0"></rect>
+<rect fill="#ffffff" height="8" width="120" x="0" y="48"></rect>
+<path d="M 60 12 C 26 32, 26 84, 60 106 C 94 84, 94 32, 60 12 Z" fill="#134a84" stroke="#ffffff" stroke-linejoin="round" stroke-width="7.5"></path>
+<path d="M 60 106 C 46 113, 35 116, 28 117 M 60 106 C 74 113, 85 116, 92 117" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="7.5"></path>
+<circle cx="60" cy="36" fill="#ffffff" r="4.2"></circle>
+<rect fill="#ffffff" height="40" width="120" x="0" y="124"></rect>
+<path d="M 0 128 Q 30 113, 60 129 Q 90 113, 120 128 L 120 137 Q 90 122, 60 138 Q 30 122, 0 137 Z" fill="#10a386"></path>
+<path d="M 0 142 Q 30 127, 60 143 Q 90 127, 120 142 L 120 151 Q 90 136, 60 152 Q 30 136, 0 151 Z" fill="#10a386"></path>
+<path d="M 0 156 Q 30 141, 60 157 Q 90 141, 120 156 L 120 164 L 0 164 Z" fill="#10a386"></path>
+</svg>
+<div class="spb-brand-text">
+<div class="spb-brand-name">
+            Seminário<br/>
+            Presbiteriano<br/>
+            de Brasília
+          </div>
+<div class="spb-brand-motto">Teologia para transformação da vida</div>
+</div>
+</div>
+<div class="spb-meta-right">
+<div class="spb-meta-line">BACHAREL EM TEOLOGIA</div>
+<div class="spb-meta-line">DEPARTAMENTO DE CULTURA GERAL</div>
+<div class="spb-meta-line">LÍNGUA PORTUGUESA – PORTUGUÊS 2 – 2º SEM. 2026</div>
+<div class="spb-meta-prof">Prof.: ISMAEL ROCHA</div>
+</div>
+</header><div class="hero-title-block"><div class="hero-kicker">PORTUGUÊS 2</div><h1>PERÍODO COMPOSTO POR SUBORDINAÇÃO</h1><p class="hero-subtitle">Orações subordinadas substantivas, adjetivas e adverbiais</p><div class="pdf-action-wrap"></div></div><section class="content-sec" id="sec-introducao"><div class="table-wrap palette-orange">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         IDEIA-CHAVE DA AULA
+        </strong>
+</p>
+<p>
+        Na subordinação, uma oração depende sintaticamente de outra. Para classificar a oração subordinada, pergunte: O que ela faz na frase? A que termo ela se liga? Que relação de sentido estabelece?
+       </p>
+</td>
+</tr>
+</table>
+</div></section><section class="content-sec" id="sec-aula7-1"><section class="para">
+<strong>
+     1. OBJETIVOS DA AULA
+    </strong>
+</section><section class="para">
+    Ao final do estudo, o aluno deverá ser capaz de:
+   </section><section class="para">
+    reconhecer a estrutura de um período composto por subordinação;
+   </section><section class="para">
+    distinguir oração principal e oração subordinada;
+   </section><section class="para">
+    identificar as seis orações subordinadas substantivas e explicar a função de cada uma;
+   </section><section class="para">
+    distinguir oração subordinada adjetiva restritiva de explicativa, especialmente pelo efeito de sentido das vírgulas;
+   </section><section class="para">
+    reconhecer as nove classificações tradicionais das orações subordinadas adverbiais;
+   </section><section class="para">
+    usar perguntas e substituições como estratégias de identificação sem depender apenas da conjunção;
+   </section><section class="para">
+    analisar períodos curtos de textos bíblicos, observando a estrutura e o efeito de sentido.
+   </section></section><section class="content-sec" id="sec-aula7-2"><section class="para">
+<strong>
+     2. VISÃO GERAL: COMO ENXERGAR A SUBORDINAÇÃO
+    </strong>
+</section><section class="para">
+    Antes de decorar nomes, é mais importante compreender a lógica. Um período composto possui duas ou mais orações. Cada oração se organiza, em regra, em torno de um núcleo verbal, que pode ser um verbo simples ou uma locução verbal. Por isso, não basta contar formas verbais: é preciso distinguir verbo simples de locução verbal e identificar os limites das orações.
+   </section><div class="table-wrap palette-green">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         SUBSTANTIVA
+        </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+         ADJETIVA
+        </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+         ADVERBIAL
+        </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        Substitua por “isso”, “disso” ou “nisso”
+       </p>
+</td>
+<td class="cell">
+<p>
+        Procure um antecedente nominal
+       </p>
+</td>
+<td class="cell">
+<p>
+        Pergunte pela circunstância ou relação de sentido
+       </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        Exerce função de sujeito, objeto, predicativo, complemento nominal ou aposto
+       </p>
+</td>
+<td class="cell">
+<p>
+        Caracteriza, explica ou restringe um nome
+       </p>
+</td>
+<td class="cell">
+<p>
+        Indica causa, condição, tempo, finalidade, concessão etc.
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+     Mapa geral da subordinação
+    </strong>
+</section><div class="table-wrap palette-purple">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         REGRA DE OURO
+        </strong>
+</p>
+<p>
+        Não classifique uma oração apenas pela palavra que a introduz. A mesma palavra pode desempenhar funções diferentes. Observe a relação que a oração estabelece dentro do período.
+       </p>
+</td>
+</tr>
+</table>
+</div></section><section class="content-sec" id="sec-aula7-3"><section class="para">
+<strong>
+     3. O QUE É SUBORDINAÇÃO?
+    </strong>
+</section><section class="para">
+    Subordinação é a relação em que uma oração desempenha, dentro do período, uma função sintática ou uma relação circunstancial que depende de outra oração. A oração que serve de referência é tradicionalmente chamada de oração principal (OP).
+   </section><section class="para">
+    A oração subordinada não deve ser entendida simplesmente como uma oração “incompleta”. Ela pode ter sentido compreensível isoladamente, mas, na estrutura do período, exerce uma função em relação à oração principal ou a um termo dela.
+   </section><div class="table-wrap palette-cyan">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         1 — SUBSTANTIVA
+        </strong>
+</p>
+<p>
+        O professor afirmou que a verdade prevalecerá.
+        <br/>
+<br/>
+         Oração principal: “O professor afirmou”.
+         <br/>
+         Oração subordinada: “que a verdade prevalecerá”.
+         <br/>
+         Pergunta: afirmou o quê? → “isso”.
+         <br/>
+         Logo, a subordinada funciona como objeto direto: oração subordinada substantiva objetiva direta.
+        
+</p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-pink">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         2 — ADJETIVA
+        </strong>
+</p>
+<p>
+        Os alunos que estudaram foram aprovados.
+        <br/>
+<br/>
+        “que estudaram” caracteriza o antecedente “alunos”. Não funciona como objeto do verbo “foram aprovados”. É uma oração subordinada adjetiva restritiva.
+       </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-gold">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         3 — ADVERBIAL
+        </strong>
+</p>
+<p>
+        Todos silenciaram quando o professor entrou.
+        <br/>
+<br/>
+        “quando o professor entrou” indica o momento em que ocorreu o silêncio. É uma oração subordinada adverbial temporal.
+       </p>
+</td>
+</tr>
+</table>
+</div></section><section class="content-sec" id="sec-aula7-4"><section class="para">
+<strong>
+     4. ORAÇÕES SUBORDINADAS SUBSTANTIVAS
+    </strong>
+</section><section class="para">
+    As subordinadas substantivas exercem funções que poderiam ser desempenhadas por um substantivo, por um pronome substantivo ou por uma expressão nominal. Em geral, são introduzidas por conjunções integrantes, principalmente “que” e “se”.
+   </section><div class="table-wrap palette-teal">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         COMO IDENTIFICAR
+        </strong>
+</p>
+<p>
+        Tente substituir a oração inteira por “isso”. Se a estrutura exigir preposição, use a forma correspondente: “disso”, “nisso”, “a isso” etc. Depois descubra qual função sintática esse termo exerce.
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+     4.1 Substantiva subjetiva
+    </strong>
+</section><section class="para">
+    A oração subordinada exerce a função de sujeito da oração principal. É comum aparecer depois de expressões como “é necessário”, “é importante”, “convém”, “parece”, “foi decidido” etc.
+   </section><div class="table-wrap palette-blue">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         Aplicação
+        </strong>
+</p>
+<p>
+        É necessário que todos compreendam a mensagem.
+        <br/>
+<br/>
+        “que todos compreendam a mensagem” = sujeito de “é necessário”.
+        <br/>
+        Teste: “Isso é necessário.”
+        <br/>
+        Classificação: oração subordinada substantiva subjetiva.
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+     4.2 Substantiva objetiva direta
+    </strong>
+</section><section class="para">
+    Exerce a função de objeto direto de um verbo transitivo direto da oração principal. Não é introduzida por preposição exigida pelo verbo.
+   </section><div class="table-wrap palette-brown">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         Aplicação
+        </strong>
+</p>
+<p>
+        O mestre afirmou que a verdade prevalecerá.
+        <br/>
+<br/>
+        Afirmou o quê? → “que a verdade prevalecerá”.
+        <br/>
+        Teste: “O mestre afirmou isso.”
+        <br/>
+        Classificação: subordinada substantiva objetiva direta.
+       </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-violet">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         EXEMPLO ASSOCIADO A JOÃO 11:27
+        </strong>
+</p>
+<p>
+        Marta declarou que Jesus é o Cristo.
+        <br/>
+<br/>
+        “que Jesus é o Cristo” completa diretamente o verbo “declarou”.
+        <br/>
+        Declarou o quê? → isso.
+        <br/>
+        Classificação: subordinada substantiva objetiva direta.
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+     4.3 Substantiva objetiva indireta
+    </strong>
+</section><section class="para">
+    Exerce a função de objeto indireto. O verbo da oração principal exige uma preposição.
+   </section><div class="table-wrap palette-lime">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         Aplicação
+        </strong>
+</p>
+<p>
+        O líder insistiu em que todos permanecessem atentos.
+        <br/>
+<br/>
+        O verbo “insistir” rege a preposição “em”: insistiu em quê? → nisso.
+        <br/>
+        Classificação: subordinada substantiva objetiva indireta.
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+     4.4 Substantiva completiva nominal
+    </strong>
+</section><section class="para">
+    Completa o sentido de um nome — geralmente substantivo abstrato, adjetivo ou advérbio — que aparece na oração principal e exige ou admite complemento.
+   </section><div class="table-wrap palette-orange">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         Aplicação
+        </strong>
+</p>
+<p>
+        Tenho a convicção de que superaremos os desafios.
+        <br/>
+<br/>
+        “de que superaremos os desafios” completa o sentido do substantivo abstrato “convicção”.
+        <br/>
+        Teste: “Tenho a convicção disso.”
+        <br/>
+        Classificação: subordinada substantiva completiva nominal.
+       </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-green">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         ATENÇÃO: OBJETO INDIRETO × COMPLEMENTO NOMINAL
+        </strong>
+</p>
+<p>
+        Pergunte: a oração completa um VERBO? → objetiva indireta. A oração completa um NOME? → completiva nominal.
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+     4.5 Substantiva predicativa
+    </strong>
+</section><section class="para">
+    Exerce a função de predicativo do sujeito. É frequente depois de verbo de ligação, especialmente “ser”.
+   </section><div class="table-wrap palette-purple">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         Aplicação
+        </strong>
+</p>
+<p>
+        A nossa esperança é que a justiça seja feita.
+        <br/>
+<br/>
+        Sujeito: “A nossa esperança”.
+        <br/>
+        Verbo de ligação: “é”.
+        <br/>
+        Predicativo: “que a justiça seja feita”.
+        <br/>
+        Teste: “A nossa esperança é isso.”
+        <br/>
+        Classificação: subordinada substantiva predicativa.
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+     4.6 Substantiva apositiva
+    </strong>
+</section><section class="para">
+    Exerce a função de aposto, explicando, especificando ou desenvolvendo um termo anterior. É comum aparecer depois de dois-pontos, travessão ou vírgula.
+   </section><div class="table-wrap palette-cyan">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         Aplicação
+        </strong>
+</p>
+<p>
+        Desejo apenas uma coisa: que mantenham a lealdade.
+        <br/>
+<br/>
+        “que mantenham a lealdade” explica/especifica o termo “uma coisa”.
+        <br/>
+        Classificação: subordinada substantiva apositiva.
+       </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-pink">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         TIPO
+        </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+         PERGUNTA-CHAVE
+        </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+         FUNÇÃO
+        </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        Subjetiva
+       </p>
+</td>
+<td class="cell">
+<p>
+        O que é necessário/importante?
+       </p>
+</td>
+<td class="cell">
+<p>
+        Sujeito
+       </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        Objetiva direta
+       </p>
+</td>
+<td class="cell">
+<p>
+        O verbo pede o quê?
+       </p>
+</td>
+<td class="cell">
+<p>
+        Objeto direto
+       </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        Objetiva indireta
+       </p>
+</td>
+<td class="cell">
+<p>
+        O verbo pede o quê, com preposição?
+       </p>
+</td>
+<td class="cell">
+<p>
+        Objeto indireto
+       </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        Completiva nominal
+       </p>
+</td>
+<td class="cell">
+<p>
+        O nome precisa de quê?
+       </p>
+</td>
+<td class="cell">
+<p>
+        Complemento nominal
+       </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        Predicativa
+       </p>
+</td>
+<td class="cell">
+<p>
+        O que o sujeito é?
+       </p>
+</td>
+<td class="cell">
+<p>
+        Predicativo
+       </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        Apositiva
+       </p>
+</td>
+<td class="cell">
+<p>
+        O que explica/especifica o termo anterior?
+       </p>
+</td>
+<td class="cell">
+<p>
+        Aposto
+       </p>
+</td>
+</tr>
+</table>
+</div></section><section class="content-sec" id="sec-aula7-5"><section class="para">
+<strong>
+     5. ORAÇÕES SUBORDINADAS ADJETIVAS
+    </strong>
+</section><section class="para">
+    As orações subordinadas adjetivas caracterizam ou explicam um substantivo ou pronome antecedente. Por isso, exercem função semelhante à de um adjetivo: funcionam como adjunto adnominal do antecedente.
+   </section><section class="para">
+    Normalmente são introduzidas por pronomes relativos, como “que”, “quem”, “o qual”, “a qual”, “os quais”, “as quais”, “cujo”, “onde”, entre outros. O pronome relativo retoma um termo anterior e estabelece uma relação entre esse antecedente e a oração.
+   </section><div class="table-wrap palette-gold">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         O TESTE DO ADJETIVO
+        </strong>
+</p>
+<p>
+        Se a oração caracteriza um nome anterior, tente substituí-la por um adjetivo ou expressão equivalente. Ex.: “os alunos que estudaram” → “os alunos estudiosos”. O teste não resolve todos os casos, mas ajuda a perceber a função adjetiva.
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+     5.1 Restritiva
+    </strong>
+</section><section class="para">
+    A oração adjetiva restritiva delimita o grupo representado pelo antecedente. Em regra, não é isolada por vírgulas.
+   </section><div class="table-wrap palette-teal">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         Aplicação
+        </strong>
+</p>
+<p>
+        Os alunos que estudaram foram aprovados.
+        <br/>
+<br/>
+        “que estudaram” restringe o sentido de “alunos”.
+        <br/>
+        Sentido: entre os alunos, foram aprovados aqueles que estudaram.
+        <br/>
+        Classificação: oração subordinada adjetiva restritiva.
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+     5.2 Explicativa
+    </strong>
+</section><section class="para">
+    A oração adjetiva explicativa acrescenta uma informação sobre o antecedente sem restringir o grupo. Na escrita, aparece isolada por vírgulas.
+   </section><div class="table-wrap palette-blue">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         Aplicação
+        </strong>
+</p>
+<p>
+        Os alunos, que estudaram com seriedade, foram aprovados.
+        <br/>
+<br/>
+        As vírgulas sinalizam uma informação explicativa sobre “os alunos”.
+        <br/>
+        Leitura: o grupo já está determinado; a oração acrescenta uma informação sobre ele.
+        <br/>
+        Classificação: oração subordinada adjetiva explicativa.
+       </p>
+</td>
+</tr>
+</table>
+</div><section aria-labelledby="visual-virgula" class="visual-card">
+<div class="visual-card-title" id="visual-virgula">
+     O IMPACTO SEMÂNTICO DA VÍRGULA
+    </div>
+<div class="visual-grid">
+<article class="visual-panel restrictive">
+<h3>
+       SEM VÍRGULA = RESTRITIVA
+      </h3>
+<p class="quote">
+       “Os irmãos que chegaram foram recebidos.”
+      </p>
+<div class="meaning-badge">
+       SÓ ALGUNS
+      </div>
+<p class="question">
+       Pergunta:
+       <strong>
+        quais deles?
+       </strong>
+       — a oração delimita o grupo.
+      </p>
+</article>
+<article class="visual-panel explanatory">
+<h3>
+       COM VÍRGULAS = EXPLICATIVA
+      </h3>
+<p class="quote">
+       “Os irmãos, que chegaram, foram recebidos.”
+      </p>
+<div class="meaning-badge">
+       O GRUPO É TOMADO COMO UM TODO
+      </div>
+<p class="question">
+       Pergunta:
+       <strong>
+        o que se diz sobre todos?
+       </strong>
+       — a oração acrescenta uma informação.
+      </p>
+</article>
+</div>
+</section><div class="table-wrap palette-coral">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         A VÍRGULA MUDA O SENTIDO
+        </strong>
+</p>
+<p>
+        Na oração subordinada adjetiva, a presença ou a ausência das vírgulas pode alterar o alcance da informação. A diferença não é apenas gráfica: ela pode mudar a interpretação da frase.
+       </p>
+<p>
+<strong>
+         2. Restrição × explicação
+        </strong>
+</p>
+<p>
+        “Os irmãos que chegaram foram recebidos.”
+        <br/>
+        → Entre os irmãos, foram recebidos aqueles que chegaram. A oração restringe o grupo.
+       </p>
+<p>
+        “Os irmãos, que chegaram, foram recebidos.”
+        <br/>
+        → O grupo “os irmãos” já está identificado; “que chegaram” é apresentado como informação adicional sobre esse grupo.
+       </p>
+<p>
+<strong>
+         3. A vírgula também pode alterar radicalmente a leitura
+        </strong>
+</p>
+<p>
+        “Não, espere.”
+        <br/>
+        → O falante está dizendo para a pessoa esperar.
+       </p>
+<p>
+        “Não espere.”
+        <br/>
+        → O falante está dando a ordem para não esperar.
+       </p>
+<p>
+        “Vamos comer, irmãos.”
+        <br/>
+        → “irmãos” é vocativo: estamos falando com os irmãos.
+       </p>
+<p>
+        “Vamos comer irmãos.”
+        <br/>
+        → Sem a vírgula, “irmãos” passa a ser lido como objeto direto. O sentido se torna completamente diferente.
+       </p>
+<p>
+<strong>
+         4. Leitura cuidadosa de textos religiosos
+        </strong>
+</p>
+<p>
+        “Os discípulos que permaneceram em Jerusalém receberam a orientação.”
+        <br/>
+        → A oração pode delimitar quais discípulos receberam a orientação.
+       </p>
+<p>
+        “Os discípulos, que permaneceram em Jerusalém, receberam a orientação.”
+        <br/>
+        → Os discípulos já estão identificados; a oração acrescenta uma informação sobre eles.
+       </p>
+<p>
+        “Os que perseverarem até o fim serão salvos.”
+        <br/>
+        → “que perseverarem até o fim” delimita o grupo referido por “os”.
+       </p>
+<p>
+        Em uma leitura cuidadosa das Escrituras, essa distinção ajuda a perceber se uma oração está delimitando um grupo ou apenas acrescentando uma informação sobre um grupo já identificado. A sintaxe não resolve sozinha uma questão de interpretação, mas pode impedir que uma relação importante passe despercebida.
+       </p>
+<p>
+<strong>
+         REGRA DE MEMÓRIA
+        </strong>
+</p>
+<p>
+        SEM VÍRGULAS → tende a restringir: “quais deles?”
+        <br/>
+        COM VÍRGULAS → tende a explicar: “o que se diz sobre eles?”
+       </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-brown">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         ESTRUTURA
+        </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+         EFEITO DE SENTIDO
+        </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        Os alunos que estudaram foram aprovados.
+       </p>
+</td>
+<td class="cell">
+<p>
+        A oração restringe: somente os que estudaram.
+       </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        Os alunos, que estudaram, foram aprovados.
+       </p>
+</td>
+<td class="cell">
+<p>
+        A oração explica/acrescenta informação sobre o grupo já identificado.
+       </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        Os livros que estão na mesa serão guardados.
+       </p>
+</td>
+<td class="cell">
+<p>
+        A oração delimita quais livros.
+       </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        Os livros, que estão na mesa, serão guardados.
+       </p>
+</td>
+<td class="cell">
+<p>
+        A oração informa onde estão os livros já identificados.
+       </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        Os pastores que chegaram participaram.
+       </p>
+</td>
+<td class="cell">
+<p>
+        A oração delimita quais pastores.
+       </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        Os pastores, que chegaram, participaram.
+       </p>
+</td>
+<td class="cell">
+<p>
+        A oração acrescenta informação sobre os pastores já identificados.
+       </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-violet">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         PERGUNTA
+        </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+         PISTA DE LEITURA
+        </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        “Estou separando um grupo dentro de outro?”
+       </p>
+</td>
+<td class="cell">
+<p>
+        Pense em oração subordinada adjetiva restritiva.
+       </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        “O grupo já está identificado e só quero acrescentar uma informação?”
+       </p>
+</td>
+<td class="cell">
+<p>
+        Pense em oração subordinada adjetiva explicativa.
+       </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        “A vírgula está isolando um termo chamado diretamente?”
+       </p>
+</td>
+<td class="cell">
+<p>
+        Pode ser vocativo: “Senhor, ajuda-nos.”
+       </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        “A ausência da vírgula muda quem recebe ou pratica a ação?”
+       </p>
+</td>
+<td class="cell">
+<p>
+        Reveja a estrutura sintática antes de interpretar.
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+     5.3 Pronomes relativos: cuidado com a função
+    </strong>
+</section><section class="para">
+    O pronome relativo não é apenas uma palavra de ligação. Ele retoma um antecedente e, dentro da oração subordinada, desempenha uma função sintática.
+   </section><div class="table-wrap palette-lime">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         Aplicação
+        </strong>
+</p>
+<p>
+        O livro que comprei é útil.
+        <br/>
+<br/>
+        Antecedente: “livro”.
+        <br/>
+        “que” retoma “livro”.
+        <br/>
+        Na subordinada “que comprei”, quem comprou? Eu. Comprei o quê? “que” (= o livro).
+        <br/>
+        Portanto, “que” exerce função de objeto direto dentro da subordinada.
+       </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-orange">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         COM “CUJO”
+        </strong>
+</p>
+<p>
+        O autor cuja obra estudamos escreveu muitos comentários.
+        <br/>
+<br/>
+        “cuja obra” estabelece relação de posse entre “autor” e “obra”.
+        <br/>
+        “cujo/cuja” concorda com o termo possuído: “obra”, e não com o possuidor “autor”.
+        <br/>
+        Esse detalhe é importante para a leitura e para a escrita formal.
+       </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-green">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         COM “ONDE”
+        </strong>
+</p>
+<p>
+        A cidade onde Jesus ensinava recebeu muitos visitantes.
+        <br/>
+<br/>
+        “onde” retoma “cidade” e indica lugar.
+        <br/>
+        A oração “onde Jesus ensinava” caracteriza “cidade”.
+        <br/>
+        Classificação: subordinada adjetiva.
+       </p>
+</td>
+</tr>
+</table>
+</div></section><section class="content-sec" id="sec-aula7-6"><section class="para">
+<strong>
+     6. ORAÇÕES SUBORDINADAS ADVERBIAIS
+    </strong>
+</section><section class="para">
+    As subordinadas adverbiais estabelecem uma circunstância ou relação de sentido com a oração principal. Em vez de perguntar apenas “qual é a função sintática?”, procure compreender a relação lógica entre os acontecimentos.
+   </section><div class="table-wrap palette-purple">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         CAUSA
+        </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+         CONDIÇÃO
+        </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+         CONCESSÃO
+        </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        Por que aconteceu?
+       </p>
+</td>
+<td class="cell">
+<p>
+        Em que condição?
+       </p>
+</td>
+<td class="cell">
+<p>
+        Apesar de quê?
+       </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        porque, já que, visto que
+       </p>
+</td>
+<td class="cell">
+<p>
+        se, caso, desde que
+       </p>
+</td>
+<td class="cell">
+<p>
+        embora, ainda que, mesmo que
+       </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-cyan">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         TEMPO
+        </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+         FINALIDADE
+        </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+         CONSEQUÊNCIA
+        </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        Quando?
+       </p>
+</td>
+<td class="cell">
+<p>
+        Para quê?
+       </p>
+</td>
+<td class="cell">
+<p>
+        Com que resultado?
+       </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        quando, enquanto, assim que
+       </p>
+</td>
+<td class="cell">
+<p>
+        para que, a fim de que
+       </p>
+</td>
+<td class="cell">
+<p>
+        tão... que, tanto... que
+       </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-pink">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         CONFORMIDADE
+        </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+         COMPARAÇÃO
+        </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+         PROPORÇÃO
+        </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        De acordo com quê?
+       </p>
+</td>
+<td class="cell">
+<p>
+        Em comparação com quê?
+       </p>
+</td>
+<td class="cell">
+<p>
+        Em que proporção?
+       </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+        conforme, segundo, como
+       </p>
+</td>
+<td class="cell">
+<p>
+        como, mais... que, menos... que
+       </p>
+</td>
+<td class="cell">
+<p>
+        à medida que, à proporção que, quanto mais
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+     6.1 Causal
+    </strong>
+</section><section class="para">
+    Indica a causa ou a razão do fato apresentado na oração principal.
+   </section><div class="table-wrap palette-gold">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         Aplicação
+        </strong>
+</p>
+<p>
+        Não viajaram porque choveu torrencialmente.
+        <br/>
+<br/>
+        “porque choveu torrencialmente” apresenta a causa da não viagem.
+        <br/>
+        Pergunta: por que não viajaram? → porque choveu.
+        <br/>
+        Classificação: subordinada adverbial causal.
+       </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-teal">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         MATEUS 5:3
+        </strong>
+</p>
+<p>
+        Bem-aventurados os humildes de espírito, porque deles é o Reino dos céus.
+        <br/>
+<br/>
+        “porque deles é o Reino dos céus” introduz uma justificativa/razão associada à declaração anterior.
+        <br/>
+        A conjunção “porque” pode introduzir uma oração subordinada adverbial causal ou, em determinados contextos, uma oração coordenada sindética explicativa. Neste versículo, o valor depende da relação estabelecida com a declaração anterior e do contexto. Para o aluno, o ponto central é: a palavra “porque” não decide sozinha a classificação.
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+     6.2 Comparativa
+    </strong>
+</section><section class="para">
+    Estabelece uma comparação entre o conteúdo da oração principal e outro elemento ou ação.
+   </section><div class="table-wrap palette-blue">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         Aplicação
+        </strong>
+</p>
+<p>
+        Ele agiu como um verdadeiro sábio agiria.
+        <br/>
+<br/>
+        A oração compara o modo de agir dele com o modo de agir de um sábio.
+        <br/>
+        Classificação: subordinada adverbial comparativa.
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+     6.3 Concessiva
+    </strong>
+</section><section class="para">
+    Apresenta um fato que poderia funcionar como obstáculo, mas não impede a realização do fato principal.
+   </section><div class="table-wrap palette-coral">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         Aplicação
+        </strong>
+</p>
+<p>
+        Venceu o debate, embora estivesse exausto.
+        <br/>
+<br/>
+        Estar exausto poderia dificultar a vitória, mas a vitória ocorreu.
+        <br/>
+        Ideia: apesar de estar exausto, venceu.
+        <br/>
+        Classificação: subordinada adverbial concessiva.
+       </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-brown">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         ROMANOS 5:8
+        </strong>
+</p>
+<p>
+        “Deus prova o seu amor para conosco, em que Cristo morreu por nós, sendo nós ainda pecadores.”
+        <br/>
+<br/>
+        Neste recorte, a expressão reduzida “sendo nós ainda pecadores” apresenta uma circunstância concessiva: Cristo morreu por nós apesar de ainda sermos pecadores. O exemplo mostra que uma relação concessiva também pode aparecer em uma oração reduzida. A análise de “em que Cristo morreu por nós” deve seguir a redação e a estrutura da tradução adotada; por isso, não a usamos aqui como modelo de classificação.
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+     6.4 Condicional
+    </strong>
+</section><section class="para">
+    Apresenta uma condição para que o fato da oração principal ocorra ou seja considerado válido.
+   </section><div class="table-wrap palette-violet">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         Aplicação
+        </strong>
+</p>
+<p>
+        Serão perdoados, se confessarem o erro.
+        <br/>
+<br/>
+        “se confessarem o erro” apresenta a condição relacionada ao perdão.
+        <br/>
+        Pergunta: em que condição? → se confessarem.
+        <br/>
+        Classificação: subordinada adverbial condicional.
+       </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-lime">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         1 JOÃO 1:9
+        </strong>
+</p>
+<p>
+        Se confessarmos os nossos pecados, ele é fiel e justo para nos perdoar os pecados e nos purificar de toda injustiça.
+        <br/>
+<br/>
+        “Se confessarmos os nossos pecados” apresenta a condição expressa para a afirmação da oração principal.
+        <br/>
+        Classificação: subordinada adverbial condicional.
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+     6.5 Conformativa
+    </strong>
+</section><section class="para">
+    Indica conformidade, acordo ou correspondência com aquilo que é apresentado na oração principal.
+   </section><div class="table-wrap palette-orange">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         Aplicação
+        </strong>
+</p>
+<p>
+        O processo ocorreu conforme determinava a lei.
+        <br/>
+<br/>
+        A ação ocorreu de acordo com o que a lei determinava.
+        <br/>
+        Classificação: subordinada adverbial conformativa.
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+     6.6 Consecutiva
+    </strong>
+</section><section class="para">
+    Indica a consequência ou o resultado produzido pela intensidade ou circunstância apresentada na oração principal. É comum aparecer em construções como “tão... que”, “tanto... que”, “tal... que”.
+   </section><div class="table-wrap palette-green">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         Aplicação
+        </strong>
+</p>
+<p>
+        Falou com tanta firmeza que convenceu os juízes.
+        <br/>
+<br/>
+        “com tanta firmeza” apresenta a intensidade; “que convenceu os juízes” apresenta o resultado.
+        <br/>
+        Classificação: subordinada adverbial consecutiva.
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+     6.7 Final
+    </strong>
+</section><section class="para">
+    Indica finalidade, objetivo ou intenção.
+   </section><div class="table-wrap palette-purple">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+         Aplicação
+        </strong>
+</p>
+<p>
+        Escreveram a ata a fim de que tudo ficasse registrado.
+        <br/>
+<br/>
+        Pergunta: para quê escreveram a ata? → para que tudo ficasse registrado.
+        <br/>
+        Classificação: subordinada adverbial final.
+       </p>
+</td>
+</tr>
+</table>
+</div><section class="para"><strong>6.8 Proporcional</strong></section><section class="para">
+        Expressa uma relação de proporção: à medida que um fato se intensifica ou progride, outro também se altera.
+       </section><div class="table-wrap palette-pink">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             Aplicação
+            </strong>
+</p>
+<p>
+            À medida que avançavam, o frio aumentava.
+            <br/>
+<br/>
+            Há dois processos que evoluem paralelamente: avançar e aumentar o frio.
+            <br/>
+            Classificação: subordinada adverbial proporcional.
+           </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+         6.9 Temporal
+        </strong>
+</section><section class="para">
+        Indica o momento em que o fato da oração principal ocorre.
+       </section><div class="table-wrap palette-gold">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             Aplicação
+            </strong>
+</p>
+<p>
+            Todos silenciaram assim que o palestrante entrou.
+            <br/>
+<br/>
+            “assim que o palestrante entrou” indica quando ocorreu o silêncio.
+            <br/>
+            Classificação: subordinada adverbial temporal.
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-teal">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             MATEUS 4:20
+            </strong>
+</p>
+<p>
+            E eles, deixando logo as redes, o seguiram.
+            <br/>
+<br/>
+            A forma reduzida “deixando logo as redes” expressa uma circunstância temporal associada à ação principal. Em uma construção desenvolvida, uma formulação mais próxima do sentido seria “assim que deixaram as redes”.
+            <br/>
+            Observação: esse exemplo também permite introduzir, posteriormente, o estudo das orações reduzidas.
+           </p>
+</td>
+</tr>
+</table>
+</div></section><section class="content-sec" id="sec-aula7-7"><section class="para">
+<strong>
+         7. NÃO CONFUNDA AS CLASSIFICAÇÕES
+        </strong>
+</section><section class="para">
+        Muitas dificuldades surgem porque uma mesma conjunção pode introduzir relações diferentes. A classificação depende do sentido produzido no contexto.
+       </section><div class="table-wrap palette-blue">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             COMPARATIVA
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             CONFORMATIVA
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             CAUSAL
+            </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Ele age como um sábio agiria.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Faça como foi orientado.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Como estava cansado, saiu cedo.
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            comparação
+           </p>
+</td>
+<td class="cell">
+<p>
+            conformidade
+           </p>
+</td>
+<td class="cell">
+<p>
+            causa
+           </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+         Uso de “como”
+        </strong>
+</section><div class="table-wrap palette-coral">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             SUBSTANTIVA
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             ADJETIVA
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             CONSECUTIVA
+            </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Espero que você venha.
+           </p>
+</td>
+<td class="cell">
+<p>
+            O aluno que chegou estudou.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Falou tanto que todos ouviram.
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            conjunção integrante
+           </p>
+</td>
+<td class="cell">
+<p>
+            pronome relativo
+           </p>
+</td>
+<td class="cell">
+<p>
+            conjunção subordinativa consecutiva
+           </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+         Uso de “que”
+        </strong>
+</section><div class="table-wrap palette-brown">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             PERGUNTA DECISIVA
+            </strong>
+</p>
+<p>
+            A palavra introdutória ajuda, mas não decide sozinha. Primeiro identifique a relação da oração dentro do período; depois dê o nome à classificação.
+           </p>
+</td>
+</tr>
+</table>
+</div></section><section class="content-sec" id="sec-aula7-8"><section class="para">
+<strong>
+         8. ANÁLISE COMPLETA DE UM PERÍODO
+        </strong>
+</section><section class="para">
+        Uma análise segura pode seguir cinco passos. Esse procedimento evita que o aluno tente decorar listas sem compreender a estrutura.
+       </section><div class="table-wrap palette-violet">
+<table class="analysis-steps">
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             1. VERBOS
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             2. ORAÇÕES
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             3. RELAÇÃO
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             4. FUNÇÃO
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             5. CLASSIFICAÇÃO
+            </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Localize os verbos.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Separe as orações.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Veja a que termo a oração se liga.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Descubra o que ela exerce/exprime.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Dê o nome correto.
+           </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+         Método em 5 passos
+        </strong>
+</section><div class="table-wrap palette-lime">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             MODELO
+            </strong>
+</p>
+<p>
+            O professor afirmou que os alunos compreenderam a lição.
+            <br/>
+<br/>
+            1. Núcleos verbais: “afirmou” / “compreenderam”.
+            <br/>
+            2. Orações: “O professor afirmou” / “que os alunos compreenderam a lição”.
+            <br/>
+            3. A segunda oração depende do verbo “afirmou”.
+            <br/>
+            4. “Afirmou o quê?” → “isso”.
+            <br/>
+            5. Classificação: oração subordinada substantiva objetiva direta.
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-orange">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             MODELO — ADJETIVA
+            </strong>
+</p>
+<p>
+            Os discípulos que ouviram a mensagem permaneceram atentos.
+            <br/>
+<br/>
+            1. Núcleos verbais: “ouviram” / “permaneceram”.
+            <br/>
+            2. A oração “que ouviram a mensagem” retoma “discípulos”.
+            <br/>
+            3. Ela caracteriza/restringe o antecedente.
+            <br/>
+            4. Não funciona como objeto do verbo “permaneceram”.
+            <br/>
+            5. Como não está entre vírgulas e delimita o grupo, é adjetiva restritiva.
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-green">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             MODELO — ADVERBIAL
+            </strong>
+</p>
+<p>
+            Quando chegou a hora, todos permaneceram em silêncio.
+            <br/>
+<br/>
+            1. Núcleos verbais: “chegou” / “permaneceram”.
+            <br/>
+            2. “Quando chegou a hora” estabelece relação com “permaneceram em silêncio”.
+            <br/>
+            3. Pergunta: quando permaneceram em silêncio?
+            <br/>
+            4. Resposta: quando chegou a hora.
+            <br/>
+            5. Classificação: subordinada adverbial temporal.
+           </p>
+</td>
+</tr>
+</table>
+</div></section><section class="content-sec" id="sec-aula7-9"><section class="para">
+<strong>
+         9. ANÁLISE DE TEXTOS BÍBLICOS
+        </strong>
+</section><section class="para">
+        A análise sintática não substitui a interpretação bíblica. Ela ajuda o leitor a perceber como as palavras estão organizadas e como as relações entre as orações contribuem para a progressão do texto. Em leitura exegética, isso pode ser útil para observar, com sobriedade, relações de causa, condição, finalidade, contraste e consequência expressas pelo próprio texto. A tradução utilizada pode alterar a estrutura sintática; por isso, a análise deve partir da redação concreta da versão adotada.
+       </section><section class="para">
+<strong>
+         9.1 João 11:35 — período simples
+        </strong>
+</section><div class="table-wrap palette-purple">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             TEXTO
+            </strong>
+</p>
+<p>
+            “Jesus chorou.”
+            <br/>
+<br/>
+            Há um único verbo: “chorou”.
+            <br/>
+            Logo, temos uma única oração e um período simples.
+            <br/>
+            Este exemplo serve de contraste: antes de procurar subordinação, conte as orações.
+           </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+         9.2 Gênesis 1:1 — estrutura simples
+        </strong>
+</section><div class="table-wrap palette-cyan">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             TEXTO
+            </strong>
+</p>
+<p>
+            “No princípio criou Deus os céus e a terra.”
+            <br/>
+<br/>
+            Verbo: “criou”.
+            <br/>
+            Há uma única oração.
+            <br/>
+            “Os céus e a terra” funciona como objeto direto de “criou”.
+            <br/>
+            Não há oração subordinada neste período.
+           </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+         9.3 1 João 1:9 — condição
+        </strong>
+</section><div class="table-wrap palette-pink">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             TEXTO
+            </strong>
+</p>
+<p>
+            “Se confessarmos os nossos pecados, ele é fiel e justo para nos perdoar os pecados e nos purificar de toda injustiça.”
+            <br/>
+<br/>
+            O verbo “confessarmos” aparece na oração iniciada por “se”.
+            <br/>
+            “Se confessarmos os nossos pecados” estabelece a condição para a afirmação principal.
+            <br/>
+            Classificação: subordinada adverbial condicional.
+            <br/>
+            A sequência “para nos perdoar...” expressa finalidade em relação a “é fiel e justo”/à ação afirmada, conforme a análise sintática do período e da tradução.
+           </p>
+</td>
+</tr>
+</table>
+</div></section><section class="content-sec" id="sec-aula7-10"><section class="para">
+<strong>
+         10. QUADRO-MESTRE PARA REVISÃO
+        </strong>
+</section><div class="table-wrap palette-teal">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             GRUPO
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             O QUE FAZ
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             COMO RECONHECER
+            </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Substantiva
+           </p>
+</td>
+<td class="cell">
+<p>
+            Exerce função nominal
+           </p>
+</td>
+<td class="cell">
+<p>
+            Teste: “isso/disso/nisso” + função sintática
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Adjetiva
+           </p>
+</td>
+<td class="cell">
+<p>
+            Caracteriza/explica/restringe um antecedente
+           </p>
+</td>
+<td class="cell">
+<p>
+            Procure antecedente + pronome relativo
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Adverbial
+           </p>
+</td>
+<td class="cell">
+<p>
+            Indica circunstância/relação de sentido
+           </p>
+</td>
+<td class="cell">
+<p>
+            Pergunte pela relação: quando? por quê? para quê? em que condição? etc.
+           </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+         Resumo das subordinadas
+        </strong>
+</section></section><section class="content-sec" id="sec-aula7-11"><section class="para">
+<strong>
+         11. CHECKLIST DE ANÁLISE
+        </strong>
+</section><section class="para">
+        Localizei todos os verbos e locuções verbais?
+       </section><section class="para">
+        Separei corretamente as orações?
+       </section><section class="para">
+        Identifiquei a oração principal?
+       </section><section class="para">
+        A oração subordinada se liga a um verbo, a um nome, a um antecedente nominal ou ao conjunto da oração?
+       </section><section class="para">
+        Se for substantiva, consigo substituí-la por “isso”, “disso” ou “nisso”?
+       </section><section class="para">
+        Se for adjetiva, qual é o antecedente? A oração restringe ou apenas explica?
+       </section><section class="para">
+        Se for adverbial, qual relação de sentido ela estabelece?
+       </section><section class="para">
+        Estou classificando pelo sentido e pela função, e não apenas pela conjunção?
+       </section><section class="para">
+        A pontuação interfere na interpretação?
+       </section><section class="para">
+        A redação bíblica usada pertence a qual tradução?
+       </section><div class="table-wrap palette-blue">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             PARA FIXAR
+            </strong>
+</p>
+<p>
+            Substantiva = ocupa um lugar que poderia ser ocupado por um nome.
+            <br/>
+            Adjetiva = caracteriza um nome anterior.
+            <br/>
+            Adverbial = acrescenta uma circunstância ou relação de sentido.
+            <br/>
+<br/>
+            Se você conseguir responder “o que essa oração faz aqui?”, a classificação fica muito mais segura.
+           </p>
+</td>
+</tr>
+</table>
+</div></section><section class="content-sec" id="sec-aula7-12"><section class="para">
+<strong>
+         12. RESUMO FINAL PARA EXPOSIÇÃO EM SALA
+        </strong>
+</section><div class="table-wrap palette-coral">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             SUBSTANTIVA
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             ADJETIVA
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             ADVERBIAL
+            </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            FUNÇÃO DE NOME
+           </p>
+</td>
+<td class="cell">
+<p>
+            CARACTERIZA UM NOME
+           </p>
+</td>
+<td class="cell">
+<p>
+            EXPRESSA CIRCUNSTÂNCIA/RELAÇÃO
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            subjetiva • objetiva direta • objetiva indireta • completiva nominal • predicativa • apositiva
+           </p>
+</td>
+<td class="cell">
+<p>
+            restritiva • explicativa
+           </p>
+</td>
+<td class="cell">
+<p>
+            causal • comparativa • concessiva • condicional • conformativa • consecutiva • final • proporcional • temporal
+           </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+         A lógica em uma única tela
+        </strong>
+</section><section class="para">
+        Observação didática: os exemplos bíblicos desta apostila são usados para análise linguística. A análise sintática deve ser feita sobre a redação concreta da tradução adotada em sala, pois traduções diferentes podem apresentar estruturas diferentes.
+       </section></section><section class="content-sec" id="sec-aula7-13"><section class="para">
+<strong>
+         13. CARTÃO DE MEMÓRIA — O QUE PERGUNTAR?
+        </strong>
+</section><div class="table-wrap palette-blue">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             SE FOR SUBSTANTIVA
+            </strong>
+</p>
+<p>
+            “Posso substituir a oração por ISSO/DISSO/NISSO?” Depois descubra a função: sujeito, objeto, complemento nominal, predicativo ou aposto.
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-coral">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             SE FOR ADJETIVA
+            </strong>
+</p>
+<p>
+            “Qual nome essa oração caracteriza?” Depois observe: restringe o grupo ou apenas acrescenta uma explicação? Verifique o antecedente e o pronome relativo.
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-brown">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             SE FOR ADVERBIAL
+            </strong>
+</p>
+<p>
+            “Que relação de sentido existe com a oração principal?” Procure causa, comparação, concessão, condição, conformidade, consequência, finalidade, proporção ou tempo.
+           </p>
+</td>
+</tr>
+</table>
+</div></section><section class="content-sec" id="sec-aula7-14"><section class="para">
+<strong>
+         14. GUIA VISUAL DE CLASSIFICAÇÃO — MUITOS EXEMPLOS PARA FIXAÇÃO
+        </strong>
+</section><div class="table-wrap palette-violet">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             PRIMEIRO PASSO: IDENTIFIQUE OS VERBOS E AS LOCUÇÕES VERBAIS
+            </strong>
+</p>
+<p>
+            “Jesus chorou.” → 1 verbo → 1 oração → período simples.
+            <br/>
+            “Jesus entrou e ensinou.” → dois núcleos verbais → duas orações → período composto.
+            <br/>
+            “Quando Jesus entrou, todos se calaram.” → dois núcleos verbais → duas orações → período composto por subordinação.
+            <br/>
+            Atenção: “havia chegado”, por exemplo, é uma locução verbal e constitui um único núcleo verbal de uma oração.
+           </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+         Substantivas: seis classificações lado a lado
+        </strong>
+</section><div class="table-wrap palette-lime">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             Tipo
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             Pergunta
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             Frase
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             Como confirmar
+            </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Subjetiva
+           </p>
+</td>
+<td class="cell">
+<p>
+            O que é necessário?
+           </p>
+</td>
+<td class="cell">
+<p>
+            É necessário que todos estudem.
+           </p>
+</td>
+<td class="cell">
+<p>
+            “Isso é necessário.”
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Objetiva direta
+           </p>
+</td>
+<td class="cell">
+<p>
+            O verbo pede o quê?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Espero que você venha.
+           </p>
+</td>
+<td class="cell">
+<p>
+            “Espero isso.”
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Objetiva indireta
+           </p>
+</td>
+<td class="cell">
+<p>
+            O verbo pede o quê, com preposição?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Insisti em que ele viesse.
+           </p>
+</td>
+<td class="cell">
+<p>
+            “Insisti nisso.”
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Completiva nominal
+           </p>
+</td>
+<td class="cell">
+<p>
+            O nome precisa de quê?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Tenho certeza de que ele virá.
+           </p>
+</td>
+<td class="cell">
+<p>
+            “Tenho certeza disso.”
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Predicativa
+           </p>
+</td>
+<td class="cell">
+<p>
+            O que o sujeito é?
+           </p>
+</td>
+<td class="cell">
+<p>
+            A verdade é que precisamos estudar.
+           </p>
+</td>
+<td class="cell">
+<p>
+            “A verdade é isso.”
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Apositiva
+           </p>
+</td>
+<td class="cell">
+<p>
+            O que explica o termo anterior?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Tenho um desejo: que todos compreendam.
+           </p>
+</td>
+<td class="cell">
+<p>
+            “um desejo: isso”.
+           </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+         Substantivas: sequência de exemplos graduais
+        </strong>
+</section><div class="table-wrap palette-orange">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             Frase
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             Pergunta
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             Classificação
+            </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            É possível que ele venha.
+           </p>
+</td>
+<td class="cell">
+<p>
+            O que é possível?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Subjetiva
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            O professor percebeu que todos entenderam.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Percebeu o quê?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Objetiva direta
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Ele se lembrou de que havia uma reunião.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Lembrou-se de quê?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Objetiva indireta
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Havia esperança de que tudo mudasse.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Esperança de quê?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Completiva nominal
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Nosso objetivo é que todos aprendam.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Nosso objetivo é o quê?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Predicativa
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Só peço uma coisa: que leiam o texto.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Que coisa?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Apositiva
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-green">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             COMPARAÇÃO ESSENCIAL — VERBO × NOME
+            </strong>
+</p>
+<p>
+            “O aluno afirmou que estudou.” → “que estudou” completa o verbo “afirmou” → objetiva direta.
+            <br/>
+            “O aluno tinha certeza de que estudou.” → “de que estudou” completa o nome “certeza” → completiva nominal.
+            <br/>
+            A diferença não está apenas em “que/de que”; está naquilo que a oração completa.
+           </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+         Adjetivas: restritiva × explicativa
+        </strong>
+</section><div class="table-wrap palette-purple">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             Construção
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             Leitura
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             Classificação
+            </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Os alunos que estudaram foram aprovados.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Somente os alunos identificados pela oração.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Restritiva
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Os alunos, que estudaram, foram aprovados.
+           </p>
+</td>
+<td class="cell">
+<p>
+            A oração acrescenta informação sobre o grupo já identificado.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Explicativa
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Os irmãos que chegaram participaram.
+           </p>
+</td>
+<td class="cell">
+<p>
+            A oração delimita quais irmãos.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Restritiva
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Os irmãos, que chegaram, participaram.
+           </p>
+</td>
+<td class="cell">
+<p>
+            A oração é apresentada como informação adicional.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Explicativa
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            O livro que comprei é útil.
+           </p>
+</td>
+<td class="cell">
+<p>
+            “que comprei” caracteriza “livro”.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Restritiva
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            O livro, que comprei ontem, é útil.
+           </p>
+</td>
+<td class="cell">
+<p>
+            A oração apenas acrescenta uma informação.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Explicativa
+           </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+         Pronomes relativos: o que observar
+        </strong>
+</section><div class="table-wrap palette-cyan">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             Pronome
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             Ideia principal
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             Frase
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             Observação
+            </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            que
+           </p>
+</td>
+<td class="cell">
+<p>
+            retoma pessoa ou coisa
+           </p>
+</td>
+<td class="cell">
+<p>
+            O livro que li é útil.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Pode exercer diferentes funções na subordinada.
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            quem
+           </p>
+</td>
+<td class="cell">
+<p>
+            retoma pessoa
+           </p>
+</td>
+<td class="cell">
+<p>
+            A pessoa a quem falei chegou.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Frequentemente aparece com preposição.
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            o qual / a qual
+           </p>
+</td>
+<td class="cell">
+<p>
+            retoma e especifica o antecedente
+           </p>
+</td>
+<td class="cell">
+<p>
+            A norma à qual obedecemos é clara.
+           </p>
+</td>
+<td class="cell">
+<p>
+            A preposição pode aparecer antes.
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            cujo / cuja
+           </p>
+</td>
+<td class="cell">
+<p>
+            relação de posse
+           </p>
+</td>
+<td class="cell">
+<p>
+            O autor cuja obra estudamos escreveu muito.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Concorda com o termo possuído.
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            onde
+           </p>
+</td>
+<td class="cell">
+<p>
+            lugar
+           </p>
+</td>
+<td class="cell">
+<p>
+            A cidade onde nasceu é pequena.
+           </p>
+</td>
+<td class="cell">
+<p>
+            Retoma antecedente com valor locativo.
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-pink">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             COMO DESCOBRIR A FUNÇÃO DO PRONOME RELATIVO
+            </strong>
+</p>
+<p>
+            “O livro que comprei...” → comprei o quê? → o livro → “que” é objeto direto.
+            <br/>
+            “O aluno que estudou...” → quem estudou? → o aluno → “que” é sujeito.
+            <br/>
+            A oração é adjetiva nos dois casos, mas a função do pronome relativo dentro da oração muda.
+           </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+         Adverbiais: nove relações de sentido
+        </strong>
+</section><div class="table-wrap palette-gold">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             Tipo
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             Pergunta
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             Frase
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             Palavras frequentes
+            </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Causal
+           </p>
+</td>
+<td class="cell">
+<p>
+            Por quê?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Saiu porque estava cansado.
+           </p>
+</td>
+<td class="cell">
+<p>
+            porque, já que, visto que
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Comparativa
+           </p>
+</td>
+<td class="cell">
+<p>
+            Em comparação com quê?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Age como um sábio agiria.
+           </p>
+</td>
+<td class="cell">
+<p>
+            como, mais... que, menos... que
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Concessiva
+           </p>
+</td>
+<td class="cell">
+<p>
+            Apesar de quê?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Embora cansado, continuou.
+           </p>
+</td>
+<td class="cell">
+<p>
+            embora, ainda que, mesmo que
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Condicional
+           </p>
+</td>
+<td class="cell">
+<p>
+            Em que condição?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Se estudar, compreenderá.
+           </p>
+</td>
+<td class="cell">
+<p>
+            se, caso, desde que
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Conformativa
+           </p>
+</td>
+<td class="cell">
+<p>
+            De acordo com quê?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Agiu conforme foi orientado.
+           </p>
+</td>
+<td class="cell">
+<p>
+            conforme, segundo, como
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Consecutiva
+           </p>
+</td>
+<td class="cell">
+<p>
+            Com que resultado?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Falou tanto que todos ouviram.
+           </p>
+</td>
+<td class="cell">
+<p>
+            tão... que, tanto... que
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Final
+           </p>
+</td>
+<td class="cell">
+<p>
+            Para quê?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Estudou para que pudesse compreender.
+           </p>
+</td>
+<td class="cell">
+<p>
+            para que, a fim de que
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Proporcional
+           </p>
+</td>
+<td class="cell">
+<p>
+            Em que proporção?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Quanto mais lia, mais compreendia.
+           </p>
+</td>
+<td class="cell">
+<p>
+            à medida que, quanto mais
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            Temporal
+           </p>
+</td>
+<td class="cell">
+<p>
+            Quando?
+           </p>
+</td>
+<td class="cell">
+<p>
+            Quando chegou, começou a aula.
+           </p>
+</td>
+<td class="cell">
+<p>
+            quando, enquanto, assim que
+           </p>
+</td>
+</tr>
+</table>
+</div><section class="para">
+<strong>
+         Treino rápido: classifique pelo sentido
+        </strong>
+</section><div class="table-wrap palette-teal">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             Período
+            </strong>
+</p>
+</td>
+<td class="cell header">
+<p>
+<strong>
+             Resposta
+            </strong>
+</p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            “Como estava doente, não saiu.”
+           </p>
+</td>
+<td class="cell">
+<p>
+            Causal
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            “Faça como foi orientado.”
+           </p>
+</td>
+<td class="cell">
+<p>
+            Conformativa
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            “Ele corre como um atleta.”
+           </p>
+</td>
+<td class="cell">
+<p>
+            Comparativa
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            “Embora discordasse, ouviu.”
+           </p>
+</td>
+<td class="cell">
+<p>
+            Concessiva
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            “Se houver tempo, estudaremos.”
+           </p>
+</td>
+<td class="cell">
+<p>
+            Condicional
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            “Falou tão baixo que ninguém ouviu.”
+           </p>
+</td>
+<td class="cell">
+<p>
+            Consecutiva
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            “Estudou para que pudesse ensinar.”
+           </p>
+</td>
+<td class="cell">
+<p>
+            Final
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            “Enquanto lia, fazia anotações.”
+           </p>
+</td>
+<td class="cell">
+<p>
+            Temporal
+           </p>
+</td>
+</tr>
+<tr>
+<td class="cell">
+<p>
+            “À medida que avançava, compreendia melhor.”
+           </p>
+</td>
+<td class="cell">
+<p>
+            Proporcional
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-blue">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             ATENÇÃO ÀS PALAVRAS POLIVALENTES
+            </strong>
+</p>
+<p>
+            “Como” pode ser causal, conformativo ou comparativo.
+            <br/>
+            “Que” pode introduzir substantiva, adjetiva ou consecutiva.
+            <br/>
+            “Quando” geralmente indica tempo, mas a análise deve considerar a construção inteira.
+            <br/>
+            “Porque” pode introduzir causa ou, em determinados contextos, uma explicação ligada ao enunciado anterior.
+            <br/>
+            Portanto: primeiro compreenda a relação; depois dê o nome.
+           </p>
+</td>
+</tr>
+</table>
+</div></section><section class="content-sec" id="sec-aula7-15"><section class="para">
+<strong>
+         15. MAIS EXEMPLOS PARA LEITURA E ANÁLISE
+        </strong>
+</section><div class="table-wrap palette-violet">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             “Sabemos que Deus é fiel.”
+            </strong>
+</p>
+<p>
+            “que Deus é fiel” completa o verbo “sabemos” → objetiva direta.
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-lime">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             “É certo que a Palavra permanece.”
+            </strong>
+</p>
+<p>
+            “que a Palavra permanece” exerce função de sujeito → subjetiva.
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-orange">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             “Temos confiança de que Deus sustentará o seu povo.”
+            </strong>
+</p>
+<p>
+            “de que Deus sustentará...” completa o nome “confiança” → completiva nominal.
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-green">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             “A esperança é que o povo permaneça fiel.”
+            </strong>
+</p>
+<p>
+            A oração funciona como predicativo do sujeito “a esperança” → predicativa.
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-purple">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             “Há uma certeza: que Deus não abandona os seus.”
+            </strong>
+</p>
+<p>
+            A oração explica/especifica “uma certeza” → apositiva.
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-cyan">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             “Os que perseverarem permanecerão firmes.”
+            </strong>
+</p>
+<p>
+            A oração iniciada por “que” caracteriza/restringe o grupo representado por “os” → adjetiva restritiva.
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-pink">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             “A mensagem que ouvimos foi clara.”
+            </strong>
+</p>
+<p>
+            “que ouvimos” caracteriza “mensagem” → adjetiva restritiva.
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-gold">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             “Quando ouviram a notícia, permaneceram em silêncio.”
+            </strong>
+</p>
+<p>
+            A oração indica o momento da ação principal → temporal.
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-teal">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             “Embora houvesse oposição, continuaram o trabalho.”
+            </strong>
+</p>
+<p>
+            A oração apresenta um obstáculo que não impede a ação principal → concessiva.
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-blue">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             “Se permanecerem firmes, concluirão a tarefa.”
+            </strong>
+</p>
+<p>
+            A oração apresenta a condição relacionada ao resultado → condicional.
+           </p>
+</td>
+</tr>
+</table>
+</div><div class="table-wrap palette-coral">
+<table>
+<tr>
+<td class="cell header">
+<p>
+<strong>
+             “Trabalharam para que tudo fosse concluído.”
+            </strong>
+</p>
+<p>
+            A oração indica o objetivo da ação → final.
+           </p>
+</td>
+</tr>
+</table>
+</div></section><div class="back-portal-wrap"><a class="back-portal-btn" href="/portugues/p2/">← Voltar ao portal de Português 2</a></div>
+</main><script>
+    (function () {
+      "use strict";
+
+      /* 1. Chave de Alternância de Modos: Claro e Escuro */
+      var root = document.documentElement;
+      var themeBtn = document.getElementById("themeToggle");
+      var themeIcon = document.getElementById("themeIcon");
+      var storageKey = "spb-periodo-composto-theme";
+
+      var sunSvg = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+      var moonSvg = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+
+      function applyTheme(mode) {
+        var isDark = mode === "dark";
+        root.classList.toggle("dark-mode", isDark);
+        themeBtn.setAttribute("aria-checked", String(isDark));
+        themeIcon.innerHTML = isDark ? moonSvg : sunSvg;
+      }
+
+      try {
+        var saved = localStorage.getItem(storageKey);
+        if (saved === "dark" || saved === "light") {
+          applyTheme(saved);
+        }
+      } catch (e) {}
+
+      themeBtn.addEventListener("click", function () {
+        var nextMode = root.classList.contains("dark-mode") ? "light" : "dark";
+        applyTheme(nextMode);
+        try {
+          localStorage.setItem(storageKey, nextMode);
+        } catch (e) {}
+      });
+
+      /* 2. Pequeno Ícone Clicável para Resposta Comentada */
+      var answerBtns = document.querySelectorAll(".icon-answer-btn");
+      answerBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var targetId = btn.getAttribute("data-target");
+          var panel = document.getElementById(targetId);
+          if (!panel) return;
+
+          var isOpen = panel.classList.contains("is-open");
+          panel.classList.toggle("is-open", !isOpen);
+          btn.setAttribute("aria-expanded", String(!isOpen));
+          btn.setAttribute("title", !isOpen ? "Ocultar resposta" : "Ver resposta comentada");
+        });
+      });
+
+      /* 3. Links PDF: os links HTML apontam diretamente para /portugues/p2/aula8.pdf. */
+      /* 4. Botão de Seta no Final da Página para Subir Rápido ao Topo */
+      var scrollTopBtn = document.getElementById("scrollTopBtn");
+      if (scrollTopBtn) {
+        scrollTopBtn.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      /* 5. Indicador de Seção Ativa no Menu Lateral Slim */
+      var sections = document.querySelectorAll("section.content-sec");
+      var navLinks = document.querySelectorAll(".slim-toc-link");
+
+      function updateActiveNav() {
+        var scrollPos = window.scrollY + 150;
+        var currentId = sections[0] ? sections[0].getAttribute("id") : "";
+
+        sections.forEach(function (sec) {
+          if (sec.offsetTop <= scrollPos) {
+            currentId = sec.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach(function (link) {
+          var href = link.getAttribute("href").replace("#", "");
+          link.classList.toggle("active", href === currentId);
+        });
+      }
+
+      window.addEventListener("scroll", updateActiveNav, { passive: true });
+      updateActiveNav();
+    })();
+  </script>
+
+</body></html>

@@ -1,0 +1,237 @@
+/* Interface comum das apostilas — logos carregadas externamente de /graphics/. */
+:root { --lesson-ui-watermark-size: min(86vw, 1100px); }
+
+/* A marca fica centralizada na janela e acompanha a rolagem sem participar do fluxo. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  pointer-events: none;
+  background-image: url('/graphics/logo_em_tudo_watermark_light.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: var(--lesson-ui-watermark-size) auto;
+}
+html.dark-mode body::after,
+html[data-theme="dark"] body::after {
+  background-image: url('/graphics/logo_em_tudo_watermark_dark.png');
+}
+
+/* Remove as marcas-d'água antigas aplicadas aos contêineres; usa-se uma única camada fixa. */
+main,
+.page-wrapper,
+.secao-materiais {
+  background-image: none !important;
+  background-attachment: scroll !important;
+}
+
+/* Botão de tema: no topo do documento/cabeçalho, nunca preso à janela durante a rolagem. */
+body > .theme-switch-wrapper {
+  position: absolute !important;
+  top: max(12px, env(safe-area-inset-top, 12px)) !important;
+  right: max(12px, env(safe-area-inset-right, 12px)) !important;
+  left: auto !important;
+  bottom: auto !important;
+  z-index: 9200 !important;
+  transform: none !important;
+}
+body > .theme-switch-wrapper > #themeToggle.theme-switch-btn {
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+}
+html body > button#themeToggle.lesson-ui-theme-toggle,
+body > button#themeToggle,
+body > button.lesson-ui-theme-toggle {
+  position: absolute !important;
+  top: max(12px, env(safe-area-inset-top, 12px)) !important;
+  right: max(12px, env(safe-area-inset-right, 12px)) !important;
+  left: auto !important;
+  bottom: auto !important;
+  z-index: 9200 !important;
+  transform: none !important;
+}
+#themeToggle,
+.theme-switch-btn,
+.lesson-ui-theme-toggle {
+  touch-action: manipulation;
+}
+
+body > #themeToggle,
+body > .lesson-ui-theme-toggle {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 !important;
+  border: 1px solid var(--line, var(--border-color, #cbd5e1)) !important;
+  border-radius: 50% !important;
+  background: var(--surface, var(--bg-surface, var(--bg-body, #fff))) !important;
+  color: var(--ink, var(--text-primary, #1e293b)) !important;
+  box-shadow: 0 3px 12px rgba(0,0,0,.14);
+  cursor: pointer;
+  font: 700 1.15rem/1 system-ui, sans-serif;
+}
+body > #themeToggle:focus-visible,
+body > .lesson-ui-theme-toggle:focus-visible { outline: 3px solid var(--blue, var(--brand-blue-accent, #2563eb)); outline-offset: 3px; }
+#themeToggle svg,
+.theme-switch-btn svg,
+.lesson-ui-theme-toggle svg {
+  width: 21px;
+  height: 21px;
+  display: block;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* No portal: o botão acompanha o cabeçalho institucional e sai da tela ao rolar. */
+.cabecalho-interno {
+  position: relative !important;
+  padding-right: 54px !important;
+}
+html body .cabecalho-interno > .bloco-direita-cabecalho > #botao-alternar-tema.botao-tema,
+.cabecalho-interno > .bloco-direita-cabecalho > .botao-tema {
+  position: absolute !important;
+  top: 0.1rem !important;
+  right: 0 !important;
+  left: auto !important;
+  bottom: auto !important;
+  z-index: 20 !important;
+  transform: none !important;
+}
+
+/* Índice lateral uniforme, com os mesmos comportamentos da Aula 8. */
+.slim-toc {
+  position: fixed !important;
+  left: 14px !important;
+  top: 50% !important;
+  bottom: auto !important;
+  transform: translateY(-50%) !important;
+  z-index: 9100 !important;
+  box-sizing: border-box;
+  width: 36px;
+  max-height: min(84vh, 760px);
+  overflow: hidden;
+  padding: 8px 5px;
+  background: var(--surface, var(--bg-surface, #fff));
+  color: var(--ink, var(--text-primary, #182438));
+  border: 1px solid var(--line, var(--border-color, #d4dce6));
+  border-radius: 999px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .13);
+  opacity: .92;
+  transition: width .22s ease, border-radius .2s ease, padding .2s ease, opacity .2s ease;
+}
+.slim-toc:hover,
+.slim-toc:focus-within {
+  width: 264px;
+  border-radius: 12px;
+  padding: 10px 8px;
+  overflow-y: auto;
+  opacity: 1;
+}
+.slim-toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.slim-toc-link {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 27px;
+  padding: 4px;
+  border-radius: 999px;
+  color: var(--muted, var(--text-secondary, #586579));
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color .15s ease, color .15s ease;
+}
+.slim-toc-link:hover,
+.slim-toc-link:focus-visible {
+  background: var(--blue-pale, var(--bg-surface-hover, #edf4ff));
+  color: var(--blue, var(--brand-blue-accent, #2563eb));
+  outline: 2px solid transparent;
+}
+.slim-toc-link.active {
+  background: var(--blue, var(--brand-blue, #2563eb));
+  color: #fff;
+}
+.toc-num {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: .72rem;
+  font-weight: 800;
+}
+.toc-text {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  text-overflow: ellipsis;
+  font-size: .8rem;
+  font-weight: 650;
+  transition: opacity .18s ease;
+}
+.slim-toc:hover .toc-text,
+.slim-toc:focus-within .toc-text { opacity: 1; }
+
+html { scroll-padding-top: 24px; }
+body { overflow-x: clip; }
+img { max-width: 100%; }
+@media (max-width: 760px) {
+  :root { --lesson-ui-watermark-size: 94vw; }
+  .slim-toc {
+    left: 4px !important;
+    width: 31px;
+    max-height: 74vh;
+    padding: 6px 3px;
+  }
+  .slim-toc:hover,
+  .slim-toc:focus-within {
+    width: min(254px, calc(100vw - 42px));
+    padding: 8px 6px;
+  }
+  body > button#themeToggle,
+  body > button.lesson-ui-theme-toggle,
+  body > .theme-switch-wrapper {
+    top: max(8px, env(safe-area-inset-top, 8px)) !important;
+    right: max(8px, env(safe-area-inset-right, 8px)) !important;
+  }
+  #themeToggle, .theme-switch-btn, .lesson-ui-theme-toggle {
+    min-width: 42px;
+    min-height: 42px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .slim-toc, .slim-toc-link, .toc-text { transition: none !important; }
+  html { scroll-behavior: auto !important; }
+}
+@media print {
+  body::after {
+    position: fixed !important;
+    z-index: 9000 !important;
+    background-image: url('/graphics/logo_em_tudo_watermark_light.png') !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: 78% auto !important;
+  }
+  .slim-toc, #themeToggle, .theme-switch-wrapper, .lesson-ui-theme-toggle {
+    display: none !important;
+  }
+}

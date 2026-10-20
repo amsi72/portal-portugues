@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal de Português — Seminário Presbiteriano de Brasília</title>
+<script>
+        (function () {
+            var chave = 'spb_portais_tema';
+            var temaSalvo = null;
+            try {
+                temaSalvo = window.localStorage.getItem(chave);
+            } catch (e) {}
+
+            var temaInicial = 'light';
+            if (temaSalvo === 'dark' || temaSalvo === 'light') {
+                temaInicial = temaSalvo;
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                temaInicial = 'dark';
+            }
+            document.documentElement.setAttribute('data-theme', temaInicial);
+        })();
+    </script>
+<style>
+:root {
+            --bg: #f7f8fa;
+            --surface: #ffffff;
+            --text: #1a2433;
+            --muted: #5a6779;
+            --primary: #15477c;
+            --border: #dde3ec;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f1724;
+                --surface: #162235;
+                --text: #eef2f7;
+                --muted: #9fb0c7;
+                --primary: #4da3ff;
+                --border: #263854;
+            }
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+        .erro-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--primary);
+            border-radius: 8px;
+            max-width: 460px;
+            width: 100%;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+        h1 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+        p { color: var(--muted); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem; }
+        a {
+            display: inline-block;
+            padding: 0.65rem 1.25rem;
+            background-color: var(--primary);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        a:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+/* Ajustes do portal estático no GitHub Pages */
+.cabecalho-interno { align-items:center; }
+</style>
+</head>
+<body>
+<header class="cabecalho-institucional" role="banner"><div class="container-portal"><div class="cabecalho-interno">
+<div class="marca-seminario" aria-label="Seminário Presbiteriano de Brasília — Teologia para transformação da vida"><svg class="logo-spb-svg" xmlns="http://www.w3.org/2000/svg" viewBox="8 8 618 264" role="img" aria-hidden="true">
+                        <defs>
+                            <clipPath id="spb-icon-clip">
+                                <rect x="10" y="12" width="166" height="256" rx="1"/>
+                            </clipPath>
+                            <mask id="spb-cutout-mask">
+                                <rect x="0" y="0" width="200" height="280" fill="#ffffff"/>
+                                <!-- Eixo vertical superior e inferior da cruz -->
+                                <rect x="88" y="8" width="10" height="32" fill="#000000"/>
+                                <rect x="88" y="191" width="10" height="44" fill="#000000"/>
+                                <!-- Braços horizontais esquerdo e direito -->
+                                <rect x="6" y="96" width="38" height="10" fill="#000000"/>
+                                <rect x="142" y="96" width="38" height="10" fill="#000000"/>
+                                <!-- Corpo do Ichthys (Peixe) -->
+                                <path d="M 93 34 C 33 78, 33 158, 93 194 C 106 202, 121 207, 137 209" stroke="#000000" stroke-width="10.5" fill="none" stroke-linecap="butt"/>
+                                <path d="M 93 34 C 153 78, 153 158, 93 194 C 80 202, 65 207, 49 209" stroke="#000000" stroke-width="10.5" fill="none" stroke-linecap="butt"/>
+                                <!-- Olho circular do peixe -->
+                                <circle cx="93" cy="76" r="5.5" fill="#000000"/>
+                            </mask>
+                        </defs>
+
+                        <!-- Símbolo Esquerdo (Retângulo Azul + Ichthys + Ondas Verdes) -->
+                        <g clip-path="url(#spb-icon-clip)">
+                            <rect x="10" y="12" width="166" height="256" fill="#ffffff"/>
+                            <path d="M 10 12 H 176 V 225 Q 134.5 198 93 225 Q 51.5 198 10 225 Z" fill="#15477C" mask="url(#spb-cutout-mask)"/>
+                            <!-- Três pares de ondas em verde-água institucional -->
+                            <path d="M 10 229 Q 51.5 202 93 229 Q 134.5 202 176 229" stroke="#0CA992" stroke-width="9.5" fill="none" stroke-linejoin="miter"/>
+                            <path d="M 10 246 Q 51.5 219 93 246 Q 134.5 219 176 246" stroke="#0CA992" stroke-width="9.5" fill="none" stroke-linejoin="miter"/>
+                            <path d="M 10 263 Q 51.5 236 93 263 Q 134.5 236 176 263" stroke="#0CA992" stroke-width="9.5" fill="none" stroke-linejoin="miter"/>
+                        </g>
+
+                        <!-- Tipografia Institucional Direita -->
+                        <g font-family="'Montserrat', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+                            <text class="spb-texto-principal" x="204" y="88" fill="#15477C" font-size="55" font-weight="500" letter-spacing="0.3">Seminário</text>
+                            <text class="spb-texto-principal" x="204" y="152" fill="#15477C" font-size="55" font-weight="500" letter-spacing="0.3">Presbiteriano</text>
+                            <text class="spb-texto-principal" x="204" y="216" fill="#15477C" font-size="55" font-weight="500" letter-spacing="0.3">de Brasília</text>
+                            <text x="204" y="253" fill="#0CA992" font-size="21.2" font-weight="600" letter-spacing="0.15">Teologia para transformação da vida</text>
+                        </g>
+                    </svg></div>
+<div class="bloco-direita-cabecalho"><div class="dados-academicos"><div class="linha-curso">BACHARELADO EM TEOLOGIA</div><div class="linha-departamento">DEPARTAMENTO DE CULTURA GERAL</div><div class="linha-disciplina">PORTAL ACADÊMICO — LÍNGUA PORTUGUESA</div><div class="linha-professor">Prof. Ismael Rocha</div></div>
+<button type="button" id="botao-alternar-tema" class="botao-tema" aria-label="Alternar para modo escuro" title="Alternar entre tema claro e escuro"><svg class="icone-lua" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icone-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="5.64"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+</div></div></div></header>
+<main class="conteudo-principal" role="main"><div class="container-portal"><section class="secao-materiais" aria-labelledby="titulo-materiais"><h1 id="titulo-materiais" class="titulo-secao">Materiais de Portal de Português</h1><p class="mensagem-vazia">Nenhum material disponibilizado no momento.</p></section></div></main>
+<footer class="rodape-institucional" role="contentinfo"><div class="container-portal"><a class="link-bunker" href="https://bunkerdigital.top/" target="_blank" rel="noopener noreferrer">Bunker Digital</a></div></footer>
+<script>
+        (function () {
+            var chave = 'spb_portais_tema';
+            var temaSalvo = null;
+            try {
+                temaSalvo = window.localStorage.getItem(chave);
+            } catch (e) {}
+
+            var temaInicial = 'light';
+            if (temaSalvo === 'dark' || temaSalvo === 'light') {
+                temaInicial = temaSalvo;
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                temaInicial = 'dark';
+            }
+            document.documentElement.setAttribute('data-theme', temaInicial);
+        })();
+    </script>
+</body></html>

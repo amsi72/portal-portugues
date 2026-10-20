@@ -56,7 +56,7 @@ jobs:
                           label = re.sub(r'[_-]+', ' ', f.stem).strip().capitalize()
                       items.append(f'<li class="item-material"><a class="link-material" href="{html.escape(f.name, quote=True)}"><span class="link-material-texto">{html.escape(label)}</span><span class="link-material-seta" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span></a></li>')
               listing = '<ul class="lista-materiais">' + ''.join(items) + '</ul>' if items else '<p class="mensagem-vazia">Nenhum material disponibilizado no momento.</p>'
-              page = template.replace('{{TITULO}}', title).replace('{{CABECALHO}}', header).replace('{{MATERIAIS}}', listing)
+              page = template.replace('{{TITULO}}', title).replace('{{CABECALHO}}', header).replace('{CABECALHO}', header).replace('{{MATERIAIS}}', listing)
               target = site / 'portugues' / code / 'index.html'
               target.parent.mkdir(parents=True, exist_ok=True)
               target.write_text(page, encoding='utf-8')

@@ -1167,17 +1167,37 @@ html.dark-mode body::after,html[data-theme="dark"] body::after{background-image:
 @media print{.report-model{break-inside:avoid;}}
 </style>
 
-<style id="correcao-mobile-sem-indice-e-sem-marca-dagua">
-/* Correção solicitada: remove a marca-d’água sem alterar o conteúdo da aula. */
-.page-wrapper { background-image: none !important; }
-body::before, body::after, .page-wrapper::before, .page-wrapper::after {
+<style id="ajustes-solicitados">
+/* Ajustes solicitados: remover marca-d'água e evitar sobreposição do índice em celulares. */
+.page-wrapper {
   background-image: none !important;
+  background: var(--surface) !important;
+}
+body::before,
+body::after {
   content: none !important;
   display: none !important;
+  background-image: none !important;
 }
-/* Em telas pequenas, oculta o índice lateral para liberar a área de leitura. */
-@media (max-width: 800px) {
-  .slim-toc { display: none !important; }
+@media screen and (max-width: 768px) {
+  .slim-toc,
+  .mobile-toc,
+  .toc-mobile,
+  .horizontal-toc {
+    display: none !important;
+  }
+}
+@media print {
+  .page-wrapper {
+    background-image: none !important;
+    background: #ffffff !important;
+  }
+  body::before,
+  body::after {
+    content: none !important;
+    display: none !important;
+    background-image: none !important;
+  }
 }
 </style>
 </head>

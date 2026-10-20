@@ -1130,208 +1130,149 @@ html.dark-mode body::after, html[data-theme="dark"] body::after { background-ima
 @media print { body::after { position:absolute; opacity:.06; background-image:url("/graphics/logo_em_tudo_b.png") !important; } }
 
 
-/* Bunker Digital: arquivo original externo, com variante por tema */
-.bunker-logo-link{display:inline-flex;align-items:center;justify-content:center;max-width:100%;}
-.bunker-logo-link img{display:block;width:min(150px,42vw);height:auto;object-fit:contain;}
-.bunker-logo-light{display:none!important;}
-html.dark-mode .bunker-logo-dark,html[data-theme="dark"] .bunker-logo-dark{display:none!important;}
-html.dark-mode .bunker-logo-light,html[data-theme="dark"] .bunker-logo-light{display:block!important;}
-/* Marca-d’água Em Tudo centralizada na viewport, inclusive durante a rolagem */
+html[data-theme="dark"] html[data-theme="dark"] /* Marca-d’água Em Tudo centralizada na viewport, inclusive durante a rolagem */
 body::after{content:"";position:fixed;inset:0;z-index:9990;pointer-events:none;opacity:.055;background:url('/graphics/logo_em_tudo_b.png') center center/min(58vw,760px) auto no-repeat;}
 html.dark-mode body::after,html[data-theme="dark"] body::after{background-image:url('/graphics/logo_em_tudo_w.png');opacity:.075;}
 @media(max-width:640px){body::after{background-size:88vw auto;opacity:.04;}html.dark-mode body::after,html[data-theme="dark"] body::after{opacity:.055;}}
 @media print{body::after{position:absolute;opacity:.04;background-image:url('/graphics/logo_em_tudo_b.png')!important;}}
 
 
-
-/* ===== Ajustes finais de responsividade, cabeçalho e marca-d'água ===== */
+/* ===== Revisão final de responsividade e identidade visual ===== */
 .inst-header {
   position: relative !important;
-  padding-right: 62px !important;
-  min-width: 0;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  grid-template-rows: auto auto !important;
+  align-items: center !important;
+  column-gap: clamp(12px, 2.4vw, 28px) !important;
+  row-gap: 10px !important;
+  padding: 0 0 14px !important;
+  margin: 0 auto 22px !important;
+  min-width: 0 !important;
+  overflow: visible !important;
 }
-.theme-switch-wrapper {
-  position: absolute !important;
-  top: 5px !important;
-  right: 0 !important;
-  z-index: 1205 !important;
-  margin: 0 !important;
+.inst-header > .theme-switch-wrapper {
+  grid-column: 1 / -1 !important;
+  grid-row: 1 !important;
+  justify-self: end !important;
+  align-self: start !important;
+  position: static !important;
+  inset: auto !important;
+  margin: 0 0 2px !important;
+  z-index: 5 !important;
+  width: auto !important;
 }
-#themeToggle.theme-switch-btn {
-  min-width: 48px;
-  min-height: 44px;
-  justify-content: center;
-  gap: 7px;
-  padding: 7px 10px !important;
-  box-shadow: var(--shadow-sm);
-  transform: none;
+.inst-header > .spb-brand-left { grid-column: 1 !important; grid-row: 2 !important; min-width: 0 !important; }
+.inst-header > .spb-meta-right { grid-column: 2 !important; grid-row: 2 !important; min-width: 0 !important; padding: 0 !important; margin: 0 !important; }
+.theme-switch-btn {
+  position: relative !important; inset: auto !important;
+  display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  min-width: 48px !important; min-height: 42px !important; padding: 8px 11px !important;
+  gap: 8px !important; line-height: 1 !important; white-space: nowrap !important;
+  box-shadow: var(--shadow-sm) !important; transform: none !important;
 }
-#themeToggle.theme-switch-btn:hover { transform: none; }
-#themeToggle #themeIcon { flex: 0 0 18px; width:18px; height:18px; }
-.spb-brand-left, .spb-brand-text, .spb-meta-right { min-width: 0; }
-.spb-meta-line, .spb-meta-prof { overflow-wrap: anywhere; }
-
-/* Marca-d'água fixa à viewport: aparece sobre o conteúdo, mas não intercepta toques. */
+.theme-switch-btn svg { flex: 0 0 18px !important; width:18px !important; height:18px !important; }
+.spb-brand-left, .spb-brand-text, .spb-meta-right { min-width:0 !important; }
+.spb-meta-line, .spb-meta-prof { overflow-wrap:anywhere !important; }
+.page-wrapper { width:100% !important; min-width:0 !important; overflow:visible !important; }
+.page-wrapper img, .content-sec img, .diagram-box img { max-width:100% !important; height:auto !important; }
+.content-sec .table-wrap, .table-wrap { max-width:100% !important; overflow-x:auto !important; -webkit-overflow-scrolling:touch; }
+.content-sec table { max-width:100%; }
+body { overflow-x:hidden !important; }
+html[data-theme="dark"] html[data-theme="dark"] /* Marca-d’água externa Em Tudo, acima dos fundos e sem bloquear interações. */
 body::after {
-  content: "" !important;
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: 1000 !important;
-  pointer-events: none !important;
-  background-image: url('/graphics/logo_em_tudo_watermark_light.png') !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-  background-size: min(78vw, 1050px) auto !important;
-  opacity: .42 !important;
+  content:"" !important; position:fixed !important; inset:0 !important; z-index:9990 !important;
+  pointer-events:none !important; display:block !important;
+  background-image:url('/graphics/logo_em_tudo_watermark_dark.png') !important;
+  background-repeat:no-repeat !important; background-position:center center !important;
+  background-size:min(58vw, 760px) auto !important; opacity:.055 !important;
 }
-html.dark-mode body::after {
-  background-image: url('/graphics/logo_em_tudo_watermark_dark.png') !important;
-  opacity: .34 !important;
+html.dark-mode body::after, html[data-theme="dark"] body::after {
+  background-image:url('/graphics/logo_em_tudo_watermark_light.png') !important; opacity:.065 !important;
 }
-/* A marca fica acima dos blocos opacos e abaixo dos controles interativos. */
-.theme-switch-wrapper, .slim-toc { z-index: 1205 !important; }
-
-@media (min-width: 769px) {
-  .inst-header { gap: 14px !important; padding-top: 2px !important; padding-bottom: 12px !important; margin-bottom: 20px !important; }
-  .spb-brand-left { gap: 12px !important; }
-  .spb-emblem-svg { width: 54px !important; height: 74px !important; }
-  .spb-brand-name { font-size: clamp(1rem, 1.55vw, 1.22rem) !important; }
-  .spb-brand-motto { font-size: clamp(.62rem, .85vw, .72rem) !important; }
-  .spb-meta-line { font-size: clamp(.76rem, 1.1vw, .94rem) !important; }
-  .spb-meta-prof { font-size: clamp(.8rem, 1.15vw, .98rem) !important; }
-}
-
-@media (max-width: 768px) {
-  body { overflow-x: hidden !important; }
+/* Em telas pequenas o índice vira uma faixa horizontal no fluxo normal: nunca cobre a aula. */
+@media (max-width: 800px) {
   .slim-toc {
-    position: relative !important;
-    inset: auto !important;
-    transform: none !important;
-    display: block !important;
-    width: calc(100% - 16px) !important;
-    max-width: 100% !important;
-    margin: 8px auto 12px !important;
-    padding: 7px !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    white-space: nowrap !important;
-    border-radius: 12px !important;
-    opacity: 1 !important;
-    box-shadow: var(--shadow-sm) !important;
-    -webkit-overflow-scrolling: touch;
+    position:relative !important; inset:auto !important; top:auto !important; left:auto !important;
+    transform:none !important; width:100% !important; max-width:100% !important;
+    height:auto !important; max-height:none !important; overflow-x:auto !important; overflow-y:hidden !important;
+    margin:0 auto 10px !important; padding:6px 8px !important; border-radius:12px !important;
+    opacity:1 !important; box-shadow:var(--shadow-sm) !important; z-index:2 !important;
+    -webkit-overflow-scrolling:touch; scrollbar-width:thin;
   }
-  .slim-toc:hover, .slim-toc:focus-within {
-    width: calc(100% - 16px) !important;
-    padding: 7px !important;
-    border-radius: 12px !important;
-  }
-  .slim-toc-list {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    width: max-content !important;
-    gap: 6px !important;
-  }
-  .slim-toc-link {
-    width: auto !important;
-    padding: 6px 8px !important;
-    gap: 6px !important;
-    border-radius: 9px !important;
-    background: var(--paper);
-  }
-  .toc-num { width: 22px !important; height: 22px !important; font-size: .72rem !important; }
-  .toc-text { display: inline-block !important; opacity: 1 !important; max-width: 180px !important; font-size: .72rem !important; }
-  .page-wrapper {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 12px 15px 64px !important;
-    margin: 0 !important;
-  }
-  .inst-header {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 12px !important;
-    padding: 4px 54px 12px 0 !important;
-    margin-bottom: 18px !important;
-  }
-  .spb-brand-left {
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-right: 0 !important;
-  }
-  .spb-emblem-svg { width: 46px !important; height: 63px !important; }
-  .spb-brand-name { font-size: clamp(.98rem, 4.2vw, 1.15rem) !important; line-height: 1.13 !important; }
-  .spb-brand-motto { font-size: .64rem !important; line-height: 1.25 !important; margin-top: 3px !important; }
-  .spb-meta-right {
-    width: 100% !important;
-    text-align: left !important;
-    gap: 4px !important;
-  }
-  .spb-meta-line { font-size: .76rem !important; line-height: 1.35 !important; letter-spacing: 0 !important; }
-  .spb-meta-prof { font-size: .82rem !important; line-height: 1.3 !important; margin-top: 3px !important; }
-  .theme-switch-wrapper { top: 2px !important; right: 0 !important; }
-  #themeToggle.theme-switch-btn { min-width: 46px !important; min-height: 44px !important; padding: 7px 9px !important; }
-  .hero-title-block { padding: 8px 2px 18px !important; margin-bottom: 22px !important; }
-  .hero-title-block h1 { font-size: clamp(1.65rem, 7vw, 2.3rem) !important; overflow-wrap: anywhere; }
-  .hero-title-block .subtitle { font-size: clamp(.98rem, 4.2vw, 1.18rem) !important; }
-  .pdf-download-btn { white-space: normal !important; justify-content: center !important; }
-  .grid-2 { grid-template-columns: minmax(0, 1fr) !important; }
-  .content-sec, .diagram-box, .interactive-box, .callout, .example-card { min-width: 0 !important; max-width: 100% !important; }
-  .content-sec table { max-width: 100%; }
-  body::after { background-size: min(92vw, 640px) auto !important; opacity: .28 !important; }
-  html.dark-mode body::after { opacity: .24 !important; }
+  .slim-toc:hover, .slim-toc:focus-within { width:100% !important; padding:6px 8px !important; }
+  .slim-toc-list { display:flex !important; flex-direction:row !important; align-items:center !important; gap:5px !important; width:max-content !important; min-width:100%; }
+  .slim-toc-list li { flex:0 0 auto !important; margin:0 !important; }
+  .slim-toc-link { display:flex !important; align-items:center !important; min-height:34px; padding:5px 8px !important; gap:5px !important; }
+  .toc-text { display:inline !important; opacity:1 !important; max-width:180px; font-size:.72rem !important; }
+  .page-wrapper { padding:14px 14px 56px !important; }
+  .inst-header { grid-template-columns:minmax(0,1fr) !important; grid-template-rows:auto auto auto !important; row-gap:12px !important; }
+  .inst-header > .theme-switch-wrapper { grid-column:1 !important; grid-row:1 !important; }
+  .inst-header > .spb-brand-left { grid-column:1 !important; grid-row:2 !important; width:100% !important; gap:12px !important; }
+  .inst-header > .spb-meta-right { grid-column:1 !important; grid-row:3 !important; text-align:left !important; width:100% !important; }
+  .spb-emblem-svg { width:48px !important; height:66px !important; }
+  .spb-brand-name { font-size:1.05rem !important; line-height:1.12 !important; }
+  .spb-brand-motto { font-size:.68rem !important; line-height:1.3 !important; overflow-wrap:anywhere; }
+  .spb-meta-line { font-size:.78rem !important; line-height:1.35 !important; letter-spacing:0 !important; }
+  .spb-meta-prof { font-size:.84rem !important; line-height:1.35 !important; letter-spacing:0 !important; }
+  .hero-title-block { padding:10px 2px 20px !important; margin-bottom:22px !important; }
+  .hero-title-block h1 { font-size:clamp(1.65rem,7vw,2.2rem) !important; line-height:1.15 !important; overflow-wrap:anywhere; }
+  .hero-title-block .subtitle, .hero-subtitle { font-size:1rem !important; line-height:1.45 !important; overflow-wrap:anywhere; }
+  .pdf-download-btn { white-space:normal !important; text-align:center; overflow-wrap:anywhere; }
+  .grid-2 { grid-template-columns:minmax(0,1fr) !important; }
+  .callout, .example-card, .interactive-box, .diagram-box { padding:13px !important; }
+  body::after { background-size:88vw auto !important; opacity:.035 !important; }
+  html.dark-mode body::after, html[data-theme="dark"] body::after { opacity:.045 !important; }
 }
-@media (max-width: 380px) {
-  .page-wrapper { padding-left: 12px !important; padding-right: 12px !important; }
-  .spb-emblem-svg { width: 40px !important; height: 55px !important; }
-  .spb-brand-motto { font-size: .59rem !important; }
-  .spb-meta-line { font-size: .71rem !important; }
-  .toc-text { max-width: 135px !important; }
+@media (max-width:420px) {
+  .page-wrapper { padding-left:11px !important; padding-right:11px !important; }
+  .spb-emblem-svg { width:42px !important; height:58px !important; }
+  .spb-brand-left { gap:9px !important; }
+  .toc-text { max-width:140px; }
 }
 @media print {
-  body::after { display:none !important; }
-  .theme-switch-wrapper { display:none !important; }
-}
-
-
-
-/* Ajustes solicitados: ocultar o índice lateral no celular e remover a marca-d’água. */
-@media (max-width: 768px) {
-  .slim-toc { display: none !important; }
-}
-.page-wrapper { background-image: none !important; }
-body::after { display: none !important; content: none !important; background-image: none !important; }
-@media print {
-  .page-wrapper { background-image: none !important; }
-  body::after { display: none !important; content: none !important; background-image: none !important; }
+  body::after { position:absolute !important; opacity:.04 !important; background-image:url('/graphics/logo_em_tudo_watermark_dark.png') !important; }
+  .slim-toc, .theme-switch-wrapper { display:none !important; }
 }
 
 </style>
 
-<style id="correcao-mobile-sem-indice-e-sem-marca-dagua">
-/* Correção solicitada: remove a marca-d’água sem alterar o conteúdo da aula. */
-.page-wrapper { background-image: none !important; }
-body::before, body::after, .page-wrapper::before, .page-wrapper::after {
+<style id="ajustes-solicitados">
+/* Ajustes solicitados: remover marca-d'água e evitar sobreposição do índice em celulares. */
+.page-wrapper {
   background-image: none !important;
+  background: var(--surface) !important;
+}
+body::before,
+body::after {
   content: none !important;
   display: none !important;
+  background-image: none !important;
 }
-/* Em telas pequenas, oculta o índice lateral para liberar a área de leitura. */
-@media (max-width: 800px) {
-  .slim-toc { display: none !important; }
+@media screen and (max-width: 768px) {
+  .slim-toc,
+  .mobile-toc,
+  .toc-mobile,
+  .horizontal-toc {
+    display: none !important;
+  }
+}
+@media print {
+  .page-wrapper {
+    background-image: none !important;
+    background: #ffffff !important;
+  }
+  body::before,
+  body::after {
+    content: none !important;
+    display: none !important;
+    background-image: none !important;
+  }
 }
 </style>
 </head>
 <body id="page-top">
-
-  <!-- CHAVE PARA TROCA DE MODOS: CLARO E ESCURO -->
-  
-
-  <!-- MENU LATERAL SLIM FIXO E SUTIL -->
+<!-- MENU LATERAL SLIM FIXO E SUTIL -->
   <nav class="slim-toc" aria-label="Sumário de navegação rápida">
     <ul class="slim-toc-list">
       <li>
@@ -1391,7 +1332,8 @@ body::before, body::after, .page-wrapper::before, .page-wrapper::after {
 
     <!-- CABEÇALHO INSTITUCIONAL EM ALTA DEFINIÇÃO E CONDIZENTE COM MODO CLARO E ESCURO -->
     <header class="inst-header" role="banner" aria-label="Cabeçalho Institucional do Seminário Presbiteriano de Brasília">
-<div class="theme-switch-wrapper">
+<!-- CHAVE PARA TROCA DE MODOS: CLARO E ESCURO -->
+  <div class="theme-switch-wrapper">
     <button type="button" id="themeToggle" class="theme-switch-btn" role="switch" aria-checked="false" title="Alternar entre modo claro e escuro" aria-label="Alternar entre modo claro e escuro">
       <svg id="themeIcon" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="5"></circle>
@@ -1443,14 +1385,7 @@ body::before, body::after, .page-wrapper::before, .page-wrapper::after {
     <div class="hero-title-block">
       <h1>O Período Composto</h1>
       <p class="subtitle">Coordenação, Subordinação e Períodos Mistos</p>
-      <a href="/portugues/p2/aula8.pdf" class="pdf-download-btn" download="aula8.pdf" title="Baixar versão em PDF (aula8.pdf)">
-        <svg viewBox="0 0 24 24">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-          <polyline points="7 10 12 15 17 10"></polyline>
-          <line x1="12" y1="15" x2="12" y2="3"></line>
-        </svg>
-        <span>Baixar Apostila em PDF (aula8.pdf)</span>
-      </a>
+      
     </div>
 
     <!-- SEÇÃO 1: REVISÃO E INTRODUÇÃO -->
@@ -2368,14 +2303,7 @@ body::before, body::after, .page-wrapper::before, .page-wrapper::after {
       </ul>
 
       <div class="bottom-actions-bar">
-        <a href="/portugues/p2/aula8.pdf" class="pdf-download-btn" download="aula8.pdf" title="Baixar versão em PDF (aula8.pdf)">
-          <svg viewBox="0 0 24 24">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
-          </svg>
-          <span>Baixar PDF (aula8.pdf)</span>
-        </a>
+        
 
         <button type="button" id="scrollTopBtn" class="scroll-top-btn" title="Subir ao topo da página" aria-label="Subir ao topo da página">
           <svg viewBox="0 0 24 24">
@@ -2476,12 +2404,7 @@ body::before, body::after, .page-wrapper::before, .page-wrapper::after {
     })();
   </script>
 
-<footer class="site-credit" style="text-align:center;padding:28px 16px 34px;position:relative;z-index:1">
-  <a class="bunker-logo-link" href="https://bunkerdigital.top/" target="_blank" rel="noopener noreferrer" aria-label="Bunker Digital">
-    <img class="bunker-logo-dark" src="/graphics/logo-bunker-dark.png" alt="Bunker Digital" loading="lazy">
-    <img class="bunker-logo-light" src="/graphics/logo-bunker-light.png" alt="Bunker Digital" loading="lazy">
-  </a>
-</footer>
+
 
 </body>
 </html>

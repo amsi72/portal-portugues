@@ -2,8 +2,7 @@ name: Publicar portal de Português
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -21,70 +20,52 @@ jobs:
     steps:
       - name: Baixar arquivos
         uses: actions/checkout@v4
-
-      - name: Preparar páginas e índices
+      - name: Gerar site com o visual original
         shell: bash
         run: |
           python3 <<'PY'
-          import os
-          import shutil
-          import html
           from pathlib import Path
-
-          origem = Path('.')
-          destino = Path('_site')
-          shutil.rmtree(destino, ignore_errors=True)
-          destino.mkdir()
-
-          for raiz, dirs, arquivos in os.walk(origem):
+          import shutil, html, re, os
+          src = Path('.')
+          site = Path('_site')
+          shutil.rmtree(site, ignore_errors=True)
+          site.mkdir()
+          for root, dirs, files in os.walk(src):
               dirs[:] = [d for d in dirs if d not in {'.git', '.github', '_site'}]
-              for nome in arquivos:
-                  src = Path(raiz) / nome
-                  if src.suffix.lower() == '.php':
+              for name in files:
+                  p = Path(root) / name
+                  rel = p.relative_to(src)
+                  if p.suffix.lower() == '.php' or rel.as_posix() == 'templates/portal-template.html':
                       continue
-                  rel = src.relative_to(origem)
-                  dst = destino / rel
-                  dst.parent.mkdir(parents=True, exist_ok=True)
-                  shutil.copy2(src, dst)
-
-          for turma in ('p2', 'p4'):
-              pasta = destino / 'portugues' / turma
-              if not pasta.is_dir():
-                  continue
-              paginas = sorted(f for f in pasta.glob('*.html') if f.name.lower() != 'index.html')
-              links = []
-              for pagina in paginas:
-                  titulo = html.escape(pagina.stem.replace('_', ' ').replace('-', ' '))
-                  nome = html.escape(pagina.name, quote=True)
-                  links.append('<li><a href="{}">{}</a></li>'.format(nome, titulo))
-              conteudo = '\n'.join(links) if links else '<li>Nenhuma aula publicada.</li>'
-              linhas = [
-                  '<!doctype html>',
-                  '<html lang="pt-BR">',
-                  '<head>',
-                  '<meta charset="utf-8">',
-                  '<meta name="viewport" content="width=device-width, initial-scale=1">',
-                  '<title>Materiais de Português {}</title>'.format(turma.upper()),
-                  '<style>body{font:16px system-ui,sans-serif;max-width:850px;margin:40px auto;padding:0 20px;line-height:1.6}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}li{margin:12px 0}</style>',
-                  '</head>',
-                  '<body>',
-                  '<h1>Materiais de Português {}</h1>'.format(turma.upper()),
-                  '<ul>',
-                  conteudo,
-                  '</ul>',
-                  '</body>',
-                  '</html>'
-              ]
-              (pasta / 'index.html').write_text('\n'.join(linhas), encoding='utf-8')
+                  dest = site / rel
+                  dest.parent.mkdir(parents=True, exist_ok=True)
+                  shutil.copy2(p, dest)
+          template = Path('templates/portal-template.html').read_text(encoding='utf-8')
+          for code, title, header in [('p2', 'Português 2', 'LÍNGUA PORTUGUESA — PORTUGUÊS 2 — 2º SEM. 2026'), ('p4', 'Português 4', 'LÍNGUA PORTUGUESA — PORTUGUÊS 4 — 2º SEM. 2026')]:
+              folder = src / 'portugues' / code
+              items = []
+              if folder.exists():
+                  files = sorted(folder.iterdir(), key=lambda x: x.name.lower())
+                  for f in files:
+                      if not f.is_file() or f.suffix.lower() != '.html' or f.name.lower() == 'index.html' or f.name.startswith(('.', '_')):
+                          continue
+                      raw = f.read_text(encoding='utf-8', errors='replace')[:300000]
+                      m = re.search(r'<title\b[^>]*>(.*?)</title\s*>', raw, re.I | re.S)
+                      label = html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', m.group(1)))).strip() if m else ''
+                      if not label:
+                          label = re.sub(r'[_-]+', ' ', f.stem).strip().capitalize()
+                      items.append(f'<li class="item-material"><a class="link-material" href="{html.escape(f.name, quote=True)}"><span class="link-material-texto">{html.escape(label)}</span><span class="link-material-seta" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span></a></li>')
+              listing = '<ul class="lista-materiais">' + ''.join(items) + '</ul>' if items else '<p class="mensagem-vazia">Nenhum material disponibilizado no momento.</p>'
+              page = template.replace('{{TITULO}}', title).replace('{{CABECALHO}}', header).replace('{{MATERIAIS}}', listing)
+              target = site / 'portugues' / code / 'index.html'
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_text(page, encoding='utf-8')
           PY
-
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
-
       - name: Preparar publicação
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
-
       - name: Publicar site
         uses: actions/deploy-pages@v4

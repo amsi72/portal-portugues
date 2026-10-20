@@ -1,0 +1,96 @@
+name: Publicar portal de Português
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar arquivos
+        uses: actions/checkout@v4
+
+      - name: Preparar páginas e índices
+        shell: bash
+        run: |
+          python3 <<'PY'
+          import os
+          import shutil
+          import html
+          from pathlib import Path
+
+          origem = Path(".")
+          destino = Path("_site")
+          shutil.rmtree(destino, ignore_errors=True)
+          destino.mkdir()
+
+          for raiz, dirs, arquivos in os.walk(origem):
+              dirs[:] = [d for d in dirs if d not in {".git", ".github", "_site"}]
+              for nome in arquivos:
+                  src = Path(raiz) / nome
+                  if src.suffix.lower() == ".php":
+                      continue
+                  rel = src.relative_to(origem)
+                  dst = destino / rel
+                  dst.parent.mkdir(parents=True, exist_ok=True)
+                  shutil.copy2(src, dst)
+
+          for turma in ("p2", "p4"):
+              pasta = destino / "portugues" / turma
+              if not pasta.is_dir():
+                  continue
+
+              paginas = sorted(f for f in pasta.glob("*.html") if f.name.lower() != "index.html")
+              links = []
+              for pagina in paginas:
+                  titulo = html.escape(pagina.stem.replace("_", " ").replace("-", " "))
+                  nome = html.escape(pagina.name, quote=True)
+                  links.append(f'<li><a href="{nome}">{titulo}</a></li>')
+
+              conteudo = "\n".join(links) or "<li>Nenhuma aula publicada.</li>"
+              documento = f\"\"\"<!doctype html>
+          <html lang="pt-BR">
+          <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>Português {turma.upper()} - Materiais</title>
+          <style>
+          body {{ font: 16px system-ui, sans-serif; max-width: 850px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }}
+          a {{ color: #2563eb; text-decoration: none; }}
+          a:hover {{ text-decoration: underline; }}
+          li {{ margin: 12px 0; }}
+          </style>
+          </head>
+          <body>
+          <h1>Materiais de Português {turma.upper()}</h1>
+          <ul>
+          {conteudo}
+          </ul>
+          </body>
+          </html>
+          \"\"\"
+              (pasta / "index.html").write_text(documento, encoding="utf-8")
+          PY
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Preparar publicação
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Publicar site
+        uses: actions/deploy-pages@v4

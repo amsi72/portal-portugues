@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Português 2 — Apêndice 2 da Aula 8: Respostas preenchidas</title>
+  <meta name="description" content="Apêndice da Aula 8 de Português 2: material de treinamento e avaliação final de análise sintática.">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg-page: #eef2f7;
+      --surface: #ffffff;
+      --paper: #f8fafc;
+      --ink: #1e293b;
+      --muted: #475569;
+      --navy: #0b2344;
+      --navy-light: #163a6b;
+      --blue: #2563eb;
+      --blue-pale: #eff6ff;
+      --blue-border: #bfdbfe;
+      --teal: #0f766e;
+      --teal-pale: #f0fdfa;
+      --teal-border: #99f6e4;
+      --green: #15803d;
+      --green-pale: #f0fdf4;
+      --green-border: #bbf7d0;
+      --coral: #c2410c;
+      --coral-pale: #fff7ed;
+      --coral-border: #fed7aa;
+      --purple: #6d28d9;
+      --purple-pale: #f5f3ff;
+      --purple-border: #ddd6fe;
+      --amber: #b45309;
+      --amber-pale: #fffbeb;
+      --amber-border: #fde68a;
+      --line: #cbd5e1;
+      --shadow-sm: 0 1px 3px rgba(11, 35, 68, 0.06);
+      --shadow-md: 0 4px 20px rgba(11, 35, 68, 0.1);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+
+      /* Cores Vetoriais do Cabeçalho Institucional (Modo Claro) */
+      --hdr-navy: #134a84;
+      --hdr-teal: #10a386;
+      --hdr-right-main: #1e293b;
+      --hdr-right-sub: #334155;
+      --hdr-line: #1e5a96;
+
+      /* Pílulas sintáticas modo claro */
+      --pill-op-bg: #dbeafe; --pill-op-txt: #1e3a8a; --pill-op-brd: #93c5fd;
+      --pill-co-bg: #dcfce7; --pill-co-txt: #14532d; --pill-co-brd: #86efac;
+      --pill-su-bg: #ffedd5; --pill-su-txt: #7c2d12; --pill-su-brd: #fdba74;
+      --pill-cn-bg: #fae8ff; --pill-cn-txt: #581c87; --pill-cn-brd: #e879f9;
+    }
+
+    html.dark-mode {
+      color-scheme: dark;
+      --bg-page: #090d16;
+      --surface: #111827;
+      --paper: #1e293b;
+      --ink: #f1f5f9;
+      --muted: #94a3b8;
+      --navy: #e2e8f0;
+      --navy-light: #93c5fd;
+      --blue: #60a5fa;
+      --blue-pale: #172554;
+      --blue-border: #1e3a8a;
+      --teal: #2dd4bf;
+      --teal-pale: #042f2e;
+      --teal-border: #115e59;
+      --green: #4ade80;
+      --green-pale: #052e16;
+      --green-border: #14532d;
+      --coral: #fb923c;
+      --coral-pale: #431407;
+      --coral-border: #7c2d12;
+      --purple: #c084fc;
+      --purple-pale: #2e1065;
+      --purple-border: #581c87;
+      --amber: #fbbf24;
+      --amber-pale: #451a03;
+      --amber-border: #78350f;
+      --line: #334155;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+      --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.55);
+
+      /* Cores Vetoriais do Cabeçalho Institucional (Modo Escuro — integrado ao fundo) */
+      --hdr-navy: #1d5ca0;
+      --hdr-teal: #2dd4bf;
+      --hdr-right-main: #f8fafc;
+      --hdr-right-sub: #cbd5e1;
+      --hdr-line: #3b82f6;
+
+      /* Pílulas sintáticas modo escuro */
+      --pill-op-bg: #1e3a8a; --pill-op-txt: #dbeafe; --pill-op-brd: #3b82f6;
+      --pill-co-bg: #14532d; --pill-co-txt: #dcfce7; --pill-co-brd: #22c55e;
+      --pill-su-bg: #7c2d12; --pill-su-txt: #ffedd5; --pill-su-brd: #f97316;
+      --pill-cn-bg: #581c87; --pill-cn-txt: #fae8ff; --pill-cn-brd: #c084fc;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-page);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .page-wrapper {
+      max-width: 1060px;
+      margin: 0 auto;
+      background-color: var(--surface);
+      padding: 28px clamp(16px, 4.5vw, 58px) 84px;
+      box-shadow: var(--shadow-md);
+      transition: background-color 0.2s ease;
+    }
+
+    /* Chave Seletora de Modo Claro / Escuro */
+    .theme-switch-wrapper {
+      position: fixed;
+      top: 16px;
+      right: 18px;
+      z-index: 1200;
+    }
+
+    .theme-switch-btn {
+      appearance: none;
+      background-color: var(--surface);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px 5px 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-md);
+      transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .theme-switch-btn:hover {
+      border-color: var(--blue);
+      transform: translateY(-1px);
+    }
+
+    .theme-switch-btn:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
+    }
+
+    .switch-track {
+      width: 30px;
+      height: 17px;
+      background-color: var(--line);
+      border-radius: 999px;
+      position: relative;
+      transition: background-color 0.2s ease;
+    }
+
+    html.dark-mode .switch-track {
+      background-color: var(--blue);
+    }
+
+    .switch-thumb {
+      width: 13px;
+      height: 13px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    }
+
+    html.dark-mode .switch-thumb {
+      transform: translateX(13px);
+    }
+
+    .theme-switch-btn svg {
+      width: 15px;
+      height: 15px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Menu Lateral Slim Fixo e Sóbrio */
+    .slim-toc {
+      position: fixed;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1100;
+      background-color: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 5px;
+      width: 36px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      opacity: 0.78;
+      transition: width 0.24s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.2s ease, padding 0.2s ease, opacity 0.2s ease;
+    }
+
+    .slim-toc:hover,
+    .slim-toc:focus-within {
+      width: 254px;
+      border-radius: var(--radius-md);
+      padding: 10px 8px;
+      opacity: 1;
+    }
+
+    .slim-toc-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .slim-toc-link {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      color: var(--muted);
+      padding: 4px;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .slim-toc-link:hover,
+    .slim-toc-link:focus-visible {
+      background-color: var(--blue-pale);
+      color: var(--blue);
+      outline: none;
+    }
+
+    .slim-toc-link.active {
+      background-color: var(--blue);
+      color: #ffffff;
+    }
+
+    .toc-num {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      border-radius: 50%;
+    }
+
+    .toc-text {
+      font-size: 0.8rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.18s ease;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .slim-toc:hover .toc-text,
+    .slim-toc:focus-within .toc-text {
+      opacity: 1;
+    }
+
+    /* CABEÇALHO INSTITUCIONAL ADAPTÁVEL AO FUNDO CLARO/ESCURO EM ALTA DEFINIÇÃO */
+    .inst-header {
+      width: 100%;
+      margin: 0 auto 24px;
+      background-color: transparent;
+      padding: 4px 0 16px;
+      border-bottom: 2.5px solid var(--hdr-line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      transition: border-color 0.2s ease;
+    }
+
+    .spb-brand-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .spb-emblem-svg {
+      width: 60px;
+      height: 82px;
+      display: block;
+      flex-shrink: 0;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .spb-brand-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .spb-brand-name {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      font-size: clamp(1.08rem, 1.9vw, 1.32rem);
+      font-weight: 600;
+      line-height: 1.16;
+      color: #134a84;
+      letter-spacing: -0.01em;
+      transition: color 0.2s ease;
+    }
+
+    html.dark-mode .spb-brand-name {
+      color: #e2e8f0;
+    }
+
+    .spb-brand-motto {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      font-size: clamp(0.66rem, 1vw, 0.76rem);
+      font-weight: 600;
+      color: var(--hdr-teal);
+      margin-top: 5px;
+      letter-spacing: 0.01em;
+    }
+
+    .spb-meta-right {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+    }
+
+    .spb-meta-line {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      font-size: clamp(0.82rem, 1.45vw, 1.02rem);
+      font-weight: 500;
+      color: var(--hdr-right-sub);
+      letter-spacing: 0.02em;
+      line-height: 1.28;
+      transition: color 0.2s ease;
+    }
+
+    /* Fonte suavizada para Prof.: ISMAEL ROCHA */
+    .spb-meta-prof {
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+      font-size: clamp(0.86rem, 1.5vw, 1.04rem);
+      font-weight: 500;
+      color: var(--hdr-right-main);
+      letter-spacing: 0.03em;
+      margin-top: 2px;
+      transition: color 0.2s ease;
+    }
+
+    /* Título Didático Principal */
+    .hero-title-block {
+      text-align: center;
+      padding: 12px 10px 24px;
+      margin-bottom: 30px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .hero-title-block h1 {
+      font-size: clamp(1.85rem, 4.5vw, 2.95rem);
+      color: var(--navy);
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .hero-title-block .subtitle {
+      font-size: clamp(1.05rem, 2.2vw, 1.38rem);
+      color: var(--blue);
+      font-weight: 600;
+      margin: 0 0 16px;
+    }
+
+    /* Botão Discreto de Download do PDF (aula8.pdf) */
+    .pdf-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--blue);
+      background-color: var(--blue-pale);
+      border: 1px solid var(--blue-border);
+      padding: 6px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .pdf-download-btn:hover,
+    .pdf-download-btn:focus-visible {
+      background-color: var(--blue);
+      color: #ffffff;
+      border-color: var(--blue);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .pdf-download-btn svg {
+      width: 15px;
+      height: 15px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Seções e Tipografia */
+    section.content-sec {
+      margin-bottom: 46px;
+      scroll-margin-top: 24px;
+    }
+
+    h2.sec-heading {
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      color: var(--navy);
+      border-bottom: 3px solid var(--blue);
+      padding-bottom: 8px;
+      margin: 0 0 18px;
+      line-height: 1.25;
+    }
+
+    h3.sub-heading {
+      font-size: clamp(1.12rem, 2.3vw, 1.35rem);
+      color: var(--blue);
+      margin: 26px 0 12px;
+      line-height: 1.3;
+    }
+
+    p {
+      margin: 0 0 15px;
+    }
+
+    ul, ol {
+      margin: 0 0 18px;
+      padding-left: 1.45rem;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    /* Caixas de Destaque */
+    .callout {
+      border-left: 5px solid var(--teal);
+      background-color: var(--teal-pale);
+      border-top: 1px solid var(--teal-border);
+      border-right: 1px solid var(--teal-border);
+      border-bottom: 1px solid var(--teal-border);
+      padding: 16px 20px;
+      margin: 20px 0;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+
+    .callout.blue {
+      border-left-color: var(--blue);
+      background-color: var(--blue-pale);
+      border-color: var(--blue-border);
+    }
+
+    .callout.coral {
+      border-left-color: var(--coral);
+      background-color: var(--coral-pale);
+      border-color: var(--coral-border);
+    }
+
+    .callout.amber {
+      border-left-color: var(--amber);
+      background-color: var(--amber-pale);
+      border-color: var(--amber-border);
+    }
+
+    .callout.green {
+      border-left-color: var(--green);
+      background-color: var(--green-pale);
+      border-color: var(--green-border);
+    }
+
+    .callout-title {
+      font-size: 0.96rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin: 0 0 6px;
+      display: block;
+      color: var(--navy);
+    }
+
+    /* Exemplos Fixos */
+    .example-card {
+      background-color: var(--paper);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--blue);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 15px 18px;
+      margin: 16px 0;
+    }
+
+    .example-card.green {
+      border-left-color: var(--green);
+      background-color: var(--green-pale);
+    }
+
+    .example-tag {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 9px;
+      border-radius: 4px;
+      background-color: var(--blue);
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .example-card.green .example-tag {
+      background-color: var(--green);
+    }
+
+    .quote-verse {
+      font-size: 1.06rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    /* Exemplos Interativos com Pequeno Ícone Clicável */
+    .interactive-box {
+      background-color: var(--surface);
+      border: 1.5px solid var(--blue-border);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin: 22px 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .interactive-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .interactive-badge {
+      background-color: var(--blue);
+      color: #ffffff;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .interactive-focus {
+      font-size: 0.86rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .interactive-prompt {
+      font-size: 1.04rem;
+      font-weight: 700;
+      color: var(--navy);
+      background-color: var(--paper);
+      padding: 12px 15px;
+      border-radius: var(--radius-sm);
+      border-left: 4px solid var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .interactive-question-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .interactive-question {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--ink);
+      flex: 1;
+    }
+
+    /* Pequeno Ícone Clicável para Resposta Comentada */
+    .icon-answer-btn {
+      appearance: none;
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background-color: var(--blue-pale);
+      color: var(--blue);
+      border: 1px solid var(--blue-border);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.2s ease, border-color 0.15s ease;
+    }
+
+    .icon-answer-btn:hover {
+      background-color: var(--blue);
+      color: #ffffff;
+      border-color: var(--blue);
+      transform: scale(1.08);
+    }
+
+    .icon-answer-btn:focus-visible {
+      outline: 2px solid var(--amber);
+      outline-offset: 2px;
+    }
+
+    .icon-answer-btn[aria-expanded="true"] {
+      background-color: var(--teal);
+      color: #ffffff;
+      border-color: var(--teal);
+    }
+
+    .icon-answer-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.2s ease;
+    }
+
+    .icon-answer-btn[aria-expanded="true"] svg {
+      transform: rotate(180deg);
+    }
+
+    .answer-panel {
+      display: none;
+      margin-top: 14px;
+      padding: 15px 18px;
+      background-color: var(--teal-pale);
+      border: 1px solid var(--teal-border);
+      border-left: 5px solid var(--teal);
+      border-radius: var(--radius-sm);
+      font-size: 0.94rem;
+    }
+
+    .answer-panel.is-open {
+      display: block;
+    }
+
+    .answer-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Diagramas e Infográficos */
+    .diagram-box {
+      background-color: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 20px 18px;
+      margin: 24px 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .diagram-title {
+      text-align: center;
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      margin: 0 0 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .diag-card {
+      background-color: var(--surface);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+
+    .diag-card.coord { border-top: 5px solid var(--green); }
+    .diag-card.subord { border-top: 5px solid var(--coral); }
+    .diag-card.subst { border-top: 5px solid var(--blue); }
+    .diag-card.adj { border-top: 5px solid var(--green); }
+
+    .diag-card h4 {
+      margin: 0 0 10px;
+      font-size: 1.04rem;
+      color: var(--navy);
+    }
+
+    .train-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .wagon {
+      background-color: var(--green-pale);
+      border: 1.5px solid var(--green);
+      color: var(--navy);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    .coupler {
+      font-weight: 800;
+      color: var(--coral);
+      padding: 4px 8px;
+      background-color: var(--coral-pale);
+      border: 1px dashed var(--coral);
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+
+    .tree-flow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .tree-root {
+      background-color: var(--blue-pale);
+      border: 1.5px solid var(--blue);
+      color: var(--navy);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    .tree-branch-arrow {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--coral);
+    }
+
+    .tree-leaf {
+      background-color: var(--coral-pale);
+      border: 1.5px solid var(--coral);
+      color: var(--navy);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    /* Marcadores Sintáticos Inline */
+    .syn-pill {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-size: 0.85em;
+      font-weight: 700;
+      margin: 2px 1px;
+    }
+
+    .syn-op { background-color: var(--pill-op-bg); color: var(--pill-op-txt); border: 1px solid var(--pill-op-brd); }
+    .syn-coord { background-color: var(--pill-co-bg); color: var(--pill-co-txt); border: 1px solid var(--pill-co-brd); }
+    .syn-sub { background-color: var(--pill-su-bg); color: var(--pill-su-txt); border: 1px solid var(--pill-su-brd); }
+    .syn-conn { background-color: var(--pill-cn-bg); color: var(--pill-cn-txt); border: 1px solid var(--pill-cn-brd); }
+
+    /* Tabelas Responsivas */
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 20px 0 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    table {
+      width: 100%;
+      min-width: 540px;
+      border-collapse: collapse;
+      background-color: var(--surface);
+      font-size: 0.93rem;
+      line-height: 1.55;
+    }
+
+    thead th {
+      background-color: #0b2344;
+      color: #ffffff;
+      font-weight: 700;
+      text-align: left;
+      padding: 12px 14px;
+    }
+
+    html.dark-mode thead th {
+      background-color: #1e293b;
+      color: #f8fafc;
+      border-bottom: 2px solid var(--line);
+    }
+
+    td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: var(--paper);
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Passo a Passo do Período Misto */
+    .step-chain {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .step-item {
+      background-color: var(--surface);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--blue);
+      border-radius: var(--radius-sm);
+      padding: 13px 15px;
+    }
+
+    .step-num {
+      display: inline-block;
+      background-color: var(--blue-pale);
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 0.76rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+
+    /* Referências Gramaticais e Rodapé */
+    .ref-footer {
+      margin-top: 52px;
+      padding-top: 22px;
+      border-top: 2px solid var(--line);
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .ref-footer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .ref-footer h3 {
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .ref-footer ul {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+
+    /* Pequena Seta no Final da Página para Subir Rápido ao Topo */
+    .bottom-actions-bar {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .scroll-top-btn {
+      appearance: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background-color: var(--paper);
+      color: var(--navy);
+      border: 1px solid var(--line);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      box-shadow: var(--shadow-sm);
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .scroll-top-btn:hover,
+    .scroll-top-btn:focus-visible {
+      background-color: var(--blue);
+      color: #ffffff;
+      border-color: var(--blue);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .scroll-top-btn svg {
+      width: 17px;
+      height: 17px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Compatibilidade Mobile e Telas Menores */
+    @media (max-width: 1160px) {
+      .slim-toc {
+        left: 8px;
+        width: 32px;
+        padding: 6px 4px;
+      }
+
+      .toc-num {
+        width: 17px;
+        height: 17px;
+        font-size: 0.7rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      body {
+        font-size: 16px;
+        line-height: 1.62;
+      }
+
+      .page-wrapper {
+        padding: 16px 14px 74px 44px;
+      }
+
+      .inst-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding-bottom: 14px;
+      }
+
+      .spb-meta-right {
+        text-align: left;
+      }
+
+      .slim-toc {
+        left: 5px;
+        width: 28px;
+        padding: 6px 3px;
+        opacity: 0.88;
+      }
+
+      .slim-toc:hover,
+      .slim-toc:focus-within {
+        width: 225px;
+        padding: 8px 6px;
+      }
+
+      .toc-num {
+        width: 16px;
+        height: 16px;
+        font-size: 0.68rem;
+      }
+
+      .theme-switch-wrapper {
+        top: 10px;
+        right: 10px;
+      }
+
+      .theme-switch-btn {
+        padding: 4px 8px;
+        font-size: 0.72rem;
+      }
+
+      .interactive-box {
+        padding: 14px 14px;
+      }
+
+      .interactive-prompt {
+        font-size: 0.96rem;
+        padding: 10px 12px;
+      }
+
+      .callout {
+        padding: 14px 15px;
+      }
+    }
+
+    @media print {
+      body {
+        background-color: #ffffff;
+        font-size: 11.5pt;
+      }
+      .page-wrapper {
+        box-shadow: none;
+        max-width: none;
+        padding: 0;
+      }
+      .slim-toc, .theme-switch-wrapper, .icon-answer-btn, .bottom-actions-bar, .pdf-download-btn {
+        display: none !important;
+      }
+      .answer-panel {
+        display: block !important;
+      }
+    }
+  
+
+/* === Padronização visual e responsividade === */
+
+/* Marca-d’água discreta, transparente e sensível ao tema */
+.page-wrapper {
+  background-image: url('/graphics/logo_em_tudo_watermark_light.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: min(78vw, 900px) auto;
+  background-attachment: fixed;
+}
+html.dark-mode .page-wrapper {
+  background-image: url('/graphics/logo_em_tudo_watermark_dark.png');
+}
+
+/* Chave junto ao cabeçalho no início do documento; rola para fora da tela */
+.theme-switch-wrapper { position:absolute !important; top:14px !important; right:max(18px, calc((100vw - 1060px)/2 + 18px)) !important; z-index:1200; }
+#themeToggle.theme-switch-btn { position:relative !important; top:auto !important; right:auto !important; z-index:1200; touch-action:manipulation; }
+body { position:relative; }
+
+/* Uniformizar dimensão e interação dos botões de PDF */
+.pdf-download-btn {
+  min-height:40px; max-width:100%; padding:8px 14px;
+  border-radius:999px; font-size:.86rem; line-height:1.35;
+  overflow-wrap:anywhere; touch-action:manipulation;
+}
+.pdf-download-btn svg { flex:0 0 18px; }
+html { scroll-padding-top:84px; }
+body { overflow-x:clip; }
+.page-wrapper { min-width:0; }
+.page-wrapper img { max-width:100%; height:auto; }
+@media (max-width:640px) {
+  .theme-switch-wrapper { top:10px !important; right:12px !important; }
+  #themeToggle.theme-switch-btn { min-width:44px; min-height:44px; }
+  .page-wrapper { width:100%; padding-left:16px; padding-right:16px; }
+  .pdf-download-btn { min-height:44px; }
+}
+@media print {
+  .page-wrapper { background-image:url('/graphics/logo_em_tudo_watermark_light.png') !important; background-attachment:scroll !important; background-repeat:no-repeat !important; background-position:center center !important; background-size:72% auto !important; }
+  /* Cabeçalho de impressão em fluxo simples para evitar sobreposição em PDF. */
+  .inst-header { display:block !important; min-height:100px; margin-bottom:16px !important; padding-bottom:10px !important; overflow:hidden; }
+  .spb-brand-left { float:left; display:flex !important; width:43%; gap:10px !important; align-items:center; }
+  .spb-emblem-svg { width:50px !important; height:68px !important; }
+  .spb-brand-text { display:block !important; min-width:0; }
+  .spb-brand-name { font-size:10.5pt !important; line-height:1.15 !important; }
+  .spb-brand-motto { font-size:7pt !important; line-height:1.2 !important; margin-top:3px !important; }
+  .spb-meta-right { float:right; display:block !important; width:54%; text-align:right; }
+  .spb-meta-line, .spb-meta-prof { display:block !important; font-size:8pt !important; line-height:1.25 !important; margin:0 0 3px !important; letter-spacing:0 !important; }
+  .inst-header::after { content:""; display:block; clear:both; }
+}
+
+
+/* Marca-d’água Em Tudo: centralizada na viewport e visível durante toda a rolagem */
+body::after { content:""; position:fixed; inset:0; z-index:9990; pointer-events:none; opacity:.075; background-image:url("/graphics/logo_em_tudo_b.png"); background-repeat:no-repeat; background-position:center center; background-size:min(58vw, 760px) auto; }
+html.dark-mode body::after, html[data-theme="dark"] body::after { background-image:url("/graphics/logo_em_tudo_w.png"); opacity:.09; }
+@media(max-width:640px){ body::after { background-size:88vw auto; opacity:.055; } html.dark-mode body::after, html[data-theme="dark"] body::after { opacity:.07; } }
+@media print { body::after { position:absolute; opacity:.06; background-image:url("/graphics/logo_em_tudo_b.png") !important; } }
+
+
+html[data-theme="dark"] html[data-theme="dark"] /* Marca-d’água Em Tudo centralizada na viewport, inclusive durante a rolagem */
+body::after{content:"";position:fixed;inset:0;z-index:9990;pointer-events:none;opacity:.055;background:url('/graphics/logo_em_tudo_b.png') center center/min(58vw,760px) auto no-repeat;}
+html.dark-mode body::after,html[data-theme="dark"] body::after{background-image:url('/graphics/logo_em_tudo_w.png');opacity:.075;}
+@media(max-width:640px){body::after{background-size:88vw auto;opacity:.04;}html.dark-mode body::after,html[data-theme="dark"] body::after{opacity:.055;}}
+@media print{body::after{position:absolute;opacity:.04;background-image:url('/graphics/logo_em_tudo_b.png')!important;}}
+
+
+/* ===== Revisão final de responsividade e identidade visual ===== */
+.inst-header {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  grid-template-rows: auto auto !important;
+  align-items: center !important;
+  column-gap: clamp(12px, 2.4vw, 28px) !important;
+  row-gap: 10px !important;
+  padding: 0 0 14px !important;
+  margin: 0 auto 22px !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+}
+.inst-header > .theme-switch-wrapper {
+  grid-column: 1 / -1 !important;
+  grid-row: 1 !important;
+  justify-self: end !important;
+  align-self: start !important;
+  position: static !important;
+  inset: auto !important;
+  margin: 0 0 2px !important;
+  z-index: 5 !important;
+  width: auto !important;
+}
+.inst-header > .spb-brand-left { grid-column: 1 !important; grid-row: 2 !important; min-width: 0 !important; }
+.inst-header > .spb-meta-right { grid-column: 2 !important; grid-row: 2 !important; min-width: 0 !important; padding: 0 !important; margin: 0 !important; }
+.theme-switch-btn {
+  position: relative !important; inset: auto !important;
+  display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  min-width: 48px !important; min-height: 42px !important; padding: 8px 11px !important;
+  gap: 8px !important; line-height: 1 !important; white-space: nowrap !important;
+  box-shadow: var(--shadow-sm) !important; transform: none !important;
+}
+.theme-switch-btn svg { flex: 0 0 18px !important; width:18px !important; height:18px !important; }
+.spb-brand-left, .spb-brand-text, .spb-meta-right { min-width:0 !important; }
+.spb-meta-line, .spb-meta-prof { overflow-wrap:anywhere !important; }
+.page-wrapper { width:100% !important; min-width:0 !important; overflow:visible !important; }
+.page-wrapper img, .content-sec img, .diagram-box img { max-width:100% !important; height:auto !important; }
+.content-sec .table-wrap, .table-wrap { max-width:100% !important; overflow-x:auto !important; -webkit-overflow-scrolling:touch; }
+.content-sec table { max-width:100%; }
+body { overflow-x:hidden !important; }
+html[data-theme="dark"] html[data-theme="dark"] /* Marca-d’água externa Em Tudo, acima dos fundos e sem bloquear interações. */
+body::after {
+  content:"" !important; position:fixed !important; inset:0 !important; z-index:9990 !important;
+  pointer-events:none !important; display:block !important;
+  background-image:url('/graphics/logo_em_tudo_watermark_dark.png') !important;
+  background-repeat:no-repeat !important; background-position:center center !important;
+  background-size:min(58vw, 760px) auto !important; opacity:.055 !important;
+}
+html.dark-mode body::after, html[data-theme="dark"] body::after {
+  background-image:url('/graphics/logo_em_tudo_watermark_light.png') !important; opacity:.065 !important;
+}
+/* Em telas pequenas o índice vira uma faixa horizontal no fluxo normal: nunca cobre a aula. */
+@media (max-width: 800px) {
+  .slim-toc {
+    position:relative !important; inset:auto !important; top:auto !important; left:auto !important;
+    transform:none !important; width:100% !important; max-width:100% !important;
+    height:auto !important; max-height:none !important; overflow-x:auto !important; overflow-y:hidden !important;
+    margin:0 auto 10px !important; padding:6px 8px !important; border-radius:12px !important;
+    opacity:1 !important; box-shadow:var(--shadow-sm) !important; z-index:2 !important;
+    -webkit-overflow-scrolling:touch; scrollbar-width:thin;
+  }
+  .slim-toc:hover, .slim-toc:focus-within { width:100% !important; padding:6px 8px !important; }
+  .slim-toc-list { display:flex !important; flex-direction:row !important; align-items:center !important; gap:5px !important; width:max-content !important; min-width:100%; }
+  .slim-toc-list li { flex:0 0 auto !important; margin:0 !important; }
+  .slim-toc-link { display:flex !important; align-items:center !important; min-height:34px; padding:5px 8px !important; gap:5px !important; }
+  .toc-text { display:inline !important; opacity:1 !important; max-width:180px; font-size:.72rem !important; }
+  .page-wrapper { padding:14px 14px 56px !important; }
+  .inst-header { grid-template-columns:minmax(0,1fr) !important; grid-template-rows:auto auto auto !important; row-gap:12px !important; }
+  .inst-header > .theme-switch-wrapper { grid-column:1 !important; grid-row:1 !important; }
+  .inst-header > .spb-brand-left { grid-column:1 !important; grid-row:2 !important; width:100% !important; gap:12px !important; }
+  .inst-header > .spb-meta-right { grid-column:1 !important; grid-row:3 !important; text-align:left !important; width:100% !important; }
+  .spb-emblem-svg { width:48px !important; height:66px !important; }
+  .spb-brand-name { font-size:1.05rem !important; line-height:1.12 !important; }
+  .spb-brand-motto { font-size:.68rem !important; line-height:1.3 !important; overflow-wrap:anywhere; }
+  .spb-meta-line { font-size:.78rem !important; line-height:1.35 !important; letter-spacing:0 !important; }
+  .spb-meta-prof { font-size:.84rem !important; line-height:1.35 !important; letter-spacing:0 !important; }
+  .hero-title-block { padding:10px 2px 20px !important; margin-bottom:22px !important; }
+  .hero-title-block h1 { font-size:clamp(1.65rem,7vw,2.2rem) !important; line-height:1.15 !important; overflow-wrap:anywhere; }
+  .hero-title-block .subtitle, .hero-subtitle { font-size:1rem !important; line-height:1.45 !important; overflow-wrap:anywhere; }
+  .pdf-download-btn { white-space:normal !important; text-align:center; overflow-wrap:anywhere; }
+  .grid-2 { grid-template-columns:minmax(0,1fr) !important; }
+  .callout, .example-card, .interactive-box, .diagram-box { padding:13px !important; }
+  body::after { background-size:88vw auto !important; opacity:.035 !important; }
+  html.dark-mode body::after, html[data-theme="dark"] body::after { opacity:.045 !important; }
+}
+@media (max-width:420px) {
+  .page-wrapper { padding-left:11px !important; padding-right:11px !important; }
+  .spb-emblem-svg { width:42px !important; height:58px !important; }
+  .spb-brand-left { gap:9px !important; }
+  .toc-text { max-width:140px; }
+}
+@media print {
+  body::after { position:absolute !important; opacity:.04 !important; background-image:url('/graphics/logo_em_tudo_watermark_dark.png') !important; }
+  .slim-toc, .theme-switch-wrapper { display:none !important; }
+}
+
+
+/* Ajustes específicos do apêndice: sem marca-d’água e sem índice lateral em celular */
+.page-wrapper { background-image: none !important; }
+html.dark-mode .page-wrapper { background-image: none !important; }
+@media (max-width: 760px) { .slim-toc { display: none !important; } }
+@media print { .page-wrapper { background-image: none !important; } }
+
+
+/* Remoção definitiva da marca-d’água de fundo, em tela e impressão */
+body::after,
+html.dark-mode body::after,
+html[data-theme="dark"] body::after {
+  content: none !important;
+  display: none !important;
+  background-image: none !important;
+}
+.page-wrapper,
+html.dark-mode .page-wrapper {
+  background-image: none !important;
+}
+@media print {
+  .page-wrapper { background-image: none !important; }
+  body::after { content: none !important; display: none !important; }
+}
+
+</style>
+</head>
+<body id="page-top">
+  <main class="page-wrapper">
+    <header class="inst-header" role="banner" aria-label="Cabeçalho Institucional do Seminário Presbiteriano de Brasília">
+<!-- CHAVE PARA TROCA DE MODOS: CLARO E ESCURO -->
+  <div class="theme-switch-wrapper">
+    <button type="button" id="themeToggle" class="theme-switch-btn" role="switch" aria-checked="false" title="Alternar entre modo claro e escuro" aria-label="Alternar entre modo claro e escuro">
+      <svg id="themeIcon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <span class="switch-track"><span class="switch-thumb"></span></span>
+    </button>
+  </div>
+
+      <div class="spb-brand-left">
+        <svg class="spb-emblem-svg" viewBox="0 0 120 164" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="0" y="0" width="120" height="128" fill="#134a84"/>
+          <rect x="56" y="0" width="8" height="128" fill="#ffffff"/>
+          <rect x="0" y="48" width="120" height="8" fill="#ffffff"/>
+          <path d="M 60 12 C 26 32, 26 84, 60 106 C 94 84, 94 32, 60 12 Z" fill="#134a84" stroke="#ffffff" stroke-width="7.5" stroke-linejoin="round"/>
+          <path d="M 60 106 C 46 113, 35 116, 28 117 M 60 106 C 74 113, 85 116, 92 117" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round"/>
+          <circle cx="60" cy="36" r="4.2" fill="#ffffff"/>
+          <rect x="0" y="124" width="120" height="40" fill="#ffffff"/>
+          <path d="M 0 128 Q 30 113, 60 129 Q 90 113, 120 128 L 120 137 Q 90 122, 60 138 Q 30 122, 0 137 Z" fill="#10a386"/>
+          <path d="M 0 142 Q 30 127, 60 143 Q 90 127, 120 142 L 120 151 Q 90 136, 60 152 Q 30 136, 0 151 Z" fill="#10a386"/>
+          <path d="M 0 156 Q 30 141, 60 157 Q 90 141, 120 156 L 120 164 L 0 164 Z" fill="#10a386"/>
+        </svg>
+        <div class="spb-brand-text">
+          <div class="spb-brand-name">
+            Seminário<br>
+            Presbiteriano<br>
+            de Brasília
+          </div>
+          <div class="spb-brand-motto">Teologia para transformação da vida</div>
+        </div>
+      </div>
+
+      <div class="spb-meta-right">
+        <div class="spb-meta-line">BACHAREL EM TEOLOGIA</div>
+        <div class="spb-meta-line">DEPARTAMENTO DE CULTURA GERAL</div>
+        <div class="spb-meta-line">LÍNGUA PORTUGUESA – PORTUGUÊS 2 – 2º SEM. 2026</div>
+        <div class="spb-meta-prof">Prof.: ISMAEL ROCHA</div>
+      </div>
+    </header>
+    <div class="hero-title-block">
+      <p class="subtitle" style="margin-bottom:8px">PORTUGUÊS 2 · MATERIAL COMPLEMENTAR</p>
+      <h1>Apêndice 2 da Aula 8</h1>
+      <p class="subtitle">Material de treinamento — respostas preenchidas</p>
+    </div>
+
+    <section class="content-sec" id="orientacoes">
+      <h2 class="sec-heading">Orientações gerais</h2>
+      <p>Em cada oração, devem ser apresentados somente três elementos: a transcrição da oração, a classificação sintática e o conectivo com seu valor sintático. Não será solicitada justificativa.</p>
+    </section>
+
+    <section class="content-sec" id="modelo-2">
+      <h2 class="sec-heading">Modelo 2 — Treinamento</h2>
+      <h3 class="sub-heading">Texto bíblico — Almeida Revista e Atualizada (ARA)</h3>
+      <blockquote class="callout blue">
+        “Eu sou a videira, vós, os ramos. Quem permanece em mim, e eu, nele, esse dá muito fruto; porque sem mim nada podeis fazer”
+        <p style="margin:10px 0 0"><strong>Referência:</strong> João 15:5.</p>
+      </blockquote>
+      <p>Analise as orações na ordem em que aparecem no versículo.</p>
+      <h3 class="sub-heading">Resposta preenchida</h3>
+      <div class="callout"><p><strong>a) Primeira oração — transcrição:</strong> “Eu sou a videira”</p><p><strong>Classificação sintática:</strong> oração coordenada assindética</p><p><strong>Conectivo e valor sintático:</strong> não há conectivo interoracional expresso entre esta oração e a seguinte</p></div><div class="callout"><p><strong>b) Segunda oração — transcrição:</strong> “vós, os ramos”</p><p><strong>Classificação sintática:</strong> oração coordenada assindética, com elipse do verbo “sois”</p><p><strong>Conectivo e valor sintático:</strong> não há conectivo expresso; a relação com a oração anterior é de coordenação assindética</p></div><div class="callout"><p><strong>c) Terceira oração — transcrição:</strong> “Quem permanece em mim”</p><p><strong>Classificação sintática:</strong> oração subordinada adjetiva substantivada, com função de sujeito de “dá”</p><p><strong>Conectivo e valor sintático:</strong> “quem” é pronome relativo indefinido, que introduz a oração e equivale a “aquele que”</p></div><div class="callout"><p><strong>d) Quarta oração — transcrição:</strong> “e eu, nele”</p><p><strong>Classificação sintática:</strong> oração coordenada sindética aditiva, com elipse do verbo “permaneço”</p><p><strong>Conectivo e valor sintático:</strong> “e” é conjunção coordenativa aditiva</p></div><div class="callout"><p><strong>e) Quinta oração — transcrição:</strong> “esse dá muito fruto”</p><p><strong>Classificação sintática:</strong> oração principal em relação à oração iniciada por “Quem”</p><p><strong>Conectivo e valor sintático:</strong> não há conectivo interoracional expresso nesta oração principal</p></div><div class="callout"><p><strong>f) Sexta oração — transcrição:</strong> “porque sem mim nada podeis fazer”</p><p><strong>Classificação sintática:</strong> oração subordinada adverbial causal</p><p><strong>Conectivo e valor sintático:</strong> “porque” é conjunção subordinativa causal</p></div>
+    </section>
+
+    <footer style="border-top:1px solid var(--line); padding-top:16px; margin-top:36px; color:var(--muted); font-size:.88rem; text-align:center">
+      Seminário Presbiteriano de Brasília · Bacharelado em Teologia · Português 2
+      <p style="margin:4px 0 0"><a href="./aula8.html">Voltar à Aula 8</a></p>
+    </footer>
+
+  </main>
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const button = document.getElementById('themeToggle');
+      if (!button) return;
+      const saved = (() => { try { return localStorage.getItem('spb-theme'); } catch (e) { return null; } })();
+      if (saved === 'dark') root.classList.add('dark-mode');
+      button.setAttribute('aria-checked', root.classList.contains('dark-mode') ? 'true' : 'false');
+      button.addEventListener('click', function () {
+        root.classList.toggle('dark-mode');
+        const dark = root.classList.contains('dark-mode');
+        button.setAttribute('aria-checked', dark ? 'true' : 'false');
+        try { localStorage.setItem('spb-theme', dark ? 'dark' : 'light'); } catch (e) {}
+      });
+    })();
+  </script>
+</body>
+</html>

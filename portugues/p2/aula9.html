@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Aula de Português 2: concordância verbal e nominal. Material de leitura do Seminário Presbiteriano de Brasília.">
+<title>Português 2 — Concordância verbal e nominal</title>
+<style>
+:root{
+  color-scheme:light;
+  --bg:#eef2f7;--surface:#fff;--paper:#f8fafc;--ink:#1e293b;--muted:#475569;
+  --navy:#0b2344;--navy-light:#163a6b;--blue:#2563eb;--blue-pale:#eff6ff;--blue-border:#bfdbfe;
+  --teal:#0f766e;--teal-pale:#f0fdfa;--teal-border:#99f6e4;--green:#15803d;--green-pale:#f0fdf4;--green-border:#bbf7d0;
+  --coral:#c2410c;--coral-pale:#fff7ed;--coral-border:#fed7aa;--purple:#6d28d9;--purple-pale:#f5f3ff;--purple-border:#ddd6fe;
+  --amber:#b45309;--amber-pale:#fffbeb;--amber-border:#fde68a;--line:#cbd5e1;
+  --shadow-sm:0 1px 3px rgba(11,35,68,.06);--shadow-md:0 4px 20px rgba(11,35,68,.10);
+  --hdr-navy:#134a84;--hdr-teal:#10a386;--hdr-main:#1e293b;--hdr-sub:#334155;--hdr-line:#1e5a96;
+}
+html.dark-mode{
+  color-scheme:dark;--bg:#090d16;--surface:#111827;--paper:#1e293b;--ink:#f1f5f9;--muted:#94a3b8;
+  --navy:#e2e8f0;--navy-light:#93c5fd;--blue:#60a5fa;--blue-pale:#172554;--blue-border:#1e3a8a;
+  --teal:#2dd4bf;--teal-pale:#042f2e;--teal-border:#115e59;--green:#4ade80;--green-pale:#052e16;--green-border:#14532d;
+  --coral:#fb923c;--coral-pale:#431407;--coral-border:#7c2d12;--purple:#c084fc;--purple-pale:#2e1065;--purple-border:#581c87;
+  --amber:#fbbf24;--amber-pale:#451a03;--amber-border:#78350f;--line:#334155;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.35);--shadow-md:0 6px 24px rgba(0,0,0,.45);
+  --hdr-navy:#1d5ca0;--hdr-teal:#2dd4bf;--hdr-main:#f8fafc;--hdr-sub:#cbd5e1;--hdr-line:#3b82f6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .2s,color .2s}
+.page-wrapper{width:min(100%,1060px);min-height:100vh;margin:0 auto;padding:26px clamp(15px,4.5vw,58px) 54px;background:var(--surface);box-shadow:var(--shadow-md);position:relative}
+.inst-header{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto;align-items:center;column-gap:clamp(12px,2.4vw,28px);row-gap:10px;padding:0 0 15px;margin:0 auto 24px;border-bottom:2px solid var(--hdr-line);min-width:0}
+.theme-switch-wrapper{grid-column:1/-1;grid-row:1;justify-self:end;align-self:start;margin:0 0 2px;z-index:5}
+.theme-switch-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:48px;min-height:42px;padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer;box-shadow:var(--shadow-sm);font:inherit;touch-action:manipulation}
+.theme-switch-btn:hover{border-color:var(--blue)}.theme-switch-btn:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.theme-switch-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.spb-brand-left{grid-column:1;grid-row:2;display:flex;align-items:center;gap:14px;min-width:0}
+.spb-emblem-svg{width:72px;height:98px;flex:0 0 auto}
+.spb-brand-text{min-width:0}.spb-brand-name{font-size:1.02rem;font-weight:750;line-height:1.12;color:var(--hdr-main)}
+.spb-brand-motto{margin-top:5px;font-size:.73rem;line-height:1.3;color:var(--hdr-sub)}
+.spb-meta-right{grid-column:2;grid-row:2;min-width:0;text-align:right;color:var(--hdr-main)}
+.spb-meta-line{font-size:.83rem;line-height:1.5;font-weight:650;letter-spacing:.02em;overflow-wrap:anywhere}
+.spb-meta-prof{margin-top:4px;font-size:.83rem;color:var(--hdr-sub)}
+.slim-toc{position:fixed;left:14px;top:50%;transform:translateY(-50%);z-index:1100;width:36px;max-height:min(78vh,720px);overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 5px;box-shadow:var(--shadow-md);opacity:.86;transition:width .22s,border-radius .2s,padding .2s,opacity .2s}
+.slim-toc:hover,.slim-toc:focus-within{width:258px;border-radius:13px;padding:10px 8px;opacity:1;overflow-y:auto}
+.slim-toc-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.slim-toc-link{display:flex;align-items:center;gap:9px;min-height:31px;padding:4px 6px;border-radius:8px;text-decoration:none;color:var(--muted);white-space:nowrap}
+.slim-toc-link:hover,.slim-toc-link:focus-visible{background:var(--blue-pale);color:var(--blue);outline:none}
+.slim-toc-link.active{background:var(--blue-pale);color:var(--blue);font-weight:800}
+.toc-num{display:inline-flex;align-items:center;justify-content:center;flex:0 0 22px;width:22px;height:22px;border-radius:50%;background:var(--paper);font-size:.78rem;font-weight:800}
+.toc-text{display:inline-block;opacity:0;max-width:0;overflow:hidden;font-size:.84rem;transition:max-width .2s,opacity .2s}
+.slim-toc:hover .toc-text,.slim-toc:focus-within .toc-text{opacity:1;max-width:210px}
+.hero-title-block{text-align:center;margin:0 auto 28px;padding:9px 0 23px;border-bottom:1px solid var(--line)}
+.hero-kicker{color:var(--purple);font-size:.84rem;font-weight:900;letter-spacing:.14em;margin-bottom:9px}
+.hero-title-block h1{margin:0 auto 9px;max-width:950px;font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.16;color:var(--ink)}
+.hero-subtitle{margin:0 auto;color:var(--muted);font-size:clamp(1rem,1.7vw,1.2rem);font-weight:650}
+.back-portal-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:9px 16px;border-radius:999px;border:1px solid var(--blue-border);background:var(--blue-pale);color:var(--blue);text-decoration:none;font-size:.88rem;font-weight:800;line-height:1.35;touch-action:manipulation}
+.back-portal-btn:hover{filter:brightness(.97)}
+.content-sec{margin:0 0 30px;scroll-margin-top:24px}
+.content-sec h2{margin:0 0 15px;padding:0 0 9px;border-bottom:2px solid var(--line);color:var(--navy);font-size:1.42rem;line-height:1.3}
+.content-sec h3{margin:22px 0 9px;color:var(--navy-light);font-size:1.12rem;line-height:1.35}
+.content-sec p{margin:0 0 13px;color:var(--ink);text-align:left}
+.content-sec ul,.content-sec ol{margin:7px 0 15px;padding-left:1.45rem}
+.content-sec li{margin:0 0 7px;padding-left:3px}
+.lead-box{margin:0 0 24px;padding:17px 20px;border:1px solid var(--blue-border);border-left:5px solid var(--blue);border-radius:0 12px 12px 0;background:var(--blue-pale)}
+.lead-box strong{display:block;margin-bottom:5px;color:var(--blue);font-size:.88rem;letter-spacing:.06em}
+.example{margin:13px 0;padding:14px 17px;border:1px solid var(--line);border-radius:11px;background:var(--paper)}
+.example-label{display:block;margin-bottom:5px;color:var(--blue);font-size:.88rem;font-weight:850}
+.explain{margin:7px 0 0!important;color:var(--muted)!important;font-size:.97rem;font-style:italic}
+.callout{margin:17px 0;padding:16px 18px;border:1px solid var(--teal-border);border-left:5px solid var(--teal);border-radius:0 11px 11px 0;background:var(--teal-pale)}
+.callout-title{margin-bottom:7px;color:var(--teal);font-size:.9rem;font-weight:900;letter-spacing:.035em}
+.callout p:last-child{margin-bottom:0}
+.callout.blue{border-color:var(--blue-border);border-left-color:var(--blue);background:var(--blue-pale)}
+.callout.orange{border-color:var(--coral-border);border-left-color:var(--coral);background:var(--coral-pale)}
+.callout.purple{border-color:var(--purple-border);border-left-color:var(--purple);background:var(--purple-pale)}
+.table-wrap{max-width:100%;overflow-x:auto;margin:14px 0 18px;border:1px solid var(--line);border-radius:11px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;background:var(--surface);font-size:.98rem}
+th,td{padding:11px 13px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--navy);color:#fff;font-size:.88rem;letter-spacing:.025em}
+tbody tr:last-child td{border-bottom:0}tbody tr:nth-child(even){background:var(--paper)}
+.term{display:inline-block;margin:2px 4px 2px 0;padding:2px 8px;border-radius:999px;background:var(--blue-pale);color:var(--blue);font-size:.88rem;font-weight:750}
+.good{color:var(--green);font-weight:850}.bad{color:var(--coral);font-weight:850}
+.step-list{counter-reset:steps;list-style:none!important;padding:0!important;margin:14px 0!important;display:grid;gap:9px}
+.step-list li{counter-increment:steps;position:relative;padding:11px 14px 11px 48px;border:1px solid var(--line);border-radius:10px;background:var(--paper);margin:0}
+.step-list li::before{content:counter(steps);position:absolute;left:13px;top:11px;width:25px;height:25px;display:grid;place-items:center;border-radius:50%;background:var(--blue);color:#fff;font-size:.83rem;font-weight:850}
+.quick-summary{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin:14px 0}
+.summary-item{padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+.summary-item strong{display:block;margin-bottom:3px;color:var(--blue);font-size:.92rem}
+.back-portal-wrap{text-align:center;padding:27px 0 8px;margin-top:30px;border-top:1px solid var(--line)}
+.site-credit{text-align:center;padding:18px 12px 25px}
+.bunker-logo-link{display:inline-flex;align-items:center;justify-content:center;max-width:100%}
+.bunker-logo-link img{display:block;width:min(145px,36vw);max-height:126px;height:auto;object-fit:contain}
+.bunker-logo-link img.bunker-logo-light{display:none}
+html.dark-mode .bunker-logo-dark{display:none}html.dark-mode .bunker-logo-light{display:block}
+.footer-note{color:var(--muted);font-size:.84rem;margin-top:8px}
+/* Modo leitura: remove a interface e apresenta o conteúdo em uma coluna limpa. */
+.reader-toolbar{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin:15px 0 28px}
+.reader-toggle-btn,.reader-print-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:43px;padding:9px 16px;border:1px solid var(--blue-border);border-radius:999px;background:var(--blue-pale);color:var(--blue);font:inherit;font-size:.9rem;font-weight:750;cursor:pointer;touch-action:manipulation}
+.reader-toggle-btn:hover,.reader-print-btn:hover{filter:brightness(.97)}
+.reader-toggle-btn:focus-visible,.reader-print-btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.reader-toolbar svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.reader-print-btn{display:none}
+body.reader-mode{background:#fff!important;color:#20242a!important}
+body.reader-mode .page-wrapper{width:min(100%,860px);min-height:0;margin:0 auto;padding:28px clamp(18px,5vw,54px) 54px;background:#fff!important;color:#20242a!important;box-shadow:none}
+body.reader-mode .inst-header,body.reader-mode .slim-toc,body.reader-mode .back-portal-wrap,body.reader-mode .site-credit{display:none!important}
+body.reader-mode .hero-title-block{text-align:left;margin:0 auto 14px;padding:0 0 17px;border-bottom:1px solid #d7dce2}
+body.reader-mode .hero-kicker{color:#5b6470;font-size:.82rem;letter-spacing:.1em}
+body.reader-mode .hero-title-block h1{margin:0 0 8px;color:#14181e;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,4vw,2.6rem);line-height:1.2}
+body.reader-mode .hero-subtitle{margin:0;color:#59616c;font-size:1.05rem;font-weight:500}
+body.reader-mode .reader-toolbar{justify-content:flex-end;margin:0 0 30px;padding:0 0 13px;border-bottom:1px solid #e2e6eb}
+body.reader-mode .reader-toggle-btn,body.reader-mode .reader-print-btn{background:#f5f7f9;border-color:#d8dee6;color:#28384c}
+body.reader-mode .reader-print-btn{display:inline-flex}
+body.reader-mode .content-sec{margin:0 0 30px;scroll-margin-top:12px}
+body.reader-mode .content-sec h2{margin:0 0 15px;padding:0 0 8px;border-bottom:1px solid #cfd5dc;color:#172b45;font-family:Georgia,"Times New Roman",serif;font-size:1.48rem;line-height:1.35}
+body.reader-mode .content-sec h3{margin:23px 0 10px;color:#263d59;font-family:Georgia,"Times New Roman",serif;font-size:1.2rem;line-height:1.4}
+body.reader-mode .content-sec p,body.reader-mode .content-sec li{color:#20242a;font-size:1.08rem;line-height:1.85}
+body.reader-mode .content-sec ul,body.reader-mode .content-sec ol{padding-left:1.5rem}
+body.reader-mode .example,body.reader-mode .callout,body.reader-mode .lead-box,body.reader-mode .summary-item{padding:7px 0;margin:14px 0;background:transparent!important;border:0;border-radius:0;box-shadow:none}
+body.reader-mode .callout-title,body.reader-mode .example-label{color:#344a63;font-size:.94rem;letter-spacing:0}
+body.reader-mode .explain{color:#4b5563!important;font-size:1rem;font-style:normal}
+body.reader-mode .term{padding:0;background:transparent;color:#243e5c;font-size:.98rem}
+body.reader-mode .good,body.reader-mode .bad{color:#20242a!important}
+body.reader-mode .quick-summary{gap:5px}
+body.reader-mode .table-wrap{overflow:visible;border:0;border-radius:0}
+body.reader-mode table{min-width:0;background:#fff;color:#20242a;font-size:1rem}
+body.reader-mode th{background:#e9edf2;color:#1d2b3c;font-size:.92rem}
+body.reader-mode td,body.reader-mode th{padding:9px 10px;border-bottom:1px solid #d9dee5}
+body.reader-mode tbody tr:nth-child(even){background:#f8f9fa}
+body.reader-mode .step-list li{padding:8px 8px 8px 44px;background:transparent;border:0}
+body.reader-mode .back-portal-wrap,body.reader-mode .site-credit{display:none!important}
+
+@media(max-width:900px){.slim-toc{left:6px;width:30px}.slim-toc:hover,.slim-toc:focus-within{width:230px}}
+@media(max-width:640px){
+ body{font-size:16px}.page-wrapper{padding:13px 14px 44px;box-shadow:none}
+ .inst-header{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto;row-gap:11px;padding-bottom:12px;margin-bottom:20px}
+ .inst-header>.theme-switch-wrapper{grid-column:1;grid-row:1;justify-self:end;margin-right:0}
+ .spb-brand-left{grid-column:1;grid-row:2;width:100%;gap:11px}.spb-meta-right{grid-column:1;grid-row:3;text-align:left;width:100%}
+ .spb-emblem-svg{width:48px;height:66px}.spb-brand-name{font-size:1rem}.spb-brand-motto{font-size:.7rem}
+ .spb-meta-line{font-size:.79rem}.spb-meta-prof{font-size:.81rem}
+ .slim-toc{position:sticky;left:auto;top:auto;transform:none;width:100%;max-width:100%;max-height:none;height:auto;overflow-x:auto;overflow-y:hidden;margin:0 auto 18px;padding:6px 8px;border-radius:11px;opacity:1;box-shadow:var(--shadow-sm);-webkit-overflow-scrolling:touch}
+ .slim-toc:hover,.slim-toc:focus-within{width:100%;padding:6px 8px;overflow-x:auto;overflow-y:hidden}
+ .slim-toc-list{flex-direction:row;align-items:center;gap:5px;width:max-content;min-width:100%}.slim-toc-list li{flex:0 0 auto;margin:0}
+ .slim-toc-link{min-height:34px;padding:5px 8px;gap:5px}.toc-num{width:20px;height:20px;flex-basis:20px}.toc-text{display:inline;opacity:1;max-width:155px;font-size:.75rem}
+ .hero-title-block{padding:7px 2px 18px;margin-bottom:22px}.hero-title-block h1{font-size:clamp(1.65rem,7vw,2.15rem)}
+ .content-sec h2{font-size:1.25rem}.content-sec h3{font-size:1.05rem}
+ .lead-box,.callout,.example{padding:13px 14px}.quick-summary{grid-template-columns:1fr}
+ .back-portal-btn{width:100%;min-height:44px}
+}
+@media(max-width:380px){.page-wrapper{padding-left:11px;padding-right:11px}.spb-brand-left{gap:8px}.spb-emblem-svg{width:43px;height:59px}.toc-text{max-width:125px}}
+@media print{
+  @page{margin:18mm 16mm}
+  html,body{background:#fff!important;color:#111!important;font-size:11pt!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body .page-wrapper,body.reader-mode .page-wrapper{width:100%;max-width:none;min-height:0;margin:0;padding:0;box-shadow:none;background:#fff!important;color:#111!important}
+  .slim-toc,.theme-switch-wrapper,.reader-toolbar,.back-portal-wrap,.site-credit{display:none!important}
+  .inst-header{margin-bottom:16px}
+  .content-sec{break-inside:auto;page-break-inside:auto}
+  .content-sec h2,.content-sec h3{break-after:avoid;page-break-after:avoid}
+  .example,.callout,.lead-box,li,tr{break-inside:avoid;page-break-inside:avoid}
+  .table-wrap{overflow:visible;border:0}
+  table{min-width:0;font-size:9.5pt}
+  th,td{padding:6px 7px}
+  p,li{orphans:3;widows:3}
+}
+</style>
+<script>
+(function(){
+  try { var saved=localStorage.getItem('spb_portais_tema'); if(saved==='dark') document.documentElement.classList.add('dark-mode'); }
+  catch(e){}
+})();
+</script>
+</head>
+<body>
+<nav class="slim-toc" aria-label="Sumário de navegação rápida">
+  <ul class="slim-toc-list">
+    <li><a class="slim-toc-link" href="#sec-concordancia"><span class="toc-num">1</span><span class="toc-text">O que é concordância?</span></a></li>
+    <li><a class="slim-toc-link" href="#sec-verbal"><span class="toc-num">2</span><span class="toc-text">Concordância verbal</span></a></li>
+    <li><a class="slim-toc-link" href="#sec-nominal"><span class="toc-num">3</span><span class="toc-text">Concordância nominal</span></a></li>
+    <li><a class="slim-toc-link" href="#sec-aplicacao"><span class="toc-num">4</span><span class="toc-text">Aplicação bíblica e acadêmica</span></a></li>
+    <li><a class="slim-toc-link" href="#sec-exercicios"><span class="toc-num">5</span><span class="toc-text">Exercícios de fixação</span></a></li>
+    <li><a class="slim-toc-link" href="#sec-sintese"><span class="toc-num">6</span><span class="toc-text">Síntese para consulta</span></a></li>
+  </ul>
+</nav>
+<main class="page-wrapper">
+<header class="inst-header" role="banner" aria-label="Cabeçalho institucional do Seminário Presbiteriano de Brasília">
+  <div class="theme-switch-wrapper">
+    <button class="theme-switch-btn" id="themeToggle" type="button" role="switch" aria-checked="false" aria-label="Alternar para modo escuro" title="Alternar tema">
+      <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+      <span id="themeLabel">Claro</span>
+    </button>
+  </div>
+  <div class="spb-brand-left">
+    <svg class="spb-emblem-svg" viewBox="0 0 120 164" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect fill="#134a84" x="0" y="0" width="120" height="128"></rect><rect fill="#fff" x="56" y="0" width="8" height="128"></rect><rect fill="#fff" x="0" y="48" width="120" height="8"></rect>
+      <path d="M60 12 C26 32 26 84 60 106 C94 84 94 32 60 12Z" fill="#134a84" stroke="#fff" stroke-width="7.5" stroke-linejoin="round"></path><path d="M60 106 C46 113 35 116 28 117 M60 106 C74 113 85 116 92 117" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round"></path><circle cx="60" cy="36" r="4.2" fill="#fff"></circle>
+      <rect x="0" y="124" width="120" height="40" fill="#fff"></rect><path d="M0 128 Q30 113 60 129 Q90 113 120 128 L120 137 Q90 122 60 138 Q30 122 0 137Z" fill="#10a386"></path><path d="M0 142 Q30 127 60 143 Q90 127 120 142 L120 151 Q90 136 60 152 Q30 136 0 151Z" fill="#10a386"></path><path d="M0 156 Q30 141 60 157 Q90 141 120 156 L120 164 L0 164Z" fill="#10a386"></path>
+    </svg>
+    <div class="spb-brand-text"><div class="spb-brand-name">Seminário<br>Presbiteriano<br>de Brasília</div><div class="spb-brand-motto">Teologia para transformação da vida</div></div>
+  </div>
+  <div class="spb-meta-right">
+    <div class="spb-meta-line">BACHAREL EM TEOLOGIA</div>
+    <div class="spb-meta-line">DEPARTAMENTO DE CULTURA GERAL</div>
+    <div class="spb-meta-line">LÍNGUA PORTUGUESA — PORTUGUÊS 2 — 2º SEM. 2026</div>
+    <div class="spb-meta-prof">Prof.: ISMAEL ROCHA</div>
+  </div>
+</header>
+
+<div class="hero-title-block">
+  <div class="hero-kicker">PORTUGUÊS 2 · UNIDADE 6</div>
+  <h1>Concordância verbal e nominal</h1>
+  <p class="hero-subtitle">Relações de harmonia gramatical na construção do período</p>
+</div>
+
+<div class="reader-toolbar" role="group" aria-label="Ferramentas de leitura">
+  <button class="reader-toggle-btn" id="readerToggle" type="button" aria-pressed="false" aria-label="Ativar modo leitura">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5v16M8 7h8M8 10h8M8 13h6"/></svg>
+    <span id="readerToggleLabel">Modo leitura</span>
+  </button>
+  <button class="reader-print-btn" id="readerPrint" type="button" aria-label="Imprimir ou salvar como PDF">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6zM17 12h.01"/></svg>
+    <span>Imprimir / salvar PDF</span>
+  </button>
+</div>
+
+<section class="content-sec" id="sec-concordancia">
+  <h2>1. O que é concordância?</h2>
+  <p>Concordância é a relação de harmonia gramatical entre palavras. Algumas palavras mudam de forma para indicar pessoa, número ou gênero, conforme a relação que estabelecem com outras palavras. Mais do que uma exigência formal, a concordância organiza a frase e ajuda o leitor a compreender quem pratica a ação, quem a recebe e a que substantivo um termo se refere.</p>
+  <ul>
+    <li><strong>Concordância verbal:</strong> o verbo concorda, em regra, com o núcleo do sujeito em pessoa e número.</li>
+    <li><strong>Concordância nominal:</strong> artigos, pronomes, numerais e adjetivos concordam em gênero e número com o substantivo a que se referem.</li>
+  </ul>
+  <div class="example"><span class="example-label">Exemplo verbal</span>O profeta anunciou a mensagem. / Os profetas anunciaram a mensagem.<p class="explain">O núcleo do sujeito é <em>profeta/profetas</em>; o verbo acompanha singular/plural.</p></div>
+  <div class="example"><span class="example-label">Exemplo nominal</span>A palavra fiel / As palavras fiéis.<p class="explain">O artigo e o adjetivo acompanham o substantivo <em>palavra/palavras</em> em gênero e número.</p></div>
+  <div class="example"><span class="example-label">Exemplo acadêmico</span>A análise dos textos foi concluída. / As análises dos textos foram concluídas.<p class="explain">O núcleo é <em>análise/análises</em>; a expressão “dos textos” apenas especifica o núcleo e não determina a flexão verbal.</p></div>
+  <div class="callout blue"><div class="callout-title">COMO DECIDIR</div><p>Para a concordância verbal, localize primeiro o sujeito e marque seu núcleo. Para a concordância nominal, identifique o substantivo a que o artigo, pronome, numeral ou adjetivo se liga.</p></div>
+  <p>Em textos teológicos e acadêmicos, a concordância evita ambiguidades. Em “A maioria dos alunos compreendeu a regra”, o verbo pode ficar no singular porque o núcleo é <em>maioria</em>; em “A maioria dos alunos compreenderam a regra”, o plural é aceito por concordância com <em>alunos</em>. A escolha deve ser consistente ao longo do texto.</p>
+</section>
+
+<section class="content-sec" id="sec-verbal">
+  <h2>2. Concordância verbal</h2>
+  <h3>2.1. Regra geral: o verbo concorda com o núcleo do sujeito</h3>
+  <p>O núcleo é a palavra central do sujeito. Termos que o acompanham podem estar no plural sem que o núcleo também esteja no plural. O erro mais comum consiste em flexionar o verbo de acordo com uma palavra próxima, e não com o núcleo.</p>
+  <div class="example"><span class="example-label">Correto</span>O grupo de jovens da igreja chegou cedo.<p class="explain">O núcleo é <em>grupo</em>, singular. A expressão “de jovens da igreja” é complemento do núcleo.</p></div>
+  <div class="example"><span class="example-label">Correto</span>Os grupos de jovens chegaram cedo.<p class="explain">O núcleo é <em>grupos</em>, plural.</p></div>
+  <div class="example"><span class="example-label">Correto</span>A lista de presença dos alunos foi entregue.<p class="explain">O núcleo é <em>lista</em>, singular; “dos alunos” é complemento.</p></div>
+  <div class="example"><span class="example-label">Correto</span>As decisões do conselho foram anunciadas.<p class="explain">O núcleo é <em>decisões</em>, plural; “do conselho” especifica o núcleo.</p></div>
+  <div class="example"><span class="example-label">Exemplo bíblico</span>“A palavra do Senhor permanece para sempre” (1Pe 1.25).<p class="explain">O núcleo do sujeito é <em>palavra</em>; por isso, o verbo <em>permanece</em> está no singular.</p></div>
+  <div class="example"><span class="example-label">Exemplo bíblico</span>“Os céus proclamam a glória de Deus” (Sl 19.1).<p class="explain">O núcleo do sujeito é <em>céus</em>, plural; o verbo <em>proclamam</em> também está no plural.</p></div>
+  <div class="callout orange"><div class="callout-title">TESTE PRÁTICO</div><p>Risque mentalmente os termos entre o núcleo e o verbo. Em “O grupo de jovens da igreja chegou”, a sequência “de jovens da igreja” não altera o núcleo <em>grupo</em>.</p></div>
+
+  <h3>2.2. Sujeito composto</h3>
+  <p>O sujeito composto apresenta dois ou mais núcleos. Em regra, o verbo vai para o plural, sobretudo quando o sujeito antecede o verbo.</p>
+  <ul>
+    <li><strong>Antes do verbo:</strong> em regra, o verbo vai para o plural. Contudo, há construções em que o singular é possível ou preferível, conforme o sentido e a relação entre os núcleos.</li>
+  </ul>
+  <div class="example"><span class="example-label">Regra geral</span>O pastor e o diácono chegaram cedo.<br><span class="example-label">Exemplo bíblico</span>“Os céus e a terra passarão” (Mt 24.35).<p class="explain">O sujeito reúne dois núcleos — <em>pastor/diácono</em> e <em>céus/terra</em> —; por isso, o verbo vai ao plural.</p></div>
+  <div class="example"><span class="example-label">Exemplo acadêmico</span>O professor e a coordenadora apresentaram o relatório.<p class="explain">Há dois núcleos independentes: <em>professor</em> e <em>coordenadora</em>.</p></div>
+  <div class="callout blue"><div class="callout-title">POSSIBILIDADES E EXCEÇÕES</div><p>Quando o sujeito composto antecede o verbo, o plural é a solução mais segura. O singular, porém, pode ocorrer nos casos abaixo.</p></div>
+  <ul>
+    <li><strong>Núcleos sinônimos ou de sentido próximo:</strong> o verbo pode ficar no singular, pois os termos formam uma ideia única.</li>
+  </ul>
+  <div class="example">A força e o poder de Deus sustenta o cristão. / A força e o poder de Deus sustentam o cristão.<p class="explain">Como <em>força</em> e <em>poder</em> têm sentido próximo, o singular enfatiza a unidade da ideia; o plural também é aceito.</p></div>
+  <ul>
+    <li><strong>Núcleos ligados por “ou” com sentido exclusivo:</strong> apenas um dos termos pratica a ação; o verbo fica no singular.</li>
+  </ul>
+  <div class="example">Pedro ou João presidirá a reunião. / O aluno ou a aluna entregará o trabalho.<p class="explain">A conjunção <em>ou</em> indica escolha: somente Pedro ou somente João presidirá; somente o aluno ou somente a aluna entregará.</p></div>
+  <div class="example">Pedro ou João chegarão cedo.<p class="explain">Se <em>ou</em> tiver sentido inclusivo — isto é, se ambos puderem chegar —, o plural é possível.</p></div>
+  <ul>
+    <li><strong>Núcleos ligados por “nem” com sentido exclusivo:</strong> o singular é possível quando se nega a ação de ambos, considerados individualmente.</li>
+  </ul>
+  <div class="example">Nem Pedro nem João compareceu à reunião. / Nem Pedro nem João compareceram à reunião.<p class="explain">O singular enfatiza que cada um, isoladamente, não compareceu; o plural é igualmente correto e mais frequente.</p></div>
+  <ul>
+    <li><strong>Um núcleo determina ou especifica o outro:</strong> quando os termos se referem à mesma pessoa ou coisa, o verbo fica no singular.</li>
+  </ul>
+  <div class="example">O diretor e coordenador do curso chegou cedo.<p class="explain">“Coordenador do curso” especifica <em>diretor</em>: trata-se da mesma pessoa, e o núcleo efetivo é <em>diretor</em>.</p></div>
+  <div class="example">A autora e organizadora da coletânea palestrará no evento.<p class="explain">“Organizadora da coletânea” caracteriza <em>autora</em>; não há dois sujeitos distintos.</p></div>
+  <ul>
+    <li><strong>Expressões com “cada”:</strong> a ideia distributiva favorece o singular.</li>
+  </ul>
+  <div class="example">Cada aluno e cada professora recebeu as orientações.<p class="explain">A palavra <em>cada</em> individualiza os núcleos; por isso, o singular é a construção mais natural.</p></div>
+  <ul>
+    <li><strong>Núcleos que formam unidade conceptual:</strong> quando a sequência nomeia uma realidade única, o singular é possível.</li>
+  </ul>
+  <div class="example">Arroz e feijão é o prato preferido da família.<p class="explain">“Arroz e feijão” designa um único prato; o verbo concorda com essa ideia unitária.</p></div>
+  <div class="example">O vai-e-vem das pessoas aumentou durante o intervalo.<p class="explain">Embora haja duas palavras ligadas, a expressão <em>vai-e-vem</em> funciona como um único substantivo.</p></div>
+  <div class="callout orange"><div class="callout-title">ORIENTAÇÃO PARA A REDAÇÃO</div><p>Em textos acadêmicos e teológicos, prefira o plural quando houver dois núcleos independentes. Reserve o singular para os casos de sentido exclusivo, núcleos sinônimos, especificação de um termo pelo outro, expressões com <em>cada</em> ou ideia de unidade.</p></div>
+  <ul><li><strong>Depois do verbo:</strong> o plural é correto; em certas construções, também pode ocorrer concordância com o núcleo mais próximo.</li></ul>
+  <div class="example">Chegaram o pastor e o diácono. / Chegou o pastor e o diácono.<p class="explain">A concordância no plural é a opção mais clara em textos formais quando não há motivo para a concordância atrativa.</p></div>
+  <p>A escolha deve preservar a clareza. Em redação acadêmica, prefira a concordância que torne evidente que há mais de um núcleo.</p>
+
+  <h3>2.3. Expressões partitivas e coletivas</h3>
+  <p>Com expressões como <em>a maioria de</em>, <em>grande parte de</em>, <em>boa parte de</em> e <em>uma parcela de</em>, seguidas de substantivo plural, a norma-padrão admite geralmente o verbo no singular (concordância com a expressão partitiva) ou no plural (concordância com o substantivo plural).</p>
+  <div class="callout blue"><div class="callout-title">DUAS FORMAS POSSÍVEIS</div><p>A maioria dos alunos compreendeu a regra. / A maioria dos alunos compreenderam a regra.</p><p>Grande parte dos manuscritos apresenta essa variante. / Grande parte dos manuscritos apresentam essa variante.</p><p>Boa parte das cartas foi preservada. / Boa parte das cartas foram preservadas.</p></div>
+  <p>Com coletivos, como <em>equipe</em>, <em>turma</em>, <em>comissão</em> e <em>congregação</em>, a norma-padrão prefere o verbo no singular quando o coletivo é o núcleo.</p>
+  <div class="example"><span class="example-label">Forma preferencial</span>A equipe chegou cedo. / A turma foi informada sobre a atividade.<p class="explain">Os coletivos <em>equipe</em> e <em>turma</em> são os núcleos do sujeito.</p></div>
+  <div class="example"><span class="example-label">Observação</span>A equipe de professores chegaram cedo.<p class="explain">O plural pode ocorrer quando se enfatizam os membros do coletivo, especialmente com especificação. Em redação formal, o singular é a escolha mais segura e uniforme.</p></div>
+  <p>Para uma redação mais uniforme, escolha uma forma e mantenha o mesmo padrão ao longo do texto.</p>
+
+  <h3>2.4. Pronomes relativos QUE e QUEM</h3>
+  <ul>
+    <li><strong>Com QUE,</strong> o verbo concorda normalmente com o termo antecedente.</li>
+  </ul>
+  <div class="example">Fui eu que preparei o material. / Fomos nós que preparamos o material. / Foram eles que prepararam o material.</div>
+  <ul><li><strong>Com QUEM,</strong> a regra mais segura é usar o verbo na 3.ª pessoa do singular, independentemente do antecedente.</li></ul>
+  <div class="example"><span class="example-label">Forma recomendada</span>Fui eu quem preparou o material.<br>Fomos nós quem preparou o material.<br>Foram eles quem preparou o material.<p class="explain">Em todas as frases, o verbo é <em>preparou</em>, na 3.ª pessoa do singular. Ele não precisa concordar com <em>eu</em>, <em>nós</em> ou <em>eles</em>.</p></div>
+  <div class="callout blue"><div class="callout-title">E A FORMA “FUI EU QUEM PREPAREI”?</div><p>A construção “Fui eu quem preparei o material” também é aceita. Nela, o verbo concorda com o antecedente do pronome <em>quem</em>: <em>eu preparei</em>.</p><p>Contudo, para evitar dúvida, prefira sempre o verbo na 3.ª pessoa do singular: <strong>“Fui eu quem preparou o material.”</strong> Essa é a construção mais simples e segura.</p></div>
+  <div class="example"><span class="example-label">Comparação</span>Fui eu quem preparou o material. <span class="good">→ forma recomendada.</span><br>Fui eu quem preparei o material. <span class="good">→ forma aceita.</span><p class="explain">As duas frases estão corretas. A primeira mantém o verbo no singular; a segunda faz o verbo concordar com <em>eu</em>.</p></div>
+  <div class="example"><span class="example-label">Exemplo acadêmico</span>Fui eu quem revisou o texto. <span class="good">→ recomendada.</span><br>Foram os professores quem revisou o texto. <span class="good">→ aceita, mas menos clara.</span><br>Foram os professores que revisaram o texto. <span class="good">→ mais direta e clara.</span><p class="explain">Com <em>quem</em>, o verbo pode permanecer no singular. Porém, quando o antecedente está no plural, a construção com <em>que</em> e verbo no plural comunica a ideia com mais clareza.</p></div>
+  <div class="example"><span class="example-label">Exemplo aplicado</span>Fui eu quem organizou as referências. <span class="good">→ recomendada.</span><br>Fomos nós quem organizou as referências. <span class="good">→ aceita.</span><br>Fomos nós que organizamos as referências. <span class="good">→ mais clara.</span><p class="explain">Com <em>quem</em>, o verbo permanece <em>organizou</em>. Se a intenção é evidenciar que <em>nós</em> praticou a ação, prefira <em>que organizamos</em>.</p></div>
+  <div class="callout orange"><div class="callout-title">REGRA PRÁTICA</div><p>Use <strong>quem + verbo na 3.ª pessoa do singular</strong>: “Fui eu quem preparou”, “Fomos nós quem preparou”, “Foram eles quem preparou”. Essa é a forma mais segura.</p><p>Se quiser destacar claramente o antecedente — especialmente <em>eu</em>, <em>nós</em> ou <em>eles</em> —, prefira <strong>que + verbo concordando com o antecedente</strong>: “Fui eu que preparei”, “Fomos nós que preparamos”, “Foram eles que prepararam”.</p></div>
+
+  <h3>2.5. Verbos impessoais: HAVER e FAZER</h3>
+  <p>Quando <strong>haver</strong> significa existir ou indica tempo decorrido, é impessoal: não tem sujeito e permanece na 3.ª pessoa do singular. O verbo <strong>fazer</strong> também é impessoal quando indica tempo decorrido ou fenômeno meteorológico.</p>
+  <div class="example"><span class="good">Correto:</span> Havia muitos ouvintes na assembleia. / Há dúvidas sobre o assunto.<br><span class="bad">Incorreto:</span> Haviam muitos ouvintes. <span class="good">→ Correto:</span> Havia muitos ouvintes.<br><span class="good">Correto:</span> Faz dois anos que o estudo começou. / Fazia dias que não chovia.<br><span class="bad">Incorreto:</span> Fazem dois anos que o estudo começou. <span class="good">→ Correto:</span> Faz dois anos que o estudo começou.</div>
+  <div class="callout"><div class="callout-title">EXEMPLO BÍBLICO RELACIONADO</div><p>Em construções que expressam existência, lembre-se de que <em>haver</em> fica no singular: “Há um só corpo e um só Espírito” (Ef 4.4).</p></div>
+  <p><strong>Atenção à diferença entre HAVER e EXISTIR:</strong></p>
+  <div class="quick-summary"><div class="summary-item"><strong>HAVER (impessoal)</strong>Havia muitas pessoas na cidade.</div><div class="summary-item"><strong>EXISTIR (verbo pessoal)</strong>Existiam muitas pessoas na cidade.</div></div>
+  <div class="example"><span class="example-label">Fenômeno do tempo</span>Faz frio em Brasília. / Choveu durante a tarde.<p class="explain"><em>Fazer</em>, indicando fenômeno meteorológico, é impessoal e permanece no singular.</p></div>
+  <p>Em locuções verbais, a impessoalidade de <em>haver</em> se mantém quando ele é o verbo principal com sentido de existir: <strong>Vai haver mudanças; Deve haver soluções.</strong> Mas, quando <em>haver</em> é auxiliar de outro verbo pessoal, o auxiliar pode flexionar: <strong>Eles haviam chegado; Hão de existir alternativas.</strong> Em “hão de existir”, o verbo principal é <em>existir</em>, que tem sujeito: <em>alternativas</em>.</p>
+
+  <h3>2.6. O pronome SE e a concordância</h3>
+  <p>Para decidir se o verbo deve ir ao singular ou ao plural, observe a transitividade do verbo e a função do <em>se</em>.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Construção</th><th>Como reconhecer</th><th>Concordância</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Verbo transitivo direto + se</strong></td><td>Pode-se transformar em voz passiva analítica; o termo paciente funciona como sujeito.</td><td>O verbo concorda com o sujeito: <em>Publica-se o estudo / Publicam-se os estudos.</em></td></tr>
+      <tr><td><strong>Verbo transitivo indireto, intransitivo ou de ligação + se</strong></td><td>O sujeito é indeterminado; frequentemente há preposição exigida pelo verbo.</td><td>O verbo fica na 3.ª pessoa do singular: <em>Precisa-se de voluntários; Vive-se bem aqui.</em></td></tr>
+    </tbody>
+  </table></div>
+  <div class="example"><span class="example-label">Exemplo bíblico adaptado à estrutura</span>Leem-se os salmos na reunião.<p class="explain">Os salmos são lidos na reunião: o termo <em>os salmos</em> é sujeito paciente, e o verbo concorda no plural.</p></div>
+  <div class="example"><span class="example-label">Exemplo</span>Precisa-se de obreiros dedicados.<p class="explain">Precisar exige a preposição <em>de</em>; “de obreiros dedicados” não é sujeito, e o verbo fica no singular.</p></div>
+  <div class="example"><span class="example-label">Exemplo adicional</span>Confia-se em bons resultados. / Vendem-se livros usados.<p class="explain">Em “confia-se”, o verbo exige a preposição <em>em</em> e fica no singular. Em “vendem-se”, <em>livros usados</em> é sujeito paciente e o verbo vai ao plural.</p></div>
+  <div class="callout orange"><div class="callout-title">TESTE PRÁTICO</div><p>Se for possível reescrever a frase como “os estudos são publicados”, trata-se de voz passiva sintética e o verbo concorda com <em>estudos</em>. Se a construção exigir preposição, como em “precisa de”, o termo preposicionado não passa a ser sujeito.</p></div>
+</section>
+
+<section class="content-sec" id="sec-nominal">
+  <h2>3. Concordância nominal</h2>
+  <h3>3.1. Regra geral</h3>
+  <p>Artigos, pronomes, numerais e adjetivos concordam em gênero e número com o substantivo a que se referem.</p>
+  <div class="example">A primeira leitura cuidadosa; os primeiros estudos cuidadosos.<br><span class="example-label">Exemplo bíblico</span>“As palavras do Senhor são palavras puras” (Sl 12.6).<p class="explain">O artigo e o adjetivo concordam com <em>palavras</em>, substantivo feminino plural.</p></div>
+  <div class="example"><span class="example-label">Exemplos adicionais</span>Uma análise minuciosa do texto. / Os documentos oficiais seguem anexos.<p class="explain">Em “análise minuciosa”, artigo e adjetivo acompanham o substantivo feminino singular. Em “documentos oficiais”, acompanham o substantivo masculino plural.</p></div>
+  <p>A concordância nominal também ajuda a perceber a que substantivo um adjetivo se refere, especialmente em períodos longos.</p>
+
+  <h3>3.2. Um adjetivo relacionado a mais de um substantivo</h3>
+  <ul><li><strong>Adjetivo depois dos substantivos:</strong> pode concordar com o mais próximo ou ir para o plural; se houver substantivos de gêneros diferentes, o plural masculino é a forma geral.</li></ul>
+  <div class="example">Tinha voz e olhar profundos. / Tinha voz e olhar profundo.<p class="explain">A primeira forma evidencia a relação com os dois substantivos; a segunda concorda com o termo mais próximo.</p></div>
+  <div class="example"><span class="example-label">Gêneros diferentes</span>Encontrei casa e apartamento novos.<p class="explain">Com substantivos de gêneros diferentes, o adjetivo posposto vai, em geral, para o masculino plural.</p></div>
+  <ul><li><strong>Adjetivo antes dos substantivos:</strong> em geral, concorda com o substantivo mais próximo.</li></ul>
+  <div class="example">Escolheu excelente livro e revista.</div>
+  <p>Quando a frase puder gerar dúvida, reorganize-a para deixar clara a relação entre adjetivo e substantivo. Em vez de “O professor elogiou o aluno e a aluna dedicados”, prefira: “O professor elogiou o aluno dedicado e a aluna dedicada”, se a intenção for qualificar ambos.</p>
+
+  <h3>3.3. ANEXO, OBRIGADO, MESMO e PRÓPRIO</h3>
+  <ul>
+    <li><strong>Anexo:</strong> varia quando funciona como adjetivo — <em>As cartas seguem anexas; os documentos seguem anexos.</em> A expressão <em>em anexo</em> é invariável.</li>
+    <li><strong>Obrigado/obrigada:</strong> concorda com quem agradece — um homem diz “obrigado”; uma mulher diz “obrigada”.</li>
+    <li><strong>Mesmo/próprio:</strong> variam quando significam “a própria pessoa/coisa” — <em>Elas mesmas organizaram a reunião; os próprios autores reconheceram o problema.</em></li>
+    <li><strong>Mesmo/próprio:</strong> podem ficar invariáveis como advérbios, com sentido de “realmente” ou “até” — <em>Elas mesmo organizaram a reunião; os próprios alunos reconheceram o problema.</em></li>
+  </ul>
+  <div class="example"><span class="example-label">Exemplo aplicado</span>As referências seguem anexas ao relatório. / O arquivo segue em anexo.</div>
+
+  <h3>3.4. MEIO e BASTANTE</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Palavra</th><th>Quando varia</th><th>Quando não varia</th></tr></thead>
+    <tbody>
+      <tr><td><strong>meio</strong></td><td>Quando significa metade e acompanha substantivo: <em>meia hora, meio capítulo.</em></td><td>Quando significa um pouco e modifica adjetivo/advérbio: <em>estavam meio cansados; a turma ficou meio apreensiva.</em></td></tr>
+      <tr><td><strong>bastante</strong></td><td>Quando acompanha substantivo com sentido de muitos/suficientes: <em>bastantes razões; bastantes livros.</em></td><td>Quando intensifica verbo, adjetivo ou advérbio: <em>estudaram bastante; estavam bastante atentos.</em></td></tr>
+    </tbody>
+  </table></div>
+  <div class="example"><span class="example-label">Exemplos</span>As equipes estavam meio cansadas. / Havia bastantes motivos para continuar.</div>
+  <p><strong>Dica:</strong> substitua <em>meio</em> por “um pouco” e <em>bastante</em> por “muito” quando possível. Se a substituição funcionar, normalmente essas palavras ficam invariáveis.</p>
+</section>
+
+<section class="content-sec" id="sec-aplicacao">
+  <h2>4. Aplicação à leitura bíblica e à escrita acadêmica</h2>
+  <p>Os exemplos abaixo mostram como a concordância pode ser observada em frases bíblicas. A redação exata varia conforme a tradução; as referências servem para localizar os textos.</p>
+  <div class="example"><span class="example-label">Salmo 19.1</span>“Os céus proclamam a glória de Deus.”<p class="explain">Sujeito: os céus; núcleo: céus; verbo: proclamam, plural.</p></div>
+  <div class="example"><span class="example-label">1 Pedro 1.25</span>“A palavra do Senhor permanece para sempre.”<p class="explain">Sujeito: a palavra do Senhor; núcleo: palavra; verbo: permanece, singular.</p></div>
+  <div class="example"><span class="example-label">Mateus 24.35</span>“Os céus e a terra passarão.”<p class="explain">Sujeito composto: céus e terra; verbo no plural.</p></div>
+  <div class="example"><span class="example-label">Efésios 4.4</span>“Há um só corpo e um só Espírito.”<p class="explain">Haver com sentido de existir é impessoal e fica no singular.</p></div>
+  <div class="example"><span class="example-label">Salmo 12.6</span>“As palavras do Senhor são palavras puras.”<p class="explain">Palavras e puras estão no feminino plural; são concordância nominal.</p></div>
+  <h3>Procedimento de revisão em quatro passos</h3>
+  <ol class="step-list">
+    <li>Localize o verbo e pergunte: quem pratica, sofre ou apresenta o estado indicado pelo verbo?</li>
+    <li>Identifique o sujeito e marque seu núcleo; não confunda o núcleo com um substantivo próximo.</li>
+    <li>Verifique se há uma regra especial: sujeito composto, expressão partitiva, haver/fazer impessoais ou pronome <em>se</em>.</li>
+    <li>Na concordância nominal, identifique o substantivo a que cada artigo, pronome, numeral ou adjetivo se liga.</li>
+  </ol>
+</section>
+
+<section class="content-sec" id="sec-exercicios">
+  <h2>5. Exercícios de fixação</h2>
+  <p>Resolva os itens e justifique brevemente a concordância usada. Nos exemplos bíblicos, considere a referência indicada.</p>
+  <ol>
+    <li>Complete: “Os céus e a terra (passará / passarão)” (cf. Mt 24.35). Explique a concordância.</li>
+    <li>Escolha a forma adequada: “(Havia / Haviam) muitas pessoas reunidas.” Explique por que a outra forma não é adequada na norma-padrão.</li>
+    <li>Complete e classifique o uso do <em>se</em>: “(Publica-se / Publicam-se) os estudos.” Reescreva a frase na voz passiva analítica.</li>
+    <li>Corrija, se necessário: “As equipes estavam meias cansadas e estudaram bastantes.” Explique cada escolha.</li>
+    <li>Revise a frase para a norma-padrão: “A maioria dos alunos compreenderam a regra, e segue anexo as referências.” Indique as formas possíveis e justifique a versão escolhida.</li>
+    <li>Complete: “(Faz / Fazem) três anos que a congregação realiza esse estudo.” Justifique a forma escolhida.</li>
+    <li>Escolha: “(Precisa-se / Precisam-se) de voluntários para a atividade.” Explique a função do <em>se</em>.</li>
+    <li>Corrija, se necessário: “Fui eu que preparei o material e segue anexo as referências.”</li>
+    <li>Explique a diferença: “Pedro ou João presidirá a reunião” e “Pedro ou João chegarão cedo”.</li>
+    <li>Justifique: “Cada aluno e cada professora recebeu as orientações.”</li>
+    <li>Explique por que “Fui eu quem preparou o material” é a forma mais segura e por que “Fui eu quem preparei o material” também é aceita.</li>
+  </ol>
+</section>
+
+<section class="content-sec" id="sec-sintese">
+  <h2>6. Síntese para consulta rápida</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Regra</th><th>Consulta rápida</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Concordância verbal</strong></td><td>Verbo ↔ núcleo do sujeito: “O grupo de jovens chegou cedo.”</td></tr>
+      <tr><td><strong>Sujeito composto antes do verbo</strong></td><td>Em regra, plural: “O pastor e o diácono chegaram cedo.” Singular é possível em casos especiais: “Pedro ou João presidirá”; “O diretor e coordenador chegou”.</td></tr>
+      <tr><td><strong>Quem + verbo</strong></td><td>Forma mais segura: “Fui eu quem preparou”, “Fomos nós quem preparou”, “Foram eles quem preparou”. Também é aceita a concordância com o antecedente: “Fui eu quem preparei”.</td></tr>
+      <tr><td><strong>Haver = existir / tempo decorrido</strong></td><td>Singular: havia pessoas; há dúvidas; vai haver mudanças.</td></tr>
+      <tr><td><strong>Fazer = tempo decorrido / clima</strong></td><td>Singular: faz três anos; faz frio.</td></tr>
+      <tr><td><strong>Se apassivador</strong></td><td>O verbo concorda: publica-se o texto; publicam-se os textos.</td></tr>
+      <tr><td><strong>Índice de indeterminação do sujeito</strong></td><td>Verbo na 3.ª pessoa do singular: precisa-se de ajuda.</td></tr>
+      <tr><td><strong>Concordância nominal</strong></td><td>Artigos, pronomes, numerais e adjetivos acompanham o substantivo: “as palavras puras”.</td></tr>
+      <tr><td><strong>Meio / bastante</strong></td><td>Variam quando determinam substantivo; ficam invariáveis quando funcionam como advérbio: “meia hora”; “estudaram bastante”.</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Referências bíblicas utilizadas:</strong> Sl 12.6; Sl 19.1; Mt 24.35; Ef 4.4; 1Pe 1.25.</p>
+</section>
+
+<div class="back-portal-wrap"><a class="back-portal-btn" href="./">← Voltar ao portal de Português 2</a></div>
+</main>
+<footer class="site-credit" aria-label="Créditos do site">
+  <a class="bunker-logo-link" href="https://bunkerdigital.top/" target="_blank" rel="noopener noreferrer" aria-label="Bunker Digital — abrir em nova aba">
+    <img class="bunker-logo-dark" src="/graphics/logo-bunker-dark.png" alt="Bunker Digital" loading="lazy" width="150" height="130">
+    <img class="bunker-logo-light" src="/graphics/logo-bunker-light.png" alt="Bunker Digital" loading="lazy" width="150" height="130">
+  </a>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('themeToggle'),icon=document.getElementById('themeIcon'),label=document.getElementById('themeLabel');
+  var sun='<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+  var moon='<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+  function sync(){var dark=root.classList.contains('dark-mode');icon.innerHTML=dark?moon:sun;label.textContent=dark?'Escuro':'Claro';btn.setAttribute('aria-checked',String(dark));btn.setAttribute('aria-label',dark?'Alternar para modo claro':'Alternar para modo escuro');}
+  sync();btn.addEventListener('click',function(){root.classList.toggle('dark-mode');var mode=root.classList.contains('dark-mode')?'dark':'light';try{localStorage.setItem('spb_portais_tema',mode);}catch(e){}sync();});
+  var readerToggle=document.getElementById('readerToggle');
+  var readerToggleLabel=document.getElementById('readerToggleLabel');
+  var readerPrint=document.getElementById('readerPrint');
+  if(readerToggle){
+    readerToggle.addEventListener('click',function(){
+      var active=!document.body.classList.contains('reader-mode');
+      document.body.classList.toggle('reader-mode',active);
+      readerToggle.setAttribute('aria-pressed',String(active));
+      readerToggle.setAttribute('aria-label',active?'Sair do modo leitura':'Ativar modo leitura');
+      if(readerToggleLabel)readerToggleLabel.textContent=active?'Sair do modo leitura':'Modo leitura';
+      if(active)window.scrollTo({top:0,behavior:'smooth'});
+    });
+  }
+  if(readerPrint){readerPrint.addEventListener('click',function(){window.print();});}
+  var sections=document.querySelectorAll('section.content-sec'),links=document.querySelectorAll('.slim-toc-link');
+  function updateActive(){var pos=window.scrollY+145,current=sections[0]?sections[0].id:'';sections.forEach(function(s){if(s.offsetTop<=pos)current=s.id;});links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+current);});}
+  window.addEventListener('scroll',updateActive,{passive:true});updateActive();
+})();
+</script>
+</body>
+</html>

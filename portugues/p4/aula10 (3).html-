@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Português 4 — Aula 10: Tipologia Textual e Gêneros Acadêmicos</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg-page: #eef2f7;
+      --surface: #ffffff;
+      --paper: #f8fafc;
+      --ink: #1e293b;
+      --muted: #475569;
+      --navy: #0b2344;
+      --navy-light: #163a6b;
+      --blue: #2563eb;
+      --blue-pale: #eff6ff;
+      --blue-border: #bfdbfe;
+      --teal: #0f766e;
+      --teal-pale: #f0fdfa;
+      --teal-border: #99f6e4;
+      --green: #15803d;
+      --green-pale: #f0fdf4;
+      --green-border: #bbf7d0;
+      --coral: #c2410c;
+      --coral-pale: #fff7ed;
+      --coral-border: #fed7aa;
+      --purple: #6d28d9;
+      --purple-pale: #f5f3ff;
+      --purple-border: #ddd6fe;
+      --amber: #b45309;
+      --amber-pale: #fffbeb;
+      --amber-border: #fde68a;
+      --line: #cbd5e1;
+      --shadow-sm: 0 1px 3px rgba(11, 35, 68, 0.06);
+      --shadow-md: 0 4px 20px rgba(11, 35, 68, 0.1);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+
+      /* Cores Vetoriais do Cabeçalho Institucional (Modo Claro) */
+      --hdr-navy: #134a84;
+      --hdr-teal: #10a386;
+      --hdr-right-main: #1e293b;
+      --hdr-right-sub: #334155;
+      --hdr-line: #1e5a96;
+
+      /* Pílulas sintáticas modo claro */
+      --pill-op-bg: #dbeafe; --pill-op-txt: #1e3a8a; --pill-op-brd: #93c5fd;
+      --pill-co-bg: #dcfce7; --pill-co-txt: #14532d; --pill-co-brd: #86efac;
+      --pill-su-bg: #ffedd5; --pill-su-txt: #7c2d12; --pill-su-brd: #fdba74;
+      --pill-cn-bg: #fae8ff; --pill-cn-txt: #581c87; --pill-cn-brd: #e879f9;
+    }
+
+    html.dark-mode {
+      color-scheme: dark;
+      --bg-page: #090d16;
+      --surface: #111827;
+      --paper: #1e293b;
+      --ink: #f1f5f9;
+      --muted: #94a3b8;
+      --navy: #e2e8f0;
+      --navy-light: #93c5fd;
+      --blue: #60a5fa;
+      --blue-pale: #172554;
+      --blue-border: #1e3a8a;
+      --teal: #2dd4bf;
+      --teal-pale: #042f2e;
+      --teal-border: #115e59;
+      --green: #4ade80;
+      --green-pale: #052e16;
+      --green-border: #14532d;
+      --coral: #fb923c;
+      --coral-pale: #431407;
+      --coral-border: #7c2d12;
+      --purple: #c084fc;
+      --purple-pale: #2e1065;
+      --purple-border: #581c87;
+      --amber: #fbbf24;
+      --amber-pale: #451a03;
+      --amber-border: #78350f;
+      --line: #334155;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+      --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.55);
+
+      /* Cores Vetoriais do Cabeçalho Institucional (Modo Escuro — integrado ao fundo) */
+      --hdr-navy: #1d5ca0;
+      --hdr-teal: #2dd4bf;
+      --hdr-right-main: #f8fafc;
+      --hdr-right-sub: #cbd5e1;
+      --hdr-line: #3b82f6;
+
+      /* Pílulas sintáticas modo escuro */
+      --pill-op-bg: #1e3a8a; --pill-op-txt: #dbeafe; --pill-op-brd: #3b82f6;
+      --pill-co-bg: #14532d; --pill-co-txt: #dcfce7; --pill-co-brd: #22c55e;
+      --pill-su-bg: #7c2d12; --pill-su-txt: #ffedd5; --pill-su-brd: #f97316;
+      --pill-cn-bg: #581c87; --pill-cn-txt: #fae8ff; --pill-cn-brd: #c084fc;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-page);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .page-wrapper {
+      max-width: 1060px;
+      margin: 0 auto;
+      background-color: var(--surface);
+      padding: 28px clamp(16px, 4.5vw, 58px) 84px;
+      box-shadow: var(--shadow-md);
+      transition: background-color 0.2s ease;
+    }
+
+    /* Chave Seletora de Modo Claro / Escuro */
+    .theme-switch-wrapper {
+      position: fixed;
+      top: 16px;
+      right: 18px;
+      z-index: 1200;
+    }
+
+    .theme-switch-btn {
+      appearance: none;
+      background-color: var(--surface);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px 5px 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-md);
+      transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .theme-switch-btn:hover {
+      border-color: var(--blue);
+      transform: translateY(-1px);
+    }
+
+    .theme-switch-btn:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
+    }
+
+    .switch-track {
+      width: 30px;
+      height: 17px;
+      background-color: var(--line);
+      border-radius: 999px;
+      position: relative;
+      transition: background-color 0.2s ease;
+    }
+
+    html.dark-mode .switch-track {
+      background-color: var(--blue);
+    }
+
+    .switch-thumb {
+      width: 13px;
+      height: 13px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    }
+
+    html.dark-mode .switch-thumb {
+      transform: translateX(13px);
+    }
+
+    .theme-switch-btn svg {
+      width: 15px;
+      height: 15px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Menu Lateral Slim Fixo e Sóbrio */
+    .slim-toc {
+      position: fixed;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1100;
+      background-color: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 5px;
+      width: 36px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      opacity: 0.78;
+      transition: width 0.24s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.2s ease, padding 0.2s ease, opacity 0.2s ease;
+    }
+
+    .slim-toc:hover,
+    .slim-toc:focus-within {
+      width: 254px;
+      border-radius: var(--radius-md);
+      padding: 10px 8px;
+      opacity: 1;
+    }
+
+    .slim-toc-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .slim-toc-link {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      color: var(--muted);
+      padding: 4px;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .slim-toc-link:hover,
+    .slim-toc-link:focus-visible {
+      background-color: var(--blue-pale);
+      color: var(--blue);
+      outline: none;
+    }
+
+    .slim-toc-link.active {
+      background-color: var(--blue);
+      color: #ffffff;
+    }
+
+    .toc-num {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      border-radius: 50%;
+    }
+
+    .toc-text {
+      font-size: 0.8rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.18s ease;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .slim-toc:hover .toc-text,
+    .slim-toc:focus-within .toc-text {
+      opacity: 1;
+    }
+
+    /* CABEÇALHO INSTITUCIONAL ADAPTÁVEL AO FUNDO CLARO/ESCURO EM ALTA DEFINIÇÃO */
+    .inst-header {
+      width: 100%;
+      margin: 0 auto 24px;
+      background-color: transparent;
+      padding: 4px 0 16px;
+      border-bottom: 2.5px solid var(--hdr-line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      transition: border-color 0.2s ease;
+    }
+
+    .spb-brand-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .spb-emblem-svg {
+      width: 60px;
+      height: 82px;
+      display: block;
+      flex-shrink: 0;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .spb-brand-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .spb-brand-name {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      font-size: clamp(1.08rem, 1.9vw, 1.32rem);
+      font-weight: 600;
+      line-height: 1.16;
+      color: #134a84;
+      letter-spacing: -0.01em;
+      transition: color 0.2s ease;
+    }
+
+    html.dark-mode .spb-brand-name {
+      color: #e2e8f0;
+    }
+
+    .spb-brand-motto {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      font-size: clamp(0.66rem, 1vw, 0.76rem);
+      font-weight: 600;
+      color: var(--hdr-teal);
+      margin-top: 5px;
+      letter-spacing: 0.01em;
+    }
+
+    .spb-meta-right {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+    }
+
+    .spb-meta-line {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      font-size: clamp(0.82rem, 1.45vw, 1.02rem);
+      font-weight: 500;
+      color: var(--hdr-right-sub);
+      letter-spacing: 0.02em;
+      line-height: 1.28;
+      transition: color 0.2s ease;
+    }
+
+    /* Fonte suavizada para Prof.: ISMAEL ROCHA */
+    .spb-meta-prof {
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+      font-size: clamp(0.86rem, 1.5vw, 1.04rem);
+      font-weight: 500;
+      color: var(--hdr-right-main);
+      letter-spacing: 0.03em;
+      margin-top: 2px;
+      transition: color 0.2s ease;
+    }
+
+    /* Título Didático Principal */
+    .hero-title-block {
+      text-align: center;
+      padding: 12px 10px 24px;
+      margin-bottom: 30px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .hero-title-block h1 {
+      font-size: clamp(1.85rem, 4.5vw, 2.95rem);
+      color: var(--navy);
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .hero-title-block .subtitle {
+      font-size: clamp(1.05rem, 2.2vw, 1.38rem);
+      color: var(--blue);
+      font-weight: 600;
+      margin: 0 0 16px;
+    }
+/* Seções e Tipografia */
+    section.content-sec {
+      margin-bottom: 46px;
+      scroll-margin-top: 24px;
+    }
+
+    h2.sec-heading {
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      color: var(--navy);
+      border-bottom: 3px solid var(--blue);
+      padding-bottom: 8px;
+      margin: 0 0 18px;
+      line-height: 1.25;
+    }
+
+    h3.sub-heading {
+      font-size: clamp(1.12rem, 2.3vw, 1.35rem);
+      color: var(--blue);
+      margin: 26px 0 12px;
+      line-height: 1.3;
+    }
+
+    p {
+      margin: 0 0 15px;
+    }
+
+    ul, ol {
+      margin: 0 0 18px;
+      padding-left: 1.45rem;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    /* Caixas de Destaque */
+    .callout {
+      border-left: 5px solid var(--teal);
+      background-color: var(--teal-pale);
+      border-top: 1px solid var(--teal-border);
+      border-right: 1px solid var(--teal-border);
+      border-bottom: 1px solid var(--teal-border);
+      padding: 16px 20px;
+      margin: 20px 0;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+
+    .callout.blue {
+      border-left-color: var(--blue);
+      background-color: var(--blue-pale);
+      border-color: var(--blue-border);
+    }
+
+    .callout.coral {
+      border-left-color: var(--coral);
+      background-color: var(--coral-pale);
+      border-color: var(--coral-border);
+    }
+
+    .callout.amber {
+      border-left-color: var(--amber);
+      background-color: var(--amber-pale);
+      border-color: var(--amber-border);
+    }
+
+    .callout.green {
+      border-left-color: var(--green);
+      background-color: var(--green-pale);
+      border-color: var(--green-border);
+    }
+
+    .callout-title {
+      font-size: 0.96rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin: 0 0 6px;
+      display: block;
+      color: var(--navy);
+    }
+
+    /* Exemplos Fixos */
+    .example-card {
+      background-color: var(--paper);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--blue);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 15px 18px;
+      margin: 16px 0;
+    }
+
+    .example-card.green {
+      border-left-color: var(--green);
+      background-color: var(--green-pale);
+    }
+
+    .example-tag {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 9px;
+      border-radius: 4px;
+      background-color: var(--blue);
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .example-card.green .example-tag {
+      background-color: var(--green);
+    }
+
+    .quote-verse {
+      font-size: 1.06rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    /* Exemplos Interativos com Pequeno Ícone Clicável */
+    .interactive-box {
+      background-color: var(--surface);
+      border: 1.5px solid var(--blue-border);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin: 22px 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .interactive-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .interactive-badge {
+      background-color: var(--blue);
+      color: #ffffff;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .interactive-focus {
+      font-size: 0.86rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .interactive-prompt {
+      font-size: 1.04rem;
+      font-weight: 700;
+      color: var(--navy);
+      background-color: var(--paper);
+      padding: 12px 15px;
+      border-radius: var(--radius-sm);
+      border-left: 4px solid var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .interactive-question-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .interactive-question {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--ink);
+      flex: 1;
+    }
+
+    /* Pequeno Ícone Clicável para Resposta Comentada */
+    .icon-answer-btn {
+      appearance: none;
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background-color: var(--blue-pale);
+      color: var(--blue);
+      border: 1px solid var(--blue-border);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.2s ease, border-color 0.15s ease;
+    }
+
+    .icon-answer-btn:hover {
+      background-color: var(--blue);
+      color: #ffffff;
+      border-color: var(--blue);
+      transform: scale(1.08);
+    }
+
+    .icon-answer-btn:focus-visible {
+      outline: 2px solid var(--amber);
+      outline-offset: 2px;
+    }
+
+    .icon-answer-btn[aria-expanded="true"] {
+      background-color: var(--teal);
+      color: #ffffff;
+      border-color: var(--teal);
+    }
+
+    .icon-answer-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.2s ease;
+    }
+
+    .icon-answer-btn[aria-expanded="true"] svg {
+      transform: rotate(180deg);
+    }
+
+    .answer-panel {
+      display: none;
+      margin-top: 14px;
+      padding: 15px 18px;
+      background-color: var(--teal-pale);
+      border: 1px solid var(--teal-border);
+      border-left: 5px solid var(--teal);
+      border-radius: var(--radius-sm);
+      font-size: 0.94rem;
+    }
+
+    .answer-panel.is-open {
+      display: block;
+    }
+
+    .answer-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Diagramas e Infográficos */
+    .diagram-box {
+      background-color: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 20px 18px;
+      margin: 24px 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .diagram-title {
+      text-align: center;
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      margin: 0 0 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .diag-card {
+      background-color: var(--surface);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+
+    .diag-card.coord { border-top: 5px solid var(--green); }
+    .diag-card.subord { border-top: 5px solid var(--coral); }
+    .diag-card.subst { border-top: 5px solid var(--blue); }
+    .diag-card.adj { border-top: 5px solid var(--green); }
+
+    .diag-card h4 {
+      margin: 0 0 10px;
+      font-size: 1.04rem;
+      color: var(--navy);
+    }
+
+    .train-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .wagon {
+      background-color: var(--green-pale);
+      border: 1.5px solid var(--green);
+      color: var(--navy);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    .coupler {
+      font-weight: 800;
+      color: var(--coral);
+      padding: 4px 8px;
+      background-color: var(--coral-pale);
+      border: 1px dashed var(--coral);
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+
+    .tree-flow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .tree-root {
+      background-color: var(--blue-pale);
+      border: 1.5px solid var(--blue);
+      color: var(--navy);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    .tree-branch-arrow {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--coral);
+    }
+
+    .tree-leaf {
+      background-color: var(--coral-pale);
+      border: 1.5px solid var(--coral);
+      color: var(--navy);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    /* Marcadores Sintáticos Inline */
+    .syn-pill {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-size: 0.85em;
+      font-weight: 700;
+      margin: 2px 1px;
+    }
+
+    .syn-op { background-color: var(--pill-op-bg); color: var(--pill-op-txt); border: 1px solid var(--pill-op-brd); }
+    .syn-coord { background-color: var(--pill-co-bg); color: var(--pill-co-txt); border: 1px solid var(--pill-co-brd); }
+    .syn-sub { background-color: var(--pill-su-bg); color: var(--pill-su-txt); border: 1px solid var(--pill-su-brd); }
+    .syn-conn { background-color: var(--pill-cn-bg); color: var(--pill-cn-txt); border: 1px solid var(--pill-cn-brd); }
+
+    /* Tabelas Responsivas */
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 20px 0 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    table {
+      width: 100%;
+      min-width: 540px;
+      border-collapse: collapse;
+      background-color: var(--surface);
+      font-size: 0.93rem;
+      line-height: 1.55;
+    }
+
+    thead th {
+      background-color: #0b2344;
+      color: #ffffff;
+      font-weight: 700;
+      text-align: left;
+      padding: 12px 14px;
+    }
+
+    html.dark-mode thead th {
+      background-color: #1e293b;
+      color: #f8fafc;
+      border-bottom: 2px solid var(--line);
+    }
+
+    td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: var(--paper);
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Passo a Passo do Período Misto */
+    .step-chain {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .step-item {
+      background-color: var(--surface);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--blue);
+      border-radius: var(--radius-sm);
+      padding: 13px 15px;
+    }
+
+    .step-num {
+      display: inline-block;
+      background-color: var(--blue-pale);
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 0.76rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+
+    /* Referências Gramaticais e Rodapé */
+    .ref-footer {
+      margin-top: 52px;
+      padding-top: 22px;
+      border-top: 2px solid var(--line);
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .ref-footer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .ref-footer h3 {
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .ref-footer ul {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+
+    /* Pequena Seta no Final da Página para Subir Rápido ao Topo */
+    .bottom-actions-bar {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .scroll-top-btn {
+      appearance: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background-color: var(--paper);
+      color: var(--navy);
+      border: 1px solid var(--line);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      box-shadow: var(--shadow-sm);
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .scroll-top-btn:hover,
+    .scroll-top-btn:focus-visible {
+      background-color: var(--blue);
+      color: #ffffff;
+      border-color: var(--blue);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .scroll-top-btn svg {
+      width: 17px;
+      height: 17px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Compatibilidade Mobile e Telas Menores */
+    @media (max-width: 1160px) {
+      .slim-toc {
+        left: 8px;
+        width: 32px;
+        padding: 6px 4px;
+      }
+
+      .toc-num {
+        width: 17px;
+        height: 17px;
+        font-size: 0.7rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      body {
+        font-size: 16px;
+        line-height: 1.62;
+      }
+
+      .page-wrapper {
+        padding: 16px 14px 74px 44px;
+      }
+
+      .inst-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding-bottom: 14px;
+      }
+
+      .spb-meta-right {
+        text-align: left;
+      }
+
+      .slim-toc {
+        left: 5px;
+        width: 28px;
+        padding: 6px 3px;
+        opacity: 0.88;
+      }
+
+      .slim-toc:hover,
+      .slim-toc:focus-within {
+        width: 225px;
+        padding: 8px 6px;
+      }
+
+      .toc-num {
+        width: 16px;
+        height: 16px;
+        font-size: 0.68rem;
+      }
+
+      .theme-switch-wrapper {
+        top: 10px;
+        right: 10px;
+      }
+
+      .theme-switch-btn {
+        padding: 4px 8px;
+        font-size: 0.72rem;
+      }
+
+      .interactive-box {
+        padding: 14px 14px;
+      }
+
+      .interactive-prompt {
+        font-size: 0.96rem;
+        padding: 10px 12px;
+      }
+
+      .callout {
+        padding: 14px 15px;
+      }
+    }
+
+    @media print {
+      body {
+        background-color: #ffffff;
+        font-size: 11.5pt;
+      }
+      .page-wrapper {
+        box-shadow: none;
+        max-width: none;
+        padding: 0;
+      }
+      .slim-toc, .theme-switch-wrapper, .icon-answer-btn, .bottom-actions-bar {
+        display: none !important;
+      }
+      .answer-panel {
+        display: block !important;
+      }
+    }
+  
+
+/* === Padronização visual e responsividade === */
+
+
+/* Chave junto ao cabeçalho no início do documento; rola para fora da tela */
+.theme-switch-wrapper { position:absolute !important; top:14px !important; right:max(18px, calc((100vw - 1060px)/2 + 18px)) !important; z-index:1200; }
+#themeToggle.theme-switch-btn { position:relative !important; top:auto !important; right:auto !important; z-index:1200; touch-action:manipulation; }
+body { position:relative; }
+html { scroll-padding-top:84px; }
+body { overflow-x:clip; }
+.page-wrapper { min-width:0; }
+.page-wrapper img { max-width:100%; height:auto; }
+@media (max-width:640px) {
+  .theme-switch-wrapper { top:10px !important; right:12px !important; }
+  #themeToggle.theme-switch-btn { min-width:44px; min-height:44px; }
+  .page-wrapper { width:100%; padding-left:16px; padding-right:16px; }
+  
+}
+@media print {
+/* Cabeçalho de impressão em fluxo simples para evitar sobreposição em PDF. */
+  .inst-header { display:block !important; min-height:100px; margin-bottom:16px !important; padding-bottom:10px !important; overflow:hidden; }
+  .spb-brand-left { float:left; display:flex !important; width:43%; gap:10px !important; align-items:center; }
+  .spb-emblem-svg { width:50px !important; height:68px !important; }
+  .spb-brand-text { display:block !important; min-width:0; }
+  .spb-brand-name { font-size:10.5pt !important; line-height:1.15 !important; }
+  .spb-brand-motto { font-size:7pt !important; line-height:1.2 !important; margin-top:3px !important; }
+  .spb-meta-right { float:right; display:block !important; width:54%; text-align:right; }
+  .spb-meta-line, .spb-meta-prof { display:block !important; font-size:8pt !important; line-height:1.25 !important; margin:0 0 3px !important; letter-spacing:0 !important; }
+  .inst-header::after { content:""; display:block; clear:both; }
+}
+
+
+
+/* Bunker Digital: arquivo original externo, com variante por tema */
+.bunker-logo-link{display:inline-flex;align-items:center;justify-content:center;max-width:100%;}
+.bunker-logo-link img{display:block;width:min(150px,42vw);height:auto;object-fit:contain;}
+.bunker-logo-light{display:none!important;}
+html.dark-mode .bunker-logo-dark,html[data-theme="dark"] .bunker-logo-dark{display:none!important;}
+html.dark-mode .bunker-logo-light,html[data-theme="dark"] .bunker-logo-light{display:block!important;}
+
+
+
+
+/* Modo leitura: apresentação limpa do conteúdo para leitura e impressão */
+.reader-toolbar{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin:14px auto 0;}
+.reader-actions{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;}
+.reader-actions[hidden]{display:none!important;}
+.reader-btn{appearance:none;border:1px solid var(--blue-border);background:var(--blue-pale);color:var(--blue);border-radius:999px;padding:9px 15px;min-height:42px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;font-size:.9rem;font-weight:600;line-height:1.2;cursor:pointer;transition:background-color .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;}
+.reader-btn:hover,.reader-btn:focus-visible{background:var(--blue);border-color:var(--blue);color:#fff;outline:none;transform:translateY(-1px);}
+.reader-btn:focus-visible{outline:2px solid var(--amber);outline-offset:3px;}
+.reader-btn svg{width:18px;height:18px;flex:0 0 18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.reader-exit-btn{background:var(--surface);color:var(--muted);border-color:var(--line);}
+
+/* Ampliação discreta das fontes auxiliares e dos rótulos pequenos */
+.theme-switch-btn{font-size:.85rem;}
+.toc-num{font-size:.8rem;}
+.toc-text{font-size:.9rem;}
+.spb-brand-motto{font-size:clamp(.74rem,1vw,.82rem);}
+.spb-meta-line{font-size:clamp(.88rem,1.45vw,1.04rem);}
+.spb-meta-prof{font-size:clamp(.9rem,1.5vw,1.06rem);}
+.example-tag{font-size:.84rem;}
+.interactive-badge{font-size:.82rem;}
+.interactive-focus{font-size:.92rem;}
+.diagram-title{font-size:.98rem;}
+.wagon,.tree-root,.tree-leaf{font-size:.92rem;}
+.coupler{font-size:.88rem;}
+.step-num{font-size:.84rem;}
+.ref-footer{font-size:.95rem;}
+.ref-footer h3{font-size:1rem;}
+table{font-size:.98rem;}
+.syn-pill{font-size:.9em;}
+
+/* Leitura limpa: mantém exemplos, diagramas e tabelas, retirando a interface */
+body.reader-mode{background:#fff!important;color:#18212f!important;}
+.reader-mode .page-wrapper{max-width:860px;background:#fff!important;color:#18212f!important;box-shadow:none!important;padding:30px clamp(18px,5vw,58px) 48px!important;}
+.reader-mode .inst-header,.reader-mode .slim-toc,.reader-mode .theme-switch-wrapper,.reader-mode .site-credit,.reader-mode .portal-return-wrap{display:none!important;}
+.reader-mode .hero-title-block{padding:4px 0 18px;margin-bottom:24px;border-bottom:1px solid #d6dce5;}
+.reader-mode .hero-title-block h1{color:#111827!important;}
+.reader-mode .hero-title-block .subtitle{color:#334155!important;}
+.reader-mode .content-sec{margin-bottom:30px;}
+.reader-mode .content-sec p,.reader-mode .content-sec li{font-size:1.08rem;line-height:1.78;color:#202938!important;}
+.reader-mode .sec-heading{color:#10233f!important;border-bottom-color:#9aa9bb;}
+.reader-mode .sub-heading,.reader-mode h3,.reader-mode h4{color:#1d3555!important;}
+.reader-mode .callout,.reader-mode .example-card,.reader-mode .diagram-box,.reader-mode .diag-card,.reader-mode .step-item,.reader-mode .interactive-box{background:#fff!important;color:#202938!important;box-shadow:none!important;border-color:#d5dce5!important;break-inside:avoid;}
+.reader-mode .callout p,.reader-mode .example-card p,.reader-mode .diag-card p,.reader-mode .step-item p,.reader-mode .interactive-box p{color:#202938!important;}
+.reader-mode .callout-title,.reader-mode .diagram-title,.reader-mode .quote-verse{color:#18385f!important;}
+.reader-mode blockquote{color:#283548!important;border-left-color:#8a9bb0!important;}
+.reader-mode table{background:#fff!important;color:#202938!important;font-size:1rem;}
+.reader-mode thead th{background:#e9eef5!important;color:#14243a!important;border-color:#ccd5e1!important;}
+.reader-mode tbody tr:nth-child(even){background:#f7f9fc!important;}
+.reader-mode td{color:#202938!important;border-color:#d8dee8!important;}
+.reader-mode .syn-pill{print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+.reader-mode .reader-toolbar{margin:0 auto 24px;}
+.reader-mode .reader-mode-btn{display:none!important;}
+.reader-mode .reader-actions{display:flex!important;}
+.reader-mode .reader-btn{background:#f1f5f9!important;color:#1d3555!important;border-color:#cbd5e1!important;}
+
+.portal-return-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:8px 15px;border:1px solid var(--blue-border);border-radius:999px;background:var(--blue-pale);color:var(--blue);font-size:.9rem;font-weight:650;text-decoration:none;}
+.portal-return-btn:hover,.portal-return-btn:focus-visible{background:var(--blue);border-color:var(--blue);color:#fff;outline:none;}
+
+@media(max-width:640px){
+  .reader-btn{min-height:44px;padding:10px 14px;font-size:.88rem;}
+  .reader-mode .page-wrapper{padding:22px 18px 36px!important;}
+  .reader-mode .content-sec p,.reader-mode .content-sec li{font-size:1.04rem;}
+  .toc-num{font-size:.8rem;}
+  .theme-switch-btn{font-size:.82rem;}
+}
+
+@media print{
+  @page{margin:18mm 16mm;}
+  html,body{background:#fff!important;color:#111!important;}
+  body{font-size:12pt!important;line-height:1.55!important;}
+  .page-wrapper{max-width:none!important;margin:0!important;padding:0!important;box-shadow:none!important;background:#fff!important;color:#111!important;}
+  .inst-header,.slim-toc,.theme-switch-wrapper,.reader-toolbar,.site-credit,.portal-return-wrap,.bottom-actions-bar{display:none!important;}
+  .hero-title-block{padding:0 0 12pt!important;margin:0 0 18pt!important;border-bottom:1px solid #bbb!important;}
+  .hero-title-block h1{font-size:22pt!important;color:#111!important;}
+  .hero-title-block .subtitle{font-size:13pt!important;color:#333!important;}
+  .content-sec{margin:0 0 18pt!important;break-inside:auto;}
+  .content-sec p,.content-sec li{font-size:11.5pt!important;line-height:1.5!important;color:#111!important;orphans:3;widows:3;}
+  h2,h3,h4{break-after:avoid;}
+  .callout,.example-card,.diagram-box,.diag-card,.step-item,.interactive-box,blockquote{break-inside:avoid;box-shadow:none!important;}
+  .callout,.example-card,.diagram-box,.diag-card,.step-item,.interactive-box{background:#fff!important;color:#111!important;}
+  .table-wrap{overflow:visible!important;box-shadow:none!important;}
+  table{width:100%!important;min-width:0!important;font-size:9.5pt!important;}
+  thead th{background:#e9eef5!important;color:#111!important;}
+  td,th{color:#111!important;}
+  .answer-panel{display:block!important;}
+  a{color:inherit!important;text-decoration:none!important;}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+
+/* Blocos adicionais de exemplos para a revisão ampliada */
+.examples-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0 22px}
+.examples-grid .example-card{margin:0;height:100%}
+.example-card .model-label{display:block;font-size:.9rem;font-weight:800;color:var(--blue);margin:2px 0 7px}
+.example-card .analysis-line{padding-top:8px;margin-top:8px;border-top:1px dashed var(--line);font-size:.96rem;color:var(--muted)}
+.model-block{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-md);padding:18px 20px;margin:16px 0;}
+.model-block h4{margin:0 0 10px;color:var(--navy);font-size:1.04rem}
+.model-block p:last-child{margin-bottom:0}
+.model-block .model-caption{font-size:.88rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--blue);margin-bottom:8px}
+.model-block .model-text{border-left:3px solid var(--blue);padding:10px 14px;margin:10px 0;background:var(--surface);border-radius:0 8px 8px 0}
+.model-block .model-text p:last-child{margin-bottom:0}
+.example-sequence{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap;margin:14px 0}
+.example-sequence span{flex:1 1 145px;padding:10px 12px;border:1px solid var(--line);background:var(--surface);border-radius:9px;text-align:center;font-weight:650}
+.example-sequence b{display:block;color:var(--blue);font-size:.83rem;margin-bottom:4px}
+.comparison-table{width:100%;border-collapse:collapse;margin:16px 0 22px;overflow:hidden;border-radius:10px}
+.comparison-table th,.comparison-table td{padding:11px 13px;border:1px solid var(--line);text-align:left;vertical-align:top}
+.comparison-table th{background:var(--blue-pale);color:var(--navy);font-weight:800}
+.comparison-table td{background:var(--surface)}
+.note-small{font-size:.94rem;color:var(--muted)}
+@media(max-width:700px){.examples-grid{grid-template-columns:1fr}.comparison-table{display:block;overflow-x:auto;white-space:normal}}
+
+</style>
+</head>
+<body>
+<div class="theme-switch-wrapper">
+    <button type="button" id="themeToggle" class="theme-switch-btn" role="switch" aria-checked="false" title="Alternar entre modo claro e escuro" aria-label="Alternar entre modo claro e escuro">
+      <svg id="themeIcon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      <span class="switch-track"><span class="switch-thumb"></span></span>
+    </button>
+  </div>
+  <nav class="slim-toc" aria-label="Sumário de navegação rápida"><ul class="slim-toc-list"><li><a href="#sec-consolidacao" class="slim-toc-link active" title="1. Tipos textuais e gêneros"><span class="toc-num">1</span><span class="toc-text">Tipos textuais e gêneros</span></a></li><li><a href="#sec-tipologia" class="slim-toc-link" title="2. Tipologia e sequências"><span class="toc-num">2</span><span class="toc-text">Tipologia e sequências</span></a></li><li><a href="#sec-generos" class="slim-toc-link" title="3. Gêneros acadêmicos"><span class="toc-num">3</span><span class="toc-text">Gêneros acadêmicos</span></a></li><li><a href="#sec-comparacao" class="slim-toc-link" title="4. Resumo × Resenha"><span class="toc-num">4</span><span class="toc-text">Resumo × Resenha</span></a></li><li><a href="#sec-sintese" class="slim-toc-link" title="5. Síntese dos gêneros"><span class="toc-num">5</span><span class="toc-text">Síntese dos gêneros</span></a></li></ul></nav>
+<main class="page-wrapper">
+<header class="inst-header" role="banner" aria-label="Cabeçalho Institucional do Seminário Presbiteriano de Brasília">
+      <div class="spb-brand-left">
+        <svg class="spb-emblem-svg" viewBox="0 0 120 164" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="0" y="0" width="120" height="128" fill="#134a84"/><rect x="56" y="0" width="8" height="128" fill="#ffffff"/><rect x="0" y="48" width="120" height="8" fill="#ffffff"/>
+          <path d="M 60 12 C 26 32, 26 84, 60 106 C 94 84, 94 32, 60 12 Z" fill="#134a84" stroke="#ffffff" stroke-width="7.5" stroke-linejoin="round"/><path d="M 60 106 C 46 113, 35 116, 28 117 M 60 106 C 74 113, 85 116, 92 117" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round"/><circle cx="60" cy="36" r="4.2" fill="#ffffff"/><rect x="0" y="124" width="120" height="40" fill="#ffffff"/><path d="M 0 128 Q 30 113, 60 129 Q 90 113, 120 128 L 120 137 Q 90 122, 60 138 Q 30 122, 0 137 Z" fill="#10a386"/><path d="M 0 142 Q 30 127, 60 143 Q 90 127, 120 142 L 120 151 Q 90 136, 60 152 Q 30 136, 0 151 Z" fill="#10a386"/><path d="M 0 156 Q 30 141, 60 157 Q 90 141, 120 156 L 120 164 L 0 164 Z" fill="#10a386"/>
+        </svg>
+        <div class="spb-brand-text"><div class="spb-brand-name">Seminário<br>Presbiteriano<br>de Brasília</div><div class="spb-brand-motto">Teologia para transformação da vida</div></div>
+      </div>
+      <div class="spb-meta-right"><div class="spb-meta-line">BACHAREL EM TEOLOGIA</div><div class="spb-meta-line">DEPARTAMENTO DE CULTURA GERAL</div><div class="spb-meta-line">LÍNGUA PORTUGUESA — PORTUGUÊS 4 — 2º SEM. 2026</div><div class="spb-meta-prof">Prof.: ISMAEL ROCHA</div></div>
+    </header>
+<div class="hero-title-block"><h1>Revisão Geral — Parte 1</h1><p class="subtitle">Unidades 1 e 2 · Tipologia Textual, Sequências e Gêneros Acadêmicos</p></div>
+<div class="reader-toolbar" role="group" aria-label="Ferramentas de leitura">
+  <button type="button" class="reader-btn reader-mode-btn" id="readerToggle" aria-pressed="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5v16M8 7h8M8 11h8M8 15h5"/></svg>
+    <span>Modo leitura</span>
+  </button>
+  <div class="reader-actions" id="readerActions" hidden>
+    <button type="button" class="reader-btn reader-print-btn" id="readerPrintBtn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><path d="M7 14h10v7H7zM17 11h.01"/></svg>
+      <span>Imprimir / Salvar PDF</span>
+    </button>
+    <button type="button" class="reader-btn reader-exit-btn" id="readerExitBtn">Sair do modo leitura</button>
+  </div>
+</div>
+<section class="content-sec" id="sec-consolidacao"><h2 class="sec-heading">1. Tipos textuais e gêneros: duas dimensões da escrita</h2>
+<p>A produção de textos acadêmicos começa pela compreensão de duas perguntas diferentes: <strong>como o texto se organiza</strong> e <strong>para que ele é produzido</strong>. A primeira diz respeito à tipologia textual; a segunda, ao gênero textual. Um artigo, um resumo, um sermão, um relatório e um e-mail são gêneros. Narração, descrição, dissertação, exposição e injunção são tipos ou sequências que podem aparecer nesses gêneros.</p>
+<div class="callout blue"><span class="callout-title">Distinção essencial</span><p><strong>Gênero textual:</strong> forma socialmente reconhecida de comunicação, relacionada a uma finalidade e a uma situação de uso — por exemplo, artigo científico, resumo, resenha, boletim, ata e ofício.</p><p><strong>Tipo textual:</strong> modo de organização linguística — narrar acontecimentos, descrever características, defender uma ideia, explicar informações ou orientar uma ação.</p></div>
+<div class="example-card"><span class="example-tag">Exemplo de distinção</span><p>Um <strong>relatório de atividade missionária</strong> é um gênero textual. Dentro dele, pode haver uma sequência <strong>narrativa</strong> para relatar o que aconteceu, uma sequência <strong>descritiva</strong> para caracterizar o local e uma sequência <strong>expositiva</strong> para apresentar números e resultados.</p></div>
+</section>
+<section class="content-sec" id="sec-tipologia"><h2 class="sec-heading">2. Unidade 1: Tipologia textual e sequências</h2>
+<h3 class="sub-heading">2.1 As cinco bases da tipologia textual</h3>
+<p>Os tipos textuais são formas básicas de organização. Em textos reais, podem aparecer combinados; ainda assim, é possível reconhecer a finalidade predominante de cada trecho.</p>
+<div class="examples-grid">
+  <article class="example-card"><span class="example-tag">Tipo 1</span><h4>Narração</h4><p><strong>Finalidade:</strong> apresentar acontecimentos em sequência, situados no tempo e no espaço, com participantes e ações.</p><p><strong>Marcas frequentes:</strong> verbos de ação, referências temporais, mudança de acontecimentos e encadeamento de fatos.</p><div class="model-text"><p>“Ao amanhecer, a equipe chegou à comunidade. Depois de organizar os materiais, visitou as famílias e encerrou o dia com uma reunião de oração.”</p></div><p class="analysis-line"><strong>Por que é narração?</strong> O trecho organiza ações sucessivas: chegou, organizou, visitou e encerrou.</p></article>
+  <article class="example-card"><span class="example-tag">Tipo 2</span><h4>Descrição</h4><p><strong>Finalidade:</strong> apresentar características de pessoas, ambientes, objetos ou situações.</p><p><strong>Marcas frequentes:</strong> adjetivos, expressões de localização e verbos que indicam estado ou aparência.</p><div class="model-text"><p>“A biblioteca do seminário é silenciosa e bem iluminada. As estantes ocupam as paredes laterais, e as mesas de estudo ficam próximas às janelas.”</p></div><p class="analysis-line"><strong>Por que é descrição?</strong> O trecho caracteriza o ambiente e informa como seus elementos estão dispostos.</p></article>
+  <article class="example-card"><span class="example-tag">Tipo 3</span><h4>Dissertação</h4><p><strong>Finalidade:</strong> desenvolver uma ideia. Na forma argumentativa, apresenta uma tese e razões que a sustentam; na forma expositiva, organiza uma reflexão conceitual.</p><p><strong>Marcas frequentes:</strong> tese, justificativas, relações lógicas e conectores argumentativos.</p><div class="model-text"><p>“A formação bíblica contínua é indispensável à liderança eclesiástica, pois decisões pastorais exigem conhecimento das Escrituras, discernimento e capacidade de orientar a comunidade.”</p></div><p><strong>Modelo dissertativo-expositivo:</strong> “A aliança, na teologia bíblica, organiza a relação entre Deus e seu povo e ajuda a compreender a unidade dos diferentes momentos da história da redenção.”</p><p class="analysis-line"><strong>Por que é dissertação?</strong> O primeiro exemplo defende uma tese; o segundo desenvolve uma ideia por meio de explicação conceitual.</p></article>
+  <article class="example-card"><span class="example-tag">Tipo 4</span><h4>Exposição</h4><p><strong>Finalidade:</strong> informar e explicar conceitos, procedimentos ou fatos com organização clara, sem ter como objetivo principal persuadir.</p><p><strong>Marcas frequentes:</strong> definições, classificações, explicações e dados organizados.</p><div class="model-text"><p>“O resumo acadêmico apresenta, de forma concisa, os pontos relevantes de um texto. Deve representar o conteúdo da obra original sem acrescentar informações ou opiniões que não estejam nela.”</p></div><p class="analysis-line"><strong>Por que é exposição?</strong> O trecho explica o que é o resumo e apresenta suas características.</p></article>
+  <article class="example-card"><span class="example-tag">Tipo 5</span><h4>Injunção ou instrução</h4><p><strong>Finalidade:</strong> orientar o leitor a realizar uma ação, seguir um procedimento ou observar uma recomendação.</p><p><strong>Marcas frequentes:</strong> verbos no imperativo ou construções que expressam orientação e necessidade.</p><div class="model-text"><p>“Leia o texto bíblico indicado, observe o contexto da passagem, identifique a ideia central e registre as referências utilizadas.”</p></div><p class="analysis-line"><strong>Por que é injunção?</strong> O trecho apresenta orientações em sequência, com verbos que indicam ações a realizar.</p></article>
+  <article class="example-card"><span class="example-tag">Comparação</span><h4>Um mesmo assunto, cinco organizações</h4><p><strong>Narração:</strong> “A comissão reuniu-se, examinou os documentos e apresentou a decisão.”</p><p><strong>Descrição:</strong> “A comissão era formada por três membros e se reunia em uma sala reservada.”</p><p><strong>Dissertação:</strong> “A atuação colegiada favorece decisões mais ponderadas, porque permite o exame de diferentes perspectivas.”</p><p><strong>Exposição:</strong> “A comissão é um grupo designado para examinar determinado assunto.”</p><p><strong>Injunção:</strong> “Registre a decisão da comissão e encaminhe a ata aos responsáveis.”</p></article>
+</div>
+<h3 class="sub-heading">2.2 Sequências tipológicas na prática</h3>
+<p>Um texto raramente apresenta apenas um tipo textual. É comum que um gênero combine sequências diferentes. O tipo predominante organiza a finalidade central; os tipos secundários ajudam a desenvolver partes específicas.</p>
+<div class="example-card"><span class="example-tag">Exemplo 1 · Artigo acadêmico</span><h4>Um artigo sobre a Reforma Protestante</h4><p>O artigo pode ter predominância <strong>dissertativo-argumentativa</strong>, pois defende uma interpretação histórica ou teológica. Para construir a argumentação, inclui uma sequência <strong>narrativa</strong> que situa acontecimentos do século XVI e uma sequência <strong>descritiva</strong> que caracteriza o contexto social e religioso de Wittenberg.</p><div class="example-sequence"><span><b>Contextualização narrativa</b>Acontecimentos e sequência histórica</span><span><b>Descrição</b>Ambiente e circunstâncias</span><span><b>Dissertação</b>Tese e argumentação</span></div></div>
+<div class="examples-grid">
+ <div class="example-card"><span class="example-tag">Exemplo 2 · Estudo bíblico</span><h4>Estudo sobre uma parábola</h4><p>A sequência <strong>expositiva</strong> apresenta o contexto e explica os elementos do texto; a sequência <strong>dissertativa</strong> desenvolve o princípio teológico; a sequência <strong>injuntiva</strong> conduz às aplicações para a vida da comunidade.</p></div>
+ <div class="example-card"><span class="example-tag">Exemplo 3 · Relatório</span><h4>Relatório de ação social</h4><p>A sequência <strong>expositiva</strong> apresenta datas, quantidades e recursos; a <strong>narrativa</strong> registra as etapas da atividade; a <strong>descritiva</strong> caracteriza o local e as condições de execução.</p></div>
+ <div class="example-card"><span class="example-tag">Exemplo 4 · Boletim</span><h4>Comunicado dominical</h4><p>Um comunicado pode ser predominantemente <strong>expositivo</strong> ao informar data, horário e local, e incluir uma sequência <strong>injuntiva</strong> ao orientar os membros a confirmar presença ou levar determinado material.</p></div>
+ <div class="example-card"><span class="example-tag">Exemplo 5 · Mensagem pastoral</span><h4>Editorial de boletim</h4><p>O editorial pode combinar <strong>exposição</strong> de um tema bíblico, <strong>dissertação</strong> para desenvolver uma reflexão e <strong>injunção</strong> para apresentar uma exortação prática.</p></div>
+</div>
+<div class="callout green"><span class="callout-title">Como reconhecer a sequência predominante</span><p>Observe a finalidade global do texto. Se ele procura defender uma tese, predomina a dissertação argumentativa, mesmo que conte fatos e descreva cenários. Se procura instruir, predomina a injunção, ainda que apresente explicações antes das orientações.</p></div>
+</section>
+<section class="content-sec" id="sec-generos"><h2 class="sec-heading">3. Unidade 2: Gêneros acadêmicos</h2>
+<p>Os gêneros acadêmicos possuem finalidades próprias. O resumo apresenta o conteúdo de uma obra; a resenha combina síntese e apreciação fundamentada; o artigo científico comunica uma investigação delimitada. A escolha do gênero determina o que deve aparecer no texto e qual postura o autor deve assumir.</p>
+<h3 class="sub-heading">3.1 O resumo acadêmico</h3>
+<div class="callout blue"><span class="callout-title">Ideia central: síntese fiel e objetiva</span><p>O resumo condensa as informações relevantes do texto original. Deve preservar a ideia central, os objetivos, o percurso e as conclusões do autor, conforme o tipo de resumo. Não acrescenta opinião pessoal, elogios, críticas ou informações ausentes da obra. Emprega linguagem clara, concisa e impessoal, observando as orientações aplicáveis da ABNT NBR 6028.</p></div>
+<div class="example-card"><span class="example-tag">Modelo comentado 1</span><h4>Texto de referência didático</h4><p>“O capítulo apresenta a relação entre leitura bíblica e formação cristã. Primeiro, define a leitura como prática de compreensão do texto; depois, discute a importância do contexto histórico e literário; por fim, mostra como a interpretação responsável contribui para a formação da comunidade.”</p><h4>Resumo adequado</h4><div class="model-text"><p>“O capítulo discute a relação entre leitura bíblica e formação cristã, apresentando a leitura como prática de compreensão textual, destacando a importância dos contextos histórico e literário e relacionando a interpretação responsável à formação da comunidade.”</p></div><p class="analysis-line"><strong>Observe:</strong> o resumo reúne os pontos centrais e não acrescenta apreciação crítica sobre a qualidade do capítulo.</p></div>
+<div class="examples-grid">
+ <div class="example-card"><span class="example-tag">Modelo comentado 2</span><h4>Resumo de um capítulo histórico</h4><p>“O capítulo examina as transformações religiosas do século XVI, descreve seus principais antecedentes e apresenta os debates que contribuíram para a expansão dos movimentos reformadores.”</p><p class="analysis-line"><strong>Característica:</strong> informa o conteúdo abordado, sem declarar se o capítulo é excelente ou insuficiente.</p></div>
+ <div class="example-card"><span class="example-tag">Modelo comentado 3</span><h4>Resumo de pesquisa</h4><p>“O estudo analisa práticas de leitura bíblica em grupos comunitários, descreve os procedimentos utilizados na pesquisa e apresenta os resultados relativos à frequência, à participação e à compreensão dos textos.”</p><p class="analysis-line"><strong>Característica:</strong> concentra tema, procedimento e resultados, sem introduzir opinião do resumidor.</p></div>
+</div>
+<div class="callout coral"><span class="callout-title">O que descaracteriza um resumo</span><p>Expressões como “o autor foi brilhante”, “a obra é maravilhosa”, “discordo do argumento” ou “o livro deveria ser lido por todos” introduzem juízo pessoal. Elas pertencem à apreciação crítica, não à síntese neutra.</p></div>
+<h3 class="sub-heading">3.2 A resenha crítica</h3>
+<div class="callout coral"><span class="callout-title">Ideia central: síntese acompanhada de apreciação crítica fundamentada</span><p>A resenha crítica apresenta a obra e suas ideias centrais, mas também examina seu mérito, seus limites, a consistência da argumentação e sua contribuição para determinado público. A crítica deve ser justificada por elementos da própria obra; não basta elogiar ou rejeitar de maneira genérica.</p></div>
+<p>Uma resenha costuma articular quatro movimentos: identificação da obra; apresentação de seu tema e objetivo; síntese das ideias principais; apreciação crítica fundamentada, que pode incluir recomendação de leitura.</p>
+<div class="example-card"><span class="example-tag">Modelo comentado 1</span><h4>Resenha crítica de uma obra teológica</h4><div class="model-text"><p>“A obra examina a relação entre fé reformada e vida pública, defendendo que a reflexão teológica alcança também as dimensões culturais e sociais. O argumento é desenvolvido de maneira coerente e oferece referências úteis para o debate. Entretanto, a discussão das aplicações contemporâneas é breve, o que limita a compreensão de alguns desdobramentos práticos. Ainda assim, o livro constitui uma leitura relevante para estudantes que desejam compreender a abrangência da tradição reformada.”</p></div><p class="analysis-line"><strong>Observe:</strong> há síntese do conteúdo, apreciação positiva justificada, indicação de limite e recomendação contextualizada.</p></div>
+<div class="examples-grid">
+ <div class="example-card"><span class="example-tag">Modelo comentado 2</span><h4>Resenha com apreciação do método</h4><p>“O estudo apresenta documentação ampla e organiza os acontecimentos em ordem cronológica. A escolha das fontes fortalece a reconstrução histórica; contudo, a ausência de discussão sobre fontes divergentes reduz a amplitude da análise.”</p><p class="analysis-line"><strong>Foco crítico:</strong> examina o método e a seleção das fontes.</p></div>
+ <div class="example-card"><span class="example-tag">Modelo comentado 3</span><h4>Resenha com apreciação da linguagem</h4><p>“A obra comunica conceitos complexos com vocabulário acessível e exemplos pertinentes. Em alguns capítulos, porém, a repetição de explicações torna a leitura menos fluida. O material pode ser especialmente útil em cursos introdutórios.”</p><p class="analysis-line"><strong>Foco crítico:</strong> avalia a clareza e a adequação ao público.</p></div>
+</div>
+<h3 class="sub-heading">3.3 O artigo científico</h3>
+<p>O artigo científico comunica resultados de uma investigação delimitada. Seu texto precisa apresentar um problema claro, dialogar com conhecimentos já publicados, explicitar o percurso da pesquisa e desenvolver conclusões coerentes com os dados e argumentos apresentados.</p>
+<div class="step-chain">
+ <div class="step-item"><span class="step-num">1 · Introdução</span><p>Apresenta o tema, delimita o problema, justifica a relevância do estudo e informa seus objetivos. Pode indicar brevemente como a pesquisa foi conduzida.</p></div>
+ <div class="step-item"><span class="step-num">2 · Desenvolvimento</span><p>Organiza a fundamentação teórica, a metodologia, a análise e a discussão. As ideias de outros autores devem ser identificadas por citações e referências adequadas.</p></div>
+ <div class="step-item"><span class="step-num">3 · Conclusão</span><p>Retoma o problema e os objetivos, sintetiza o que a análise permitiu afirmar e indica limites ou desdobramentos pertinentes.</p></div>
+</div>
+<div class="example-card"><span class="example-tag">Modelo aplicado</span><h4>Tema: leitura bíblica comunitária</h4><p><strong>Título possível:</strong> “Práticas de leitura bíblica e formação comunitária em grupos de estudo”.</p><p><strong>Problema:</strong> “Como a leitura compartilhada de textos bíblicos é organizada nos grupos de estudo de uma comunidade local?”</p><p><strong>Objetivo:</strong> “Descrever e analisar as práticas de leitura e discussão utilizadas nos grupos observados.”</p><p><strong>Desenvolvimento:</strong> apresentar os conceitos utilizados, explicar os procedimentos de observação e analisar os registros coletados.</p><p><strong>Conclusão possível:</strong> “Os registros analisados indicam que a leitura compartilhada favorece a discussão coletiva quando é acompanhada de contextualização do texto e mediação organizada.”</p><p class="note-small">Exemplo didático de formulação; não representa resultado de pesquisa efetivamente realizada.</p></div>
+<div class="examples-grid">
+ <div class="example-card"><span class="example-tag">Introdução</span><h4>Exemplo de abertura</h4><p>“A formação de líderes eclesiásticos envolve o desenvolvimento de competências de leitura e interpretação. Este artigo examina a presença de práticas de leitura orientada em grupos de estudo, com o objetivo de descrever seus procedimentos e discutir sua contribuição para a formação comunitária.”</p></div>
+ <div class="example-card"><span class="example-tag">Conclusão</span><h4>Exemplo de fechamento</h4><p>“A análise evidencia que a leitura orientada depende de objetivos definidos, contextualização e espaço para discussão. Esses elementos respondem ao problema proposto e apontam a necessidade de estudos posteriores com grupos e contextos distintos.”</p></div>
+</div>
+<div class="callout blue"><span class="callout-title">Citações e integridade acadêmica</span><p>Quando o artigo utiliza ideias, dados ou palavras de outro autor, deve indicar a fonte conforme as normas de citação aplicáveis, entre elas a ABNT NBR 10520. A paráfrase também exige atribuição de autoria; mudar as palavras não transforma uma ideia alheia em produção própria.</p><p><strong>Modelo de citação indireta:</strong> Segundo Sobrenome (ano), a leitura contextualizada contribui para a compreensão do texto.</p><p><strong>Modelo de citação direta curta:</strong> “Trecho transcrito exatamente da fonte” (SOBRENOME, ano, p. xx).</p><p class="note-small">Os elementos entre parênteses são marcadores de modelo e devem ser substituídos pelos dados reais da obra consultada.</p></div>
+</section>
+<section class="content-sec" id="sec-comparacao"><h2 class="sec-heading">4. Resumo e resenha crítica: comparação de modelos</h2>
+<p>Os dois gêneros podem tratar da mesma obra, mas apresentam finalidades diferentes. O resumo registra o que o texto apresenta; a resenha, além de sintetizar, avalia aspectos da obra com justificativas.</p>
+<div class="examples-grid">
+ <div class="callout coral"><span class="callout-title">Trecho inadequado para um resumo</span><p>“O autor demonstra de forma brilhante que a fé reformada engloba toda a vida. Acredito que esta visão é a única que salva a juventude atual do secularismo. É um livro maravilhoso.”</p><p><strong>O que ocorre:</strong> “brilhante” e “maravilhoso” são avaliações; “Acredito que” explicita opinião pessoal. O trecho deixa de ser uma síntese neutra.</p></div>
+ <div class="callout green"><span class="callout-title">Trecho adequado a uma resenha crítica</span><p>“A obra estabelece que o calvinismo ultrapassa os limites eclesiásticos, operando como sistema de vida integral. Contudo, percebe-se que a linguagem do autor, própria do século XIX, impõe um desafio hermenêutico ao leitor contemporâneo. Ainda assim, a leitura é recomendável para a formação de líderes.”</p><p><strong>O que ocorre:</strong> o trecho sintetiza a ideia central, avalia a linguagem e apresenta uma recomendação com fundamento.</p></div>
+</div>
+<table class="comparison-table"><thead><tr><th>Aspecto</th><th>Resumo</th><th>Resenha crítica</th></tr></thead><tbody>
+<tr><td>Finalidade</td><td>Condensar o conteúdo da obra.</td><td>Apresentar e avaliar criticamente a obra.</td></tr>
+<tr><td>Opinião do autor do texto</td><td>Não deve ser inserida.</td><td>É admitida, desde que fundamentada.</td></tr>
+<tr><td>Conteúdo</td><td>Ideias, objetivos e conclusões do texto original.</td><td>Síntese da obra mais análise de méritos e limites.</td></tr>
+<tr><td>Formulação típica</td><td>“O capítulo apresenta...”</td><td>“A obra contribui..., embora...”</td></tr>
+</tbody></table>
+<div class="example-card"><span class="example-tag">Mais um contraste</span><p><strong>Resumo:</strong> “O capítulo apresenta três perspectivas sobre a educação cristã e descreve os fundamentos que sustentam cada uma.”</p><p><strong>Resenha:</strong> “O capítulo apresenta três perspectivas sobre a educação cristã. A comparação entre elas é clara, mas a discussão das implicações práticas poderia ser mais desenvolvida.”</p><p class="analysis-line">A primeira formulação apenas informa o conteúdo; a segunda inclui uma apreciação específica e justificada.</p></div>
+</section>
+<section class="content-sec" id="sec-sintese"><h2 class="sec-heading">5. Síntese dos gêneros acadêmicos e exemplos de uso</h2>
+<p>A escolha do gênero depende da finalidade comunicativa. O mesmo assunto pode ser apresentado em gêneros diferentes, desde que a organização e a postura do autor sejam adequadas.</p>
+<table class="comparison-table"><thead><tr><th>Quando a finalidade é...</th><th>Gênero indicado</th><th>Exemplo de formulação</th></tr></thead><tbody>
+<tr><td>Registrar as ideias centrais de um capítulo.</td><td><strong>Resumo</strong></td><td>“O capítulo apresenta os fundamentos históricos e conceituais...”</td></tr>
+<tr><td>Apresentar uma obra e avaliar sua contribuição.</td><td><strong>Resenha crítica</strong></td><td>“A obra contribui para o debate ao..., embora...”</td></tr>
+<tr><td>Comunicar resultados de uma investigação delimitada.</td><td><strong>Artigo científico</strong></td><td>“Este artigo analisa...”</td></tr>
+<tr><td>Defender uma posição sobre um tema.</td><td><strong>Dissertação argumentativa</strong></td><td>“Defende-se que..., porque...”</td></tr>
+<tr><td>Explicar um conceito sem buscar persuadir.</td><td><strong>Exposição</strong></td><td>“O conceito designa...”</td></tr>
+</tbody></table>
+<div class="callout blue"><span class="callout-title">Princípio de organização</span><p>Identifique primeiro a finalidade do texto. Depois, escolha o gênero e organize as sequências tipológicas necessárias. Em um resumo, preserve a neutralidade; em uma resenha, fundamente a apreciação; em um artigo, delimite o problema, apresente o percurso da pesquisa e conclua de acordo com o que foi desenvolvido.</p></div>
+</section>
+</main>
+<div class="portal-return-wrap" style="display:flex;justify-content:center;padding:22px 16px 36px;position:relative;z-index:1"><a href="/portugues/p4/" class="portal-return-btn" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px" aria-label="Voltar ao portal de Português 4">← Voltar ao portal de Português 4</a></div>
+  <script>
+  (function(){'use strict';var root=document.documentElement,themeBtn=document.getElementById('themeToggle'),themeIcon=document.getElementById('themeIcon'),storageKey='spb-portugues4-theme';
+  var sunSvg='<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>',moonSvg='<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+  function applyTheme(mode){var dark=mode==='dark';root.classList.toggle('dark-mode',dark);themeBtn.setAttribute('aria-checked',String(dark));themeIcon.innerHTML=dark?moonSvg:sunSvg;}
+  try{var saved=localStorage.getItem(storageKey);if(saved==='dark'||saved==='light')applyTheme(saved);}catch(e){}
+  themeBtn.addEventListener('click',function(){var next=root.classList.contains('dark-mode')?'light':'dark';applyTheme(next);try{localStorage.setItem(storageKey,next);}catch(e){}});
+  var scrollTopBtn=document.getElementById('scrollTopBtn');if(scrollTopBtn)scrollTopBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  
+  var readerToggle=document.getElementById('readerToggle');
+  var readerActions=document.getElementById('readerActions');
+  var readerPrintBtn=document.getElementById('readerPrintBtn');
+  var readerExitBtn=document.getElementById('readerExitBtn');
+  function setReaderMode(active){
+    document.body.classList.toggle('reader-mode',active);
+    if(readerActions) readerActions.hidden=!active;
+    if(readerToggle){readerToggle.setAttribute('aria-pressed',String(active));}
+    if(active){window.scrollTo({top:0,behavior:'smooth'});}
+  }
+  if(readerToggle) readerToggle.addEventListener('click',function(){setReaderMode(true);});
+  if(readerExitBtn) readerExitBtn.addEventListener('click',function(){setReaderMode(false);});
+  if(readerPrintBtn) readerPrintBtn.addEventListener('click',function(){window.print();});
+  window.addEventListener('afterprint',function(){/* Mantém o modo escolhido pelo leitor. */});
+  
+  var sections=document.querySelectorAll('section.content-sec'),links=document.querySelectorAll('.slim-toc-link');function updateActiveNav(){var pos=window.scrollY+150,current=sections[0]?sections[0].id:'';sections.forEach(function(sec){if(sec.offsetTop<=pos)current=sec.id;});links.forEach(function(link){link.classList.toggle('active',link.getAttribute('href').slice(1)===current);});}window.addEventListener('scroll',updateActiveNav,{passive:true});updateActiveNav();
+  })();
+  </script>
+<footer class="site-credit" style="text-align:center;padding:28px 16px 34px;position:relative;z-index:1"><a class="bunker-logo-link" href="https://bunkerdigital.top/" target="_blank" rel="noopener noreferrer" aria-label="Bunker Digital"><img class="bunker-logo-dark" src="/graphics/logo-bunker-dark.png" alt="Bunker Digital" loading="lazy"><img class="bunker-logo-light" src="/graphics/logo-bunker-light.png" alt="Bunker Digital" loading="lazy"></a></footer>
+</body>
+</html>

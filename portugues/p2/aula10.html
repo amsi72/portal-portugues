@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Aula 10 de Português 2: Regência Verbal e Nominal. Material de leitura do Seminário Presbiteriano de Brasília.">
+<title>Português 2 — Aula 10: Regência Verbal e Nominal</title>
+<style>
+:root{
+  color-scheme:light;
+  --bg:#eef2f7;--surface:#fff;--paper:#f8fafc;--ink:#1e293b;--muted:#475569;
+  --navy:#0b2344;--navy-light:#163a6b;--blue:#2563eb;--blue-pale:#eff6ff;--blue-border:#bfdbfe;
+  --teal:#0f766e;--teal-pale:#f0fdfa;--teal-border:#99f6e4;--green:#15803d;--green-pale:#f0fdf4;--green-border:#bbf7d0;
+  --coral:#c2410c;--coral-pale:#fff7ed;--coral-border:#fed7aa;--purple:#6d28d9;--purple-pale:#f5f3ff;--purple-border:#ddd6fe;
+  --amber:#b45309;--amber-pale:#fffbeb;--amber-border:#fde68a;--line:#cbd5e1;
+  --shadow-sm:0 1px 3px rgba(11,35,68,.06);--shadow-md:0 4px 20px rgba(11,35,68,.10);
+  --hdr-navy:#134a84;--hdr-teal:#10a386;--hdr-main:#1e293b;--hdr-sub:#334155;--hdr-line:#1e5a96;
+}
+html.dark-mode{
+  color-scheme:dark;--bg:#090d16;--surface:#111827;--paper:#1e293b;--ink:#f1f5f9;--muted:#94a3b8;
+  --navy:#e2e8f0;--navy-light:#93c5fd;--blue:#60a5fa;--blue-pale:#172554;--blue-border:#1e3a8a;
+  --teal:#2dd4bf;--teal-pale:#042f2e;--teal-border:#115e59;--green:#4ade80;--green-pale:#052e16;--green-border:#14532d;
+  --coral:#fb923c;--coral-pale:#431407;--coral-border:#7c2d12;--purple:#c084fc;--purple-pale:#2e1065;--purple-border:#581c87;
+  --amber:#fbbf24;--amber-pale:#451a03;--amber-border:#78350f;--line:#334155;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.35);--shadow-md:0 6px 24px rgba(0,0,0,.45);
+  --hdr-navy:#1d5ca0;--hdr-teal:#2dd4bf;--hdr-main:#f8fafc;--hdr-sub:#cbd5e1;--hdr-line:#3b82f6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .2s,color .2s}
+.page-wrapper{width:min(100%,1060px);min-height:100vh;margin:0 auto;padding:26px clamp(15px,4.5vw,58px) 54px;background:var(--surface);box-shadow:var(--shadow-md);position:relative}
+.inst-header{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto;align-items:center;column-gap:clamp(12px,2.4vw,28px);row-gap:10px;padding:0 0 15px;margin:0 auto 24px;border-bottom:2px solid var(--hdr-line);min-width:0}
+.theme-switch-wrapper{grid-column:1/-1;grid-row:1;justify-self:end;align-self:start;margin:0 0 2px;z-index:5}
+.theme-switch-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:48px;min-height:42px;padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer;box-shadow:var(--shadow-sm);font:inherit;touch-action:manipulation}
+.theme-switch-btn:hover{border-color:var(--blue)}.theme-switch-btn:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.theme-switch-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.spb-brand-left{grid-column:1;grid-row:2;display:flex;align-items:center;gap:14px;min-width:0}
+.spb-emblem-svg{width:72px;height:98px;flex:0 0 auto}
+.spb-brand-text{min-width:0}.spb-brand-name{font-size:1.02rem;font-weight:750;line-height:1.12;color:var(--hdr-main)}
+.spb-brand-motto{margin-top:5px;font-size:.85rem;line-height:1.3;color:var(--hdr-sub)}
+.spb-meta-right{grid-column:2;grid-row:2;min-width:0;text-align:right;color:var(--hdr-main)}
+.spb-meta-line{font-size:.9rem;line-height:1.5;font-weight:650;letter-spacing:.02em;overflow-wrap:anywhere}
+.spb-meta-prof{margin-top:4px;font-size:.9rem;color:var(--hdr-sub)}
+.slim-toc{position:fixed;left:14px;top:50%;transform:translateY(-50%);z-index:1100;width:36px;max-height:min(78vh,720px);overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 5px;box-shadow:var(--shadow-md);opacity:.86;transition:width .22s,border-radius .2s,padding .2s,opacity .2s}
+.slim-toc:hover,.slim-toc:focus-within{width:290px;border-radius:13px;padding:10px 8px;opacity:1;overflow-y:auto}
+.slim-toc-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.slim-toc-link{display:flex;align-items:center;gap:9px;min-height:31px;padding:4px 6px;border-radius:8px;text-decoration:none;color:var(--muted);white-space:nowrap}
+.slim-toc-link:hover,.slim-toc-link:focus-visible{background:var(--blue-pale);color:var(--blue);outline:none}
+.slim-toc-link.active{background:var(--blue-pale);color:var(--blue);font-weight:800}
+.toc-num{display:inline-flex;align-items:center;justify-content:center;flex:0 0 24px;width:24px;height:24px;border-radius:50%;background:var(--paper);font-size:.85rem;font-weight:800}
+.toc-text{display:inline-block;opacity:0;max-width:0;overflow:hidden;font-size:.9rem;transition:max-width .2s,opacity .2s}
+.slim-toc:hover .toc-text,.slim-toc:focus-within .toc-text{opacity:1;max-width:230px}
+.hero-title-block{text-align:center;margin:0 auto 28px;padding:9px 0 23px;border-bottom:1px solid var(--line)}
+.hero-kicker{color:var(--purple);font-size:.9rem;font-weight:900;letter-spacing:.14em;margin-bottom:9px}
+.hero-title-block h1{margin:0 auto 9px;max-width:950px;font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.16;color:var(--ink)}
+.hero-subtitle{margin:0 auto;color:var(--muted);font-size:clamp(1rem,1.7vw,1.2rem);font-weight:650}
+.back-portal-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:9px 16px;border-radius:999px;border:1px solid var(--blue-border);background:var(--blue-pale);color:var(--blue);text-decoration:none;font-size:.95rem;font-weight:800;line-height:1.35;touch-action:manipulation}
+.back-portal-btn:hover{filter:brightness(.97)}
+.content-sec{margin:0 0 30px;scroll-margin-top:24px}
+.content-sec h2{margin:0 0 15px;padding:0 0 9px;border-bottom:2px solid var(--line);color:var(--navy);font-size:1.42rem;line-height:1.3}
+.content-sec h3{margin:22px 0 9px;color:var(--navy-light);font-size:1.12rem;line-height:1.35}
+.content-sec p{margin:0 0 13px;color:var(--ink);text-align:left}
+.content-sec ul,.content-sec ol{margin:7px 0 15px;padding-left:1.45rem}
+.content-sec li{margin:0 0 7px;padding-left:3px}
+.lead-box{margin:0 0 24px;padding:17px 20px;border:1px solid var(--blue-border);border-left:5px solid var(--blue);border-radius:0 12px 12px 0;background:var(--blue-pale)}
+.lead-box strong{display:block;margin-bottom:5px;color:var(--blue);font-size:.95rem;letter-spacing:.06em}
+.example{margin:13px 0;padding:14px 17px;border:1px solid var(--line);border-radius:11px;background:var(--paper)}
+.example-label{display:block;margin-bottom:5px;color:var(--blue);font-size:.95rem;font-weight:850}
+.explain{margin:7px 0 0!important;color:var(--muted)!important;font-size:1.05rem;font-style:italic}
+.callout{margin:17px 0;padding:16px 18px;border:1px solid var(--teal-border);border-left:5px solid var(--teal);border-radius:0 11px 11px 0;background:var(--teal-pale)}
+.callout-title{margin-bottom:7px;color:var(--teal);font-size:.95rem;font-weight:900;letter-spacing:.035em}
+.callout p:last-child{margin-bottom:0}
+.callout.blue{border-color:var(--blue-border);border-left-color:var(--blue);background:var(--blue-pale)}
+.callout.orange{border-color:var(--coral-border);border-left-color:var(--coral);background:var(--coral-pale)}
+.callout.purple{border-color:var(--purple-border);border-left-color:var(--purple);background:var(--purple-pale)}
+.table-wrap{max-width:100%;overflow-x:auto;margin:14px 0 18px;border:1px solid var(--line);border-radius:11px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:560px;background:var(--surface);font-size:1rem}
+th,td{padding:11px 13px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--navy);color:#fff;font-size:.95rem;letter-spacing:.025em}
+html.dark-mode th{color:#111827}
+tbody tr:last-child td{border-bottom:0}tbody tr:nth-child(even){background:var(--paper)}
+.term{display:inline-block;margin:2px 4px 2px 0;padding:2px 8px;border-radius:999px;background:var(--blue-pale);color:var(--blue);font-size:.95rem;font-weight:750}
+.good{color:var(--green);font-weight:850}.bad{color:var(--coral);font-weight:850}
+.step-list{counter-reset:steps;list-style:none!important;padding:0!important;margin:14px 0!important;display:grid;gap:9px}
+.step-list li{counter-increment:steps;position:relative;padding:11px 14px 11px 48px;border:1px solid var(--line);border-radius:10px;background:var(--paper);margin:0}
+.step-list li::before{content:counter(steps);position:absolute;left:13px;top:11px;width:25px;height:25px;display:grid;place-items:center;border-radius:50%;background:var(--blue);color:#fff;font-size:.9rem;font-weight:850}
+.quick-summary{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin:14px 0}
+.summary-item{padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+.summary-item strong{display:block;margin-bottom:3px;color:var(--blue);font-size:1rem}
+.back-portal-wrap{text-align:center;padding:27px 0 8px;margin-top:30px;border-top:1px solid var(--line)}
+.site-credit{text-align:center;padding:18px 12px 25px}
+.bunker-logo-link{display:inline-flex;align-items:center;justify-content:center;max-width:100%}
+.bunker-logo-link img{display:block;width:min(145px,36vw);max-height:126px;height:auto;object-fit:contain}
+.bunker-logo-link img.bunker-logo-light{display:none}
+html.dark-mode .bunker-logo-dark{display:none}html.dark-mode .bunker-logo-light{display:block}
+.footer-note{color:var(--muted);font-size:.9rem;margin-top:8px}
+
+/* Modo leitura */
+.reader-toolbar{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin:15px 0 28px}
+.reader-toggle-btn,.reader-print-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:43px;padding:9px 16px;border:1px solid var(--blue-border);border-radius:999px;background:var(--blue-pale);color:var(--blue);font:inherit;font-size:.95rem;font-weight:750;cursor:pointer;touch-action:manipulation}
+.reader-toggle-btn:hover,.reader-print-btn:hover{filter:brightness(.97)}
+.reader-toggle-btn:focus-visible,.reader-print-btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.reader-toolbar svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.reader-print-btn{display:none}
+body.reader-mode{background:#fff!important;color:#20242a!important}
+body.reader-mode .page-wrapper{width:min(100%,860px);min-height:0;margin:0 auto;padding:28px clamp(18px,5vw,54px) 54px;background:#fff!important;color:#20242a!important;box-shadow:none}
+body.reader-mode .inst-header,body.reader-mode .slim-toc,body.reader-mode .back-portal-wrap,body.reader-mode .site-credit{display:none!important}
+body.reader-mode .hero-title-block{text-align:left;margin:0 auto 14px;padding:0 0 17px;border-bottom:1px solid #d7dce2}
+body.reader-mode .hero-kicker{color:#5b6470;font-size:.85rem;letter-spacing:.1em}
+body.reader-mode .hero-title-block h1{margin:0 0 8px;color:#14181e;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,4vw,2.6rem);line-height:1.2}
+body.reader-mode .hero-subtitle{margin:0;color:#59616c;font-size:1.1rem;font-weight:500}
+body.reader-mode .reader-toolbar{justify-content:flex-end;margin:0 0 30px;padding:0 0 13px;border-bottom:1px solid #e2e6eb}
+body.reader-mode .reader-toggle-btn,body.reader-mode .reader-print-btn{background:#f5f7f9;border-color:#d8dee6;color:#28384c}
+body.reader-mode .reader-print-btn{display:inline-flex}
+body.reader-mode .content-sec{margin:0 0 30px;scroll-margin-top:12px}
+body.reader-mode .content-sec h2{margin:0 0 15px;padding:0 0 8px;border-bottom:1px solid #cfd5dc;color:#172b45;font-family:Georgia,"Times New Roman",serif;font-size:1.48rem;line-height:1.35}
+body.reader-mode .content-sec h3{margin:23px 0 10px;color:#263d59;font-family:Georgia,"Times New Roman",serif;font-size:1.2rem;line-height:1.4}
+body.reader-mode .content-sec p,body.reader-mode .content-sec li{color:#20242a;font-size:1.1rem;line-height:1.85}
+body.reader-mode .content-sec ul,body.reader-mode .content-sec ol{padding-left:1.5rem}
+body.reader-mode .example,body.reader-mode .callout,body.reader-mode .lead-box,body.reader-mode .summary-item{padding:7px 0;margin:14px 0;background:transparent!important;border:0;border-radius:0;box-shadow:none}
+body.reader-mode .callout-title,body.reader-mode .example-label{color:#344a63;font-size:.95rem;letter-spacing:0}
+body.reader-mode .explain{color:#4b5563!important;font-size:1.05rem;font-style:normal}
+body.reader-mode .term{padding:0;background:transparent;color:#243e5c;font-size:1rem}
+body.reader-mode .good,body.reader-mode .bad{color:#20242a!important}
+body.reader-mode .quick-summary{gap:5px}
+body.reader-mode .table-wrap{overflow:visible;border:0;border-radius:0}
+body.reader-mode table{min-width:0;background:#fff;color:#20242a;font-size:1.05rem}
+body.reader-mode th{background:#e9edf2;color:#1d2b3c;font-size:.95rem}
+body.reader-mode td,body.reader-mode th{padding:9px 10px;border-bottom:1px solid #d9dee5}
+body.reader-mode tbody tr:nth-child(even){background:#f8f9fa}
+body.reader-mode .step-list li{padding:8px 8px 8px 44px;background:transparent;border:0}
+body.reader-mode .back-portal-wrap,body.reader-mode .site-credit{display:none!important}
+
+@media(max-width:900px){.slim-toc{left:6px;width:30px}.slim-toc:hover,.slim-toc:focus-within{width:230px}}
+@media(max-width:640px){
+ body{font-size:16px}.page-wrapper{padding:13px 14px 44px;box-shadow:none}
+ .inst-header{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto;row-gap:11px;padding-bottom:12px;margin-bottom:20px}
+ .inst-header>.theme-switch-wrapper{grid-column:1;grid-row:1;justify-self:end;margin-right:0}
+ .spb-brand-left{grid-column:1;grid-row:2;width:100%;gap:11px}.spb-meta-right{grid-column:1;grid-row:3;text-align:left;width:100%}
+ .spb-emblem-svg{width:48px;height:66px}.spb-brand-name{font-size:1rem}.spb-brand-motto{font-size:.75rem}
+ .spb-meta-line{font-size:.85rem}.spb-meta-prof{font-size:.85rem}
+ .slim-toc{position:sticky;left:auto;top:auto;transform:none;width:100%;max-width:100%;max-height:none;height:auto;overflow-x:auto;overflow-y:hidden;margin:0 auto 18px;padding:6px 8px;border-radius:11px;opacity:1;box-shadow:var(--shadow-sm);-webkit-overflow-scrolling:touch}
+ .slim-toc:hover,.slim-toc:focus-within{width:100%;padding:6px 8px;overflow-x:auto;overflow-y:hidden}
+ .slim-toc-list{flex-direction:row;align-items:center;gap:5px;width:max-content;min-width:100%}.slim-toc-list li{flex:0 0 auto;margin:0}
+ .slim-toc-link{min-height:34px;padding:5px 8px;gap:5px}.toc-num{width:20px;height:20px;flex-basis:20px}.toc-text{display:inline;opacity:1;max-width:155px;font-size:.85rem}
+ .hero-title-block{padding:7px 2px 18px;margin-bottom:22px}.hero-title-block h1{font-size:clamp(1.65rem,7vw,2.15rem)}
+ .content-sec h2{font-size:1.25rem}.content-sec h3{font-size:1.05rem}
+ .lead-box,.callout,.example{padding:13px 14px}.quick-summary{grid-template-columns:1fr}
+ .back-portal-btn{width:100%;min-height:44px}
+}
+@media(max-width:380px){.page-wrapper{padding-left:11px;padding-right:11px}.spb-brand-left{gap:8px}.spb-emblem-svg{width:43px;height:59px}.toc-text{max-width:125px}}
+@media print{
+  @page{margin:18mm 16mm}
+  html,body{background:#fff!important;color:#111!important;font-size:11.5pt!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body .page-wrapper,body.reader-mode .page-wrapper{width:100%;max-width:none;min-height:0;margin:0;padding:0;box-shadow:none;background:#fff!important;color:#111!important}
+  .slim-toc,.theme-switch-wrapper,.reader-toolbar,.back-portal-wrap,.site-credit{display:none!important}
+  .inst-header{margin-bottom:16px}
+  .content-sec{break-inside:auto;page-break-inside:auto}
+  .content-sec h2,.content-sec h3{break-after:avoid;page-break-after:avoid}
+  .example,.callout,.lead-box,li,tr{break-inside:avoid;page-break-inside:avoid}
+  .table-wrap{overflow:visible;border:0}
+  table{min-width:0;font-size:10pt}
+  th,td{padding:6px 7px}
+  p,li{orphans:3;widows:3}
+}
+</style>
+<script>
+(function(){
+  try { var saved=localStorage.getItem('spb_portais_tema'); if(saved==='dark') document.documentElement.classList.add('dark-mode'); }
+  catch(e){}
+})();
+</script>
+</head>
+<body>
+<nav class="slim-toc" aria-label="Sumário de navegação rápida">
+  <ul class="slim-toc-list">
+    <li><a class="slim-toc-link" href="#sec-conceito"><span class="toc-num">1</span><span class="toc-text">Conceito de Regência</span></a></li>
+    <li><a class="slim-toc-link" href="#sec-verbal"><span class="toc-num">2</span><span class="toc-text">A Regência Verbal</span></a></li>
+    <li><a class="slim-toc-link" href="#sec-polissemicos"><span class="toc-num">3</span><span class="toc-text">Verbos Polissêmicos</span></a></li>
+    <li><a class="slim-toc-link" href="#sec-nominal"><span class="toc-num">4</span><span class="toc-text">A Regência Nominal</span></a></li>
+    <li><a class="slim-toc-link" href="#sec-interseccao"><span class="toc-num">5</span><span class="toc-text">Intersecções com Concordância</span></a></li>
+    <li><a class="slim-toc-link" href="#sec-laboratorio"><span class="toc-num">6</span><span class="toc-text">Laboratório Prático</span></a></li>
+    <li><a class="slim-toc-link" href="#sec-apendice"><span class="toc-num">7</span><span class="toc-text">Apêndice: Justificativas</span></a></li>
+  </ul>
+</nav>
+<main class="page-wrapper">
+<header class="inst-header" role="banner" aria-label="Cabeçalho institucional do Seminário Presbiteriano de Brasília">
+  <div class="theme-switch-wrapper">
+    <button class="theme-switch-btn" id="themeToggle" type="button" role="switch" aria-checked="false" aria-label="Alternar para modo escuro" title="Alternar tema">
+      <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+      <span id="themeLabel">Claro</span>
+    </button>
+  </div>
+  <div class="spb-brand-left">
+    <svg class="spb-emblem-svg" viewBox="0 0 120 164" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect fill="#134a84" x="0" y="0" width="120" height="128"></rect><rect fill="#fff" x="56" y="0" width="8" height="128"></rect><rect fill="#fff" x="0" y="48" width="120" height="8"></rect>
+      <path d="M60 12 C26 32 26 84 60 106 C94 84 94 32 60 12Z" fill="#134a84" stroke="#fff" stroke-width="7.5" stroke-linejoin="round"></path><path d="M60 106 C46 113 35 116 28 117 M60 106 C74 113 85 116 92 117" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round"></path><circle cx="60" cy="36" r="4.2" fill="#fff"></circle>
+      <rect x="0" y="124" width="120" height="40" fill="#fff"></rect><path d="M0 128 Q30 113 60 129 Q90 113 120 128 L120 137 Q90 122 60 138 Q30 122 0 137Z" fill="#10a386"></path><path d="M0 142 Q30 127 60 143 Q90 127 120 142 L120 151 Q90 136 60 152 Q30 136 0 151Z" fill="#10a386"></path><path d="M0 156 Q30 141 60 157 Q90 141 120 156 L120 164 L0 164Z" fill="#10a386"></path>
+    </svg>
+    <div class="spb-brand-text"><div class="spb-brand-name">Seminário<br>Presbiteriano<br>de Brasília</div><div class="spb-brand-motto">Teologia para transformação da vida</div></div>
+  </div>
+  <div class="spb-meta-right">
+    <div class="spb-meta-line">BACHARELADO EM TEOLOGIA</div>
+    <div class="spb-meta-line">DEPARTAMENTO DE CULTURA GERAL</div>
+    <div class="spb-meta-line">LÍNGUA PORTUGUESA 2 (CG02) — 2º SEM. 2026</div>
+    <div class="spb-meta-prof">Prof.: ISMAEL ROCHA</div>
+  </div>
+</header>
+
+<div class="hero-title-block">
+  <div class="hero-kicker">PORTUGUÊS 2 · UNIDADE 6</div>
+  <h1>Aula 10: Regência Verbal e Nominal</h1>
+  <p class="hero-subtitle">A Dinâmica e a Lógica da Regência Verbal e Nominal</p>
+</div>
+
+<div class="reader-toolbar" role="group" aria-label="Ferramentas de leitura">
+  <button class="reader-toggle-btn" id="readerToggle" type="button" aria-pressed="false" aria-label="Ativar modo leitura">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5v16M8 7h8M8 10h8M8 13h6"/></svg>
+    <span id="readerToggleLabel">Modo leitura</span>
+  </button>
+  <button class="reader-print-btn" id="readerPrint" type="button" aria-label="Imprimir ou salvar como PDF">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6zM17 12h.01"/></svg>
+    <span>Imprimir / salvar PDF</span>
+  </button>
+</div>
+
+<div class="lead-box">
+  <strong>Objetivo da Aula:</strong> Compreender profundamente as relações de dependência entre as palavras. A regência molda não apenas a obediência à norma-padrão, mas estabelece nuances teológicas vitais. Uma preposição errada pode mudar a doutrina de uma frase.
+</div>
+
+<section class="content-sec" id="sec-conceito">
+  <h2>1. O Que é Regência? (A Relação de Subordinação)</h2>
+  <p>Na aula passada, vimos que a <strong>Concordância</strong> trata da adaptação estrutural de flexão (combinação de número e pessoa entre Sujeito e Verbo; de gênero e número entre Substantivo e Adjetivo). Agora, a <strong>Regência</strong> não trata de flexão, mas de <em>governo</em> e <em>dependência sintática</em>.</p>
+  
+  <p>Nesta relação de poder gramatical, temos:</p>
+  <ul>
+    <li><strong>Termo Regente:</strong> É a palavra soberana que exige, demanda, "pede" uma complementação para fazer sentido completo na oração.</li>
+    <li><strong>Termo Regido:</strong> É o complemento que obedece à demanda do termo regente.</li>
+  </ul>
+
+  <p>A "ponte" entre o soberano (regente) e o subordinado (regido) é, muito frequentemente, a <strong>preposição</strong> (<em>a, de, com, em, para, por</em>, etc.).</p>
+
+  <div class="example">
+    <span class="example-label">Comparativo: Verbal x Nominal</span>
+    <strong>Verbal:</strong> O aluno <em>precisa</em> <strong>de</strong> orientação.<br>
+    <strong>Nominal:</strong> O aluno tem <em>necessidade</em> <strong>de</strong> orientation.
+    <p class="explain">No primeiro caso, a preposição "de" liga o verbo regente (precisar) ao seu objeto. No segundo, a mesma preposição liga o nome regente (necessidade) ao seu complemento nominal. Ambas exercem relação de regência.</p>
+  </div>
+
+  <div class="callout blue">
+    <div class="callout-title">PREPOSIÇÕES ESSENCIAIS — A CHAVE DA REGÊNCIA</div>
+    <p>Para dominar a regência, precisamos ter domínio das preposições. Sem elas, não há conexão sintática em verbos e nomes transitivos indiretos. As preposições essenciais são:<br>
+    <em>a, ante, após, até, com, contra, de, desde, em, entre, para, per, perante, por, sem, sob, sobre, trás.</em></p>
+  </div>
+</section>
+
+<section class="content-sec" id="sec-verbal">
+  <h2>2. A Regência Verbal: Transitividade e Sentido</h2>
+  <p>Na regência verbal, o termo regente é, naturally, o VERBO. Classificar a regência de um verbo significa analisar se ele "transita", ou seja, se a ação dele precisa viajar para um objeto para fazer sentido lógico no mundo real.</p>
+
+  <h3>2.1. O Verbo Intransitivo (VI)</h3>
+  <p>É o verbo autossuficiente. A ação começa e termina no próprio sujeito. Ele não exige um objeto (não precisa de ponte para outro termo). O que frequentemente o acompanha são circunstâncias (Tempo, Modo, Lugar, Intensidade).</p>
+  
+  <div class="example">
+    <span class="example-label">Exemplo</span>
+    “O Senhor Jesus <strong>chorou</strong>.” (João 11:35)
+    <p class="explain">A frase acaba aí de forma completa. Se adicionarmos "em Betânia" ou "durante a tarde", estaremos adicionando <strong>Adjuntos Adverbiais</strong> (circunstâncias de lugar e tempo), e não objetos. Quem chora, simplesmente chora.</p>
+  </div>
+
+  <div class="example">
+    <span class="example-label">Exemplo</span>
+    “O império romano <strong>caiu</strong>.”
+    <p class="explain">A ação de cair pertence inteiramente ao império. O verbo não transita para nenhum complemento. Tudo que vier depois (ex: "no século V") será apenas uma circunstância adverbial.</p>
+  </div>
+
+  <div class="example">
+    <span class="example-label">Exemplo</span>
+    O missionário <strong>foi</strong> a Roma e <strong>chegou</strong> ao seminário.
+    <p class="explain"><strong>Atenção:</strong> Na norma-padrão, verbos que indicam deslocamento/destino exigem a preposição "a", e não "em". Portanto, é incorreto escrever "Chegou no seminário" ou "Fui no culto". O correto é "Chegou <strong>ao</strong> seminário" e "Fui <strong>ao</strong> culto". Esse erro é extremamente comum no cotidiano; é frequente ouvirmos "Vou no banheiro", "Cheguei em casa" ou "Fomos no shopping". O correto, no entanto, exige a preposição "a": "Vou ao banheiro", "Cheguei a casa" e "Fomos ao shopping".</p>
+  </div>
+
+  <h3>2.2. O Verbo Transitivo Direto (VTD)</h3>
+  <p>É o verbo cuja ação transita DIRETAMENTE para o alvo, sem encontrar pedágio (sem preposição obrigatória). O alvo se chama <strong>Objeto Direto</strong>.</p>
+  
+  <div class="example">
+    <span class="example-label">Exemplo</span>
+    O pastor <strong>leu</strong> o manuscrito original.
+    <p class="explain">Pergunte ao verbo: Quem lê, lê <em>algo</em>. A resposta liga-se ao verbo apenas pelo artigo "o". Não há preposição (de, com, em). Logo, "o manuscrito" é um Objeto Direto (OD).</p>
+  </div>
+
+  <div class="example">
+    <span class="example-label">Exemplo</span>
+    “No princípio, Deus <strong>criou</strong> os céus e a terra.” (Gn 1:1)
+    <p class="explain">A ação de criar atinge diretamente "os céus e a terra" (Objeto Direto). Não se diz "criou aos céus" ou "criou dos céus". A transição é limpa e direta.</p>
+  </div>
+
+  <h3>2.3. O Verbo Transitivo Indireto (VTI)</h3>
+  <p>É o verbo que exige um pedágio obrigatório: a preposição. O seu alvo é alcançado de forma "indireta", porque a preposição fica no meio do caminho, operando como ponte. O alvo se chama <strong>Objeto Indireto</strong>.</p>
+
+  <div class="example">
+    <span class="example-label">Exemplo</span>
+    A congregação <strong>resistiu</strong> <em>à</em> falsa doutrina.
+    <p class="explain">Quem resiste, resiste <strong>A</strong> algo. A preposição "A" é obrigatória. Como o substantivo "falsa doutrina" é feminino e exige o artigo "a", ocorre a fusão: A (preposição) + A (artigo) = <strong>À</strong> (crase). "À falsa doutrina" é o Objeto Indireto (OI).</p>
+  </div>
+
+  <div class="example">
+    <span class="example-label">Exemplo</span>
+    Todo pecador <strong>necessita</strong> <em>da</em> graça imerecida.
+    <p class="explain">O verbo "necessitar" pede a preposição "de" (Quem necessita, necessita <strong>DE</strong> algo/alguém). A contração de (preposição) + a (artigo) forma "da", iniciando o Objeto Indireto.</p>
+  </div>
+
+  <h3>2.4. O Verbo Transitivo Direto e Indireto (VTDI)</h3>
+  <p>É o verbo bitransitivo. Ele exige duas informações para fazer sentido: uma coisa (direta) e uma pessoa/alvo (indireta). Ele carrega um Objeto Direto e um Objeto Indireto ao mesmo tempo.</p>
+
+  <div class="example">
+    <span class="example-label">Exemplo</span>
+    O professor <strong>entregou</strong> a prova ao aluno.
+    <p class="explain">Quem entrega, entrega <strong>algo</strong> (a prova - OD) <strong>a alguém</strong> (ao aluno - OI). A ordem não importa. Pode ser: "Entregou ao aluno a prova". A regência se mantém.</p>
+  </div>
+
+  <div class="example">
+    <span class="example-label">Exemplo</span>
+    A igreja <strong>dedicou</strong> um belo cântico ao Senhor.
+    <p class="explain">O verbo "dedicar" transita para a coisa ofertada sem preposição ("um belo cântico" - OD) e para o alvo da homenagem com preposição ("ao Senhor" - OI).</p>
+  </div>
+</section>
+
+<section class="content-sec" id="sec-polissemicos">
+  <h2>3. Laboratório de Sentidos: Verbos Polissêmicos</h2>
+  <p>Esta é a área onde a maioria dos estudantes de teologia erra na redação acadêmica. Muitos verbos mudam de significado radicalmente se você colocar ou tirar a preposição.</p>
+
+  <div class="callout blue">
+    <div class="callout-title">O VERBO ASSISTIR</div>
+    <p><strong>1. Sem preposição (VTD):</strong> Significa ajudar, prestar assistência médica ou social.<br>
+    <em>"O capelão <strong>assistia</strong> os doentes no hospital." / "Deus sempre assiste os Seus eleitos nas tribulações."</em></p>
+    <p><strong>2. Com preposição A (VTI):</strong> Significa presenciar, ser espectador. <span class="bad">(Evite o erro clássico: "Assistir o culto")</span>.<br>
+    <em>"A igreja inteira <strong>assistiu ao</strong> batismo nas águas." / "O sínodo assistiu à apresentação do relatório."</em></p>
+    <p><strong>3. Com preposição A (VTI):</strong> Significa caber por direito.<br>
+    <em>"Este privilégio <strong>assiste aos</strong> filhos da promessa." / "A liberdade de culto assiste a todo cidadão."</em></p>
+  </div>
+
+  <div class="callout orange">
+    <div class="callout-title">O VERBO ASPIRAR</div>
+    <p><strong>1. Sem preposição (VTD):</strong> Significa sorver, inalar, respirar.<br>
+    <em>"No jardim da criação, o homem <strong>aspirou</strong> o ar puro da manhã."</em></p>
+    <p><strong>2. Com preposição A (VTI):</strong> Significa almejar, desejar profundamente um cargo ou função.<br>
+    <em>"O estudante aplicado <strong>aspira ao</strong> título de Bacharel em Teologia." / "Se alguém <strong>aspira ao</strong> episcopado, excelente obra almeja." (1 Timóteo 3:1)</em></p>
+  </div>
+
+  <div class="callout blue">
+    <div class="callout-title">O VERBO VISAR</div>
+    <p><strong>1. Sem preposição (VTD):</strong> Mirar ou assinar um documento (dar visto).<br>
+    <em>"O arqueiro <strong>visou</strong> o alvo e disparou." / "O coordenador <strong>visou</strong> o certificado do aluno."</em></p>
+    <p><strong>2. Com preposição A (VTI):</strong> Ter em vista, ter como objetivo primordial.<br>
+    <em>"O novo projeto missionário <strong>visa à</strong> salvação dos perdidos." / "As epístolas visavam à edificação das comunidades locais."</em></p>
+  </div>
+
+  <div class="callout orange">
+    <div class="callout-title">O VERBO IMPLICAR</div>
+    <p><strong>1. Sem preposição (VTD):</strong> Significa gerar consequência, acarretar. <strong>Atenção: não existe "implicar EM".</strong><br>
+    <em>"A queda humana <strong>implicou</strong> a entrada do pecado no mundo."</em> <span class="good">(Correto)</span><br>
+    <em>"A queda implicou na entrada..."</em> <span class="bad">(Incorreto na norma culta)</span>.</p>
+    <p><strong>2. Com preposição COM (VTI):</strong> Significa hostilizar, antipatizar.<br>
+    <em>"Os saduceus sempre <strong>implicavam com</strong> as doutrinas dos fariseus."</em></p>
+  </div>
+
+  <div class="callout blue">
+    <div class="callout-title">O VERBO QUERER</div>
+    <p><strong>1. Sem preposição (VTD):</strong> Significa desejar, ter a intenção ou a posse de algo.<br>
+    <em>"O povo <strong>queria</strong> um rei terreno." / "Eu quero a minha herança."</em></p>
+    <p><strong>2. Com preposição A (VTI):</strong> Significa amar, estimar, ter afeto.<br>
+    <em>"O bom pastor <strong>quer</strong> muito <strong>às</strong> suas ovelhas."</em> (Neste contexto, "querer a" significa dedicar profundo amor e cuidado, algo intimamente ligado à expressão "querer bem").</p>
+  </div>
+
+  <div class="callout orange">
+    <div class="callout-title">O VERBO PROCEDER</div>
+    <p><strong>1. Com preposição DE (VTI):</strong> Significa originar-se, vir de algum lugar.<br>
+    <em>"A verdadeira sabedoria <strong>procede do</strong> alto." / "A comitiva procedia de Antioquia."</em></p>
+    <p><strong>2. Sem preposição (VI):</strong> Significa ter fundamento, fazer sentido. Intransitivo.<br>
+    <em>"A acusação contra o presbítero não <strong>procedia</strong>."</em></p>
+    <p><strong>3. Com preposição A (VTI):</strong> Significa dar início, realizar.<br>
+    <em>"O concílio <strong>procedeu à</strong> votação da pauta dogmática."</em></p>
+  </div>
+
+  <div class="callout blue">
+    <div class="callout-title">VERBOS "PAGAR" E "PERDOAR" (A Regra Bitransitiva)</div>
+    <p>A regra de ouro na língua portuguesa é: <strong>Paga-se ou Perdoa-se ALGO (VTD) A ALGUÉM (VTI).</strong></p>
+    <p><strong>1. Somente a coisa (Dívida/Ofensa):</strong> Transitivo Direto.<br>
+    <em>"Deus perdoou <strong>o nosso pecado</strong>." / "Ele pagou <strong>a promessa</strong>."</em></p>
+    <p><strong>2. Somente a pessoa (O Devedor/Ofensor):</strong> Transitivo Indireto (Preposição "A").<br>
+    <em>"Perdoai <strong>aos nossos devedores</strong>." / "Jesus pagou <strong>a César</strong>."</em></p>
+    <p><strong>3. Os dois juntos (Bitransitivo - VTDI):</strong> Exige objeto direto e indireto.<br>
+    <em>"Cristo pagou <strong>aos romanos</strong> (VTI) <strong>o tributo devido</strong> (VTD)."</em> O verbo é bitransitivo, pois transmite a ação à coisa ("o tributo") e o destino à pessoa ("aos romanos").</p>
+  </div>
+</section>
+
+<section class="content-sec" id="sec-nominal">
+  <h2>4. A Regência Nominal: O Domínio dos Nomes</h2>
+  <p>Diferente dos verbos (que podem ser diretos ou indiretos), <strong>todos os complementos nominais são preposicionados</strong>. A regência nominal acontece quando um Substantivo Abstrato, um Adjetivo ou um Advérbio demanda um complemento (Complemento Nominal).</p>
+  
+  <div class="quick-summary">
+    <div class="summary-item">
+      <strong>1. O Princípio da Herança (A Família da Palavra)</strong>
+      <p>Geralmente, nomes (substantivos e adjetivos) derivados de verbos herdam a regência do verbo de origem. A preposição acompanha a "família" da palavra.</p>
+      <em>Verbo:</em> Obedecer <b style="color:var(--blue);">a</b> Deus.<br>
+      <em>Substantivo:</em> A obediência <b style="color:var(--blue);">a</b> Deus.<br>
+      <em>Adjetivo:</em> Ele é obediente <b style="color:var(--blue);">a</b> Deus.<br><br>
+      <em>Outros exemplos práticos:</em><br>
+      - Quem confia, confia <b style="color:var(--blue);">em</b>. Logo: ter confiança <b style="color:var(--blue);">em</b>; estar confiante <b style="color:var(--blue);">em</b>.<br>
+      - Quem atenta, atenta <b style="color:var(--blue);">a/para</b>. Logo: prestar atenção <b style="color:var(--blue);">a/para</b>; estar atento <b style="color:var(--blue);">a/para</b>.
+    </div>
+    <div class="summary-item">
+      <strong>2. A Fixação pela Leitura (O Costume do Idioma)</strong>
+      <p>Diferente da herança, algumas palavras exigem preposições sem uma lógica clara; é o mero costume da língua (idiomatismo). A única forma de internalizar essas regências é através da leitura constante de bons textos literários e acadêmicos.</p>
+      <em>Exemplos práticos de costume:</em><br>
+      - Diz-se "Bacharel <b style="color:var(--blue);">em</b> Teologia" (e não "de" Teologia).<br>
+      - Ter "Horror <b style="color:var(--blue);">a</b>" (e não "de").<br>
+      - Ter "Medo <b style="color:var(--blue);">de</b>" (e não "a").<br><br>
+      A escolha da preposição obedece à tradição culta, fixada pelos bons autores.
+    </div>
+  </div>
+
+  <h3>4.1. Regências Nominais Clássicas em Textos Acadêmicos</h3>
+  <div class="table-wrap"><table>
+    <thead>
+      <tr>
+        <th>O Nome (Regente)</th>
+        <th>Exige as Preposições</th>
+        <th>Exemplo de Aplicação Prática</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Aliado</strong> (Adjetivo/Subst.)</td>
+        <td>a, de</td>
+        <td>O silêncio do clero foi <strong>aliado da</strong> opressão política.</td>
+      </tr>
+      <tr>
+        <td><strong>Ansioso</strong> (Adjetivo)</td>
+        <td>de, para, por</td>
+        <td>O mundo aguarda, <strong>ansioso pela</strong> redenção final.</td>
+      </tr>
+      <tr>
+        <td><strong>Apto</strong> (Adjetivo)</td>
+        <td>a, para</td>
+        <td>O candidato não estava <strong>apto ao</strong> ministério ordenado.</td>
+      </tr>
+      <tr>
+        <td><strong>Compatível</strong> (Adjetivo)</td>
+        <td>com</td>
+        <td>Tal comportamento não é <strong>compatível com</strong> a ética cristã.</td>
+      </tr>
+      <tr>
+        <td><strong>Contemporâneo</strong> (Adjetivo)</td>
+        <td>a, de</td>
+        <td>Agostinho foi <strong>contemporâneo de</strong> Jerônimo.</td>
+      </tr>
+      <tr>
+        <td><strong>Devoção</strong> (Substantivo)</td>
+        <td>a, para com, por</td>
+        <td>Sua <strong>devoção para com</strong> a igreja é exemplar nas Escrituras.</td>
+      </tr>
+      <tr>
+        <td><strong>Dúvida</strong> (Substantivo)</td>
+        <td>acerca de, de, em, sobre</td>
+        <td>Não havia <strong>dúvida sobre</strong> a autoria paulina do texto lido.</td>
+      </tr>
+      <tr>
+        <td><strong>Essencial</strong> (Adjetivo)</td>
+        <td>a, para</td>
+        <td>A graça preveniente é <strong>essencial para</strong> a salvação.</td>
+      </tr>
+      <tr>
+        <td><strong>Propício</strong> (Adjetivo)</td>
+        <td>a</td>
+        <td>O ambiente silencioso é <strong>propício à</strong> meditação nas Escrituras.</td>
+      </tr>
+      <tr>
+        <td><strong>Simpatia</strong> (Substantivo)</td>
+        <td>a, por</td>
+        <td>Ele não escondia a grande <strong>simpatia por</strong> novas metodologias.</td>
+      </tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="content-sec" id="sec-interseccao">
+  <h2>5. A Intersecção: Como a Regência Comanda a Concordância</h2>
+  <p>Esta é a ponte principal que une a Aula 9 (Concordância) à Aula 10 (Regência). A sintaxe é uma engrenagem. Se você errar a regência de um verbo (tratando um VTI como VTD), o sujeito pode desaparecer ou virar objeto, o que vai destruir a sua concordância verbal.</p>
+
+  <h3>5.1. A Partícula SE e a Vingança da Transitividade</h3>
+  <p>Quando colocamos o pronome apassivador "SE" após um verbo na 3ª pessoa, a decisão de colocar o verbo no singular ou plural dependerá ESTRITAMENTE da transitividade (regência) desse verbo.</p>
+
+  <div class="example">
+    <span class="example-label">Cenário 1: VTD + SE = Voz Passiva (O Verbo Vai ao Plural)</span>
+    <strong>Regra:</strong> Quando usamos um verbo que não exige preposição (Transitivo Direto) junto com a partícula "SE", a coisa que recebe a ação vira o Sujeito da frase. Portanto, se essa "coisa" estiver no plural, o verbo obrigatoriamente vai para o plural.<br>
+    <em>"<strong>Lê-se</strong> o capítulo."</em> (O capítulo é lido).<br>
+    <em>"<strong>Leem-se</strong> os capítulos."</em> (Os capítulos são lidos).<br>
+    <em>"<strong>Discutiu-se</strong> o dogma."</em> (O dogma foi discutido).<br>
+    <em>"<strong>Discutiram-se</strong> os dogmas."</em> (Os dogmas foram discutidos).
+  </div>
+
+  <div class="example">
+    <span class="example-label">Cenário 2: VTI + SE = Sujeito Indeterminado (Singular Fixo)</span>
+    <strong>Regra:</strong> Se o verbo for Transitivo Indireto (exige preposição), o termo que vem depois não pode ser sujeito (pois sujeito nunca vem com preposição). A frase não tem sujeito explícito, tornando o "SE" índice de indeterminação. O verbo fica <strong>imóvel no singular</strong>.<br>
+    <em>"<strong>Precisa-se</strong> de um obreiro."</em> (Singular).<br>
+    <em>"<strong>Precisa-se</strong> de vários obreiros."</em> (Continua no singular, pois "de vários obreiros" é objeto indireto).<br>
+    <em>"<strong>Apelou-se</strong> para a graça divina."</em> (Singular).<br>
+    <em>"<strong>Apelou-se</strong> para os argumentos teológicos."</em> (O verbo apelar, exigindo preposição, permanece no singular).
+  </div>
+
+  <h3>5.2. A Preposição Antes do Pronome Relativo (Que / Quem / O qual)</h3>
+  <p>Na redação acadêmica de excelência, o uso correto dos pronomes relativos demonstra alto nível de letramento. Se o verbo (ou nome) que estiver <em>dentro da oração subordinada</em> exigir preposição, você <strong>deve arrastar</strong> essa preposição para ANTES do pronome relativo.</p>
+  
+  <div class="example">
+    <span class="example-label">Analisando o relativo "QUE" (com Verbo)</span>
+    "O livro <strong>de que</strong> eu preciso sumiu da biblioteca."
+    <p class="explain">Por que esse "de" está ali? Porque o verbo precisar (que rege a oração) exige a preposição "de" (Quem precisa, precisa DE algo). A norma formal obriga a preposição a vir para antes do pronome "que". Na fala coloquial, diríamos: "O livro que eu preciso", mas na monografia, a regência cobra seu preço.</p>
+  </div>
+
+  <div class="example">
+    <span class="example-label">Analisando o relativo "QUEM" (com Nome e Verbo)</span>
+    "Aquele é o Deus <strong>em quem</strong> nós confiamos cegamente."<br>
+    "Eis o mestre <strong>a quem</strong> devo total obediência."
+    <p class="explain">O verbo "confiar" exige a preposição "em" (quem confia, confia em alguém). O substantivo "obediência" exige complemento com "a" (obediência a alguém). Ambas as preposições se deslocam para trás, colando-se ao "quem".</p>
+  </div>
+
+  <div class="example">
+    <span class="example-label">Analisando o relativo "O QUAL / A QUAL" (com Nome)</span>
+    "Esta é a corrente teológica <strong>com a qual</strong> o autor simpatiza."
+    <p class="explain">O verbo "simpatizar" (VTI) exige a preposição "com". Como o pronome relativo foi trocado de "que" para "a qual" (para maior formalidade), a preposição senta-se majestosamente antes dele.</p>
+  </div>
+
+  <h3>5.3. "Economia Incorreta": Unindo Verbos de Regências Diferentes</h3>
+  <p>Para evitar a repetição exaustiva em parágrafos longos, muitas vezes juntamos dois verbos num mesmo complemento. Ex: "Eu comprei e li o livro" (Correto, pois comprar e ler são VTD). Mas se as regências forem incompatíveis, ocorre a chamada "Zeugma Irregular" ou economia incorreta.</p>
+
+  <ul class="step-list">
+    <li><strong>Frase Errada:</strong> "A equipe entrou e saiu do seminário."<br>
+    <span class="explain">Análise do Erro: "Entrar" exige a preposição EM (entrou no seminário), mas "Sair" exige a preposição DE (saiu do seminário). Um verbo está tentando roubar indevidamente o complemento do outro.</span></li>
+    <li><strong>Solução Elegante e Correta:</strong> "A equipe <strong>entrou no</strong> seminário e <strong>dele saiu</strong>."</li>
+    
+    <li><strong>Frase Errada:</strong> "O autor defende e simpatiza com a tese de João Calvino."<br>
+    <span class="explain">Análise do Erro: "Defender" é VTD (defende a tese), e "Simpatizar" é VTI (simpatiza com a tese). Se você usar "com" para ambos, estará dizendo "defende com a tese", o que é absurdo.</span></li>
+    <li><strong>Solução Elegante e Correta:</strong> "O autor <strong>defende</strong> a tese de João Calvino e <strong>com ela simpatiza</strong>."</li>
+  </ul>
+</section>
+
+<section class="content-sec" id="sec-laboratorio">
+  <h2>6. Laboratório Prático</h2>
+  <p>Para finalizar nosso aprofundamento, vamos dissecar orações complexas de nível acadêmico. Identifique as estruturas e consulte o apêndice no final do documento para entender a justificativa técnica.</p>
+
+  <div class="lead-box">
+    <strong>Questão de Análise 1</strong><br>
+    Analise a estrutura sintática do período abaixo, identificando as regras de regência e concordância aplicadas às palavras em destaque.<br><br>
+    <strong>Período:</strong> "<u><i><b>Fazia cinco anos</b></i></u> que <u><i><b>a maioria dos docentes aspirava à</b></i></u> reforma da matriz. Hoje, <u><i><b>assiste-se aos</b></i></u> bons resultados: aos alunos foram disponibilizadas ementas <u><i><b>às quais</b></i></u> muitos não tinham acesso."
+  </div>
+
+  <p><strong>Respostas Diretas (Análise):</strong></p>
+  <ul class="step-list">
+    <li><strong>Fazia cinco anos:</strong> Verbo impessoal no singular. Indica tempo.</li>
+    <li><strong>a maioria dos docentes aspirava:</strong> Concordância do verbo com o núcleo partitivo "maioria" (singular).</li>
+    <li><strong>aspirava à reforma:</strong> Verbo aspirar (desejar) exige a preposição "A". Ocorre crase (à).</li>
+    <li><strong>assiste-se aos bons resultados:</strong> Verbo assistir (presenciar) exige a preposição "A". A partícula "SE" indetermina o sujeito, logo o verbo fica no singular.</li>
+    <li><strong>ementas às quais muitos não tinham acesso:</strong> Regência nominal. "Acesso" exige a preposição "A", que é deslocada para antes do pronome relativo "as quais" (às quais).</li>
+  </ul>
+
+  <div class="lead-box">
+    <strong>Questão de Análise 2</strong><br>
+    Analise a estrutura sintática do período abaixo, identificando as regras de regência e concordância aplicadas às palavras em destaque.<br><br>
+    <strong>Período:</strong> "<u><i><b>Nem o reverendo nem os presbíteros implicaram com</b></i></u> as alterações, <u><i><b>preferindo a paz</b></i></u> eclesiástica <u><i><b>aos</b></i></u> intermináveis debates litúrgicos."
+  </div>
+
+  <p><strong>Respostas Diretas (Análise):</strong></p>
+  <ul class="step-list">
+    <li><strong>Nem o reverendo nem os presbíteros implicaram:</strong> Sujeito composto com a conjunção "nem". Verbo deslocado para o plural.</li>
+    <li><strong>implicaram com:</strong> Verbo implicar (antipatizar) exige a preposição "COM" (Transitivo Indireto).</li>
+    <li><strong>preferindo a paz... aos... debates:</strong> Verbo bitransitivo (VTDI). Exige Objeto Direto (a coisa preferida) e Objeto Indireto com preposição "A" (a coisa rejeitada).</li>
+  </ul>
+
+  <div class="lead-box">
+    <strong>Questão de Análise 3</strong><br>
+    Analise a estrutura sintática do período abaixo, identificando as regras de regência e concordância aplicadas às palavras em destaque.<br><br>
+    <strong>Período:</strong> "O teólogo reformado <u><i><b>cujas obras lemos</b></i></u> no semestre passado era <u><i><b>propício ao</b></i></u> diálogo."
+  </div>
+
+  <p><strong>Respostas Diretas (Análise):</strong></p>
+  <ul class="step-list">
+    <li><strong>cujas obras:</strong> Pronome concorda em gênero e número com o termo consequente ("obras"), nunca com o antecedente. Sem artigo posterior.</li>
+    <li><strong>obras lemos:</strong> O verbo "ler" é VTD (não tem preposição), deixando a passagem limpa para o pronome "cujas".</li>
+    <li><strong>propício ao diálogo:</strong> Regência nominal do adjetivo "propício", exigindo a preposição "A" (ao).</li>
+  </ul>
+</section>
+
+<section class="content-sec" id="sec-apendice">
+  <h2>7. Apêndice: Justificativas das Questões de Análise</h2>
+  
+  <p><strong>Referente à Questão 1:</strong></p>
+  <ul>
+    <li>O verbo <strong>fazer</strong>, indicando tempo decorrido, <strong>nunca vai para o plural</strong> ("Fazem cinco anos" é incorreto).</li>
+    <li>A expressão partitiva <strong>"a maioria de"</strong> permite dupla concordância, sendo a escolha pelo núcleo "maioria" (singular) altamente culta.</li>
+    <li>Tratar <strong>assistir</strong> (presenciar) como VTD ("assiste-se os resultados") é um erro grave; sendo VTI, o "SE" exige que o verbo seja travado no singular.</li>
+  </ul>
+
+  <p><strong>Referente à Questão 2:</strong></p>
+  <ul>
+    <li>Em <strong>sujeito composto</strong> negado por "nem... nem", a concordância natural e lógica é o plural, visto que a negação afeta ambos os núcleos.</li>
+    <li>A regência do verbo <strong>implicar</strong> (antipatizar) é restrita ao uso de "com"; ignorar a preposição gera coloquialismo.</li>
+    <li>O verbo <strong>preferir</strong> não admite intensificadores coloquiais ("preferir mais a paz do que os debates"); sua natureza exibe a glória de um VTDI clássico.</li>
+  </ul>
+
+  <p><strong>Referente à Questão 3:</strong></p>
+  <ul>
+    <li>O uso de <strong>artigo após o pronome cujo</strong> ("cujas as obras") é terminantemente proibido pela norma-padrão.</li>
+    <li>A formação <strong>"ao diálogo"</strong> reflete o complemento nominal impecável gerado por Adjetivo (propício) + Preposição A + Artigo O (Diálogo).</li>
+  </ul>
+</section>
+
+<div class="back-portal-wrap"><a class="back-portal-btn" href="./">← Voltar ao portal de Português 2</a></div>
+</main>
+<footer class="site-credit" aria-label="Créditos do site">
+  <a class="bunker-logo-link" href="https://bunkerdigital.top/" target="_blank" rel="noopener noreferrer" aria-label="Bunker Digital — abrir em nova aba">
+    <img class="bunker-logo-dark" src="/graphics/logo-bunker-dark.png" alt="Bunker Digital" loading="lazy" width="150" height="130">
+    <img class="bunker-logo-light" src="/graphics/logo-bunker-light.png" alt="Bunker Digital" loading="lazy" width="150" height="130">
+  </a>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('themeToggle'),icon=document.getElementById('themeIcon'),label=document.getElementById('themeLabel');
+  var sun='<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+  var moon='<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+  function sync(){var dark=root.classList.contains('dark-mode');icon.innerHTML=dark?moon:sun;label.textContent=dark?'Escuro':'Claro';btn.setAttribute('aria-checked',String(dark));btn.setAttribute('aria-label',dark?'Alternar para modo claro':'Alternar para modo escuro');}
+  sync();btn.addEventListener('click',function(){root.classList.toggle('dark-mode');var mode=root.classList.contains('dark-mode')?'dark':'light';try{localStorage.setItem('spb_portais_tema',mode);}catch(e){}sync();});
+  var readerToggle=document.getElementById('readerToggle');
+  var readerToggleLabel=document.getElementById('readerToggleLabel');
+  var readerPrint=document.getElementById('readerPrint');
+  if(readerToggle){
+    readerToggle.addEventListener('click',function(){
+      var active=!document.body.classList.contains('reader-mode');
+      document.body.classList.toggle('reader-mode',active);
+      readerToggle.setAttribute('aria-pressed',String(active));
+      readerToggle.setAttribute('aria-label',active?'Sair do modo leitura':'Ativar modo leitura');
+      if(readerToggleLabel)readerToggleLabel.textContent=active?'Sair do modo leitura':'Modo leitura';
+      if(active)window.scrollTo({top:0,behavior:'smooth'});
+    });
+  }
+  if(readerPrint){readerPrint.addEventListener('click',function(){window.print();});}
+  var sections=document.querySelectorAll('section.content-sec'),links=document.querySelectorAll('.slim-toc-link');
+  function updateActive(){var pos=window.scrollY+145,current=sections[0]?sections[0].id:'';sections.forEach(function(s){if(s.offsetTop<=pos)current=s.id;});links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+current);});}
+  window.addEventListener('scroll',updateActive,{passive:true});updateActive();
+})();
+</script>
+</body>
+</html>

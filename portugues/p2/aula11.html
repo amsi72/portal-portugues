@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Aula 11 de Português 2: Revisão Geral e Simulado de Avaliação. Material de leitura do Seminário Presbiteriano de Brasília.">
+<title>Português 2 — Aula 11: Simulado e Revisão</title>
+<style>
+:root{
+  color-scheme:light;
+  --bg:#eef2f7;--surface:#fff;--paper:#f8fafc;--ink:#1e293b;--muted:#475569;
+  --navy:#0b2344;--navy-light:#163a6b;--blue:#2563eb;--blue-pale:#eff6ff;--blue-border:#bfdbfe;
+  --teal:#0f766e;--teal-pale:#f0fdfa;--teal-border:#99f6e4;--green:#15803d;--green-pale:#f0fdf4;--green-border:#bbf7d0;
+  --coral:#c2410c;--coral-pale:#fff7ed;--coral-border:#fed7aa;--purple:#6d28d9;--purple-pale:#f5f3ff;--purple-border:#ddd6fe;
+  --amber:#b45309;--amber-pale:#fffbeb;--amber-border:#fde68a;--line:#cbd5e1;
+  --shadow-sm:0 1px 3px rgba(11,35,68,.06);--shadow-md:0 4px 20px rgba(11,35,68,.10);
+  --hdr-navy:#134a84;--hdr-teal:#10a386;--hdr-main:#1e293b;--hdr-sub:#334155;--hdr-line:#1e5a96;
+}
+html.dark-mode{
+  color-scheme:dark;--bg:#090d16;--surface:#111827;--paper:#1e293b;--ink:#f1f5f9;--muted:#94a3b8;
+  --navy:#e2e8f0;--navy-light:#93c5fd;--blue:#60a5fa;--blue-pale:#172554;--blue-border:#1e3a8a;
+  --teal:#2dd4bf;--teal-pale:#042f2e;--teal-border:#115e59;--green:#4ade80;--green-pale:#052e16;--green-border:#14532d;
+  --coral:#fb923c;--coral-pale:#431407;--coral-border:#7c2d12;--purple:#c084fc;--purple-pale:#2e1065;--purple-border:#581c87;
+  --amber:#fbbf24;--amber-pale:#451a03;--amber-border:#78350f;--line:#334155;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.35);--shadow-md:0 6px 24px rgba(0,0,0,.45);
+  --hdr-navy:#1d5ca0;--hdr-teal:#2dd4bf;--hdr-main:#f8fafc;--hdr-sub:#cbd5e1;--hdr-line:#3b82f6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .2s,color .2s}
+.page-wrapper{width:min(100%,1060px);min-height:100vh;margin:0 auto;padding:26px clamp(15px,4.5vw,58px) 54px;background:var(--surface);box-shadow:var(--shadow-md);position:relative}
+.inst-header{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto;align-items:center;column-gap:clamp(12px,2.4vw,28px);row-gap:10px;padding:0 0 15px;margin:0 auto 24px;border-bottom:2px solid var(--hdr-line);min-width:0}
+.theme-switch-wrapper{grid-column:1/-1;grid-row:1;justify-self:end;align-self:start;margin:0 0 2px;z-index:5}
+.theme-switch-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:48px;min-height:42px;padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer;box-shadow:var(--shadow-sm);font:inherit;touch-action:manipulation}
+.theme-switch-btn:hover{border-color:var(--blue)}.theme-switch-btn:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.theme-switch-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.spb-brand-left{grid-column:1;grid-row:2;display:flex;align-items:center;gap:14px;min-width:0}
+.spb-emblem-svg{width:72px;height:98px;flex:0 0 auto}
+.spb-brand-text{min-width:0}.spb-brand-name{font-size:1.02rem;font-weight:750;line-height:1.12;color:var(--hdr-main)}
+.spb-brand-motto{margin-top:5px;font-size:.85rem;line-height:1.3;color:var(--hdr-sub)}
+.spb-meta-right{grid-column:2;grid-row:2;min-width:0;text-align:right;color:var(--hdr-main)}
+.spb-meta-line{font-size:.9rem;line-height:1.5;font-weight:650;letter-spacing:.02em;overflow-wrap:anywhere}
+.spb-meta-prof{margin-top:4px;font-size:.9rem;color:var(--hdr-sub)}
+.slim-toc{position:fixed;left:14px;top:50%;transform:translateY(-50%);z-index:1100;width:36px;max-height:min(78vh,720px);overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 5px;box-shadow:var(--shadow-md);opacity:.86;transition:width .22s,border-radius .2s,padding .2s,opacity .2s}
+.slim-toc:hover,.slim-toc:focus-within{width:290px;border-radius:13px;padding:10px 8px;opacity:1;overflow-y:auto}
+.slim-toc-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.slim-toc-link{display:flex;align-items:center;gap:9px;min-height:31px;padding:4px 6px;border-radius:8px;text-decoration:none;color:var(--muted);white-space:nowrap}
+.slim-toc-link:hover,.slim-toc-link:focus-visible{background:var(--blue-pale);color:var(--blue);outline:none}
+.slim-toc-link.active{background:var(--blue-pale);color:var(--blue);font-weight:800}
+.toc-num{display:inline-flex;align-items:center;justify-content:center;flex:0 0 24px;width:24px;height:24px;border-radius:50%;background:var(--paper);font-size:.85rem;font-weight:800}
+.toc-text{display:inline-block;opacity:0;max-width:0;overflow:hidden;font-size:.9rem;transition:max-width .2s,opacity .2s}
+.slim-toc:hover .toc-text,.slim-toc:focus-within .toc-text{opacity:1;max-width:230px}
+.hero-title-block{text-align:center;margin:0 auto 28px;padding:9px 0 23px;border-bottom:1px solid var(--line)}
+.hero-kicker{color:var(--purple);font-size:.9rem;font-weight:900;letter-spacing:.14em;margin-bottom:9px}
+.hero-title-block h1{margin:0 auto 9px;max-width:950px;font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.16;color:var(--ink)}
+.hero-subtitle{margin:0 auto;color:var(--muted);font-size:clamp(1rem,1.7vw,1.2rem);font-weight:650}
+.back-portal-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:9px 16px;border-radius:999px;border:1px solid var(--blue-border);background:var(--blue-pale);color:var(--blue);text-decoration:none;font-size:.95rem;font-weight:800;line-height:1.35;touch-action:manipulation}
+.back-portal-btn:hover{filter:brightness(.97)}
+.content-sec{margin:0 0 30px;scroll-margin-top:24px}
+.content-sec h2{margin:0 0 15px;padding:0 0 9px;border-bottom:2px solid var(--line);color:var(--navy);font-size:1.42rem;line-height:1.3}
+.content-sec h3{margin:22px 0 9px;color:var(--navy-light);font-size:1.12rem;line-height:1.35}
+.content-sec p{margin:0 0 13px;color:var(--ink);text-align:left}
+.content-sec ul,.content-sec ol{margin:7px 0 15px;padding-left:1.45rem}
+.content-sec li{margin:0 0 7px;padding-left:3px}
+
+/* Simulado */
+.quiz-container{display:flex;flex-direction:column;gap:22px}
+.quiz-question{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px}
+.quiz-question h4{margin:0 0 12px;color:var(--navy);font-size:1.08rem;line-height:1.45}
+.quiz-options{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.quiz-options li{margin:0;padding:0}
+.quiz-options li label{display:block;padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);cursor:pointer;transition:background-color .18s,border-color .18s,color .18s;width:100%}
+.quiz-options li label:hover{background:var(--blue-pale);border-color:var(--blue-border)}
+.quiz-options li input[type="radio"]{display:none}
+.quiz-options li:has(input[type="radio"]:not(.correct):checked) label{background:var(--coral-pale);border-color:var(--coral);color:var(--coral);font-weight:600}
+.quiz-options li:has(input[type="radio"].correct:checked) label{background:var(--green);color:#fff;border-color:var(--green);font-weight:700}
+.explanation-box{display:none;margin-top:12px;padding:12px 14px;border-radius:8px;background:var(--green-pale);border:1px solid var(--green-border);color:var(--ink);font-size:.95rem}
+.explanation-box strong{color:var(--green);display:block;margin-bottom:4px}
+.quiz-options:has(input[type="radio"].correct:checked) + .explanation-box{display:block}
+
+/* Gabarito Rápido */
+.gabarito-details{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+.gabarito-details summary{cursor:pointer;font-weight:750;color:var(--navy);list-style:none;display:flex;align-items:center;justify-content:space-between}
+.gabarito-details summary::-webkit-details-marker{display:none}
+.gabarito-details summary::after{content:"Mostrar ▾";font-size:.88rem;color:var(--blue);font-weight:700}
+.gabarito-details[open] summary::after{content:"Ocultar ▴"}
+.gabarito-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px;margin-top:16px}
+.gab-item{display:flex;align-items:center;justify-content:center;gap:6px;padding:7px 8px;border:1px solid var(--line);border-radius:8px;background:var(--surface);font-size:.94rem}
+.gab-num{color:var(--muted);font-weight:600}
+.gab-ans{color:var(--green);font-weight:800}
+
+.back-portal-wrap{text-align:center;padding:27px 0 8px;margin-top:30px;border-top:1px solid var(--line)}
+.site-credit{text-align:center;padding:18px 12px 25px}
+.bunker-logo-link{display:inline-flex;align-items:center;justify-content:center;max-width:100%}
+.bunker-logo-link img{display:block;width:min(145px,36vw);max-height:126px;height:auto;object-fit:contain}
+.bunker-logo-link img.bunker-logo-light{display:none}
+html.dark-mode .bunker-logo-dark{display:none}html.dark-mode .bunker-logo-light{display:block}
+
+/* Modo leitura */
+.reader-toolbar{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin:15px 0 28px}
+.reader-toggle-btn,.reader-print-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:43px;padding:9px 16px;border:1px solid var(--blue-border);border-radius:999px;background:var(--blue-pale);color:var(--blue);font:inherit;font-size:.95rem;font-weight:750;cursor:pointer;touch-action:manipulation}
+.reader-toggle-btn:hover,.reader-print-btn:hover{filter:brightness(.97)}
+.reader-toggle-btn:focus-visible,.reader-print-btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.reader-toolbar svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.reader-print-btn{display:none}
+body.reader-mode{background:#fff!important;color:#20242a!important}
+body.reader-mode .page-wrapper{width:min(100%,860px);min-height:0;margin:0 auto;padding:28px clamp(18px,5vw,54px) 54px;background:#fff!important;color:#20242a!important;box-shadow:none}
+body.reader-mode .inst-header,body.reader-mode .slim-toc,body.reader-mode .back-portal-wrap,body.reader-mode .site-credit{display:none!important}
+body.reader-mode .hero-title-block{text-align:left;margin:0 auto 14px;padding:0 0 17px;border-bottom:1px solid #d7dce2}
+body.reader-mode .hero-kicker{color:#5b6470;font-size:.85rem;letter-spacing:.1em}
+body.reader-mode .hero-title-block h1{margin:0 0 8px;color:#14181e;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,4vw,2.6rem);line-height:1.2}
+body.reader-mode .hero-subtitle{margin:0;color:#59616c;font-size:1.1rem;font-weight:500}
+body.reader-mode .reader-toolbar{justify-content:flex-end;margin:0 0 30px;padding:0 0 13px;border-bottom:1px solid #e2e6eb}
+body.reader-mode .reader-toggle-btn,body.reader-mode .reader-print-btn{background:#f5f7f9;border-color:#d8dee6;color:#28384c}
+body.reader-mode .reader-print-btn{display:inline-flex}
+body.reader-mode .content-sec{margin:0 0 30px;scroll-margin-top:12px}
+body.reader-mode .content-sec h2{margin:0 0 15px;padding:0 0 8px;border-bottom:1px solid #cfd5dc;color:#172b45;font-family:Georgia,"Times New Roman",serif;font-size:1.48rem;line-height:1.35}
+body.reader-mode .content-sec p,body.reader-mode .content-sec li{color:#20242a;font-size:1.1rem;line-height:1.85}
+body.reader-mode .content-sec ul.quiz-options{padding-left:0;margin:0}
+body.reader-mode .quiz-question{background:#f8fafc!important;border-color:#d7dce2!important;color:#20242a!important}
+body.reader-mode .quiz-question h4{color:#172b45!important;font-family:Georgia,"Times New Roman",serif}
+body.reader-mode .quiz-options li label{background:#fff!important;border-color:#cbd5e1!important;color:#20242a!important}
+body.reader-mode .quiz-options li label:hover{background:#eff6ff!important;border-color:#93c5fd!important}
+body.reader-mode .quiz-options li:has(input[type="radio"]:not(.correct):checked) label{background:#fff7ed!important;border-color:#c2410c!important;color:#c2410c!important}
+body.reader-mode .quiz-options li:has(input[type="radio"].correct:checked) label{background:#15803d!important;color:#fff!important;border-color:#15803d!important}
+body.reader-mode .explanation-box{background:#f0fdf4!important;border-color:#bbf7d0!important;color:#20242a!important}
+body.reader-mode .explanation-box strong{color:#15803d!important}
+body.reader-mode .gabarito-details{background:#f8fafc!important;border-color:#d7dce2!important}
+body.reader-mode .gabarito-details summary{color:#172b45!important}
+body.reader-mode .gab-item{background:#fff!important;border-color:#cbd5e1!important}
+
+@media(max-width:900px){.slim-toc{left:6px;width:30px}.slim-toc:hover,.slim-toc:focus-within{width:230px}}
+@media(max-width:640px){
+ body{font-size:16px}.page-wrapper{padding:13px 14px 44px;box-shadow:none}
+ .inst-header{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto;row-gap:11px;padding-bottom:12px;margin-bottom:20px}
+ .inst-header>.theme-switch-wrapper{grid-column:1;grid-row:1;justify-self:end;margin-right:0}
+ .spb-brand-left{grid-column:1;grid-row:2;width:100%;gap:11px}.spb-meta-right{grid-column:1;grid-row:3;text-align:left;width:100%}
+ .spb-emblem-svg{width:48px;height:66px}.spb-brand-name{font-size:1rem}.spb-brand-motto{font-size:.75rem}
+ .spb-meta-line,.spb-meta-prof{font-size:.85rem}
+ .slim-toc{position:sticky;left:auto;top:auto;transform:none;width:100%;max-width:100%;max-height:none;height:auto;overflow-x:auto;overflow-y:hidden;margin:0 auto 18px;padding:6px 8px;border-radius:11px;opacity:1;box-shadow:var(--shadow-sm);-webkit-overflow-scrolling:touch}
+ .slim-toc:hover,.slim-toc:focus-within{width:100%;padding:6px 8px;overflow-x:auto;overflow-y:hidden}
+ .slim-toc-list{flex-direction:row;align-items:center;gap:5px;width:max-content;min-width:100%}.slim-toc-list li{flex:0 0 auto;margin:0}
+ .slim-toc-link{min-height:34px;padding:5px 8px;gap:5px}.toc-num{width:20px;height:20px;flex-basis:20px}.toc-text{display:inline;opacity:1;max-width:155px;font-size:.85rem}
+ .hero-title-block{padding:7px 2px 18px;margin-bottom:22px}.hero-title-block h1{font-size:clamp(1.65rem,7vw,2.15rem)}
+ .content-sec h2{font-size:1.25rem}
+ .back-portal-btn{width:100%;min-height:44px}
+}
+@media(max-width:380px){.page-wrapper{padding-left:11px;padding-right:11px}.spb-brand-left{gap:8px}.spb-emblem-svg{width:43px;height:59px}.toc-text{max-width:125px}}
+@media print{
+  @page{margin:18mm 16mm}
+  html,body{background:#fff!important;color:#111!important;font-size:11.5pt!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body .page-wrapper,body.reader-mode .page-wrapper{width:100%;max-width:none;min-height:0;margin:0;padding:0;box-shadow:none;background:#fff!important;color:#111!important}
+  .slim-toc,.theme-switch-wrapper,.reader-toolbar,.back-portal-wrap,.site-credit{display:none!important}
+  .inst-header{margin-bottom:16px}
+  .content-sec{break-inside:auto;page-break-inside:auto}
+  .content-sec h2,.content-sec h3{break-after:avoid;page-break-after:avoid}
+  .quiz-question{break-inside:avoid;page-break-inside:avoid}
+  p,li{orphans:3;widows:3}
+  .quiz-options li label input[type="radio"]{display:inline-block;margin-right:6px}
+  .explanation-box{display:block!important;background:transparent!important;border:none!important;padding:0!important;margin-top:8px!important}
+}
+</style>
+<script>
+(function(){
+  try { var saved=localStorage.getItem('spb_portais_tema'); if(saved==='dark') document.documentElement.classList.add('dark-mode'); }
+  catch(e){}
+})();
+</script>
+</head>
+<body>
+<nav class="slim-toc" aria-label="Sumário de navegação rápida">
+  <ul class="slim-toc-list">
+    <li><a class="slim-toc-link" href="#sec-resumo"><span class="toc-num">1</span><span class="toc-text">Resumo Expresso</span></a></li>
+    <li><a class="slim-toc-link" href="#sec-simulado"><span class="toc-num">2</span><span class="toc-text">Simulado (30 Questões)</span></a></li>
+    <li><a class="slim-toc-link" href="#sec-gabarito"><span class="toc-num">3</span><span class="toc-text">Gabarito Rápido</span></a></li>
+  </ul>
+</nav>
+<main class="page-wrapper">
+<header class="inst-header" role="banner" aria-label="Cabeçalho institucional do Seminário Presbiteriano de Brasília">
+  <div class="theme-switch-wrapper">
+    <button class="theme-switch-btn" id="themeToggle" type="button" role="switch" aria-checked="false" aria-label="Alternar para modo escuro" title="Alternar tema">
+      <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      <span id="themeLabel">Claro</span>
+    </button>
+  </div>
+  <div class="spb-brand-left">
+    <svg class="spb-emblem-svg" viewBox="0 0 120 164" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect fill="#134a84" x="0" y="0" width="120" height="128"></rect><rect fill="#fff" x="56" y="0" width="8" height="128"></rect><rect fill="#fff" x="0" y="48" width="120" height="8"></rect>
+      <path d="M60 12 C26 32 26 84 60 106 C94 84 94 32 60 12Z" fill="#134a84" stroke="#fff" stroke-width="7.5" stroke-linejoin="round"></path><path d="M60 106 C46 113 35 116 28 117 M60 106 C74 113 85 116 92 117" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round"></path><circle cx="60" cy="36" r="4.2" fill="#fff"></circle>
+      <rect x="0" y="124" width="120" height="40" fill="#fff"></rect><path d="M0 128 Q30 113 60 129 Q90 113 120 128 L120 137 Q90 122 60 138 Q30 122 0 137Z" fill="#10a386"></path><path d="M0 142 Q30 127 60 143 Q90 127 120 142 L120 151 Q90 136 60 152 Q30 136 0 151Z" fill="#10a386"></path><path d="M0 156 Q30 141 60 157 Q90 141 120 156 L120 164 L0 164Z" fill="#10a386"></path>
+    </svg>
+    <div class="spb-brand-text"><div class="spb-brand-name">Seminário<br>Presbiteriano<br>de Brasília</div><div class="spb-brand-motto">Teologia para transformação da vida</div></div>
+  </div>
+  <div class="spb-meta-right">
+    <div class="spb-meta-line">BACHARELADO EM TEOLOGIA</div>
+    <div class="spb-meta-line">DEPARTAMENTO DE CULTURA GERAL</div>
+    <div class="spb-meta-line">LÍNGUA PORTUGUESA 2 (CG02) — 2º SEM. 2026</div>
+    <div class="spb-meta-prof">Prof.: ISMAEL ROCHA</div>
+  </div>
+</header>
+
+<div class="hero-title-block">
+  <div class="hero-kicker">PORTUGUÊS 2 · UNIDADE 6</div>
+  <h1>Aula 11: Simulado de Avaliação</h1>
+  <p class="hero-subtitle">Concordância e Regência — Revisão Geral em 30 Questões</p>
+</div>
+
+<div class="reader-toolbar" role="group" aria-label="Ferramentas de leitura">
+  <button class="reader-toggle-btn" id="readerToggle" type="button" aria-pressed="false" aria-label="Ativar modo leitura">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5v16M8 7h8M8 10h8M8 13h6"/></svg>
+    <span id="readerToggleLabel">Modo leitura</span>
+  </button>
+  <button class="reader-print-btn" id="readerPrint" type="button" aria-label="Imprimir ou salvar como PDF">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6zM17 12h.01"/></svg>
+    <span>Imprimir / salvar PDF</span>
+  </button>
+</div>
+
+<section class="content-sec" id="sec-resumo">
+  <h2>1. Resumo Expresso do Conteúdo</h2>
+  <ul>
+    <li><strong>Concordância Verbal:</strong> O verbo concorda com o núcleo do sujeito. <em>Haver</em> (existir/ocorrer) e <em>fazer</em> (tempo decorrido) são impessoais e ficam no singular. O <em>se</em> apassivador (com VTD) leva o verbo a concordar com o sujeito paciente; o <em>se</em> índice de indeterminação (com VTI) mantém o verbo no singular.</li>
+    <li><strong>Concordância Nominal:</strong> Adjetivos, artigos e pronomes concordam com o substantivo. <em>Meio</em> (advérbio = um pouco) e <em>bastante</em> (advérbio = muito) são invariáveis. <em>Anexo</em>, <em>incluso</em> e <em>obrigado</em> variam conforme o termo a que se referem.</li>
+    <li><strong>Regência Verbal e Nominal:</strong> Estudo das preposições exigidas por verbos e nomes. Verbos mudam de sentido conforme a regência (<em>assistir o</em> = ajudar; <em>assistir ao</em> = ver). A preposição exigida pelo verbo deve vir sempre <strong>antes</strong> do pronome relativo (<em>O livro de que gosto</em>).</li>
+  </ul>
+</section>
+
+<section class="content-sec" id="sec-simulado">
+  <h2>2. Simulado de Avaliação (30 Questões)</h2>
+  <p>Selecione a alternativa correta em cada questão para conferir a justificativa.</p>
+
+  <div class="quiz-container">
+
+    <div class="quiz-question">
+      <h4>1. Assinale a frase que está totalmente de acordo com a norma culta de Concordância Verbal:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q1" class="correct"> a) Vai fazer três anos que ele pastoreia a mesma igreja.</label></li>
+        <li><label><input type="radio" name="q1"> b) Haviam muitos problemas na comunidade primitiva.</label></li>
+        <li><label><input type="radio" name="q1"> c) Há de existir respostas para esses dilemas teológicos.</label></li>
+        <li><label><input type="radio" name="q1"> d) Fazem dois meses que os missionários partiram.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa A)</strong>
+        O verbo <em>fazer</em>, indicando tempo decorrido, é impessoal e transmite essa impessoalidade ao auxiliar (<em>Vai fazer</em>). Em B e D, <em>haver</em> e <em>fazer</em> ficam no singular (<em>Havia</em>, <em>Faz</em>); em C, <em>existir</em> é pessoal (<em>Hão de existir</em>).
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>2. Em relação à concordância com a palavra "SE", assinale a alternativa CORRETA:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q2"> a) Vende-se Bíblias antigas.</label></li>
+        <li><label><input type="radio" name="q2"> b) Consertou-se os bancos do templo.</label></li>
+        <li><label><input type="radio" name="q2"> c) Apelaram-se aos recursos do conselho.</label></li>
+        <li><label><input type="radio" name="q2" class="correct"> d) Precisa-se de colaboradores para o evento.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa D)</strong>
+        <em>Precisar (de)</em> é VTI; logo, o <em>se</em> é índice de indeterminação do sujeito e o verbo fica obrigatoriamente no singular. Em A e B, os verbos são VTD (<em>Vendem-se Bíblias</em>; <em>Consertaram-se os bancos</em>). Em C, <em>apelar (a)</em> também é VTI e exige singular (<em>Apelou-se aos recursos</em>).
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>3. Quando o sujeito composto vem posposto (depois do verbo), a regra de concordância verbal permite:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q3"> a) Apenas o verbo no plural.</label></li>
+        <li><label><input type="radio" name="q3" class="correct"> b) O verbo no plural ou concordando com o núcleo mais próximo.</label></li>
+        <li><label><input type="radio" name="q3"> c) Apenas o verbo no singular.</label></li>
+        <li><label><input type="radio" name="q3"> d) O verbo flexionado de acordo com o adjunto.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa B)</strong>
+        Com sujeito composto posposto, a norma culta aceita a concordância lógica (no plural: <em>Chegaram o pastor e o líder</em>) ou a concordância atrativa com o núcleo mais próximo (<em>Chegou o pastor e o líder</em>).
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>4. "A maioria dos presentes _________ as novas diretrizes". Assinale a alternativa que preenche corretamente a lacuna:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q4"> a) apoiou</label></li>
+        <li><label><input type="radio" name="q4"> b) apoiaram</label></li>
+        <li><label><input type="radio" name="q4" class="correct"> c) As alternativas 'a' e 'b' estão corretas.</label></li>
+        <li><label><input type="radio" name="q4"> d) Nenhuma das alternativas está correta.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa C)</strong>
+        Com expressões partitivas seguidas de plural (<em>A maioria dos presentes</em>), o verbo pode concordar com o núcleo da expressão (<em>apoiou</em>) ou com o termo especificador no plural (<em>apoiaram</em>).
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>5. Assinale a alternativa que apresenta ERRO de Concordância Nominal:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q5" class="correct"> a) A porta do gabinete estava meia aberta.</label></li>
+        <li><label><input type="radio" name="q5"> b) Muito obrigadas, disseram as irmãs.</label></li>
+        <li><label><input type="radio" name="q5"> c) Ela mesma entregou os donativos.</label></li>
+        <li><label><input type="radio" name="q5"> d) As planilhas orçamentárias seguem anexas.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa A)</strong>
+        Quando <em>meio</em> tem sentido de "um pouco", atua como advérbio e é invariável. O correto é: <em>"estava meio aberta"</em>.
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>6. "Eles leram _________ livros, pois tinham _________ tempo disponível". As lacunas são preenchidas por:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q6"> a) bastante - bastantes</label></li>
+        <li><label><input type="radio" name="q6"> b) bastantes - bastantes</label></li>
+        <li><label><input type="radio" name="q6"> c) bastante - bastante</label></li>
+        <li><label><input type="radio" name="q6" class="correct"> d) bastantes - bastante</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa D)</strong>
+        Em ambos os casos, a palavra acompanha substantivos (função de pronome indefinido, equivalente a <em>muito(s)</em>): varia no plural em <em>bastantes livros</em> e permanece no singular em <em>bastante tempo</em>.
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>7. Marque a alternativa correta quanto à regência do verbo ASSISTIR no sentido de "ver/presenciar":</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q7"> a) Os alunos assistiram o seminário até o fim.</label></li>
+        <li><label><input type="radio" name="q7"> b) Os alunos assistiram no seminário até o fim.</label></li>
+        <li><label><input type="radio" name="q7" class="correct"> c) Os alunos assistiram ao seminário até o fim.</label></li>
+        <li><label><input type="radio" name="q7"> d) Os alunos assistiram pelo seminário até o fim.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa C)</strong>
+        No sentido de ver/presenciar, <em>assistir</em> é Transitivo Indireto e exige a preposição <em>a</em> (<em>assistiram ao seminário</em>).
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>8. A regência do verbo IMPLICAR, no sentido de "acarretar consequência", está correta em:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q8"> a) O pecado implica no afastamento de Deus.</label></li>
+        <li><label><input type="radio" name="q8" class="correct"> b) O pecado implica o afastamento de Deus.</label></li>
+        <li><label><input type="radio" name="q8"> c) O pecado implica ao afastamento de Deus.</label></li>
+        <li><label><input type="radio" name="q8"> d) O pecado implica com o afastamento de Deus.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa B)</strong>
+        No sentido de acarretar consequência, <em>implicar</em> é Transitivo Direto e dispensa a preposição <em>em</em> (<em>implica o afastamento</em>).
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>9. Assinale a frase que respeita a norma culta na união de preposição e pronome relativo:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q9" class="correct"> a) O hino de que mais gosto será cantado hoje.</label></li>
+        <li><label><input type="radio" name="q9"> b) O hino que mais gosto será cantado hoje.</label></li>
+        <li><label><input type="radio" name="q9"> c) O hino do que mais gosto será cantado hoje.</label></li>
+        <li><label><input type="radio" name="q9"> d) O hino onde mais gosto será cantado hoje.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa A)</strong>
+        Quem gosta, gosta <em>de</em> algo. A preposição exigida pelo verbo deve anteceder o pronome relativo (<em>de que mais gosto</em>).
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>10. Como se corrige a "economia ilícita" (erro de regência) na frase: "Eu conheço e gosto deste autor"?</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q10"> a) Eu conheço deste autor e gosto dele.</label></li>
+        <li><label><input type="radio" name="q10"> b) A frase já está correta, pois ambos os verbos exigem 'de'.</label></li>
+        <li><label><input type="radio" name="q10"> c) Eu conheço no autor e gosto dele.</label></li>
+        <li><label><input type="radio" name="q10" class="correct"> d) Eu conheço este autor e gosto dele.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa D)</strong>
+        <em>Conhecer</em> é VTD (sem preposição) e <em>gostar</em> é VTI (exige <em>de</em>). Verbos com regências diferentes não podem compartilhar o mesmo complemento.
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>11. Na frase "Todos devemos obedecer ______ mandamentos divinos", a lacuna é preenchida corretamente por:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q11"> a) os</label></li>
+        <li><label><input type="radio" name="q11"> b) nos</label></li>
+        <li><label><input type="radio" name="q11" class="correct"> c) aos</label></li>
+        <li><label><input type="radio" name="q11"> d) com os</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa C)</strong>
+        O verbo <em>obedecer</em> (assim como <em>desobedecer</em>) é Transitivo Indireto e exige a preposição <em>a</em> (<em>obedecer aos mandamentos</em>).
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>12. Em "O projeto visa ______ fortalecimento da educação teológica", o espaço deve ser preenchido por:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q12" class="correct"> a) ao</label></li>
+        <li><label><input type="radio" name="q12"> b) o</label></li>
+        <li><label><input type="radio" name="q12"> c) no</label></li>
+        <li><label><input type="radio" name="q12"> d) pelo</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa A)</strong>
+        No sentido de objetivar/almejar, <em>visar</em> é Transitivo Indireto e exige a preposição <em>a</em> (<em>visa ao fortalecimento</em>).
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>13. Assinale o período perfeitamente correto de acordo com a norma-padrão (Concordância e Regência integradas):</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q13"> a) Havia muitos textos os quais o conselho não se referiu.</label></li>
+        <li><label><input type="radio" name="q13" class="correct"> b) Chegou o mestre e o aluno, e eles obedeceram aos avisos.</label></li>
+        <li><label><input type="radio" name="q13"> c) Fazem meses que aspiramos o início do curso.</label></li>
+        <li><label><input type="radio" name="q13"> d) Precisa-se de livros novos, pois haviam muitos estragados.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa B)</strong>
+        Sujeito composto posposto concordando com o núcleo mais próximo (<em>Chegou o mestre</em>) e regência correta de <em>obedecer</em> (<em>aos avisos</em>). Erros nas demais: A (<em>aos quais</em>), C (<em>Faz meses</em> / <em>aspiramos ao</em>), D (<em>havia</em>).
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>14. Em relação à concordância do verbo HAVER, assinale a opção INCORRETA:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q14"> a) Havia muitos livros antigos na biblioteca do seminário.</label></li>
+        <li><label><input type="radio" name="q14"> b) Deve haver outras formas de explicar essa passagem.</label></li>
+        <li><label><input type="radio" name="q14"> c) Há anos não vejo uma tese tão bem fundamentada.</label></li>
+        <li><label><input type="radio" name="q14" class="correct"> d) Houveram diversos debates teológicos na conferência.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa D)</strong>
+        O verbo <em>haver</em> no sentido de existir/ocorrer é impessoal e permanece no singular. O correto é: <em>"Houve diversos debates"</em>.
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>15. "As alunas estavam ________ ansiosas, pois tinham lido ________ apostilas". A alternativa que preenche corretamente é:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q15" class="correct"> a) bastante / bastantes</label></li>
+        <li><label><input type="radio" name="q15"> b) bastante / bastante</label></li>
+        <li><label><input type="radio" name="q15"> c) bastantes / bastante</label></li>
+        <li><label><input type="radio" name="q15"> d) bastantes / bastantes</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa A)</strong>
+        <em>Bastante</em> modificando o adjetivo <em>ansiosas</em> é advérbio (invariável). <em>Bastantes</em> acompanhando o substantivo <em>apostilas</em> é pronome indefinido (variável, equivale a <em>muitas</em>).
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>16. Na frase "O pastor perdoou ______ membros da igreja ______ suas falhas", a regência bitransitiva exige que as lacunas sejam preenchidas por:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q16"> a) aos / às</label></li>
+        <li><label><input type="radio" name="q16"> b) os / às</label></li>
+        <li><label><input type="radio" name="q16" class="correct"> c) aos / as</label></li>
+        <li><label><input type="radio" name="q16"> d) os / as</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa C)</strong>
+        <em>Perdoar</em> exige Objeto Indireto para pessoa (<em>aos membros</em>) e Objeto Direto para coisa (<em>as suas falhas</em>).
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>17. Qual frase abaixo comete o ERRO comum de deslocamento na regência do verbo IR ou CHEGAR?</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q17"> a) Os irmãos foram à igreja orar.</label></li>
+        <li><label><input type="radio" name="q17" class="correct"> b) Chegamos no seminário para a primeira aula.</label></li>
+        <li><label><input type="radio" name="q17"> c) O professor chegou ao encontro pontualmente.</label></li>
+        <li><label><input type="radio" name="q17"> d) Vou a Roma para estudar história da igreja.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa B)</strong>
+        Verbos de movimento como <em>ir</em> e <em>chegar</em> exigem a preposição <em>a</em>, e não <em>em</em>. O correto é: <em>"Chegamos ao seminário"</em>.
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>18. Sobre o verbo ASPIRAR, assinale a oração CORRETA quanto à regência:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q18"> a) A poeira à qual aspiramos ao limpar o templo era densa.</label></li>
+        <li><label><input type="radio" name="q18"> b) O seminarista aspirava o cargo de capelão.</label></li>
+        <li><label><input type="radio" name="q18"> c) Aspirar àquele ar puro da montanha nos revigorou.</label></li>
+        <li><label><input type="radio" name="q18" class="correct"> d) Todos aspiram à salvação, mas poucos seguem o caminho.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa D)</strong>
+        No sentido de desejar/almejar, <em>aspirar</em> é VTI e exige preposição <em>a</em> (<em>aspiram à salvação</em>). No sentido de inalar/respirar (A e C), é VTD (sem preposição).
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>19. Assinale a alternativa que apresenta concordância INADEQUADA:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q19" class="correct"> a) É proibido a entrada de pessoas não autorizadas.</label></li>
+        <li><label><input type="radio" name="q19"> b) Envio inclusas as fotos da ordenação.</label></li>
+        <li><label><input type="radio" name="q19"> c) As teses em anexo precisam de revisão.</label></li>
+        <li><label><input type="radio" name="q19"> d) Seguem anexos os documentos da ata.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa A)</strong>
+        Quando o substantivo vem determinado por artigo (<em>a entrada</em>), a expressão concorda em gênero: <em>"É proibida a entrada"</em>. Sem artigo, permanece invariável (<em>"É proibido entrada"</em>).
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>20. Indique qual dos nomes abaixo exige a preposição DE, seguindo o princípio da fixação pela leitura:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q20"> a) Bacharel</label></li>
+        <li><label><input type="radio" name="q20" class="correct"> b) Medo</label></li>
+        <li><label><input type="radio" name="q20"> c) Horror</label></li>
+        <li><label><input type="radio" name="q20"> d) Apto</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa B)</strong>
+        Quem tem medo, tem medo <em>de</em> algo. Os demais exigem: <em>bacharel em</em>, <em>horror a</em> e <em>apto a/para</em>.
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>21. "_______ fazer dez anos que a congregação comprou esse terreno, e ainda _______ pedras para retirar." Qual a concordância correta?</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q21"> a) Vai / existe</label></li>
+        <li><label><input type="radio" name="q21"> b) Vão / existem</label></li>
+        <li><label><input type="radio" name="q21"> c) Vão / existe</label></li>
+        <li><label><input type="radio" name="q21" class="correct"> d) Vai / existem</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa D)</strong>
+        <em>Vai fazer</em> permanece no singular pela impessoalidade de <em>fazer</em> (tempo decorrido); já <em>existir</em> é verbo pessoal e concorda com o sujeito <em>pedras</em> (<em>existem</em>).
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>22. "Não há dúvidas _________ as doutrinas expostas". O complemento nominal correto pode ser introduzido por:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q22" class="correct"> a) sobre</label></li>
+        <li><label><input type="radio" name="q22"> b) para com</label></li>
+        <li><label><input type="radio" name="q22"> c) pelas</label></li>
+        <li><label><input type="radio" name="q22"> d) a</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa A)</strong>
+        O substantivo <em>dúvida</em> rege preposições como <em>sobre</em>, <em>acerca de</em> ou <em>quanto a</em>.
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>23. O verbo CUSTAR, no sentido de ser difícil (acarretar esforço ou dor), é Transitivo Indireto e NÃO aceita pessoa como sujeito. A forma correta é:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q23"> a) Eu custo a entender grego antigo.</label></li>
+        <li><label><input type="radio" name="q23" class="correct"> b) Custou aos alunos entender o hebraico.</label></li>
+        <li><label><input type="radio" name="q23"> c) Nós custamos muito para chegar à conclusão.</label></li>
+        <li><label><input type="radio" name="q23"> d) Os irmãos custaram a pagar as dívidas.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa B)</strong>
+        Na norma culta, a ação difícil é o sujeito oracional (<em>entender o hebraico</em>) e a pessoa aparece como objeto indireto (<em>aos alunos</em>), mantendo o verbo na 3ª pessoa do singular.
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>24. Em "Alugam-se salas no prédio antigo", o verbo alugar (VTD) concorda no plural com "salas" pois é apassivador. Se trocarmos por "Tratar de" (VTI), como fica?</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q24"> a) Trata-se salas no prédio antigo.</label></li>
+        <li><label><input type="radio" name="q24"> b) Tratam-se de salas no prédio antigo.</label></li>
+        <li><label><input type="radio" name="q24" class="correct"> c) Trata-se de salas no prédio antigo.</label></li>
+        <li><label><input type="radio" name="q24"> d) Tratam-se as salas no prédio antigo.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa C)</strong>
+        Com verbo transitivo indireto (<em>tratar de</em>) + partícula <em>se</em>, o sujeito é indeterminado e o verbo permanece obrigatoriamente na 3ª pessoa do singular (<em>Trata-se de salas</em>).
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>25. Na frase "O professor estava ______ nervoso com os alunos, que estavam ______ desatentos", as palavras corretas são:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q25"> a) meio / meios</label></li>
+        <li><label><input type="radio" name="q25"> b) meios / meio</label></li>
+        <li><label><input type="radio" name="q25"> c) meios / meios</label></li>
+        <li><label><input type="radio" name="q25" class="correct"> d) meio / meio</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa D)</strong>
+        Em ambos os casos, <em>meio</em> tem sentido de "um pouco" (advérbio de intensidade) e permanece invariável.
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>26. A regência do verbo PROCEDER está CORRETA, no sentido de "dar início / realizar", em:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q26" class="correct"> a) O pastor procedeu à leitura bíblica.</label></li>
+        <li><label><input type="radio" name="q26"> b) O pastor procedeu com a leitura bíblica.</label></li>
+        <li><label><input type="radio" name="q26"> c) O pastor procedeu na leitura bíblica.</label></li>
+        <li><label><input type="radio" name="q26"> d) O pastor procedeu a leitura bíblica.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa A)</strong>
+        No sentido de dar início/realizar, <em>proceder</em> é Transitivo Indireto e exige a preposição <em>a</em>, ocorrendo crase antes de palavra feminina (<em>procedeu à leitura</em>).
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>27. Sobre a herança de regência, se o verbo "RESISTIR" exige a preposição "A" (resistir à tentação), qual é a regência do substantivo derivado "RESISTÊNCIA"?</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q27"> a) Resistência da tentação.</label></li>
+        <li><label><input type="radio" name="q27"> b) Resistência com a tentação.</label></li>
+        <li><label><input type="radio" name="q27" class="correct"> c) Resistência à tentação.</label></li>
+        <li><label><input type="radio" name="q27"> d) Resistência para a tentação.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa C)</strong>
+        Substantivos derivados de verbos geralmente herdam a mesma regência do verbo de origem: <em>resistir a</em> → <em>resistência à tentação</em>.
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>28. "Os relatórios e as atas _________ foram assinados". Para preencher a lacuna com a concordância nominal adequada com múltiplos substantivos de gêneros diferentes, deve-se usar:</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q28"> a) anexas</label></li>
+        <li><label><input type="radio" name="q28" class="correct"> b) anexos</label></li>
+        <li><label><input type="radio" name="q28"> c) anexo</label></li>
+        <li><label><input type="radio" name="q28"> d) anexa</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa B)</strong>
+        Como o adjetivo qualifica dois substantivos de gêneros diferentes (<em>relatórios</em> e <em>atas</em>) e refere-se a ambos, prevalece o masculino plural (<em>anexos</em>), garantindo clareza e evitando ambiguidade.
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>29. Qual alternativa NÃO apresenta desvio da norma culta na junção de duas orações?</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q29"> a) Eu li e gostei do sermão deste domingo.</label></li>
+        <li><label><input type="radio" name="q29"> b) Eles entraram e saíram do templo apressadamente.</label></li>
+        <li><label><input type="radio" name="q29" class="correct"> c) O reitor analisou as mudanças curriculares e com elas concordou.</label></li>
+        <li><label><input type="radio" name="q29"> d) O reitor analisou e concordou com as mudanças curriculares.</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa C)</strong>
+        Os verbos <em>analisar</em> (VTD) e <em>concordar</em> (VTI com preposição <em>com</em>) possuem regências distintas. A letra C separa os complementos corretamente, evitando a economia ilícita.
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4>30. "O teólogo cujas as obras nós debatemos esteve na cidade." Onde está o ERRO gramatical na frase?</h4>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="q30"> a) O pronome relativo "cujas" devia concordar com "teólogo" (cujo).</label></li>
+        <li><label><input type="radio" name="q30"> b) O verbo debater exigiria a preposição 'sobre' antes de "cujas".</label></li>
+        <li><label><input type="radio" name="q30"> c) Não há erro, a frase está correta.</label></li>
+        <li><label><input type="radio" name="q30" class="correct"> d) O emprego do artigo "as" após o pronome "cujas".</label></li>
+      </ul>
+      <div class="explanation-box">
+        <strong>Correto! (Alternativa D)</strong>
+        Nunca se emprega artigo definido após o pronome relativo <em>cujo</em> (e suas flexões). O correto é: <em>"O teólogo cujas obras nós debatemos..."</em>.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="content-sec" id="sec-gabarito">
+  <h2>3. Gabarito Rápido</h2>
+  <details class="gabarito-details">
+    <summary>Conferir gabarito completo (30 questões)</summary>
+    <div class="gabarito-grid">
+      <div class="gab-item"><span class="gab-num">01</span><span class="gab-ans">A</span></div>
+      <div class="gab-item"><span class="gab-num">02</span><span class="gab-ans">D</span></div>
+      <div class="gab-item"><span class="gab-num">03</span><span class="gab-ans">B</span></div>
+      <div class="gab-item"><span class="gab-num">04</span><span class="gab-ans">C</span></div>
+      <div class="gab-item"><span class="gab-num">05</span><span class="gab-ans">A</span></div>
+      <div class="gab-item"><span class="gab-num">06</span><span class="gab-ans">D</span></div>
+      <div class="gab-item"><span class="gab-num">07</span><span class="gab-ans">C</span></div>
+      <div class="gab-item"><span class="gab-num">08</span><span class="gab-ans">B</span></div>
+      <div class="gab-item"><span class="gab-num">09</span><span class="gab-ans">A</span></div>
+      <div class="gab-item"><span class="gab-num">10</span><span class="gab-ans">D</span></div>
+      <div class="gab-item"><span class="gab-num">11</span><span class="gab-ans">C</span></div>
+      <div class="gab-item"><span class="gab-num">12</span><span class="gab-ans">A</span></div>
+      <div class="gab-item"><span class="gab-num">13</span><span class="gab-ans">B</span></div>
+      <div class="gab-item"><span class="gab-num">14</span><span class="gab-ans">D</span></div>
+      <div class="gab-item"><span class="gab-num">15</span><span class="gab-ans">A</span></div>
+      <div class="gab-item"><span class="gab-num">16</span><span class="gab-ans">C</span></div>
+      <div class="gab-item"><span class="gab-num">17</span><span class="gab-ans">B</span></div>
+      <div class="gab-item"><span class="gab-num">18</span><span class="gab-ans">D</span></div>
+      <div class="gab-item"><span class="gab-num">19</span><span class="gab-ans">A</span></div>
+      <div class="gab-item"><span class="gab-num">20</span><span class="gab-ans">B</span></div>
+      <div class="gab-item"><span class="gab-num">21</span><span class="gab-ans">D</span></div>
+      <div class="gab-item"><span class="gab-num">22</span><span class="gab-ans">A</span></div>
+      <div class="gab-item"><span class="gab-num">23</span><span class="gab-ans">B</span></div>
+      <div class="gab-item"><span class="gab-num">24</span><span class="gab-ans">C</span></div>
+      <div class="gab-item"><span class="gab-num">25</span><span class="gab-ans">D</span></div>
+      <div class="gab-item"><span class="gab-num">26</span><span class="gab-ans">A</span></div>
+      <div class="gab-item"><span class="gab-num">27</span><span class="gab-ans">C</span></div>
+      <div class="gab-item"><span class="gab-num">28</span><span class="gab-ans">B</span></div>
+      <div class="gab-item"><span class="gab-num">29</span><span class="gab-ans">C</span></div>
+      <div class="gab-item"><span class="gab-num">30</span><span class="gab-ans">D</span></div>
+    </div>
+  </details>
+</section>
+
+<div class="back-portal-wrap"><a class="back-portal-btn" href="./">← Voltar ao portal de Português 2</a></div>
+</main>
+<footer class="site-credit" aria-label="Créditos do site">
+  <a class="bunker-logo-link" href="https://bunkerdigital.top/" target="_blank" rel="noopener noreferrer" aria-label="Bunker Digital — abrir em nova aba">
+    <img class="bunker-logo-dark" src="/graphics/logo-bunker-dark.png" alt="Bunker Digital" loading="lazy" width="150" height="130">
+    <img class="bunker-logo-light" src="/graphics/logo-bunker-light.png" alt="Bunker Digital" loading="lazy" width="150" height="130">
+  </a>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('themeToggle'),icon=document.getElementById('themeIcon'),label=document.getElementById('themeLabel');
+  var sun='<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+  var moon='<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+  function sync(){var dark=root.classList.contains('dark-mode');icon.innerHTML=dark?moon:sun;label.textContent=dark?'Escuro':'Claro';btn.setAttribute('aria-checked',String(dark));btn.setAttribute('aria-label',dark?'Alternar para modo claro':'Alternar para modo escuro');}
+  sync();btn.addEventListener('click',function(){root.classList.toggle('dark-mode');var mode=root.classList.contains('dark-mode')?'dark':'light';try{localStorage.setItem('spb_portais_tema',mode);}catch(e){}sync();});
+  var readerToggle=document.getElementById('readerToggle');
+  var readerToggleLabel=document.getElementById('readerToggleLabel');
+  var readerPrint=document.getElementById('readerPrint');
+  if(readerToggle){
+    readerToggle.addEventListener('click',function(){
+      var active=!document.body.classList.contains('reader-mode');
+      document.body.classList.toggle('reader-mode',active);
+      readerToggle.setAttribute('aria-pressed',String(active));
+      readerToggle.setAttribute('aria-label',active?'Sair do modo leitura':'Ativar modo leitura');
+      if(readerToggleLabel)readerToggleLabel.textContent=active?'Sair do modo leitura':'Modo leitura';
+      if(active)window.scrollTo({top:0,behavior:'smooth'});
+    });
+  }
+  if(readerPrint){readerPrint.addEventListener('click',function(){window.print();});}
+  var sections=document.querySelectorAll('section.content-sec'),links=document.querySelectorAll('.slim-toc-link');
+  function updateActive(){var pos=window.scrollY+145,current=sections[0]?sections[0].id:'';sections.forEach(function(s){if(s.offsetTop<=pos)current=s.id;});links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+current);});}
+  window.addEventListener('scroll',updateActive,{passive:true});updateActive();
+})();
+</script>
+</body>
+</html>
